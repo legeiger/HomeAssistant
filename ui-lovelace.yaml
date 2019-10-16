@@ -25,18 +25,14 @@ resources:
     type: module
 
 title: Home
-background: var(--lovelace-background)
+background: 'center / cover no-repeat url("/local/backgroundbw.jpg") fixed'
 views:
   - !include lovelace/rooms.yaml
   - !include lovelace/switches.yaml
-  - !include lovelace/hvac.yaml
   - !include lovelace/devicestatus.yaml
-  - !include lovelace/network.yaml
   - !include lovelace/ha.yaml
-  - !include lovelace/rpi2.yaml
-  - !include lovelace/weather.yaml
   - !include lovelace/automations.yaml
-  - !include lovelace/trains.yaml
+
 ####################################################
 #                                                  #
 #          END OF CONFIGURATION FILE               #

@@ -23,7 +23,16 @@
     headers:
       Authorization: !secret llt
       Content-Type: application/json
-      
+
+  - platform: rest
+    resource: !secret configuratorrpi2
+    name: configuratorrpi2
+    value_template: '{{ value_json.data.state }}'
+    scan_interval: 60
+    headers:
+      Authorization: !secret lltrpi2
+      Content-Type: application/json
+
   - platform: rest
     resource: !secret dasshio
     name: dasshio
@@ -121,15 +130,6 @@
     scan_interval: 60
     headers:
       Authorization: !secret llt
-      Content-Type: application/json
-
-  - platform: rest
-    resource: !secret tasmoadmin
-    name: tasmoadmin
-    value_template: '{{ value_json.data.state }}'
-    scan_interval: 60
-    headers:
-      Authorization: !secret lltrpi2
       Content-Type: application/json
 
   - platform: rest

@@ -38,22 +38,6 @@ cover:
         device_key: !secret device_key
         name: Garage Door
 
-#https://github.com/custom-components/custom_updater
-custom_updater:
-  track:
-    - cards
-    - components
-  card_urls:
-    - https://raw.githubusercontent.com/MizterB/lovelace-secondaryinfo-entity-row/master/custom_cards.json
-    - https://raw.githubusercontent.com/keatontaylor/alexa_media_player/master/custom_components.json
-    - https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
-  component_urls:
-    - https://raw.githubusercontent.com/keatontaylor/alexa_media_player/master/custom_components.json
-
-#https://www.home-assistant.io/components/downloader/
-downloader:
-  download_dir: /share
-
 #https://www.home-assistant.io/hassio/
 hassio:
 
@@ -185,26 +169,6 @@ group:
 
 ####################################################
 #                                                  #
-#                   OPENUV                         #
-#                                                  #
-####################################################
-
-#https://www.home-assistant.io/components/openuv/
-openuv:
-  api_key: !secret openuv
-  binary_sensors:
-    monitored_conditions:
-      - uv_protection_window
-  sensors:
-    monitored_conditions:
-      - current_ozone_level
-      - current_uv_index
-      - current_uv_level
-      - max_uv_index
-      - safe_exposure_time_type_3
-
-####################################################
-#                                                  #
 #                   SPEETEST                       #
 #                                                  #
 ####################################################
@@ -246,7 +210,6 @@ weather:
 ####################################################
 
 #https://home-assistant.io/components/light.yeelight/
-
 yeelight:
   devices:
     192.168.1.10:

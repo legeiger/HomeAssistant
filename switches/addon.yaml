@@ -23,6 +23,17 @@
           data:
             addon: core_configurator
 
+      configuratorrpi2:
+        value_template: "{{ is_state('sensor.configuratorrpi2', 'started') }}"
+        turn_on:
+          service: hassio.addon_start
+          data:
+            addon: core_configurator
+        turn_off:
+          service: hassio.addon_stop
+          data:
+            addon: core_configurator
+
       dasshio:
         value_template: "{{ is_state('sensor.dasshio', 'started') }}"
         turn_on:
@@ -143,17 +154,6 @@
           service: hassio.addon_stop
           data:
             addon: core_ssh
-
-      tasmoadmin:
-        value_template: "{{ is_state('sensor.tasmoadmin', 'started') }}"
-        turn_on:
-          service: hassio.addon_start
-          data:
-            addon: a0d7b954_sonweb
-        turn_off:
-          service: hassio.addon_stop
-          data:
-            addon: a0d7b954_sonweb
 
       unificontroller:
         value_template: "{{ is_state('sensor.unificontroller', 'started') }}"

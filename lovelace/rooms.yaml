@@ -30,9 +30,6 @@ cards:
         theme: midnightclear
         entities: 
           - entity: cover.garage_door
-          - entity: sensor.garage_car_present
-            name: Car In Garage?
-            icon: mdi:car
   - type: custom:vertical-stack-in-card
     title: Entertainment Center
     cards: 
@@ -127,8 +124,99 @@ cards:
       - entity: sensor.hours_at_work_yesterday
         icon: mdi:progress-clock
       - entity: sensor.hours_at_work_two_days_ago
-        icon: mdi:progress-clock
-        
+        icon: mdi:progress-cloc
+  - type: vertical-stack
+    cards:
+      - type: conditional
+        theme: midnightclear
+        conditions:
+          - entity: climate.linear_heating
+            state: "heat"
+        card:
+          type: entities
+          show_header_toggle: false
+          title: Thermostat
+          entities:
+            - entity: climate.linear_heating
+              name: Thermostat
+      - type: conditional
+        conditions:
+          - entity: climate.linear_cooling
+            state: "cool"
+        card:
+          type: entities
+          show_header_toggle: false
+          title: Thermostat
+          entities:
+            - entity: climate.linear_cooling
+              name: Thermostat
+      - type: entities
+        show_header_toggle: false
+        title: Temperature & Humidity
+        entities:
+          - entity: sensor.th161_temperature
+            name: Upstairs Temperature
+            icon: mdi:thermometer-lines
+          - entity:  sensor.th161_humidity
+            name: Upstairs Humidity
+            icon: mdi:water-percent
+          - entity: sensor.currenttemp
+            name: Outside Temperature
+            icon: mdi:thermometer-lines
+          - entity: sensor.currenthumid
+            name: Outside Humidity
+            icon: mdi:water-percent
+      - type: conditional
+        theme: midnightclear
+        conditions:
+          - entity: climate.linear_cooling
+            state: "cool"
+        card:
+          type: entities
+          show_header_toggle: false
+          title: HVAC Runtime
+          entities:
+            - entity: sensor.cooling_hours_today
+              icon: mdi:progress-clock
+            - entity: sensor.cooling_hours_yesterday
+              icon: mdi:progress-clock
+            - entity: sensor.cooling_hours_two_days_ago
+              icon: mdi:progress-clock
+      - type: conditional
+        theme: midnightclear
+        conditions:
+          - entity: climate.linear_heating
+            state: "heat"
+        card:
+          type: entities
+          show_header_toggle: false
+          title: HVAC Runtime
+          entities:
+            - entity: sensor.heating_hours_today
+              icon: mdi:progress-clock
+            - entity: sensor.heating_hours_yesterday
+              icon: mdi:progress-clock
+            - entity: sensor.heating_hours_two_days_ago
+              icon: mdi:progress-clock
+  - type: weather-forecast
+    entity: weather.dark_sky
+  - type: entities
+    title: Sun & Moon
+    show_header_toggle: false
+    entities:
+      - entity: sun.sun
+        name: Sun
+      - entity: sensor.sunrise
+        name: Next Sunrise
+        icon: mdi:weather-sunset-up
+      - entity: sensor.sunset
+        name: Next Sunset
+        icon: mdi:weather-sunset-down
+      - entity: sensor.daylight
+        name: Hours of Daylight
+        icon: mdi:timelapse
+      - entity: sensor.moon
+
 ####################################################
 #                                                  #
 #          END OF CONFIGURATION FILE               #

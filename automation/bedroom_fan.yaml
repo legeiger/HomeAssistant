@@ -9,7 +9,7 @@
     trigger:
       platform: state
       entity_id: sensor.operatingstate
-      to: Cooling
+      to: cooling
     condition:
       condition: and
       conditions:
@@ -26,7 +26,7 @@
     trigger:
       platform: state
       entity_id: sensor.operatingstate
-      to: Idle
+      to: idle
     condition:
       condition: and
       conditions:

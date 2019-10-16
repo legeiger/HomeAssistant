@@ -25,11 +25,6 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 
 This notification is used to notify me if my Lets Encrypt certificate does not auto renew after the days remaining in the certificate validity goes below 28 days.  It should auto renew at 30 days.  	
 
-### CTA.yaml Automation:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/cta.yaml)__
-
-These automations update my CTA bus tracker sensors when on.  They are by default off.  I only use the CTA data when leaving work on a weekday so no need to be polling it all day and on the weekends.   
-
 ### Device Offline.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/deviceoffline.yaml)__
 
@@ -47,12 +42,6 @@ These automations are used to notify me when a door is opened when no one is hom
 * Notify Me if the back door is opened and I am away
 * Notify Me if the garage door is left open when I leave
 * Notify Me when the doorbell is pressed and flash a light in the house
-
-### Downloader.yaml Automations:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/certupdate.yaml)__
-
-* Notify Me if a downloader download fails
-* Notify Me if a downloader download completes
 
 ### Feed the dog.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/feed_the_dog.yaml)__
@@ -99,6 +88,17 @@ Some automations for Home Assistant related items.
 * Notify me if a battery power sensor battery is getting low
 * Notify me if there is a custom component/card update available
 * Notify me and restart the nut addon if it stops reporting values
+
+### hvac.yaml Automations:
+__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/thermostat.yaml)__
+
+This set of automations is still in its infancy.  I replaced my nest thermostat with a basic Z-wave unit.  Given the presence detection of home assistant and the ability to control the thermostat, I can replace all the nest functions I used and have less reliance on 'the cloud'.
+
+* Set the thermostat to 'away' temperature when everyone has left for the day. (weekdays only)
+* Turn the thermostat back to our 'home' temperature at 4:00 to preheat the house so it is warm when my wife arrives home.
+* If anyone comes home, turn the temperature back to the 'home' value.
+* At bedtime lower the temperature 2 degrees.
+* Pre-heat the house for when we wake up.
 
 ### Leaving Home.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/leaving_home.yaml)__
@@ -164,17 +164,6 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 * Notify me if the Desktop PC is turned on while away
 * Notify me if there is a failed login attempt to the HA front end
 * Notify me of a new device added to my Wifi network
-
-### Thermostat.yaml Automations:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/thermostat.yaml)__
-
-This set of automations is still in its infancy.  I replaced my nest thermostat with a basic Z-wave unit.  Given the presence detection of home assistant and the ability to control the thermostat, I can replace all the nest functions I used and have less reliance on 'the cloud'.
-
-* Set the thermostat to 'away' temperature when everyone has left for the day. (weekdays only)
-* Turn the thermostat back to our 'home' temperature at 4:00 to preheat the house so it is warm when my wife arrives home.
-* If anyone comes home, turn the temperature back to the 'home' value.
-* At bedtime lower the temperature 2 degrees.
-* Pre-heat the house for when we wake up.
 
 ### UPS.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/ups.yaml)__

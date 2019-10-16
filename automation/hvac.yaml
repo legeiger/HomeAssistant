@@ -29,8 +29,8 @@
     action:
       - service: climate.set_temperature
         data:
-          entity_id: climate.linear_cooling
-          temperature: 80
+          entity_id: climate.linear_heating
+          temperature: 62
 
 #########################################################
 #                                                       #
@@ -54,8 +54,8 @@
     action:
       - service: climate.set_temperature
         data:
-          entity_id: climate.linear_cooling
-          temperature: 74
+          entity_id: climate.linear_heating
+          temperature: 69
 
 #########################################################
 #                                                       #
@@ -72,7 +72,7 @@
       condition: and
       conditions:
         - condition: template
-          value_template: "{% if states('sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature') | float >= 77 %} True {% else %} False {% endif %}"
+          value_template: "{% if states('sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature') | float <= 64 %} True {% else %} False {% endif %}"
         - condition: time
           weekday:
             - mon
@@ -83,8 +83,8 @@
     action:
       - service: climate.set_temperature
         data:
-          entity_id: climate.linear_cooling
-          temperature: 74
+          entity_id: climate.linear_heating
+          temperature: 69
 
 
 #########################################################
@@ -105,8 +105,8 @@
     action:
       - service: climate.set_temperature
         data:
-          entity_id: climate.linear_cooling
-          temperature: 74
+          entity_id: climate.linear_heating
+          temperature: 69
 
 #########################################################
 #                                                       #
@@ -115,7 +115,7 @@
 #########################################################
 
   - alias: "Set Thermostat Temperature - 2200"
-    initial_state: false
+    initial_state: true
     trigger:
       platform: time
       at: '22:00'
@@ -126,7 +126,7 @@
           temperature: 67
 
   - alias: "Set Thermostat Temperature - 0500"
-    initial_state: false
+    initial_state: true
     trigger:
       platform: time
       at: '06:30'

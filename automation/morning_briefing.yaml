@@ -18,9 +18,9 @@
                     {{ "\n" }}
                     {% if is_state('sensor.holiday', '') %} {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %}{{ "\n" }}
                     {{ "\n" }}
-                    The current temperature is {{state_attr('weather.dark_sky', 'temperature')}} degrees Fahrenheit with a forecast of {{states('sensor.dark_sky_summary_0d')}} The high temperature today will be {{states('sensor.dark_sky_daytime_high_temperature_0d')}} degrees Fahrenheit.{{ "\n" }}
+                    The current temperature is {{state_attr('weather.dark_sky', 'temperature')}} degrees Fahrenheit with a forecast of {{ states.weather.dark_sky.attributes.forecast[0].condition }}. The low temperature today is {{ states.weather.dark_sky.attributes.forecast[0].templow }} degrees Fahrenheit with a high of {{ states.weather.dark_sky.attributes.forecast[0].temperature }}.{{ "\n" }}
                     {{ "\n" }}
-                    There is a {{states('sensor.dark_sky_precip_probability_0d')}} % chance of precipitation today.{{ "\n" }}
+                    The predicted rainfall today is {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} inches.{{ "\n" }}
 
   - alias: "Morning Briefing Amy"
     initial_state: true
@@ -32,13 +32,13 @@
         data_template:
           title: "Moring Briefing"
           message: >
-                    Good Morning my Love! Today is {{ now().strftime( '%B %d, %Y') }}{{ "\n" }}
+                    Good morning my love!Today is {{ now().strftime( '%B %d, %Y') }}{{ "\n" }}
                     {{ "\n" }}
                     {% if is_state('sensor.holiday', '') %} {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %}{{ "\n" }}
                     {{ "\n" }}
-                    The current temperature is {{state_attr('weather.dark_sky', 'temperature')}} degrees Fahrenheit with a forecast of {{states('sensor.dark_sky_summary_0d')}} The high temperature today will be {{states('sensor.dark_sky_daytime_high_temperature_0d')}} degrees Fahrenheit.{{ "\n" }}
+                    The current temperature is {{state_attr('weather.dark_sky', 'temperature')}} degrees Fahrenheit with a forecast of {{ states.weather.dark_sky.attributes.forecast[0].condition }}. The low temperature today is {{ states.weather.dark_sky.attributes.forecast[0].templow }} degrees Fahrenheit with a high of {{ states.weather.dark_sky.attributes.forecast[0].temperature }}.{{ "\n" }}
                     {{ "\n" }}
-                    There is a {{states('sensor.dark_sky_precip_probability_0d')}} % chance of precipitation today.{{ "\n" }}
+                    The predicted rainfall today is {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} inches.{{ "\n" }}
 
 ####################################################
 #                                                  #

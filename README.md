@@ -24,7 +24,7 @@ __[Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b
 * [SSH](https://www.home-assistant.io/addons/ssh/)
 * [Samba](https://www.home-assistant.io/addons/samba/)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.98.1__
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.100.2__
 
 __[Raspberry Pi 2B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)__ This Raspberry Pi is running [HassOS ](https://github.com/home-assistant/hassos) and HomeAssistant mainly for the ease of adding add-ons and sending load data to the main instance
 
@@ -40,15 +40,10 @@ I think this is an often overlooked part of any internet connected project.  I a
 - My Home Assistant Traffic is encrypted with [Let's Encrypt](https://letsencrypt.org/).  I used [this guide](https://github.com/SilvrrGIT/HomeAssistant/wiki/Let's-Encrypt-Setup-(Hassbian,-Python-Virtual-Environment)) to get it setup on Hassbian and now use the [DuckDNS](www.home-assistant.io/addons/duckdns/) add-on in Hass.io to do the same thing.
 - [Test your security and test it often](https://community.home-assistant.io/t/test-your-security-and-test-it-often/76354).
 
-# Editing the Configuration Files:
-I create a Samba share that I can then edit on any computer in my house.  I accomplished this with the Samba add-on for Hass.io.  For other install methods [this](https://github.com/SilvrrGIT/HomeAssistant/wiki/Hassbian-Quick-Reference-Sheet#setting-up-a-samba-share) is a good tutorial. 
-
-After you have the Samba share setup, I liked to use [Visual Studio Code](https://code.visualstudio.com/) to edit my files with the [Home Assistant Config Helper]([Visual Studio Code](https://code.visualstudio.com/)).  It works on both Windows and Linux, has a great interface and some nice features. 
-
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|41               |10      |7               |42        |86           |4        |210      |7              | 
+|38               |10      |6               |45        |76           |4        |137      |7              | 
 
 # Connected Devices:
 
@@ -96,19 +91,9 @@ After you have the Samba share setup, I liked to use [Visual Studio Code](https:
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/switches.png">
 </p>
 
-## HVAC
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/hvac.png">
-</p>
-
 ## Device Status
 <p align="center">
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/devicestatus.png">
-</p>
-
-## Network Status
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/networkstatus.png">
 </p>
 
 ## Home Assistant Status
@@ -116,25 +101,11 @@ After you have the Samba share setup, I liked to use [Visual Studio Code](https:
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/ha.png">
 </p>
 
-## Raspberry Pi2B Status
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/rpi2status.png">
-</p>
-
-## Weather
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/weather.png">
-</p>
-
 ## Automations
 <p align="center">
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/automations.png">
 </p>
 
-## Trains
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/statsndata.png">
-</p>
 
 
 # Questions?

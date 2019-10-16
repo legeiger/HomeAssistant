@@ -116,12 +116,6 @@ cards:
       - entity: automation.update_template_sensors
         name: Update Template Sensors
         icon: mdi:update
-      - entity: automation.update_weather_sensors
-        name: Update Weather Sensors
-        icon: mdi:update
-      - entity: automation.custom_update_available
-        name: Custom Update Available
-        icon: mdi:update
   - type: entities
     title: Other Automations
     show_header_toggle: false
@@ -132,9 +126,6 @@ cards:
       - entity: automation.holiday_and_birthday_notification
         name: Holiday/Birthday Notification
         icon: mdi:gift
-      - entity: automation.open_uv_update
-        name: Update Open UV Sensors
-        icon: mdi:weather-sunset
   - type: entities
     title: Climate Automations
     show_header_toggle: false
@@ -238,16 +229,6 @@ cards:
         name: Humidifier Maintenance
         icon: mdi:water-percent
   - type: entities
-    title: Downloader Automations
-    show_header_toggle: false
-    entities:
-      - entity: automation.download_complete
-        name: Downloader - Download Complete
-        icon: mdi:cloud-download
-      - entity: automation.download_failed
-        name: Downloader - Download Failed
-        icon: mdi:cloud-download
-  - type: entities
     title: Morning Briefings
     show_header_toggle: false
     entities:
@@ -307,29 +288,6 @@ cards:
       - entity: automation.notify_if_network_device_issue
         name: Network Device Issue Notification
         icon: mdi:help-network
-  - type: entities
-    title: Weather Automations
-    show_header_toggle: false
-    entities:
-      - entity: automation.dupage_nws_notification_weather_alert
-        name: DuPage County Weather Alert
-        icon: mdi:cloud-alert
-  - type: entities
-    show_header_toggle: false
-    title: CTA Updates
-    entities:
-      - entity: automation.update_route_151
-        name: Update Route 151
-        icon: mdi:update
-      - entity: automation.update_route_126
-        name: Update Route 126
-        icon: mdi:update
-      - entity: automation.update_route_28
-        name: Update Route 128
-        icon: mdi:update
-      - entity: automation.update_route_7
-        name: Update Route 7
-        icon: mdi:update
 
 ####################################################
 #                                                  #
