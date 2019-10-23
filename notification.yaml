@@ -9,8 +9,8 @@
 
 #https://home-assistant.io/components/notify.smtp/
 
-  - name: Home_Assistant
-    platform: smtp
+  - platform: smtp
+    name: Home_Assistant
     server: smtp.gmail.com
     port: 587
     sender: !secret notification_sender
@@ -19,8 +19,8 @@
     password: !secret notification_password
     recipient: !secret notification_recipient
 
-  - name: Amy
-    platform: smtp
+  - platform: smtp
+    name: Amy
     server: smtp.gmail.com
     port: 587
     sender: !secret notification_sender
@@ -29,9 +29,10 @@
     password: !secret notification_password
     recipient: !secret notification_amy
 
-#https://github.com/keatontaylor/alexa_media_player
-  - platform: alexa_media
-    name: alexa_media
+  - platform: file
+    name: work_hours_log
+    filename: /config/www/work_hours_log.csv
+    timestamp: false
 
 ####################################################
 #                                                  #
