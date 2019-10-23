@@ -40,7 +40,7 @@ I think this is an often overlooked part of any internet connected project.  I a
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|39               |10      |6               |35        |77           |4        |136      |7              | 
+|39               |10      |6               |35        |78           |4        |136      |7              | 
 
 # Connected Devices:
 
