@@ -20,11 +20,6 @@ These notifications are triggered after 8:00 PM when I plug my phone in (general
 <p align="center"> <img src="https://github.com/SilvrrGIT/HomeAssistant/blob/master/www/iosnotification.jpg"><img src="https://github.com/SilvrrGIT/HomeAssistant/blob/master/www/ios%20action.jpg">
 </p>
 
-### Cert Update.yaml Automation:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/certupdate.yaml)__
-
-This notification is used to notify me if my Lets Encrypt certificate does not auto renew after the days remaining in the certificate validity goes below 28 days.  It should auto renew at 30 days.  	
-
 ### Device Offline.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/deviceoffline.yaml)__
 
@@ -120,6 +115,14 @@ These lamps are the main light source when you walk in through the garage (our p
 * Turn on the living room lamps at sunset 
 * Turn on the living room lamps when somone comes home and its dark out
 * Turn off the living room lamps at midnight
+
+
+### Long Term Data.yaml Automations:
+__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/long_term_data.yaml)__
+
+These automation take data from home assistant and store it in a .csv file for later trending/evaluation.  I only keep 3 days of history and do not want all devices saved long term so this is the solution I implemented. 
+* Store my hours spent at work
+* Store my HVAC runtime, and the outdoor high/low temps. 
 
 ### Low_Battery_Adams_iPhone.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/low_battery_adam_phone.yaml)__
