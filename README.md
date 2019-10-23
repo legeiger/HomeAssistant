@@ -12,7 +12,7 @@ This is the most important part of Home Assistant!  Remote control and voice com
 
 # Hardware Running My Home Assistant Setup:
 
-__[Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)__ This Raspberry Pi is running [HassOS ](https://github.com/home-assistant/hassos) and HomeAssistant.  It also runs the following add-ons. 
+__[Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)__ This Raspberry Pi is running [HassOS ](https://github.com/home-assistant/hassos) and HomeAssistant.  I'm currently running [Home Assistant](https://home-assistant.io) version __0.100.2__ on this instance.  It also runs the following add-ons. 
 
 * [Configurator](https://www.home-assistant.io/addons/configurator/)
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
@@ -24,11 +24,8 @@ __[Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b
 * [SSH](https://www.home-assistant.io/addons/ssh/)
 * [Samba](https://www.home-assistant.io/addons/samba/)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.100.2__
 
-__[Raspberry Pi 2B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)__ This Raspberry Pi is running [HassOS ](https://github.com/home-assistant/hassos) and HomeAssistant mainly for the ease of adding add-ons and sending load data to the main instance
-
-There is a seperate repository for this instance located [Here](https://github.com/SilvrrGIT/Raspberry-Pi2B-Server) 
+__[Raspberry Pi 2B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)__ This Raspberry Pi is running [HassOS ](https://github.com/home-assistant/hassos) and HomeAssistant mainly for the ease of adding add-ons and sending load data to the main instance.  There is a seperate repository for this instance located [Here](https://github.com/SilvrrGIT/Raspberry-Pi2B-Server) 
 
 # Network & Home Assistant Instance Security:
 I think this is an often overlooked part of any internet connected project.  I am far from a security expert, however, these are the steps I have taken to add some level of security to my Home Assistant instance.
@@ -43,12 +40,13 @@ I think this is an often overlooked part of any internet connected project.  I a
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|38               |10      |6               |45        |76           |4        |137      |7              | 
+|39               |10      |6               |35        |77           |4        |136      |7              | 
 
 # Connected Devices:
 
 ### Cloud Controlled Devices:
-* [Amazon Echo Dot](https://www.amazon.com/All-New-Amazon-Echo-Dot-Add-Alexa-To-Any-Room/dp/B01DFKC2SO) Used for voice commands to turn devices on/off using the [Emulated Hue Component](https://home-assistant.io/components/emulated_hue/)
+
+* [Google Nest Hub](https://store.google.com/us/product/google_nest_hub) Used for voice commands to turn devices on/off and casting a view with a few switches
 * [iPhone XR](https://www.apple.com/iphone-xr/) Used for presence detection
 
 ### Wifi Connected Devices
