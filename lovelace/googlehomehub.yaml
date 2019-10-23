@@ -1,0 +1,75 @@
+####################################################
+#                                                  #
+#          GOOGLE HOME HUB VIEW                    #
+#                                                  #
+####################################################
+
+title: Google Home
+theme: default
+path: googlehomehub
+icon: mdi:google-home
+cards:
+  - type: vertical-stack
+    title: Entertainment Center
+    cards: 
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: switch.tvstate
+            name: TV - Power
+            icon: mdi:television
+          - type: entity-button
+            entity: switch.tvtv
+            name: TV - Input 
+            icon: mdi:television
+          - type: entity-button
+            entity: switch.receiverstate
+            icon: mdi:speaker
+            name: Amp - Power
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: script.volumeup
+            name: Volume Up
+            icon: mdi:volume-plus
+            tap_action:
+              action: call-service
+              service: script.volumeup
+          - type: entity-button
+            entity: switch.receivermute
+            name: Mute
+            icon: mdi:volume-mute
+          - type: entity-button
+            entity: script.volumedown
+            name: Volume Down
+            icon: mdi:volume-minus
+            tap_action:
+              action: call-service
+              service: script.volumedown
+  - type: horizontal-stack
+    title: Living Room Lights
+    cards:
+      - type: entity-button
+        entity: switch.basic1
+        name: Livingroom
+        icon: mdi:lightbulb-outline
+      - type: entity-button
+        entity: input_boolean.guest
+        name: Guest Mode
+        icon: mdi:home-account
+      - type: entity-button
+        entity: light.yeelightrgb2
+        name: Notification
+        icon: mdi:lightbulb-outline
+        tap_action: 
+          action: toggle
+        hold_action:
+          action: call-service
+          service: script.normallight
+        
+####################################################
+#                                                  #
+#          END OF CONFIGURATION FILE               #
+#                                                  #
+####################################################              
+              

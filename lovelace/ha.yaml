@@ -6,6 +6,7 @@
 
 title: HA
 icon: mdi:home-assistant
+path: ha
 cards:
   - type: entities
     title: Hass.io Addons
@@ -197,9 +198,9 @@ cards:
       - entity: sensor.hassio_version
         name: Latest Release
         icon: mdi:github-circle
-      - entity: sensor.ssl_certificate_expiry
-        name: Lets Encrypt Expiration
-        icon: mdi:timelapse
+      - entity: switch.cast
+        name: Cast HA
+        icon: mdi:google-home
     columns: 3
   - type: entities
     title: Zwave Status

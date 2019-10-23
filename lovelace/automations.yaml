@@ -126,6 +126,9 @@ cards:
       - entity: automation.holiday_and_birthday_notification
         name: Holiday/Birthday Notification
         icon: mdi:gift
+      - entity: automation.work_hours_record
+        name: Long Term Work Hours Record
+        icon: mdi:timetable
   - type: entities
     title: Climate Automations
     show_header_toggle: false

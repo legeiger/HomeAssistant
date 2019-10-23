@@ -5,7 +5,7 @@
 #########################################################
 
   - alias: "Notify if Network Device Issue"
-    initial_state: true
+    initial_state: false
     trigger:
       - platform: template
         value_template: "{{ states('sensor.unifi_gateway_lan') != 'OK' }}"

@@ -46,11 +46,8 @@ history:
 
 #https://home-assistant.io/components/http/
 http:
-  base_url: !secret base_url
   ip_ban_enabled: true
   login_attempts_threshold: 2
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
 
 #https://home-assistant.io/components/logger/
 logger:
@@ -65,6 +62,10 @@ sun:
 
 #https://www.home-assistant.io/components/system_health/
 system_health:
+
+#https://www.home-assistant.io/integrations/google_translate/
+tts:
+  - platform: google_translate
 
 ####################################################
 #                                                  #
@@ -89,51 +90,71 @@ zone: !include zones.yaml
 
 ####################################################
 #                                                  #
-#               Alexa Media                        #
+#               GOOGLE ACTIONS                     #
 #                                                  #
 ####################################################
-
-#https://github.com/keatontaylor/alexa_media_player
-alexa_media:
-  accounts:
-    - email: !secret notification_recipient
-      password: !secret amazon
-      url: amazon.com
-
-####################################################
-#                                                  #
-#               EMULATED HUE                       #
-#                                                  #
-####################################################
-
-#https://home-assistant.io/components/emulated_hue/
-emulated_hue:
-  expose_by_default: false
-  entities:
-    light.yeelightrgb2:
-      hidden: false
-      name: Notification
-    group.living_room_lamps:
-      name: Lamps
-      hidden: false
-    switch.receiverpower:
-      hidden: false
-      name: Amplifier
-    switch.tvpower:
-      hidden: false
-      name: TV
-    script.normallight:
-      hidden: false
-      name: normal light
-    script.volumedown:
-      hidden: false
-      name: Volume Down
-    script.volumeup:
-      hidden: false
-      name: Volume Up
-    input_boolean.feeddog:
-      hidden: false
-      name: feeddog
+#https://www.home-assistant.io/integrations/cloud/
+cloud:
+#https://www.nabucasa.com/config/google_assistant/
+  google_actions:
+    filter:
+      include_entities:
+        - group.living_room_lamps
+        - input_boolean.guest
+        - script.volumedown
+        - script.volumeup
+        - input_boolean.feeddog
+        - script.normallight
+        - switch.cast
+        - switch.receiverpower
+        - switch.tvpower
+    entity_config:
+      group.living_room_lamps:
+        name: Living Room Lamps
+        aliases: Lamps
+        room: Family Room
+      input_boolean.guest:
+        name: Guest Mode
+        aliases: Guest
+        room: Family Room
+      switch.cast:
+        name: Cast
+        aliases: Cast Google Home
+        room: Family Room
+      script.volumedown:
+        name: Volume Down
+        room: Family Room
+      script.volumeup:
+        name: Volume Up
+        room: Family Room
+      light.yeelightrgb2:
+        name: Notification light
+        aliases: Corner Light
+        room: Family Room
+      input_boolean.feeddog:
+        name: Feed The Dog
+        aliases:
+          - I fed the Dog
+          - Dog fed
+          - fed dog
+        room: Family Room
+      script.normallight:
+        name: Normal Light
+        aliases: Normal Lamp
+        room: Family Room
+      switch.receiverpower:
+        name: Receiver Power
+        aliases:
+          - Receiver
+          - Amplifier
+          - Amp
+        room: Family Room
+      switch.tvpower:
+        name: TV Power
+        aliases:
+          - TV
+          - Television
+        room: Family Room
 
 ####################################################
 #                                                  #
