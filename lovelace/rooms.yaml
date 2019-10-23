@@ -5,6 +5,7 @@
 ####################################################
 
 title: Rooms
+path: home
 icon: mdi:home
 cards:
   - type: custom:vertical-stack-in-card
@@ -36,9 +37,9 @@ cards:
       - type: horizontal-stack
         cards:
           - type: entity-button
-            entity: switch.tvpower
+            entity: switch.tvstate
             name: TV - Power
-            theme: midnightclear
+            theme: midnightyellow
             icon: mdi:television
           - type: entity-button
             entity: switch.tvtv
@@ -46,10 +47,10 @@ cards:
             icon: mdi:television
             theme: midnightclear
           - type: entity-button
-            entity: switch.receiverpower
+            entity: switch.receiverstate
             icon: mdi:speaker
             name: Amp - Power
-            theme: midnightclear
+            theme: midnightyellow
       - type: horizontal-stack
         cards:
           - type: entity-button
@@ -124,7 +125,7 @@ cards:
       - entity: sensor.hours_at_work_yesterday
         icon: mdi:progress-clock
       - entity: sensor.hours_at_work_two_days_ago
-        icon: mdi:progress-cloc
+        icon: mdi:progress-clock
   - type: vertical-stack
     cards:
       - type: conditional

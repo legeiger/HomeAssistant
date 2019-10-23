@@ -41,6 +41,30 @@
         command_on: AAAvANAGEaAI0AEaARoBGgNOARpUQhGgBGgBGrvOIgEiEREiEhEREiIhEhEREiEjgkU=
         command_off: AAAvANAGEaAI0AEaARoBGgNOARpUQhGgBGgBGrvOIgEiEREiEhEREiIhEhEREiEjgkU=
 
+#https://www.home-assistant.io/integrations/switch.template/ 
+  - platform: template
+    switches:
+      receiverstate:
+        value_template: "{% if states('sensor.pow1_power') | float > 10 %}True{%else%}False{%endif %}"
+        turn_on:
+          service: switch.turn_on
+          data:
+            entity_id: switch.receiverpower
+        turn_off:
+          service: switch.turn_off
+          data:
+            entity_id: switch.receiverpower
+      tvstate:
+        value_template: "{% if states('sensor.pow2_power') | float > 10 %}True{%else%}False{%endif %}"
+        turn_on:
+          service: switch.turn_on
+          data:
+            entity_id: switch.tvpower
+        turn_off:
+          service: switch.turn_off
+          data:
+            entity_id: switch.tvpower
+
 ####################################################
 #                                                  #
 #           END OF CONFIGURATION FILE              #

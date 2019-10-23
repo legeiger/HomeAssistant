@@ -6,6 +6,7 @@
 
 title: Switches
 icon: mdi:light-switch
+path: switches
 cards:
   - type: entities
     title: Bedroom Lights
@@ -42,12 +43,15 @@ cards:
     title: Broadlink IR Switches
     show_header_toggle: false
     entities:
+      - entity: switch.receiverstate
+        name: Receiver-Power
+        icon: mdi:speaker
+      - entity: switch.tvstate
+        name: TV - Power
+        icon: mdi:television
       - entity: switch.receivermute
         name: Receiver-Mute
         icon: mdi:volume-mute
-      - entity: switch.receiverpower
-        name: Receiver-Power
-        icon: mdi:speaker
       - entity: switch.receivervideo1
         name: Receiver - Video 1
         icon: mdi:television
@@ -63,9 +67,6 @@ cards:
       - entity: switch.tvhdmi
         name: TV - HDMI
         icon: mdi:video-input-hdmi
-      - entity: switch.tvpower
-        name: TV - Power
-        icon: mdi:television
       - entity: switch.tvtv
         name: TV - Input Select
         icon: mdi:television
