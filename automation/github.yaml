@@ -38,6 +38,8 @@
         value_template: "{{ trigger.from_state.state != 'None' }}"
       - condition: template
         value_template: "{{ trigger.from_state.state != 'unavailable' }}"
+      - condition: template
+        value_template: "{{ (as_timestamp(now()) - as_timestamp(states.automation.home_assistant_started.attributes.last_triggered | default(0)) | int > 10)}}"
     action:
       service: notify.ios_adams_iphone
       data:
