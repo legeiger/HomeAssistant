@@ -17,7 +17,6 @@ __[Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b
 * [Configurator](https://www.home-assistant.io/addons/configurator/)
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
 * [Dasshio](https://github.com/SilvrrGIT/hassio-addons)
-* [DuckDNS](www.home-assistant.io/addons/duckdns/)
 * [Network UPS Tools](https://github.com/SilvrrGIT/hassio-addons)
 * [PiHole](https://github.com/hassio-addons/addon-pi-hole)
 * [RPC Shutdown](https://www.home-assistant.io/addons/rpc_shutdown/)
@@ -26,6 +25,15 @@ __[Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b
 
 
 __[Raspberry Pi 2B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)__ This Raspberry Pi is running [HassOS ](https://github.com/home-assistant/hassos) and HomeAssistant mainly for the ease of adding add-ons and sending load data to the main instance.  There is a seperate repository for this instance located [Here](https://github.com/SilvrrGIT/Raspberry-Pi2B-Server) 
+
+# UI Based Integrations:
+The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup.  
+* [IKEA Trådfri (Tradfri)](https://www.home-assistant.io/integrations/tradfri/)
+* [MQTT](https://www.home-assistant.io/integrations/mqtt/)
+* [Unifi Controller](https://www.home-assistant.io/integrations/unifi/)
+* [Google Cast](https://www.home-assistant.io/integrations/cast/)
+* [iOS](https://www.home-assistant.io/integrations/ios/)
+* [ZWave](https://www.home-assistant.io/docs/z-wave/installation)
 
 # Network & Home Assistant Instance Security:
 I think this is an often overlooked part of any internet connected project.  I am far from a security expert, however, these are the steps I have taken to add some level of security to my Home Assistant instance.
