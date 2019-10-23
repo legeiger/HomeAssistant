@@ -14,6 +14,16 @@
         data_template:
           message: "{{ now().strftime( '%D') }}, {{ now().strftime( '%A') }}, {{ states('sensor.hours_at_work_today') }}"
 
+  - alias: "HVAC Record"
+    initial_state: true
+    trigger:
+      platform: time
+      at: '23:59'
+    action:
+      - service: notify.hvac_log
+        data_template:
+          message: "{{ now().strftime( '%D') }}, {{ now().strftime( '%A') }}, {{ states('sensor.cooling_hours_today') }}, {{ states('sensor.heating_hours_today') }}, {{ states('climate.linear_cooling') }}, {{ states.weather.dark_sky.attributes.forecast[0].templow }}, {{ states.weather.dark_sky.attributes.forecast[0].temperature }}"
+
 ####################################################
 #                                                  #
 #           END OF CONFIGURATION FILE              #
