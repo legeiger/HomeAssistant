@@ -43,15 +43,6 @@
       Content-Type: application/json
 
   - platform: rest
-    resource: !secret duckdns
-    name: duckdns
-    value_template: '{{ value_json.data.state }}'
-    scan_interval: 60
-    headers:
-      Authorization: !secret llt
-      Content-Type: application/json
-      
-  - platform: rest
     resource: !secret gdrivebackup
     name: gdrivebackup
     value_template: '{{ value_json.data.state }}'

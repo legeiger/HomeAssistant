@@ -22,11 +22,6 @@ cards:
         icon: mdi:server-plus
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "[[ sensor.dasshio.state ]]"
-      - entity: switch.duckdns
-        name: DuckDNS
-        icon: mdi:server-plus
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.duckdns.state ]]"
       - entity: switch.gdrivebackup
         name: Google Drive Backup
         icon: mdi:server-plus
