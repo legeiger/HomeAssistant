@@ -29,9 +29,16 @@
     password: !secret notification_password
     recipient: !secret notification_amy
 
+#https://www.home-assistant.io/integrations/file/#notifications
+
   - platform: file
     name: work_hours_log
-    filename: /config/www/work_hours_log.csv
+    filename: /config/data/work_hours_log.csv
+    timestamp: false
+
+  - platform: file
+    name: hvac_log
+    filename: /config/data/hvac_log.csv
     timestamp: false
 
 ####################################################
