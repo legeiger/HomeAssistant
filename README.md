@@ -12,7 +12,7 @@ This is the most important part of Home Assistant!  Remote control and voice com
 
 # Hardware Running My Home Assistant Setup:
 
-__[Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)__ This Raspberry Pi is running [HassOS ](https://github.com/home-assistant/hassos) and HomeAssistant.  I'm currently running [Home Assistant](https://home-assistant.io) version __0.100.2__ on this instance.  It also runs the following add-ons. 
+__[Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)__ This Raspberry Pi is running [HassOS ](https://github.com/home-assistant/hassos) and HomeAssistant.  I'm currently running [Home Assistant](https://home-assistant.io) version __0.101.0__ on this instance.  It also runs the following add-ons. 
 
 * [Configurator](https://www.home-assistant.io/addons/configurator/)
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
@@ -48,7 +48,7 @@ I think this is an often overlooked part of any internet connected project.  I a
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|39               |10      |6               |35        |78           |4        |136      |7              | 
+|41               |10      |7               |34        |77           |4        |135      |7              | 
 
 # Connected Devices:
 
