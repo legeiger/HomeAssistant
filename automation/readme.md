@@ -180,10 +180,3 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 This is a single switch to turn on/off a number of automations and devices when we will be away from the house for an extended period of time. 
 * Turn On Vacation Mode with Vacation Mode Switch
 * Turn Off Vacation Mode with Vacation Mode Switch
-
-### Weather.yaml Automations:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/weather.yaml)__
-
-Notify of severe weather.  I work in one county and live in another so I have an automation for both counties. 
-* Notify me of severe weather events
-* Update the weather sensors used in the front end everday just after midnight
