@@ -12,7 +12,7 @@ This is the most important part of Home Assistant!  Remote control and voice com
 
 # My Home Assistant Setup:
 
-I run my home assistant instance on a [Zotac AQ01Plus](https://www.zotac.com/dk/product/mini_pcs/aq01-plus). The previous life of this device was as a Datto Alto2 backup solution.  It has a AMD A4-5000 processor, 8GB of RAM, 64GB SSD and sips on power.  The base operating system is [Ubuntu Server 18.04.3 LTS](https://ubuntu.com/download/server) and it runs [Hass.io via docker](https://www.home-assistant.io/hassio/installation/#alternative-install-on-a-generic-linux-host). It also runs the following add-ons. 
+I run my home assistant instance on a Zotac mini PC.  The previous life of this device was as a Datto Alto2 backup solution.  It has a AMD GX-415GA quad core processor, 8GB of RAM, 64GB SSD and sips on power.  The base operating system is [Ubuntu Server 18.04.3 LTS](https://ubuntu.com/download/server) and it runs [Hass.io via docker](https://www.home-assistant.io/hassio/installation/#alternative-install-on-a-generic-linux-host). It also runs the following add-ons. 
 
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
 * [Dasshio](https://github.com/SilvrrGIT/hassio-addons)
