@@ -55,21 +55,21 @@ cards:
         type: "custom:secondaryinfo-entity-row"
         icon: mdi:garage
         secondary_info: "192.168.1.18"
-      - entity: device_tracker.echo_dot
-        name: Amazon Echo Dot
-        icon: mdi:amazon
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.17"
-      - entity: device_tracker.google_home_hub
+      # - entity: device_tracker.echo_dot
+      #   name: Amazon Echo Dot
+      #   icon: mdi:amazon
+      #   type: "custom:secondaryinfo-entity-row"
+      #   secondary_info: "192.168.1.17"
+      - entity: device_tracker.google_nest_hub
         name: Google Home Hub
         icon: mdi:google-home
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.14"       
-      - entity: device_tracker.amazon_fire_tv
-        name: Amazon Fire TV
-        icon: mdi:fire
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.21"
+      # - entity: device_tracker.amazon_fire_tv
+      #   name: Amazon Fire TV
+      #   icon: mdi:fire
+      #   type: "custom:secondaryinfo-entity-row"
+      #   secondary_info: "192.168.1.21"
       - entity: device_tracker.kuled_1
         name: Kuled Switch 1
         icon: mdi:light-switch
@@ -97,11 +97,11 @@ cards:
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.37"
         icon: mdi:toggle-switch
-      - entity: device_tracker.sonoff_pow_2_2
+      - entity: device_tracker.sonoff_pow_2
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.34"
         icon: mdi:toggle-switch
-      - entity: device_tracker.sonoff_th16_1_2
+      - entity: device_tracker.sonoff_th16_1
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.40"
         icon: mdi:toggle-switch
@@ -142,16 +142,20 @@ cards:
         icon: mdi:desktop-tower
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.6"
-      - entity: device_tracker.raspberry_pi_3_wired
-        name: Raspberry Pi 3B+ (Wired)
-        icon: mdi:raspberry-pi
+      - entity: device_tracker.linux_laptop_wired
+        icon: mdi:linux
         type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.31"
-      - entity: device_tracker.raspberry_pi_3_wired_2
-        name: Raspberry Pi 3B (Wired)
-        icon: mdi:raspberry-pi
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.31"
+        secondary_info: "192.168.1.23"
+      # - entity: device_tracker.raspberry_pi_3_wired
+      #   name: Raspberry Pi 3B+ (Wired)
+      #   icon: mdi:raspberry-pi
+      #   type: "custom:secondaryinfo-entity-row"
+      #   secondary_info: "192.168.1.31"
+      # - entity: device_tracker.raspberry_pi_3_wired_2
+      #   name: Raspberry Pi 3B (Wired)
+      #   icon: mdi:raspberry-pi
+      #   type: "custom:secondaryinfo-entity-row"
+        # secondary_info: "192.168.1.31"
       - entity: device_tracker.raspberry_pi_2_wired
         name: Raspberry Pi 2B (Wired)
         icon: mdi:raspberry-pi
@@ -166,7 +170,7 @@ cards:
         icon: mdi:windows
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.8"
-      - entity: device_tracker.linux_laptop_wifi_2
+      - entity: device_tracker.linux_laptop_wifi
         icon: mdi:linux
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.23"
@@ -221,10 +225,12 @@ cards:
             secondary_info: "[[ sensor.myip.state ]]"
             icon: mdi:folder-key-network-outline
           - entity: device_tracker.unifi_switch_8_poe_60w
+            name: Ubiquiti Switch 8
             type: "custom:secondaryinfo-entity-row"
             secondary_info: "192.168.1.19"
             icon: mdi:server-network
           - entity: device_tracker.unifi_ap_ac_lr
+            name: Ubiquiti AP-AC-LR
             type: "custom:secondaryinfo-entity-row"
             secondary_info: "192.168.1.38"
             icon: mdi:access-point-network

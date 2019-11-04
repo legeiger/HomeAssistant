@@ -16,24 +16,6 @@
 # 12345678910 is the Long Lived Access Token generated in the Home Assistant Frontend.
 
   - platform: rest
-    resource: !secret configurator
-    name: configurator
-    value_template: '{{ value_json.data.state }}'
-    scan_interval: 60
-    headers:
-      Authorization: !secret llt
-      Content-Type: application/json
-
-  - platform: rest
-    resource: !secret configuratorrpi2
-    name: configuratorrpi2
-    value_template: '{{ value_json.data.state }}'
-    scan_interval: 60
-    headers:
-      Authorization: !secret lltrpi2
-      Content-Type: application/json
-
-  - platform: rest
     resource: !secret dasshio
     name: dasshio
     value_template: '{{ value_json.data.state }}'
@@ -57,7 +39,7 @@
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
     headers:
-      Authorization: !secret lltrpi2
+      Authorization: !secret llt
       Content-Type: application/json
 
   - platform: rest
@@ -97,24 +79,6 @@
       Content-Type: application/json
 
   - platform: rest
-    resource: !secret sambarpi2
-    name: samba rpi2
-    value_template: '{{ value_json.data.state }}'
-    scan_interval: 5
-    headers:
-      Authorization: !secret lltrpi2
-      Content-Type: application/json
-
-  - platform: rest
-    resource: !secret sshrpi2
-    name: ssh rpi2
-    value_template: '{{ value_json.data.state }}'
-    scan_interval: 60
-    headers:
-      Authorization: !secret lltrpi2
-      Content-Type: application/json
-
-  - platform: rest
     resource: !secret ssh
     name: ssh
     value_template: '{{ value_json.data.state }}'
@@ -129,7 +93,16 @@
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
     headers:
-      Authorization: !secret lltrpi2
+      Authorization: !secret llt
+      Content-Type: application/json
+
+  - platform: rest
+    resource: !secret vscode
+    name: vscode
+    value_template: '{{ value_json.data.state }}'
+    scan_interval: 60
+    headers:
+      Authorization: !secret llt
       Content-Type: application/json
 
 ####################################################

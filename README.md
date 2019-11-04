@@ -10,21 +10,22 @@ A detailed description of each of my automations and a link to the yaml file is 
 
 This is the most important part of Home Assistant!  Remote control and voice commands are nice, however, that is not home automation, just remote control.  Automations should make your life easier, look at what you do every day, the simplest things, and automate them.  To me Home Automation is collecting data about your home and automatically acting based on that data.
 
-# Hardware Running My Home Assistant Setup:
+# My Home Assistant Setup:
 
-__[Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)__ This Raspberry Pi is running [HassOS ](https://github.com/home-assistant/hassos) and HomeAssistant.  I'm currently running [Home Assistant](https://home-assistant.io) version __0.101.0__ on this instance.  It also runs the following add-ons. 
+I run my home assistant instance on a __[Zotac AQ01Plus](https://www.zotac.com/dk/product/mini_pcs/aq01-plus)__. The previous life of this device was as a Datto Alto2 backup solution.  It has a AMD A4-5000 processor, 8GB of RAM, 64GB SSD and sips on power.  The base operating system is [Ubuntu Server 18.04.3 LTS](https://ubuntu.com/download/server) and it runs [Hass.io via docker](https://www.home-assistant.io/hassio/installation/#alternative-install-on-a-generic-linux-host). It also runs the following add-ons. 
 
-* [Configurator](https://www.home-assistant.io/addons/configurator/)
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
 * [Dasshio](https://github.com/SilvrrGIT/hassio-addons)
+* [Mosquitto MQTT broker](https://www.home-assistant.io/addons/mosquitto/)
 * [Network UPS Tools](https://github.com/SilvrrGIT/hassio-addons)
 * [PiHole](https://github.com/hassio-addons/addon-pi-hole)
 * [RPC Shutdown](https://www.home-assistant.io/addons/rpc_shutdown/)
 * [SSH](https://www.home-assistant.io/addons/ssh/)
 * [Samba](https://www.home-assistant.io/addons/samba/)
+* [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
+* [VScode](https://github.com/hassio-addons/addon-vscode)
 
-
-__[Raspberry Pi 2B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)__ This Raspberry Pi is running [HassOS ](https://github.com/home-assistant/hassos) and HomeAssistant mainly for the ease of adding add-ons and sending load data to the main instance.  There is a seperate repository for this instance located [Here](https://github.com/SilvrrGIT/Raspberry-Pi2B-Server) 
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.101.2__ on this instance.
 
 # UI Based Integrations:
 The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup.  
@@ -35,20 +36,10 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 * [iOS](https://www.home-assistant.io/integrations/ios/)
 * [ZWave](https://www.home-assistant.io/docs/z-wave/installation)
 
-# Network & Home Assistant Instance Security:
-I think this is an often overlooked part of any internet connected project.  I am far from a security expert, however, these are the steps I have taken to add some level of security to my Home Assistant instance.
-- Simple protections like enabling a [password](https://github.com/SilvrrGIT/HomeAssistant/blob/master/configuration.yaml#L45) and limiting the number of incorrect [login attempts](https://github.com/SilvrrGIT/HomeAssistant/blob/master/configuration.yaml#L48).
-- Setup [Multi Factor Authentication](https://www.home-assistant.io/docs/authentication/multi-factor-auth/) wherever possible
-- Anything that doesn't need an internet connection is blocked from any inbound or outbound traffic at the router level.
-- Open ports are limited to access only from the IPs I designate.  The Ubiquiti USG has a 'limited' option when opening ports. As a result, port scanners and other tools see these ports as closed/filtered.
-- Failed login attempts to the Home Assistant Front end generate a [notification](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/pc_security.yaml#L23) to me with the source IP.
-- My Home Assistant Traffic is encrypted with [Let's Encrypt](https://letsencrypt.org/).  I used [this guide](https://github.com/SilvrrGIT/HomeAssistant/wiki/Let's-Encrypt-Setup-(Hassbian,-Python-Virtual-Environment)) to get it setup on Hassbian and now use the [DuckDNS](www.home-assistant.io/addons/duckdns/) add-on in Hass.io to do the same thing.
-- [Test your security and test it often](https://community.home-assistant.io/t/test-your-security-and-test-it-often/76354).
-
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|41               |10      |7               |34        |77           |4        |135      |7              | 
+|33               |10      |7               |30        |77           |4        |123      |7              | 
 
 # Connected Devices:
 

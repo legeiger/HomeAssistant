@@ -18,11 +18,12 @@
         entity_id:
           - device_tracker.sonoff_basic_1
           - device_tracker.sonoff_pow_1
-          - device_tracker.sonoff_pow_2_2
-          - device_tracker.sonoff_th16_1_2
+          - device_tracker.sonoff_pow_2
+          - device_tracker.sonoff_th16_1
           - device_tracker.kuled_1
           - device_tracker.kuled_2
           - device_tracker.broadlink_rm_mini_3
+          - device_tracker.google_nest_hub
           - device_tracker.ikea_tradfri_gateway
           - device_tracker.open_garage
           - device_tracker.echo_dot

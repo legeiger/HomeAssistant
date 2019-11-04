@@ -33,7 +33,7 @@
             {% set nr = nr - 60*60*24 %}
           {% endif %}
           {{ (ns - nr)|timestamp_custom('%H:%M',false) }}
- 
+
       sensor_count:
         entity_id: []
         friendly_name: 'Number of Sensors'

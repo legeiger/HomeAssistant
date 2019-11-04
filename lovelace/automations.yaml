@@ -104,9 +104,6 @@ cards:
     title: Home Assistant Automations
     show_header_toggle: false
     entities:
-      - entity: automation.lets_encrypt_cert_did_not_update
-        name: Lets Encrypt Certificate Did Not Update
-        icon: mdi:certificate
       - entity: automation.home_assistant_started
         name: Home Assistant Started
         icon: mdi:home-assistant
@@ -283,7 +280,7 @@ cards:
         name: Addon Stopped
         icon: mdi:home-assistant
       - entity: automation.disk_use_alarm
-        name: Hass.io VM Disk Use Alarm
+        name: Hass.io Disk Use Alarm
         icon: mdi:harddisk
       - entity: automation.sensor_low_battery
         name: Low Sensor Battery

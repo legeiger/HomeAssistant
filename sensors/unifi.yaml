@@ -9,7 +9,7 @@
 
 #https://github.com/custom-components/sensor.unifigateway
   - platform: unifigateway
-    host: 192.168.1.33
+    host: 192.168.1.24
     username: !secret ubiquiti_username
     password: !secret ubiquiti_password
     monitored_conditions:

@@ -46,8 +46,6 @@ history:
 
 #https://home-assistant.io/components/http/
 http:
-  ip_ban_enabled: true
-  login_attempts_threshold: 2
 
 #https://home-assistant.io/components/logger/
 logger:
@@ -106,8 +104,8 @@ cloud:
         - input_boolean.feeddog
         - script.normallight
         - switch.cast
-        - switch.receiverpower
-        - switch.tvpower
+        - switch.receiverstate
+        - switch.tvstate
     entity_config:
       group.living_room_lamps:
         name: Living Room Lamps
@@ -142,14 +140,14 @@ cloud:
         name: Normal Light
         aliases: Normal Lamp
         room: Family Room
-      switch.receiverpower:
+      switch.receiverstate:
         name: Receiver Power
         aliases:
           - Receiver
           - Amplifier
           - Amp
         room: Family Room
-      switch.tvpower:
+      switch.tvstate:
         name: TV Power
         aliases:
           - TV

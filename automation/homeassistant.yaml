@@ -41,7 +41,6 @@
     trigger:
       platform: state
       entity_id:
-        - sensor.configurator
         - sensor.dasshio
         - sensor.gdrivebackup
         - sensor.mosquitto
@@ -50,11 +49,8 @@
         - sensor.rpcshutdown
         - sensor.samba
         - sensor.ssh
-        - sensor.tasmoadmin
         - sensor.unificontroller
         - sensor.vscode
-        - sensor.samba_rpi2
-        - sensor.ssh_rpi2
       from: started
       to: stopped
     action:
