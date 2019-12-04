@@ -78,10 +78,9 @@ Some automations for Home Assistant related items.
 * Notify me when Home Assistant is shutting down
 * Notify me if an add-on stops working
 * Manually update some sensor that will no longer auto update
-* Send me a notification if my Home Assistant VM disk gets full
+* Send me a notification if my Home Assistant disk gets full
 * Notify me if a Zwave device is dead
 * Notify me if a battery power sensor battery is getting low
-* Notify me if there is a custom component/card update available
 * Notify me and restart the nut addon if it stops reporting values
 
 ### hvac.yaml Automations:
@@ -121,7 +120,6 @@ These lamps are the main light source when you walk in through the garage (our p
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/long_term_data.yaml)__
 
 These automation take data from home assistant and store it in a .csv file for later trending/evaluation.  I only keep 3 days of history and do not want all devices saved long term so this is the solution I implemented. 
-* Store my hours spent at work
 * Store my HVAC runtime, and the outdoor high/low temps. 
 
 ### Low_Battery_Adams_iPhone.yaml Automations:
