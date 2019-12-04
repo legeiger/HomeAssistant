@@ -11,7 +11,6 @@ cards:
   - type: custom:vertical-stack-in-card
     cards: 
       - type: glance
-        theme: midnightclear
         title: Door Status
         entities:
           - entity: sensor.gehingepinsensor2
@@ -28,7 +27,6 @@ cards:
             icon: mdi:door
         columns: 4
       - type: entities
-        theme: midnightclear
         entities: 
           - entity: cover.garage_door
   - type: custom:vertical-stack-in-card
@@ -37,43 +35,43 @@ cards:
       - type: horizontal-stack
         cards:
           - type: entity-button
+            theme: midnightyellow
             entity: switch.tvstate
             name: TV - Power
-            theme: midnightyellow
             icon: mdi:television
           - type: entity-button
+            theme: midnightyellow
             entity: switch.tvtv
             name: TV - Input 
             icon: mdi:television
-            theme: midnightclear
           - type: entity-button
+            theme: midnightyellow
             entity: switch.receiverstate
             icon: mdi:speaker
             name: Amp - Power
-            theme: midnightyellow
       - type: horizontal-stack
         cards:
           - type: entity-button
+            theme: midnightyellow
             entity: script.volumeup
             name: Volume Up
             icon: mdi:volume-plus
             tap_action:
               action: call-service
               service: script.volumeup
-            theme: midnightclear
           - type: entity-button
+            theme: midnightyellow
             entity: switch.receivermute
             name: Mute
             icon: mdi:volume-mute
-            theme: midnightclear
           - type: entity-button
+            theme: midnightyellow
             entity: script.volumedown
             name: Volume Down
             icon: mdi:volume-minus
             tap_action:
               action: call-service
               service: script.volumedown
-            theme: midnightclear
   - type: custom:vertical-stack-in-card
     title: Living Room
     cards: 
@@ -90,10 +88,10 @@ cards:
             name: Desktop
             icon: mdi:desktop-tower
           - type: entity-button
+            theme: midnightyellow
             entity: light.yeelightrgb2
             name: Notification
             icon: mdi:lightbulb-outline
-            theme: midnightclear
             tap_action: 
               action: toggle
             hold_action:
@@ -116,20 +114,9 @@ cards:
             entity: switch.kuled2
             name: Nursery Fan
             icon: mdi:fan
-  - type: entities
-    show_header_toggle: false
-    title: Work Hours
-    entities:
-      - entity: sensor.hours_at_work_today
-        icon: mdi:progress-clock
-      - entity: sensor.hours_at_work_yesterday
-        icon: mdi:progress-clock
-      - entity: sensor.hours_at_work_two_days_ago
-        icon: mdi:progress-clock
   - type: vertical-stack
     cards:
       - type: conditional
-        theme: midnightclear
         conditions:
           - entity: climate.linear_heating
             state: "heat"
@@ -151,24 +138,17 @@ cards:
           entities:
             - entity: climate.linear_cooling
               name: Thermostat
-      - type: entities
-        show_header_toggle: false
-        title: Temperature & Humidity
-        entities:
-          - entity: sensor.th161_temperature
-            name: Upstairs Temperature
-            icon: mdi:thermometer-lines
-          - entity:  sensor.th161_humidity
-            name: Upstairs Humidity
-            icon: mdi:water-percent
-          - entity: sensor.currenttemp
-            name: Outside Temperature
-            icon: mdi:thermometer-lines
-          - entity: sensor.currenthumid
-            name: Outside Humidity
-            icon: mdi:water-percent
+      # - type: entities
+      #   show_header_toggle: false
+      #   title: Temperature & Humidity
+      #   entities:
+      #     - entity: sensor.th161_temperature
+      #       name: Upstairs Temperature
+      #       icon: mdi:thermometer-lines
+      #     - entity:  sensor.th161_humidity
+      #       name: Upstairs Humidity
+      #       icon: mdi:water-percent
       - type: conditional
-        theme: midnightclear
         conditions:
           - entity: climate.linear_cooling
             state: "cool"
@@ -184,7 +164,6 @@ cards:
             - entity: sensor.cooling_hours_two_days_ago
               icon: mdi:progress-clock
       - type: conditional
-        theme: midnightclear
         conditions:
           - entity: climate.linear_heating
             state: "heat"
@@ -201,22 +180,12 @@ cards:
               icon: mdi:progress-clock
   - type: weather-forecast
     entity: weather.dark_sky
-  - type: entities
-    title: Sun & Moon
-    show_header_toggle: false
-    entities:
-      - entity: sun.sun
-        name: Sun
-      - entity: sensor.sunrise
-        name: Next Sunrise
-        icon: mdi:weather-sunset-up
-      - entity: sensor.sunset
-        name: Next Sunset
-        icon: mdi:weather-sunset-down
-      - entity: sensor.daylight
-        name: Hours of Daylight
-        icon: mdi:timelapse
-      - entity: sensor.moon
+  - type: vertical-stack
+    cards:
+      - type: media-control
+        entity: media_player.fire_tv
+      - type: media-control
+        entity: media_player.samsung_tv_remote
 
 ####################################################
 #                                                  #

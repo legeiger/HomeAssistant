@@ -123,9 +123,6 @@ cards:
       - entity: automation.holiday_and_birthday_notification
         name: Holiday/Birthday Notification
         icon: mdi:gift
-      - entity: automation.work_hours_record
-        name: Long Term Work Hours Record
-        icon: mdi:timetable
       - entity: automation.hvac_record
         name: Long Term HVAC Record
         icon: mdi:timetable
@@ -291,6 +288,9 @@ cards:
       - entity: automation.notify_if_network_device_issue
         name: Network Device Issue Notification
         icon: mdi:help-network
+      - entity:  automation.notify_if_unifi_firmware_update_available
+        name: Network Device Firmware Update Available
+        icon: mdi:check-network
 
 ####################################################
 #                                                  #

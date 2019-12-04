@@ -15,10 +15,10 @@
         below: 30
     condition:
       condition: zone
-      entity_id: device_tracker.adams_iphone
+      entity_id: device_tracker.adam_s_iphone_2
       zone: zone.adam_work
     action:
-      service: notify.ios_adams_iphone
+      service: notify.mobile_app_adam_s_iphone
       data:
         title: "Your Battery is low, charge your phone!"
         message: "Adam's iPhone battery is getting low and should be charged"

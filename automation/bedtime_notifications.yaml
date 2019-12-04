@@ -22,7 +22,7 @@
           entity_id: group.adam_home_presence
           state: 'home'
     action:
-      - service: notify.ios_adams_iphone
+      - service: notify.mobile_app_adam_s_iphone
         data:
           title: "Garage Door Open"
           message: "The Garage Door is open and you are in bed"
@@ -51,7 +51,7 @@
           entity_id: group.adam_home_presence
           state: 'home'
     action:
-      - service: notify.ios_adams_iphone
+      - service: notify.mobile_app_adam_s_iphone
         data:
           message: "The Desktop is on and you are in bed"
           data:
@@ -93,7 +93,7 @@
           entity_id: group.adam_home_presence
           state: 'home'
     action:
-      - service: notify.ios_adams_iphone
+      - service: notify.mobile_app_adam_s_iphone
         data:
           message: "The Living Room Lamps are on and you are in bed"
           data:

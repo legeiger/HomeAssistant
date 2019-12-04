@@ -22,7 +22,7 @@
           entity_id: switch.desktop_switch
           state: 'on'
     action:
-      - service: notify.ios_adams_iphone
+      - service: notify.mobile_app_adam_s_iphone
         data:
           message: "The Desktop is on and you are away"
           data:
@@ -74,7 +74,7 @@
             - condition: template
               value_template: "{{ states('sensor.pow2_power') | float > 10 }}"
     action:
-      - service: notify.ios_adams_iphone
+      - service: notify.mobile_app_adam_s_iphone
         data_template:
           message: 'The TV is pulling {{ states("sensor.pow2_power") }} watts, the Receiver is pulling {{ states("sensor.pow1_power") }} watts and no one is home'
           data:

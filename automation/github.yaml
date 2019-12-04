@@ -15,7 +15,7 @@
       - condition: template
         value_template: "{{ trigger.from_state.state != 'unavailable' }}"
     action:
-      service: notify.ios_adams_iphone
+      service: notify.mobile_app_adam_s_iphone
       data:
         title: "New Home Assistant Version"
         message: "Version {{ states.sensor.hassio_version.state }} is available!"
@@ -39,7 +39,7 @@
       - condition: template
         value_template: "{{ trigger.from_state.state != 'unavailable' }}"
     action:
-      service: notify.ios_adams_iphone
+      service: notify.mobile_app_adam_s_iphone
       data:
         title: "New Github Star"
         message: "The SilvrrGit HomeAssistant Repository now has {{ states.sensor.stars.state }} stars!"
@@ -61,7 +61,7 @@
       - condition: template
         value_template: "{{ trigger.from_state.state != 'None' }}"
     action:
-      service: notify.ios_adams_iphone
+      service: notify.mobile_app_adam_s_iphone
       data:
         title: "New Github Fork"
         message: "The SilvrrGit HomeAssistant Repository now has {{ states.sensor.forks.state }} forks!"
@@ -83,7 +83,7 @@
       - condition: template
         value_template: "{{ trigger.from_state.state != 'None' }}"
     action:
-      service: notify.ios_adams_iphone
+      service: notify.mobile_app_adam_s_iphone
       data:
         title: "New Github Subscirber"
         message: "The SilvrrGit HomeAssistant Repository now has {{ states.sensor.subscribers.state }} subscribers!"
@@ -105,7 +105,7 @@
       - condition: template
         value_template: "{{ trigger.from_state.state != 'None' }}"
     action:
-      service: notify.ios_adams_iphone
+      service: notify.mobile_app_adam_s_iphone
       data:
         title: "Github Issues Update"
         message: "The SilvrrGit HomeAssistant Repository now has {{ states.sensor.issues.state }} issues."

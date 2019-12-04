@@ -37,7 +37,6 @@
           - device_tracker.unifi_security_gateway
           - device_tracker.unifi_switch_8_poe_60w
           - device_tracker.raspberry_pi_2_wired
-          - device_tracker.raspberry_pi_3_wired
         from: 'home'
         to: 'not_home'
     action:

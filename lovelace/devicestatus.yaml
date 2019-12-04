@@ -9,17 +9,10 @@ icon: mdi:monitor-cellphone-star
 path: devices
 cards:
   - type: entities
-    title: Phone Location & Battery Data
+    title: Adam's iPhone Location & Data
     show_header_toggle: false
     entities:
-      - type: section
-        label: Adam's iPhone
-      - entity:  group.adam_home_presence
-        name: Location
-        icon: mdi:crosshairs-gps
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "GPS location is [[ device_tracker.adams_iphone.state ]]"
-      - entity: sensor.adam_s_iphone_battery_level
+      - entity: sensor.battery_level
         name: Battery
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "[[ {entity}.attributes.Battery State ]]"
@@ -27,22 +20,61 @@ cards:
         name: Wifi Connection
         icon: mdi:cellphone-iphone
         type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.7"
-      - type: section
-        label: Amy's iPhone
-      - entity:  group.amy_home_presence
-        name: Location
+        secondary_info: "[[ sensor.ssid.state ]]"
+      - entity: device_tracker.adam_s_iphone_2
+        name: GPS Location
         icon: mdi:crosshairs-gps
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "GPS location is [[ device_tracker.amys_iphone.state ]]"
-      - entity: sensor.amy_s_iphone_battery_level
+  - type: entities
+    title: Amy's iPhone Location & Data
+    show_header_toggle: false
+    entities:
+      - entity: sensor.battery_level_2
         name: Battery
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "[[ {entity}.attributes.Battery State ]]"
       - entity: device_tracker.amy_s_iphone
         name: Wifi Connection
+        icon: mdi:cellphone-iphone
         type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.2"
+        secondary_info: "[[ sensor.ssid_2.state ]]"
+      - entity: device_tracker.amy_s_iphone_2
+        name: GPS Location
+        icon: mdi:crosshairs-gps
+  # - type: entities
+  #   title: Phone Location & Battery Data
+  #   show_header_toggle: false
+  #   entities:
+  #     - type: section
+  #       label: Adam's iPhone
+  #     - entity:  group.adam_home_presence
+  #       name: Location
+  #       icon: mdi:crosshairs-gps
+  #       type: "custom:secondaryinfo-entity-row"
+  #       secondary_info: "GPS location is [[ device_tracker.adam_s_iphone_2.state ]]"
+  #     - entity: sensor.battery_level
+  #       name: Battery
+  #       type: "custom:secondaryinfo-entity-row"
+  #       secondary_info: "[[ {entity}.attributes.Battery State ]]"
+  #     - entity: device_tracker.adam_s_iphone
+  #       name: Wifi Connection
+  #       icon: mdi:cellphone-iphone
+  #       type: "custom:secondaryinfo-entity-row"
+  #       secondary_info: "192.168.1.7"
+  #     - type: section
+  #       label: Amy's iPhone
+  #     - entity:  group.amy_home_presence
+  #       name: Location
+  #       icon: mdi:crosshairs-gps
+  #       type: "custom:secondaryinfo-entity-row"
+  #       secondary_info: "GPS location is [[ device_tracker.amy_s_iphone_2.state ]]"
+  #     - entity: sensor.battery_level_2
+  #       name: Battery
+  #       type: "custom:secondaryinfo-entity-row"
+  #       secondary_info: "[[ {entity}.attributes.Battery State ]]"
+  #     - entity: device_tracker.amy_s_iphone
+  #       name: Wifi Connection
+  #       type: "custom:secondaryinfo-entity-row"
+  #       secondary_info: "192.168.1.2"
   - type: entities
     title: Home Automation Devices
     show_header_toggle: false
@@ -65,11 +97,16 @@ cards:
         icon: mdi:google-home
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.14"       
-      # - entity: device_tracker.amazon_fire_tv
-      #   name: Amazon Fire TV
-      #   icon: mdi:fire
-      #   type: "custom:secondaryinfo-entity-row"
-      #   secondary_info: "192.168.1.21"
+      - entity: device_tracker.amazon_fire_tv
+        name: Amazon Fire TV
+        icon: mdi:fire
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.21"
+      - entity: device_tracker.localhost
+        name: Samsung Smart TV
+        icon: mdi:television-classic
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.9"
       - entity: device_tracker.kuled_1
         name: Kuled Switch 1
         icon: mdi:light-switch
@@ -85,6 +122,11 @@ cards:
         name: Tradfri Gateway
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.20"
+      - entity: device_tracker.doorbell
+        name: Doorbell
+        icon: mdi:bell
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.39"
   - type: entities
     title: Sonoffs
     show_header_toggle: false
@@ -146,21 +188,16 @@ cards:
         icon: mdi:linux
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.23"
-      # - entity: device_tracker.raspberry_pi_3_wired
-      #   name: Raspberry Pi 3B+ (Wired)
-      #   icon: mdi:raspberry-pi
-      #   type: "custom:secondaryinfo-entity-row"
-      #   secondary_info: "192.168.1.31"
-      # - entity: device_tracker.raspberry_pi_3_wired_2
-      #   name: Raspberry Pi 3B (Wired)
-      #   icon: mdi:raspberry-pi
-      #   type: "custom:secondaryinfo-entity-row"
-        # secondary_info: "192.168.1.31"
       - entity: device_tracker.raspberry_pi_2_wired
         name: Raspberry Pi 2B (Wired)
         icon: mdi:raspberry-pi
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.33"
+      - entity: device_tracker.ubuntu
+        name: Hassio Server
+        icon:  mdi:server
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.24"
   - type: entities
     title: Wireless Devices
     show_header_toggle: false
@@ -178,11 +215,25 @@ cards:
         type: "custom:secondaryinfo-entity-row"
         icon: mdi:amazon
         secondary_info: "192.168.1.4"
+      - entity: device_tracker.amy_2018
+        name: Amy's Work Laptop (WiFi)
+        icon: mdi:windows
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "No Static IP"
+      - entity: device_tracker.adam_s_work_laptop
+        name: Adam's Work Laptop (WiFi)
+        icon: mdi:windows
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "No Static IP"
+      - entity: device_tracker.amy_s_apple_watch
+        name: Amy's Apple Watch
+        icon: mdi:watch
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.16"
   - type: custom:vertical-stack-in-card
     title: Network Status
     cards:
       - type: entities
-        theme: midnightclear
         show_header_toggle: false
         entities:
           - entity: sensor.wireless_clients
@@ -198,21 +249,18 @@ cards:
         title: Network Status
         cards:
           - type: sensor
-            theme: midnightclear
             entity: sensor.speedtest_download
             name: Download
             hours_to_show: 24
             graph: line
             detail: 1
           - type: sensor
-            theme: midnightclear
             entity: sensor.speedtest_upload
             name: Upload
             hours_to_show: 24
             graph: line
             detail: 1
       - type: entities
-        theme: midnightclear
         show_header_toggle: false
         entities:
           - entity: binary_sensor.modem
@@ -221,9 +269,9 @@ cards:
             icon: mdi:wan
           - entity: device_tracker.unifi_security_gateway
             name: Ubiquiti Security Gateway
-            type: "custom:secondaryinfo-entity-row"
-            secondary_info: "[[ sensor.myip.state ]]"
             icon: mdi:folder-key-network-outline
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "192.168.1.1"
           - entity: device_tracker.unifi_switch_8_poe_60w
             name: Ubiquiti Switch 8
             type: "custom:secondaryinfo-entity-row"
@@ -242,8 +290,6 @@ cards:
       - entity: sensor.unifi_gateway_www
       - entity: sensor.unifi_gateway_wlan
       - entity: sensor.unifi_gateway_lan
-      - entity: sensor.unifi_gateway_firmware_upgradable
-        name: Devices with Firmware Upgrade Available
   - type: entities
     entities:
       - entity: sensor.basic1_signal
@@ -265,7 +311,6 @@ cards:
       - type: entities
         show_header_toggle: false
         title: UPS Status
-        theme: midnightclear
         entities:
           - entity: sensor.ups_status
             name: State
@@ -280,7 +325,6 @@ cards:
       - type: horizontal-stack
         cards:
           - type: sensor
-            theme: midnightclear
             entity: sensor.approxwattage
             name: Load
             icon: mdi:gauge
@@ -288,7 +332,6 @@ cards:
             graph: line
             detail: 1
           - type: sensor
-            theme: midnightclear
             entity: sensor.ups_battery_runtime
             name: Runtime
             hours_to_show: 24

@@ -17,6 +17,22 @@ homeassistant:
     - /share
 
 ####################################################
+#      LINKS TO INDIVUAL CONFIGURATION FILES       #
+####################################################
+
+#https://home-assistant.io/docs/configuration/splitting_configuration/
+automation: !include_dir_merge_list automation/
+cloud: !include cloud.yaml
+frontend: !include frontend.yaml
+ios: !include ios.yaml
+media_player: !include media_player.yaml
+notify: !include notification.yaml
+recorder: !include recorder.yaml
+script: !include scripts.yaml
+sensor: !include_dir_merge_list sensors/
+switch: !include_dir_merge_list switches/
+
+####################################################
 #                                                  #
 #                     GENERAL                      #
 #                                                  #
@@ -28,15 +44,6 @@ climate:
 
 #https://home-assistant.io/components/config/
 config:
-
-#https://www.home-assistant.io/components/opengarage/
-cover:
-  platform: opengarage
-  covers:
-      garage:
-        host:  192.168.1.18
-        device_key: !secret device_key
-        name: Garage Door
 
 #https://www.home-assistant.io/hassio/
 hassio:
@@ -55,6 +62,9 @@ logger:
 lovelace:
   mode: yaml
 
+#https://www.home-assistant.io/integrations/mobile_app/
+mobile_app:
+
 #https://home-assistant.io/components/sun/
 sun:
 
@@ -66,98 +76,29 @@ tts:
   - platform: google_translate
 
 ####################################################
-#                                                  #
-#      LINKS TO INDIVUAL CONFIGURATION FILES       #
-#                                                  #
+#               BINARY SENSOR                      #
 ####################################################
 
-#https://home-assistant.io/docs/configuration/splitting_configuration/
-automation: !include_dir_merge_list automation/
-binary_sensor: !include binary_sensor.yaml
-frontend: !include frontend.yaml
-input_boolean: !include input_boolean.yaml
-input_select: !include input_select.yaml
-ios: !include ios.yaml
-light: !include lights.yaml
-notify: !include notification.yaml
-recorder: !include recorder.yaml
-script: !include scripts.yaml
-sensor: !include_dir_merge_list sensors/
-switch: !include_dir_merge_list switches/
-zone: !include zones.yaml
+#https://home-assistant.io/components/binary_sensor.ping/
+binary_sensor:
+  - platform: ping
+    host: 192.168.100.1
+    name: Modem
 
 ####################################################
-#                                                  #
-#               GOOGLE ACTIONS                     #
-#                                                  #
+#                     COVER                        #
 ####################################################
-#https://www.home-assistant.io/integrations/cloud/
-cloud:
-#https://www.nabucasa.com/config/google_assistant/
-  google_actions:
-    filter:
-      include_entities:
-        - group.living_room_lamps
-        - input_boolean.guest
-        - script.volumedown
-        - script.volumeup
-        - input_boolean.feeddog
-        - script.normallight
-        - switch.cast
-        - switch.receiverstate
-        - switch.tvstate
-    entity_config:
-      group.living_room_lamps:
-        name: Living Room Lamps
-        aliases: Lamps
-        room: Family Room
-      input_boolean.guest:
-        name: Guest Mode
-        aliases: Guest
-        room: Family Room
-      switch.cast:
-        name: Cast
-        aliases: Cast Google Home
-        room: Family Room
-      script.volumedown:
-        name: Volume Down
-        room: Family Room
-      script.volumeup:
-        name: Volume Up
-        room: Family Room
-      light.yeelightrgb2:
-        name: Notification light
-        aliases: Corner Light
-        room: Family Room
-      input_boolean.feeddog:
-        name: Feed The Dog
-        aliases:
-          - I fed the Dog
-          - Dog fed
-          - fed dog
-        room: Family Room
-      script.normallight:
-        name: Normal Light
-        aliases: Normal Lamp
-        room: Family Room
-      switch.receiverstate:
-        name: Receiver Power
-        aliases:
-          - Receiver
-          - Amplifier
-          - Amp
-        room: Family Room
-      switch.tvstate:
-        name: TV Power
-        aliases:
-          - TV
-          - Television
-        room: Family Room
+#https://www.home-assistant.io/components/opengarage/
+cover:
+  platform: opengarage
+  covers:
+      garage:
+        host:  192.168.1.18
+        device_key: !secret device_key
+        name: Garage Door
 
 ####################################################
-#                                                  #
 #                    GROUP                         #
-#                                                  #
 ####################################################
 
 #https://www.home-assistant.io/components/group/
@@ -172,24 +113,81 @@ group:
     - light.yeelight3
     - light.yeelight4
   adam_home_presence:
-    - device_tracker.adams_iphone #GPS
+    - device_tracker.adam_s_iphone_2 #GPS
     - device_tracker.adam_s_iphone #WiFi
   amy_home_presence:
-    - device_tracker.amys_iphone #GPS
+    - device_tracker.amy_s_iphone_2 #GPS
     - device_tracker.amy_s_iphone #WiFi
   home_presence:
-    - device_tracker.adams_iphone #GPS
+    - device_tracker.adam_s_iphone_2 #GPS
     - device_tracker.adam_s_iphone #WiFi
-    - device_tracker.amys_iphone #GPS
+    - device_tracker.amy_s_iphone2 #GPS
     - device_tracker.amy_s_iphone #WiFi
   living_room_lamps:
     - switch.basic1
     - light.yeelightrgb2
 
 ####################################################
-#                                                  #
+#                 INPUT BOOLEAN                    #
+####################################################
+
+#https://home-assistant.io/components/input_boolean/
+input_boolean:
+  vacation:
+    name: Vacation Mode
+    initial: off
+  guest:
+    name: Guest Mode
+    initial: off
+  feeddog:
+    name: feeddog
+    initial: off
+  doorbelllight:
+    name: doorbelllight
+    initial: off
+
+####################################################
+#                    INPUT SELECT                  #
+####################################################
+
+#https://home-assistant.io/components/input_select/
+input_select:
+  notification_bulb2_color:
+    options:
+      - "Normal"
+      - "White"
+      - "Red"
+      - "Orange"
+      - "Yellow"
+      - "Green"
+      - "Blue"
+      - "Indigo"
+      - "Violet"
+      - "Purple"
+    icon: mdi:lightbulb
+    initial: White
+
+####################################################
+#                     LIGHT                        #
+####################################################
+
+#https://www.home-assistant.io/components/light.group/
+light:
+  - platform: group
+    name: Front Lights
+    entities:
+      - light.yeelight1
+      - light.yeelight3
+      - light.yeelight4
+
+  - platform: group
+    name: Bedroom Lights
+    entities:
+      - light.tradfri_bulb_e26_ws_opal_980lm_2_2
+      - light.tradfri_bulb_e26_ws_opal_980lm_3
+
+####################################################
 #                   SPEETEST                       #
-#                                                  #
 ####################################################
 
 #https://www.home-assistant.io/components/speedtestdotnet/
@@ -200,9 +198,7 @@ speedtestdotnet:
     - upload
 
 ####################################################
-#                                                  #
 #                TRADFRI HUB                       #
-#                                                  #
 ####################################################
 
 #https://home-assistant.io/components/tradfri/
@@ -211,9 +207,7 @@ tradfri:
   allow_tradfri_groups: false
 
 ####################################################
-#                                                  #
 #                   WEATHER                        #
-#                                                  #
 ####################################################
 
 #https://www.home-assistant.io/components/weather.darksky/
@@ -223,9 +217,7 @@ weather:
     mode: daily
 
 ####################################################
-#                                                  #
 #                     YEELIGHTS                    #
-#                                                  #
 ####################################################
 
 #https://home-assistant.io/components/light.yeelight/

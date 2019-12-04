@@ -9,7 +9,7 @@
       platform: homeassistant
       event: start
     action:
-      - service: notify.ios_adams_iphone
+      - service: notify.mobile_app_adam_s_iphone
         data:
           title: "Home Assistant Started"
           message: "Home Assistant Has Started"
@@ -25,7 +25,7 @@
       platform: homeassistant
       event: shutdown
     action:
-      - service: notify.ios_adams_iphone
+      - service: notify.mobile_app_adam_s_iphone
         data:
           title: "Home Assistant Stopped"
           message: "Home Assistant Has Stopped"
@@ -54,7 +54,7 @@
       from: started
       to: stopped
     action:
-      - service: notify.ios_adams_iphone
+      - service: notify.mobile_app_adam_s_iphone
         data_template:
           title: "Hass.io Addon Stopped"
           message: "{{ trigger.to_state.entity_id }} addon is stopped"
@@ -170,7 +170,7 @@
       - delay: '00:00:30'
       - service: switch.turn_on
         entity_id: switch.nut
-      - service: notify.ios_adams_iphone
+      - service: notify.mobile_app_adam_s_iphone
         data:
           title: Nut Add-On Watchdog
           message: Nut Add-On was restarted due to a 'unknown' state being reported to Home Assistant

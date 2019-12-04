@@ -7,16 +7,8 @@
 #                                                  #
 ####################################################
 
-#https://www.home-assistant.io/components/sensor.rest/
-# I had to use my subdomain to get this to work with ssl.  Therefore I don't have the full paths in the config.
-# here is an example for gdrivebackup
-# https://myhome.duckdns.org:8123/api/hassio/addons/382254_googlebackup/info
-# The 382254_googlebackup is the slug name which can be pulled by going to the addon page.  It is in the end of the URL.
-# !secret llt is "Bearer 12345678910"
-# 12345678910 is the Long Lived Access Token generated in the Home Assistant Frontend.
-
   - platform: rest
-    resource: !secret dasshio
+    resource: http://192.168.1.24:8123/api/hassio/addons/68be3ab6_dasshio/info
     name: dasshio
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
@@ -25,7 +17,7 @@
       Content-Type: application/json
 
   - platform: rest
-    resource: !secret gdrivebackup
+    resource: http://192.168.1.24:8123/api/hassio/addons/cebe7a76_hassio_google_drive_backup/info
     name: gdrivebackup
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
@@ -34,7 +26,7 @@
       Content-Type: application/json
 
   - platform: rest
-    resource: !secret mosquitto
+    resource: http://192.168.1.24:8123/api/hassio/addons/core_mosquitto/info
     name: mosquitto
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
@@ -43,7 +35,7 @@
       Content-Type: application/json
 
   - platform: rest
-    resource: !secret nut
+    resource: http://192.168.1.24:8123/api/hassio/addons/68be3ab6_nut/info
     name: nut
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
@@ -52,7 +44,7 @@
       Content-Type: application/json
       
   - platform: rest
-    resource: !secret pihole
+    resource: http://192.168.1.24:8123/api/hassio/addons/a0d7b954_pi-hole/info
     name: pihole
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
@@ -61,7 +53,7 @@
       Content-Type: application/json
 
   - platform: rest
-    resource: !secret rpcshutdown
+    resource: http://192.168.1.24:8123/api/hassio/addons/core_rpc_shutdown/info
     name: rpcshutdown
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
@@ -70,7 +62,7 @@
       Content-Type: application/json
 
   - platform: rest
-    resource: !secret samba
+    resource: http://192.168.1.24:8123/api/hassio/addons/core_samba/info
     name: samba
     value_template: '{{ value_json.data.state }}'
     scan_interval: 5
@@ -79,7 +71,7 @@
       Content-Type: application/json
 
   - platform: rest
-    resource: !secret ssh
+    resource: http://192.168.1.24:8123/api/hassio/addons/core_ssh/info
     name: ssh
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
@@ -88,7 +80,7 @@
       Content-Type: application/json
 
   - platform: rest
-    resource: !secret unificontroller
+    resource: http://192.168.1.24:8123/api/hassio/addons/a0d7b954_unifi/info
     name: unificontroller
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
@@ -97,7 +89,7 @@
       Content-Type: application/json
 
   - platform: rest
-    resource: !secret vscode
+    resource: http://192.168.1.24:8123/api/hassio/addons/a0d7b954_vscode/info
     name: vscode
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
