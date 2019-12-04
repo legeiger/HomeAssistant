@@ -25,7 +25,7 @@ I run my home assistant instance on a Zotac mini PC.  The previous life of this 
 * [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
 * [VScode](https://github.com/hassio-addons/addon-vscode)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.101.2__ on this instance.
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.102.2__ on this instance.
 
 # UI Based Integrations:
 The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup.  
@@ -34,12 +34,13 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 * [Unifi Controller](https://www.home-assistant.io/integrations/unifi/)
 * [Google Cast](https://www.home-assistant.io/integrations/cast/)
 * [iOS](https://www.home-assistant.io/integrations/ios/)
+* [Zone](https://www.home-assistant.io/integrations/zone/)
 * [ZWave](https://www.home-assistant.io/docs/z-wave/installation)
 
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|33               |10      |7               |30        |77           |4        |123      |7              | 
+|36               |10      |7               |33        |77           |4        |113      |7              | 
 
 # Connected Devices:
 
