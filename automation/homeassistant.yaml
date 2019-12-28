@@ -41,7 +41,6 @@
     trigger:
       platform: state
       entity_id:
-        - sensor.dasshio
         - sensor.gdrivebackup
         - sensor.mosquitto
         - sensor.nut
@@ -121,6 +120,9 @@
           - zwave.unknown_id_021f_unknown_type_0003_id_0101
           - zwave.linear_gc_tbz48_battery_powered_z_wave_thermostat
           - zwave.aeotec_zw117_range_extender_6
+          - zwave.aeon_labs_dsb28_home_energy_meter_2nd_edition
+          - zwave.zooz_zen27_s2_dimmer_wall_switch
+          - zwave.zooz_zen27_s2_dimmer_wall_switch_2
         to: 'dead'
     action:
       service: notify.home_assistant
@@ -174,6 +176,25 @@
         data:
           title: Nut Add-On Watchdog
           message: Nut Add-On was restarted due to a 'unknown' state being reported to Home Assistant
+
+#########################################################
+#                                                       #
+#                  RESET ENERGY USAGE                   #
+#                                                       #
+#########################################################
+
+  - alias: "Reset Energy Usage at Midnight"
+    initial_state: true
+    trigger:
+      platform: time
+      at: '00:01'
+    action:
+      - service: notify.energy_log
+        data_template:
+          message: "{{states('sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_energy')}}"
+      - service: zwave.reset_node_meters
+        data:
+          node_id: 16
 
 #########################################################
 #                                                       #

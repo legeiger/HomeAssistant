@@ -8,15 +8,6 @@
 ####################################################
 
   - platform: rest
-    resource: http://192.168.1.24:8123/api/hassio/addons/68be3ab6_dasshio/info
-    name: dasshio
-    value_template: '{{ value_json.data.state }}'
-    scan_interval: 60
-    headers:
-      Authorization: !secret llt
-      Content-Type: application/json
-
-  - platform: rest
     resource: http://192.168.1.24:8123/api/hassio/addons/cebe7a76_hassio_google_drive_backup/info
     name: gdrivebackup
     value_template: '{{ value_json.data.state }}'

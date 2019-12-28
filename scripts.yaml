@@ -3,6 +3,24 @@
 
 ####################################################
 #                                                  #
+#               iOS Location Updates               #
+#                                                  #
+####################################################
+
+  adamlocation:
+    sequence:
+      - service: notify.mobile_app_adam_s_iphone
+        data:
+          message: "request_location_update"
+
+  amylocation:
+    sequence:
+      - service: notify.mobile_app_amy_s_iphone
+        data:
+          message: "request_location_update"
+
+####################################################
+#                                                  #
 #                 NORMAL LIGHT                     #
 #                                                  #
 ####################################################

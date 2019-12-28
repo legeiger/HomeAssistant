@@ -12,17 +12,6 @@
   - platform: template
     switches:
 
-      dasshio:
-        value_template: "{{ is_state('sensor.dasshio', 'started') }}"
-        turn_on:
-          service: hassio.addon_start
-          data:
-            addon: 66fe6d4d_dasshio_kludged
-        turn_off:
-          service: hassio.addon_stop
-          data:
-            addon: 66fe6d4d_dasshio_kludged
-
       gdrivebackup:
         value_template: "{{ is_state('sensor.gdrivebackup', 'started') }}"
         turn_on:

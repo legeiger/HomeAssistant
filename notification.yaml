@@ -36,6 +36,11 @@
     filename: /config/data/hvac_log.csv
     timestamp: false
 
+  - platform: file
+    name: energy_log
+    filename: /config/data/energy_log.txt
+    timestamp: false
+
 #https://www.home-assistant.io/integrations/nfandroidtv/
 
   - platform: nfandroidtv

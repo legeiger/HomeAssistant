@@ -1,0 +1,27 @@
+#########################################################
+#                                                       #
+#                  HIGH FREEZER TEMP                    #
+#                                                       #
+#########################################################
+
+  - alias: "Check Deep Freezer Temperature"
+    initial_state: true
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.th161_temperature
+        above: 10
+    action:
+      - service: notify.mobile_app_adam_s_iphone
+        data:
+          title: "Deep Freezer Temperature Alert!"
+          message: "The Deep Freezer Temperature is above 10 degrees!"
+      - service: notify.mobile_app_amy_s_iphone
+        data:
+          title: "Deep Freezer Temperature Alert!"
+          message: "The Deep Freezer Temperature is above 10 degrees!"
+
+#########################################################
+#                                                       #
+#            END OF CONFIGURATION FILE                  #
+#                                                       #
+#########################################################

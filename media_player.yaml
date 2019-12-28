@@ -27,7 +27,7 @@
       'com.pandora.android.gtv':
         - 'media_session_state'
 
-#https://www.home-assistant.io/integrations/samsungtv/
+#https://github.com/jaruba/ha-samsungtv-custom
   - platform: samsungtv
     host: 192.168.1.9
     mac: 8c:79:f5:84:21:39

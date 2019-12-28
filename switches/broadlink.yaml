@@ -45,7 +45,7 @@
   - platform: template
     switches:
       receiverstate:
-        value_template: "{% if states('sensor.pow1_power') | float > 10 %}True{%else%}False{%endif %}"
+        value_template: "{% if states('sensor.pow1_power') | float > 20 %}True{%else%}False{%endif %}"
         turn_on:
           service: switch.turn_on
           data:
@@ -55,7 +55,7 @@
           data:
             entity_id: switch.receiverpower
       tvstate:
-        value_template: "{% if states('sensor.pow2_power') | float > 10 %}True{%else%}False{%endif %}"
+        value_template: "{% if states('sensor.pow2_power') | float > 20 %}True{%else%}False{%endif %}"
         turn_on:
           service: switch.turn_on
           data:

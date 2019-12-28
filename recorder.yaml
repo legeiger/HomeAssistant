@@ -51,7 +51,6 @@
       - sensor.speedtest_upload
       - sensor.pow1_power
       - sensor.pow2_power
-      - sensor.th161_humidity
       - sensor.th161_temperature
       - sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
       - sensor.processor_use
@@ -64,6 +63,7 @@
       - sensor.amy_s_iphone_battery_state
       - sensor.doorbell
       - sensor.cpu_temperature
+      - sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
     domains:
       - media_player
       - climate
