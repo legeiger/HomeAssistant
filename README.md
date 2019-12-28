@@ -15,7 +15,6 @@ This is the most important part of Home Assistant!  Remote control and voice com
 I run my home assistant instance on a Zotac mini PC.  The previous life of this device was as a Datto Alto2 backup solution.  It has a AMD GX-415GA quad core processor, 8GB of RAM, 64GB SSD and sips on power.  The base operating system is [Ubuntu Server 18.04.3 LTS](https://ubuntu.com/download/server) and it runs [Hass.io via docker](https://www.home-assistant.io/hassio/installation/#alternative-install-on-a-generic-linux-host). It also runs the following add-ons. 
 
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
-* [Dasshio](https://github.com/SilvrrGIT/hassio-addons)
 * [Mosquitto MQTT broker](https://www.home-assistant.io/addons/mosquitto/)
 * [Network UPS Tools](https://github.com/SilvrrGIT/hassio-addons)
 * [PiHole](https://github.com/hassio-addons/addon-pi-hole)
@@ -40,14 +39,14 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|35               |10      |7               |33        |77           |6        |150      |8              | 
+|41               |13      |7               |33        |79           |6        |152      |10             | 
 
 # Connected Devices:
 
 ### Cloud Controlled Devices:
 
 * [Google Nest Hub](https://store.google.com/us/product/google_nest_hub) Used for voice commands to turn devices on/off and casting a view with a few switches
-* [iPhone XR](https://www.apple.com/iphone-xr/) Used for presence detection
+* [iPhone 11](https://www.apple.com/iphone-11/) Used for presence detection
 
 ### Wifi Connected Devices
 * [Xiaomi Yeelight RGBW E27 Smart LED Bulbs](http://www.gearbest.com/smart-lighting/pp_361555.html) *
@@ -69,6 +68,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 * [Dome Miniature, Z-Wave Plus Door/Window Sensor](https://www.amazon.com/Dome-Home-Automation-Miniature-DMWD1/dp/B01JGMZNNG)
 * [Go Control Thermostat](https://www.gocontrol.com/detail.php?productId=3)
 * [Aeotec Home Energy Meter Gen2 ](https://aeotec.com/z-wave-home-energy-measure/)
+* [Zooz Z-wave Dimmer Switches ](https://www.amazon.com/Z-Wave-Switch-Existing-Switches-Add-Ons/dp/B07K37BNMC?th=1)
 
 ### Hardwired Devices
 * [Cyberpower CP1500PFCLCD UPS ](https://www.amazon.com/CyberPower-CP1500PFCLCD-Sinewave-Outlets-Mini-Tower/dp/B00429N19W) used to detect power outages and keep network and HA running in a power outage.
@@ -104,7 +104,6 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 <p align="center">
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/automations.png">
 </p>
-
 
 
 # Questions?
