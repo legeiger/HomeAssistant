@@ -48,6 +48,11 @@ These automations are used to turn a light on to signify the dog needs to be fed
 * Turn off the Notification Light When the button is pressed in the evening
 * Reset everything for the new day
 
+### Freezer Temp.yaml Automations:
+__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/freezertemp.yaml)__
+
+Send a notification when the basement deep freezer temperature is above 10 degrees fahrenheit.  
+
 ### Garage Light.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/garage_light.yaml)__
 
@@ -82,6 +87,7 @@ Some automations for Home Assistant related items.
 * Notify me if a Zwave device is dead
 * Notify me if a battery power sensor battery is getting low
 * Notify me and restart the nut addon if it stops reporting values
+* A dailty reset and loggin of the total kWh reading from my home energy monitor
 
 ### hvac.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/thermostat.yaml)__
@@ -114,7 +120,6 @@ These lamps are the main light source when you walk in through the garage (our p
 * Turn on the living room lamps at sunset 
 * Turn on the living room lamps when somone comes home and its dark out
 * Turn off the living room lamps at midnight
-
 
 ### Long Term Data.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/long_term_data.yaml)__
