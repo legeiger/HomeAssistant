@@ -27,7 +27,9 @@ I run my home assistant instance on a Zotac mini PC.  The previous life of this 
 I'm currently running [Home Assistant](https://home-assistant.io) version __0.103.4__ on this instance.
 
 # UI Based Integrations:
-The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup.  
+The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup. 
+
+* [Adguard Home](https://www.home-assistant.io/integrations/adguard/)
 * [IKEA Trådfri (Tradfri)](https://www.home-assistant.io/integrations/tradfri/)
 * [MQTT](https://www.home-assistant.io/integrations/mqtt/)
 * [Unifi Controller](https://www.home-assistant.io/integrations/unifi/)
