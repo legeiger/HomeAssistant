@@ -1,0 +1,21 @@
+#########################################################
+#                                                       #
+#                   Turn on Amp With TV                 #
+#                                                       #
+#########################################################
+
+  - alias: "Turn on Amp With TV"
+    initial_state: true
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.pow2_power
+        above: 50
+    action:
+      - service: switch.turn_on
+        entity_id: switch.receivervideo2
+
+#########################################################
+#                                                       #
+#            END OF CONFIGURATION FILE                  #
+#                                                       #
+#########################################################
