@@ -41,7 +41,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|43               |14      |7               |38        |78           |6        |159      |11             | 
+|44               |14      |7               |39        |79           |6        |160      |12             | 
 
 # Connected Devices:
 
@@ -71,7 +71,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 * [Go Control Thermostat](https://www.gocontrol.com/detail.php?productId=3)
 * [Aeotec Home Energy Meter Gen2 ](https://aeotec.com/z-wave-home-energy-measure/)
 * [Zooz Z-wave Dimmer Switches ](https://www.amazon.com/Z-Wave-Switch-Existing-Switches-Add-Ons/dp/B07K37BNMC?th=1)
-* [Greenwave Multi socket PowerNode US NP222-B ](https://www.monoprice.com/product?p_id=39425)
+
 ### Hardwired Devices
 * [Cyberpower CP1500PFCLCD UPS ](https://www.amazon.com/CyberPower-CP1500PFCLCD-Sinewave-Outlets-Mini-Tower/dp/B00429N19W) used to detect power outages and keep network and HA running in a power outage.
 * [Ubiquiti Unifi AP-AC Long Range - Wireless Access Point](https://www.ui.com/unifi/unifi-ap-ac-lr/) used for presence detection
@@ -107,6 +107,10 @@ The following integrations are setup in the User Interface (UI) and may be a mis
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/automations.png">
 </p>
 
+## Data
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/data.png">
+</p>
 
 # Questions?
 
