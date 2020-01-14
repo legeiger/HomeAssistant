@@ -144,6 +144,11 @@ A series of automations that trigger monthly or weekly to help me remember to pe
 * Remind me to service our whole home humidifier before winter
 * Remind me to service our water filter
 
+### Media Center.yaml Automations:
+__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/mediacenter.yaml)__
+
+* When the TV turns on power draw will go above 50 watts, change the amplifier to the TV input. (This also would turn it on if it hasn't been turned on)
+
 ### Morning Briefing.yaml Automation:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/morning_briefing.yaml)__
 
