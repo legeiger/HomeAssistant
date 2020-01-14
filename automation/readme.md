@@ -5,6 +5,7 @@
 
 ### Bedroom Fan.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/bedroom_fan.yaml)__
+
 Automations to turn on/off the ceiling fan in our bedroom.  Its a vaulted ceiling and in the summer a lot of hot air gets trapped up there and in the winter the same thing happens to a less notable extent.
 * When the HVAC turns on, turn on the fan to circulate the air
 * When the HVAC turns off, turn off the fan
