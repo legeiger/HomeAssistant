@@ -9,7 +9,7 @@
       platform: homeassistant
       event: start
     action:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           title: "Home Assistant Started"
           message: "Home Assistant Has Started"
@@ -25,7 +25,7 @@
       platform: homeassistant
       event: shutdown
     action:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           title: "Home Assistant Stopped"
           message: "Home Assistant Has Stopped"
@@ -41,10 +41,11 @@
     trigger:
       platform: state
       entity_id:
+        - sensor.adguard
         - sensor.gdrivebackup
         - sensor.mosquitto
         - sensor.nut
-        - sensor.pihole
+#        - sensor.pihole
         - sensor.rpcshutdown
         - sensor.samba
         - sensor.ssh
@@ -53,7 +54,7 @@
       from: started
       to: stopped
     action:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data_template:
           title: "Hass.io Addon Stopped"
           message: "{{ trigger.to_state.entity_id }} addon is stopped"
@@ -123,6 +124,7 @@
           - zwave.aeon_labs_dsb28_home_energy_meter_2nd_edition
           - zwave.zooz_zen27_s2_dimmer_wall_switch
           - zwave.zooz_zen27_s2_dimmer_wall_switch_2
+          - zwave.zooz_zen27_s2_dimmer_wall_switch_3
         to: 'dead'
     action:
       service: notify.home_assistant
@@ -172,7 +174,7 @@
       - delay: '00:00:30'
       - service: switch.turn_on
         entity_id: switch.nut
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           title: Nut Add-On Watchdog
           message: Nut Add-On was restarted due to a 'unknown' state being reported to Home Assistant
@@ -195,6 +197,48 @@
       - service: zwave.reset_node_meters
         data:
           node_id: 16
+
+#########################################################
+#                                                       #
+#               HOST UPDATES AVAILABLE                  #
+#                                                       #
+#########################################################
+
+  - alias: "Notify if Host System Update Available"
+    initial_state: true
+    trigger:
+      - platform: template
+        value_template: "{{ states('sensor.host_system_updates') > '0' }}"
+    condition:
+      - condition: template
+        value_template: "{{ trigger.from_state.state != 'None' }}"
+      - condition: template
+        value_template: "{{ trigger.from_state.state != 'unavailable' }}"
+      - condition: template
+        value_template: "{{ trigger.from_state.state < trigger.to_state.state }}"
+    action:
+      service: notify.home_assistant
+      data_template:
+        title: "Hassio Host System Update Available"
+        message: "There are currently {{ trigger.to_state.state }} system updates available for the Hassio Host"
+
+  - alias: "Notify if Host Security Update Available"
+    initial_state: true
+    trigger:
+      - platform: template
+        value_template: "{{ states('sensor.host_security_updates') > '0' }}"
+    condition:
+      - condition: template
+        value_template: "{{ trigger.from_state.state != 'None' }}"
+      - condition: template
+        value_template: "{{ trigger.from_state.state != 'unavailable' }}"
+      - condition: template
+        value_template: "{{ trigger.from_state.state < trigger.to_state.state }}"
+    action:
+      service: notify.home_assistant
+      data_template:
+        title: "Hassio Host Security Update Available"
+        message: "There are currently {{ trigger.to_state.state }} security updates available for the Hassio Host"
 
 #########################################################
 #                                                       #

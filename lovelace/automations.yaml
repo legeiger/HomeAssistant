@@ -41,9 +41,6 @@ cards:
       - entity: automation.open_back_door_increase_brightness
         name: Open Back Doors Increase Brightness
         icon: mdi:lightbulb-outline
-      - entity: automation.open_front_doors_increase_brightness
-        name: Open Front Doors Increase Brightness
-        icon: mdi:lightbulb-outline
       - entity: automation.turn_on_living_room_lamps
         name: Turn on Living Room Lamps - Sunset
         icon: mdi:lightbulb-outline
@@ -113,6 +110,12 @@ cards:
       - entity: automation.update_template_sensors
         name: Update Template Sensors
         icon: mdi:update
+      - entity: automation.notify_if_host_security_update_available
+        name: Host Security Update Available
+        icon: mdi:shield-lock
+      - entity: automation.notify_if_host_system_update_available
+        name: Host System Update Available
+        icon: mdi:update
   - type: entities
     title: Other Automations
     show_header_toggle: false
@@ -126,6 +129,15 @@ cards:
       - entity: automation.hvac_record
         name: Long Term HVAC Record
         icon: mdi:timetable
+      - entity: automation.reset_energy_usage_at_midnight
+        name: Reset Energy Usage - Midnight
+        icon: mdi:power-plug
+      - entity: automation.check_deep_freezer_temperature
+        name: Check Freezer Temperature
+        icon: mdi:snowflake
+      - entity: automation.turn_on_amp_with_tv
+        name: Turn on Amp with TV
+        icon: mdi:television
   - type: entities
     title: Climate Automations
     show_header_toggle: false
@@ -184,7 +196,7 @@ cards:
         name: Media Center On When leaving
         icon: mdi:television-classic
       - entity: automation.leaving_home
-        name: Leaving Home Tun off lights
+        name: Leaving Home Turn off lights
         icon: mdi:home-circle
   - type: entities
     title: UPS Automations

@@ -25,6 +25,15 @@
     unit_of_measurement: "°C"
     value_template: '{{ value | multiply(0.001) | round(1) }}'
 
+  - platform: command_line
+    name: Host System Updates
+    scan_interval: 3600
+    command: "cat /share/system_updates.out | cut -d ';' -f 1"
+  - platform: command_line
+    name: Host Security Updates
+    scan_interval: 3600
+    command: "cat /share/system_updates.out | cut -d ';' -f 2"
+
 ####################################################
 #                                                  #
 #            END OF CONFIGURATION FILE             #
