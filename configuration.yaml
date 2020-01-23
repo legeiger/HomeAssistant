@@ -103,25 +103,11 @@ cover:
 
 #https://www.home-assistant.io/components/group/
 group:
-  outside_lights:
-    - light.yeelight1
-    - light.yeelight2
-    - light.yeelight3
-    - light.yeelight4
-  front_lights:
-    - light.yeelight1
-    - light.yeelight3
-    - light.yeelight4
   adam_home_presence:
     - device_tracker.adam_s_iphone_2 #GPS
     - device_tracker.adam_s_iphone #WiFi
   amy_home_presence:
     - device_tracker.amy_s_iphone_2 #GPS
-    - device_tracker.amy_s_iphone #WiFi
-  home_presence:
-    - device_tracker.adam_s_iphone_2 #GPS
-    - device_tracker.adam_s_iphone #WiFi
-    - device_tracker.amy_s_iphone2 #GPS
     - device_tracker.amy_s_iphone #WiFi
   living_room_lamps:
     - switch.basic1
@@ -187,10 +173,11 @@ light:
       - light.tradfri_bulb_e26_ws_opal_980lm_3
 
   - platform: group
-    name: Basement Main Room
+    name: Basement Lights
     entities:
       - light.zooz_zen27_s2_dimmer_wall_switch_level
       - light.zooz_zen27_s2_dimmer_wall_switch_level_2
+      - light.zooz_zen27_s2_dimmer_wall_switch_level_3
 
 ####################################################
 #                   SPEETEST                       #

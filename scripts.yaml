@@ -9,7 +9,7 @@
 
   adamlocation:
     sequence:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           message: "request_location_update"
 

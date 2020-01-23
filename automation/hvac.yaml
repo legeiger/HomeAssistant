@@ -29,7 +29,7 @@
     action:
       - service: climate.set_temperature
         data:
-          entity_id: climate.linear_heating
+          entity_id: climate.thermostat
           temperature: 62
 
 #########################################################
@@ -54,7 +54,7 @@
     action:
       - service: climate.set_temperature
         data:
-          entity_id: climate.linear_heating
+          entity_id: climate.thermostat
           temperature: 69
 
 #########################################################
@@ -83,7 +83,7 @@
     action:
       - service: climate.set_temperature
         data:
-          entity_id: climate.linear_heating
+          entity_id: climate.thermostat
           temperature: 69
 
 
@@ -105,7 +105,7 @@
     action:
       - service: climate.set_temperature
         data:
-          entity_id: climate.linear_heating
+          entity_id: climate.thermostat
           temperature: 69
 
 #########################################################
@@ -122,7 +122,7 @@
     action:
       - service: climate.set_temperature
         data:
-          entity_id: climate.linear_heating
+          entity_id: climate.thermostat
           temperature: 67
 
   - alias: "Set Thermostat Temperature - 0500"
@@ -133,7 +133,7 @@
     action:
       - service: climate.set_temperature
         data:
-          entity_id: climate.linear_heating
+          entity_id: climate.thermostat
           temperature: 69
 
 #########################################################

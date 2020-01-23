@@ -19,6 +19,18 @@ cards:
       - entity: light.tradfri_bulb_e26_ws_opal_980lm_2_2
         name: Adam's Bedside
   - type: entities
+    title: Basement Lights
+    show_header_toggle: false
+    entities:
+      - entity: light.basement_lights
+        name: All Basement Lights   
+      - entity: light.zooz_zen27_s2_dimmer_wall_switch_level
+        name: Main Room Lights
+      - entity: light.zooz_zen27_s2_dimmer_wall_switch_level_2
+        name: Fireplace Accent LIghts
+      - entity: light.zooz_zen27_s2_dimmer_wall_switch_level_3
+        name: Stair Lights
+  - type: entities
     title: Yeelights
     show_header_toggle: false
     entities:
@@ -36,7 +48,7 @@ cards:
         name: Notification Light
       - entity: script.normallight
         name: Script - Normal Light
-        icon: mdi:mdi:lightbulb
+        icon: mdi:lightbulb
       - entity: input_select.notification_bulb2_color
         name: Notification Light Color
   - type: entities
@@ -89,6 +101,7 @@ cards:
         name: Sonoff TH16
         icon: mdi:toggle-switch
         type: "custom:secondaryinfo-entity-row"
+        secondary_info: "Basement freezer temp is [[ sensor.th161_temperature.state ]] °F"
       - entity: switch.pow1
         name: Sonoff POW 1
         icon: mdi:speaker-wireless
@@ -147,6 +160,64 @@ cards:
       - entity: switch.lenovo_switch
         name: Lenovo Laptop
         icon: mdi:windows
+  # - type: entities
+  #   title: Greenwave Powerstrip
+  #   show_header_toggle: false
+  #   entities:
+  #     - entity: switch.greenwave_reality_inc_powernode_6_port_switch
+  #       name: Plug 1
+  #       icon: mdi:power-socket-us
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_energy
+  #       name: kWh
+  #       icon: mdi:chart-line
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_power
+  #       name: Watts
+  #       icon: mdi:power-plug
+  #     - entity: switch.greenwave_reality_inc_powernode_6_port_switch_2
+  #       name: Plug 2
+  #       icon: mdi:power-socket-us
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_energy_2
+  #       name: kWh
+  #       icon: mdi:chart-line
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_power_2
+  #       name: Watts
+  #       icon: mdi:power-plug
+  #     - entity: switch.greenwave_reality_inc_powernode_6_port_switch_3
+  #       name: Plug 3
+  #       icon: mdi:power-socket-us
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_energy_3
+  #       name: kWh
+  #       icon: mdi:chart-line
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_power_3
+  #       name: Watts
+  #       icon: mdi:power-plug
+  #     - entity: switch.greenwave_reality_inc_powernode_6_port_switch_4
+  #       name: Plug 4
+  #       icon: mdi:power-socket-us
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_energy_4
+  #       name: kWh
+  #       icon: mdi:chart-line
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_power_4
+  #       name: Watts
+  #       icon: mdi:power-plug
+  #     - entity: switch.greenwave_reality_inc_powernode_6_port_switch_5
+  #       name: Plug 5
+  #       icon: mdi:power-socket-us
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_energy_5
+  #       name: kWh
+  #       icon: mdi:chart-line
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_power_5
+  #       name: Watts
+  #       icon: mdi:power-plug
+  #     - entity: switch.greenwave_reality_inc_powernode_6_port_switch_6
+  #       name: Plug 6
+  #       icon: mdi:power-socket-us
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_energy_6
+  #       name: kWh
+  #       icon: mdi:chart-line
+  #     - entity: sensor.greenwave_reality_inc_powernode_6_port_power_6
+  #       name: Watts
+  #       icon: mdi:power-plug
 
 ####################################################
 #                                                  #

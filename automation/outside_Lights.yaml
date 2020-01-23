@@ -34,45 +34,13 @@
         data:
           entity_id:
             - light.yeelight1
+            - light.yeelight3
+            - light.yeelight4
+          brightness_pct: 100
+      - service: light.turn_on
+        data:
+          entity_id:
             - light.yeelight2
-            - light.yeelight3
-            - light.yeelight4
-          brightness_pct: 5
-
-#########################################################
-#                                                       #
-#          OPEN FRONT DOORS INCREASE BRIGHTNESS         #
-#                                                       #
-#########################################################
-
-  - alias: "Open Front Doors Increase Brightness"
-    initial_state: true
-    trigger:
-      - platform: state
-        entity_id:
-          - sensor.gehingepinsensor1
-          - sensor.garagedoorstatus
-        from: 'Closed'
-        to: 'Open'
-    condition:
-      condition: state
-      entity_id: group.outside_lights
-      state: 'on'
-    action:
-      - service: light.turn_on
-        data:
-          entity_id:
-            - light.yeelight1
-            - light.yeelight3
-            - light.yeelight4
-          brightness: 254
-      - wait_template: "{{ is_state(trigger.entity_id, 'Closed') }}"
-      - service: light.turn_on
-        data:
-          entity_id:
-            - light.yeelight1
-            - light.yeelight3
-            - light.yeelight4
           brightness_pct: 5
 
 #########################################################
@@ -90,7 +58,7 @@
         to: 'Open'
     condition:
       condition: state
-      entity_id: group.outside_lights
+      entity_id: light.yeelight2
       state: 'on'
     action:
       - service: light.turn_on

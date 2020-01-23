@@ -17,7 +17,7 @@
       - condition: template
         value_template: "{{ states.sensor.holiday.state | trim != '' }}"
     action:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           message: 'Today is {{ states.sensor.holiday.state }}.'
           title: '{{ states.sensor.holiday.state }}'

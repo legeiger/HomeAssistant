@@ -29,8 +29,8 @@
       condition: and
       conditions:
         - condition: state
-          entity_id: sensor.garagedoorstatus
-          state: 'Open'
+          entity_id: cover.garage_door
+          state: 'open'
         - condition: template
           value_template: "{{ states.sun.sun.attributes.elevation  | int < 10 }}"
     action:

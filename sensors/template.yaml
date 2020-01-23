@@ -15,7 +15,7 @@
         value_template:  '{{states("sensor.ups_load")|int*9}}'
         
       operatingstate:
-        value_template: "{{ state_attr('climate.linear_cooling', 'hvac_action') }}"
+        value_template: "{{ state_attr('climate.thermostat', 'hvac_action') }}"
 
       sensor_count:
         entity_id: []

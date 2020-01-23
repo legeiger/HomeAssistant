@@ -15,6 +15,7 @@
       com.amazon.firetv.youtube: "Youtube"
       com.hulu.plus: "Hulu"
       com.pandora.android.gtv: "Pandora"
+      com.disney.disneyplus: "Disney+"
     state_detection_rules:
       'com.amazon.tv.launcher':
         - 'standby'
@@ -25,6 +26,8 @@
       'com.hulu.plus':
         - 'media_session_state'
       'com.pandora.android.gtv':
+        - 'media_session_state'
+      'com.disney.disneyplus':
         - 'media_session_state'
 
 #https://github.com/jaruba/ha-samsungtv-custom

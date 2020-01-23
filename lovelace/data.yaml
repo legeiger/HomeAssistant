@@ -1,0 +1,121 @@
+####################################################
+#                                                  #
+#                    DATA VIEW                    #
+#                                                  #
+####################################################
+
+title: Data
+path: data
+icon: mdi:folder-information-outline
+cards:
+  - type: conditional
+    conditions:
+      - entity: climate.thermostat
+        state: "cool"
+    card:
+      type: entities
+      show_header_toggle: false
+      title: HVAC Runtime
+      entities:
+        - entity: sensor.cooling_hours_today
+          icon: mdi:progress-clock
+        - entity: sensor.cooling_hours_yesterday
+          icon: mdi:progress-clock
+        - entity: sensor.cooling_hours_two_days_ago
+          icon: mdi:progress-clock
+  - type: conditional
+    conditions:
+      - entity: climate.thermostat
+        state: "heat"
+    card:
+      type: entities
+      show_header_toggle: false
+      title: HVAC Runtime
+      entities:
+        - entity: sensor.heating_hours_today
+          icon: mdi:progress-clock
+        - entity: sensor.heating_hours_yesterday
+          icon: mdi:progress-clock
+        - entity: sensor.heating_hours_two_days_ago
+          icon: mdi:progress-clock
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: sensor
+        name: Whole Home Energy Usage
+        icon: mdi:power-plug
+        entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
+        hours_to_show: 24
+        graph: line
+        detail: 1
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_energy
+            icon: mdi:power-plug
+            name: Energy Today
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "Energy today cost [[ sensor.energy_cost ]] cents"
+          - entity: sensor.yesterday_energy
+            icon: mdi:power-plug
+            name: Energy Yesterday
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "Energy yesterday was [[ sensor.energy_cost_yesterday ]] cents"
+  - type: sensor
+    name: Deep Freezer Temperature
+    icon: mdi:snowflake
+    entity: sensor.th161_temperature
+    hours_to_show: 24
+    graph: line
+    detail: 1
+  - type: entities
+    title: Home Assistant Stats
+    show_header_toggle: false
+    entities:
+      - entity: sensor.tracker_count
+        icon: mdi:cellphone-link
+        name: Number of Network Devices
+      - entity: sensor.lights_count
+        icon: mdi:lightbulb
+      - entity: sensor.binary_sensor_count
+        icon: mdi:nintendo-switch
+      - entity: sensor.switch_count
+        icon: mdi:toggle-switch
+      - entity: sensor.automation_count
+        icon: mdi:home-assistant
+      - entity: sensor.script_count
+        icon: mdi:script-text-outline
+      - entity: sensor.sensor_count
+        icon: mdi:gauge
+      - entity: sensor.zwave_count
+        icon: mdi:z-wave
+  - type: glance
+    title: Home Assistant GitHub
+    entities:
+      - entity: sensor.stars
+        name: Stars
+        icon: mdi:star-circle
+      - entity: sensor.subscribers
+        name: Subscribers
+        icon: mdi:github-circle
+      - entity: sensor.issues
+        name: Issues
+        icon: mdi:alert-circle
+      - entity: sensor.forks
+        name: Forks
+        icon: mdi:directions-fork
+    columns: 4
+  - type: entities
+    title: Ad Guard Home
+    show_header_toggle: false
+    entities:
+      - entity: switch.adguard_filtering
+      - entity: sensor.adguard_dns_queries
+      - entity: sensor.adguard_dns_queries_blocked
+      - entity: sensor.adguard_dns_queries_blocked_ratio
+      - entity: sensor.adguard_rules_count
+
+####################################################
+#                                                  #
+#          END OF CONFIGURATION FILE               #
+#                                                  #
+####################################################

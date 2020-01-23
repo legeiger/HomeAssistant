@@ -15,9 +15,9 @@
         value_template: "{{ state_attr('zwave.unknown_id_021f_unknown_type_0003_id_0101', 'battery_level') }}"
         unit_of_measurement: '%'
 
-      garagedoorstatusbatt:
-        value_template: "{{ state_attr('zwave.vision_zg8101_garage_door_detector', 'battery_level') }}"
-        unit_of_measurement: '%'
+      # garagedoorstatusbatt:
+      #   value_template: "{{ state_attr('zwave.vision_zg8101_garage_door_detector', 'battery_level') }}"
+      #   unit_of_measurement: '%'
 
       gehingepinsensor1batt:
         value_template: "{{ state_attr('zwave.ge_32563_hinge_pin_smart_door_sensor', 'battery_level') }}"

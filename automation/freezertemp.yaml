@@ -9,16 +9,16 @@
     trigger:
       - platform: numeric_state
         entity_id: sensor.th161_temperature
-        above: 10
+        above: 0
     action:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           title: "Deep Freezer Temperature Alert!"
-          message: "The Deep Freezer Temperature is above 10 degrees!"
+          message: "The Deep Freezer Temperature is above 0 degrees!"
       - service: notify.mobile_app_amy_s_iphone
         data:
           title: "Deep Freezer Temperature Alert!"
-          message: "The Deep Freezer Temperature is above 10 degrees!"
+          message: "The Deep Freezer Temperature is above 0 degrees!"
 
 #########################################################
 #                                                       #

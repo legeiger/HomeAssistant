@@ -32,6 +32,7 @@
         - light.tradfri_bulb_e26_ws_opal_980lm_2_2
         - light.zooz_zen27_s2_dimmer_wall_switch_level
         - light.zooz_zen27_s2_dimmer_wall_switch_level_2
+        - light.zooz_zen27_s2_dimmer_wall_switch_level_3
 
 ########################################################
 #                                                      #

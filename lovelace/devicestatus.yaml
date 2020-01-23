@@ -24,6 +24,9 @@ cards:
       - entity: device_tracker.adam_s_iphone_2
         name: GPS Location
         icon: mdi:crosshairs-gps
+      - entity: script.adamlocation
+        name: Request Location Update
+        icon: mdi:refresh
   - type: entities
     title: Amy's iPhone Location & Data
     show_header_toggle: false
@@ -40,41 +43,9 @@ cards:
       - entity: device_tracker.amy_s_iphone_2
         name: GPS Location
         icon: mdi:crosshairs-gps
-  # - type: entities
-  #   title: Phone Location & Battery Data
-  #   show_header_toggle: false
-  #   entities:
-  #     - type: section
-  #       label: Adam's iPhone
-  #     - entity:  group.adam_home_presence
-  #       name: Location
-  #       icon: mdi:crosshairs-gps
-  #       type: "custom:secondaryinfo-entity-row"
-  #       secondary_info: "GPS location is [[ device_tracker.adam_s_iphone_2.state ]]"
-  #     - entity: sensor.battery_level
-  #       name: Battery
-  #       type: "custom:secondaryinfo-entity-row"
-  #       secondary_info: "[[ {entity}.attributes.Battery State ]]"
-  #     - entity: device_tracker.adam_s_iphone
-  #       name: Wifi Connection
-  #       icon: mdi:cellphone-iphone
-  #       type: "custom:secondaryinfo-entity-row"
-  #       secondary_info: "192.168.1.7"
-  #     - type: section
-  #       label: Amy's iPhone
-  #     - entity:  group.amy_home_presence
-  #       name: Location
-  #       icon: mdi:crosshairs-gps
-  #       type: "custom:secondaryinfo-entity-row"
-  #       secondary_info: "GPS location is [[ device_tracker.amy_s_iphone_2.state ]]"
-  #     - entity: sensor.battery_level_2
-  #       name: Battery
-  #       type: "custom:secondaryinfo-entity-row"
-  #       secondary_info: "[[ {entity}.attributes.Battery State ]]"
-  #     - entity: device_tracker.amy_s_iphone
-  #       name: Wifi Connection
-  #       type: "custom:secondaryinfo-entity-row"
-  #       secondary_info: "192.168.1.2"
+      - entity: script.amylocation
+        name: Request Location Update
+        icon: mdi:refresh
   - type: entities
     title: Home Automation Devices
     show_header_toggle: false
@@ -87,11 +58,6 @@ cards:
         type: "custom:secondaryinfo-entity-row"
         icon: mdi:garage
         secondary_info: "192.168.1.18"
-      # - entity: device_tracker.echo_dot
-      #   name: Amazon Echo Dot
-      #   icon: mdi:amazon
-      #   type: "custom:secondaryinfo-entity-row"
-      #   secondary_info: "192.168.1.17"
       - entity: device_tracker.google_nest_hub
         name: Google Home Hub
         icon: mdi:google-home
@@ -246,7 +212,6 @@ cards:
             name: Guest Clients Connected
             icon: mdi:account-network
       - type: horizontal-stack
-        title: Network Status
         cards:
           - type: sensor
             entity: sensor.speedtest_download
@@ -290,6 +255,7 @@ cards:
       - entity: sensor.unifi_gateway_www
       - entity: sensor.unifi_gateway_wlan
       - entity: sensor.unifi_gateway_lan
+      - entity: sensor.unifi_gateway_firmware_upgradable
   - type: entities
     entities:
       - entity: sensor.basic1_signal

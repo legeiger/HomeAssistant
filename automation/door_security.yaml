@@ -19,7 +19,7 @@
         - condition: template
           value_template: "{{ states('group.amy_home_presence') != 'home' }}"
     action:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           title: "Interior Garage Door Opened"
           message: "The Interior Garage Door was opened and Amy and Adam are not home"
@@ -38,8 +38,8 @@
     initial_state: true    
     trigger:
       platform: state
-      entity_id: sensor.garagedoorstatus
-      to: 'Open'
+      entity_id: cover.garagedoor
+      to: 'open'
     condition:
       condition: and
       conditions:
@@ -48,7 +48,7 @@
         - condition: template
           value_template: "{{ states('group.amy_home_presence') != 'home' }}"
     action:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           title: "Exterior Garage Door Opened"
           message: "The Exterior Garage Door was opened and Amy and Adam are not home"
@@ -77,7 +77,7 @@
         - condition: template
           value_template: "{{ states('group.amy_home_presence') != 'home' }}"
     action:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           title: "Front Door Opened"
           message: "The Front Door was opened and Amy and Adam are not home"
@@ -107,10 +107,10 @@
         - condition: template
           value_template: "{{ states('group.amy_home_presence') != 'home' }}"
         - condition: state
-          entity_id: sensor.garagedoorstatus
-          state: 'Open'
+          entity_id: cover.garage_door
+          state: 'open'
     action:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           title: "Exterior Garage Door Left Open"
           message: "The Exterior Garage Door was left open and Amy and Adam are not home"
@@ -139,7 +139,7 @@
         - condition: template
           value_template: "{{ states('group.amy_home_presence') != 'home' }}"
     action:
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           title: "Back Door Opened"
           message: "The Back Door was opened and Amy and Adam are not home"
@@ -163,7 +163,9 @@
       - condition: template
         value_template: "{{trigger.from_state.state != trigger.to_state.state}}"
       - condition: template
-        value_template: "{{ states('group.home_presence') != 'away' }}"
+        value_template: "{{ states('group.adam_home_presence') != 'away' }}"
+      - condition: template
+        value_template: "{{ states('group.amy_home_presence') != 'away' }}"
       - condition: template
         value_template: "{{ states('input_boolean.guest_mode') != 'off' }}"
     action:
@@ -178,7 +180,7 @@
         entity_id: media_player.family_room_display
         data:
           message: 'Someone is at the front door!'
-      - service: notify.mobile_app_adam_s_iphone
+      - service: notify.mobile_app_adams_iphone
         data:
           title: "Doorbell Pressed"
           message: "The doorbell was pressed"
