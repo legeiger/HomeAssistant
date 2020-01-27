@@ -180,7 +180,7 @@ light:
       - light.zooz_zen27_s2_dimmer_wall_switch_level_3
 
 ####################################################
-#                   SPEETEST                       #
+#                   SPEEDTEST                      #
 ####################################################
 
 #https://www.home-assistant.io/components/speedtestdotnet/
