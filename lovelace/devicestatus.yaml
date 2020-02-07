@@ -21,7 +21,7 @@ cards:
         icon: mdi:cellphone-iphone
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "[[ sensor.ssid.state ]]"
-      - entity: device_tracker.adam_s_iphone_2
+      - entity: device_tracker.adams_iphone
         name: GPS Location
         icon: mdi:crosshairs-gps
       - entity: script.adamlocation
@@ -200,6 +200,7 @@ cards:
     title: Network Status
     cards:
       - type: entities
+        theme: midnightclear
         show_header_toggle: false
         entities:
           - entity: sensor.wireless_clients
@@ -219,13 +220,16 @@ cards:
             hours_to_show: 24
             graph: line
             detail: 1
+            theme: midnightclear
           - type: sensor
             entity: sensor.speedtest_upload
             name: Upload
             hours_to_show: 24
             graph: line
             detail: 1
+            theme: midnightclear
       - type: entities
+        theme: midnightclear
         show_header_toggle: false
         entities:
           - entity: binary_sensor.modem
@@ -277,6 +281,7 @@ cards:
       - type: entities
         show_header_toggle: false
         title: UPS Status
+        theme: midnightclear
         entities:
           - entity: sensor.ups_status
             name: State
@@ -297,12 +302,14 @@ cards:
             hours_to_show: 24
             graph: line
             detail: 1
+            theme: midnightclear
           - type: sensor
             entity: sensor.ups_battery_runtime
             name: Runtime
             hours_to_show: 24
             graph: line
             detail: 1
+            theme: midnightclear
 
 ####################################################
 #                                                  #

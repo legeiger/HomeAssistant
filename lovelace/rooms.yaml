@@ -9,9 +9,10 @@ path: home
 icon: mdi:home
 cards:
   - type: custom:vertical-stack-in-card
+    title: Door Status
     cards: 
       - type: glance
-        title: Door Status
+        theme: midnightclear
         entities:
           - entity: sensor.gehingepinsensor2
             name: Int. Garage
@@ -19,13 +20,11 @@ cards:
           - entity: sensor.backdoorstatus
             name: Back
             icon: mdi:door
-          # - entity: sensor.garagedoorstatus
-          #   name: Garage
-          #   icon: mdi:garage
           - entity: sensor.gehingepinsensor1
             name: Front
             icon: mdi:door
       - type: entities
+        theme: midnightclear
         entities: 
           - entity: cover.garage_door
   - type: custom:vertical-stack-in-card
@@ -34,108 +33,107 @@ cards:
       - type: horizontal-stack
         cards:
           - type: entity-button
-            theme: midnightyellow
             entity: switch.tvstate
             name: TV - Power
             icon: mdi:television
+            theme: midnightclear
           - type: entity-button
             entity: switch.receivervideo2
             name: Amp-TV
             icon: mdi:television
+            theme: midnightclear
           - type: entity-button
-            theme: midnightyellow
             entity: script.volumeup
             name: Volume Up
             icon: mdi:volume-plus
+            theme: midnightclear
             tap_action:
               action: call-service
               service: script.volumeup
       - type: horizontal-stack
         cards:
           - type: entity-button
-            theme: midnightyellow
+            state_color: true
             entity: switch.receiverstate
             icon: mdi:speaker
+            theme: midnightclear
             name: Amp - Power
           - type: entity-button
             entity: switch.receivervideo1
             name: Amp-Music
             icon: mdi:music
+            theme: midnightclear
           - type: entity-button
-            theme: midnightyellow
             entity: script.volumedown
             name: Volume Down
             icon: mdi:volume-minus
+            theme: midnightclear
             tap_action:
               action: call-service
               service: script.volumedown
   - type: custom:vertical-stack-in-card
+    title: Lights & Fans
     cards:
       - type: horizontal-stack
-        title: Lights & Fans
         cards:
           - type: entity-button
-            theme: midnightyellow
             entity: switch.basic1
             name: Livingroom
             icon: mdi:lightbulb-outline
+            theme: midnightclear
           - type: entity-button
-            theme: midnightyellow
-            entity: light.front_lights
-            icon: mdi:lightbulb-outline
-            name: Outdoor Lights
-          - type: entity-button
-            theme: midnightyellow
-            entity: light.yeelightrgb2
-            name: Notification
-            icon: mdi:lightbulb-outline
-            tap_action: 
-              action: toggle
-            hold_action:
-              action: call-service
-              service: script.normallight
-      - type: horizontal-stack
-        cards:
-          - type: entity-button
-            theme: midnightyellow
             entity: switch.kuled1
             name: Bedroom Fan
             icon: mdi:fan
+            theme: midnightclear
           - type: entity-button
-            theme: midnightyellow
-            entity: light.bedroom_lights
-            name: Bedroom
-            icon: mdi:lightbulb-outline
-          - type: entity-button
-            theme: midnightyellow
             entity: switch.kuled2
             name: Nursery Fan
             icon: mdi:fan
+            theme: midnightclear
+      - type: horizontal-stack
+        cards:
+          - type: light
+            entity: light.front_lights
+            icon: mdi:lightbulb-outline
+            theme: midnightclear
+            name: Outdoor Lights
+          - type: light
+            entity: light.yeelightrgb2
+            name: Notification Light
+            icon: mdi:lightbulb-outline
+            theme: midnightclear
+          - type: light
+            entity: light.bedroom_lights
+            name: Bedroom Lights
+            icon: mdi:lightbulb-outline
+            theme: midnightclear
   - type: custom:vertical-stack-in-card
+    title: Basement Lights
     cards:            
       - type: horizontal-stack
-        title: Basement Lights
         cards:
-          - type: entity-button
+          - type: light
             entity: light.zooz_zen27_s2_dimmer_wall_switch_level
             name: Main Room Lights
             icon: mdi:lightbulb-outline
-            theme: midnightyellow
-          - type: entity-button
+            theme: midnightclear
+          - type: light
             entity: light.zooz_zen27_s2_dimmer_wall_switch_level_2
             name: Accent Lights
             icon: mdi:lightbulb-outline
-            theme: midnightyellow
-          - type: entity-button
+            theme: midnightclear
+          - type: light
             entity: light.basement_lights
             name: All Lights
             icon: mdi:lightbulb-outline
-            theme: midnightyellow
+            theme: midnightclear
   - type: thermostat
     entity: climate.thermostat
     name: Thermostat
   - type: weather-forecast
     entity: weather.dark_sky
+
 ####################################################
 #                                                  #
 #          END OF CONFIGURATION FILE               #

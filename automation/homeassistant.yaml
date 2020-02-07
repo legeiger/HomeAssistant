@@ -207,8 +207,8 @@
   - alias: "Notify if Host System Update Available"
     initial_state: true
     trigger:
-      - platform: template
-        value_template: "{{ states('sensor.host_system_updates') > '0' }}"
+      - platform: state
+        entity_id: sensor.host_system_updates
     condition:
       - condition: template
         value_template: "{{ trigger.from_state.state != 'None' }}"
@@ -216,6 +216,8 @@
         value_template: "{{ trigger.from_state.state != 'unavailable' }}"
       - condition: template
         value_template: "{{ trigger.from_state.state < trigger.to_state.state }}"
+      - condition: template
+        value_template: "{{ states('sensor.host_system_updates') > '0' }}"
     action:
       service: notify.home_assistant
       data_template:
@@ -225,8 +227,8 @@
   - alias: "Notify if Host Security Update Available"
     initial_state: true
     trigger:
-      - platform: template
-        value_template: "{{ states('sensor.host_security_updates') > '0' }}"
+      - platform: state
+        entity_id: sensor.host_security_updates
     condition:
       - condition: template
         value_template: "{{ trigger.from_state.state != 'None' }}"
@@ -234,6 +236,8 @@
         value_template: "{{ trigger.from_state.state != 'unavailable' }}"
       - condition: template
         value_template: "{{ trigger.from_state.state < trigger.to_state.state }}"
+      - condition: template
+        value_template: "{{ states('sensor.host_security_updates') > '0' }}"
     action:
       service: notify.home_assistant
       data_template:

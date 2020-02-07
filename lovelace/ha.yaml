@@ -32,11 +32,6 @@ cards:
         icon: mdi:server-plus
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "[[ sensor.nut.state ]]"
-#      - entity: switch.pihole
-#        name: PiHole
-#        icon: mdi:server-plus
-#        type: "custom:secondaryinfo-entity-row"
-#        secondary_info: "[[ sensor.pihole.state ]]"
       - entity: switch.rpcshutdown
         name: RPC Shutdown
         icon: mdi:server-plus
@@ -72,15 +67,7 @@ cards:
         hours_to_show: 24
         graph: line
         detail: 1
-      - type: glance
-        columns: 3
-        entities:
-          - entity: sensor.load_1m
-            icon: mdi:speedometer
-          - entity: sensor.load_5m
-            icon: mdi:speedometer
-          - entity: sensor.load_15m
-            icon: mdi:speedometer
+        theme: midnightclear
       - type: horizontal-stack
         cards:
           - type: sensor
@@ -89,14 +76,17 @@ cards:
             hours_to_show: 24
             graph: line
             detail: 1
+            theme: midnightclear
           - type: sensor
             entity: sensor.memory_use_percent
             name: Memory
             hours_to_show: 24
             graph: line
             detail: 1
+            theme: midnightclear
       - type: glance
         columns: 3
+        theme: midnightclear
         entities:
           - entity: sensor.host_system_updates
             icon: mdi:update
@@ -128,8 +118,6 @@ cards:
         name: GE Hinge Pin Sensor 1
       - entity: zwave.ge_32563_hinge_pin_smart_door_sensor_2
         name: GE Hinge Pin Sensor 2
-      # - entity: zwave.vision_zg8101_garage_door_detector
-      #   name: Vision Garage Door  Sensor
       - entity: zwave.unknown_id_021f_unknown_type_0003_id_0101
         name: Dome Door Sensor
       - entity: zwave.linear_gc_tbz48_battery_powered_z_wave_thermostat
@@ -155,9 +143,6 @@ cards:
       - entity: sensor.gehingepinsensor2batt
         icon: mdi:battery-50
         name: GE Hinge Pin Sensor 2
-      # - entity: sensor.garagedoorstatusbatt
-      #   icon: mdi:battery-50
-      #   name: Garage Door Sensor
       - entity: sensor.backdoorstatusbatt
         icon: mdi:battery-50
         name: Back Door Sensor

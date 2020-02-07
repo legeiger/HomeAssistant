@@ -38,10 +38,6 @@ switch: !include_dir_merge_list switches/
 #                                                  #
 ####################################################
 
-#https://www.home-assistant.io/components/climate/
-climate:
-  - platform: zwave
-
 #https://home-assistant.io/components/config/
 config:
 
@@ -104,7 +100,7 @@ cover:
 #https://www.home-assistant.io/components/group/
 group:
   adam_home_presence:
-    - device_tracker.adam_s_iphone_2 #GPS
+    - device_tracker.adam_s_iphone #GPS
     - device_tracker.adam_s_iphone #WiFi
   amy_home_presence:
     - device_tracker.amy_s_iphone_2 #GPS

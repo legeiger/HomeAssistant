@@ -15,7 +15,7 @@
         below: 30
     condition:
       condition: zone
-      entity_id: device_tracker.adam_s_iphone_2
+      entity_id: device_tracker.adam_s_iphone
       zone: zone.adam_work
     action:
       service: notify.mobile_app_adams_iphone

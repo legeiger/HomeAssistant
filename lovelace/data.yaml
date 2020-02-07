@@ -47,8 +47,10 @@ cards:
         hours_to_show: 24
         graph: line
         detail: 1
+        theme: midnightclear
       - type: entities
         show_header_toggle: false
+        theme: midnightclear
         entities:
           - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_energy
             icon: mdi:power-plug
@@ -71,6 +73,13 @@ cards:
     title: Home Assistant Stats
     show_header_toggle: false
     entities:
+      - entity: sensor.time_online
+        name: Time Since Last Restart
+        icon: mdi:clock-outline
+      - entity: sensor.last_boot
+        name: Time since Last Boot
+        format: relative
+        icon: mdi:clock-outline
       - entity: sensor.tracker_count
         icon: mdi:cellphone-link
         name: Number of Network Devices
