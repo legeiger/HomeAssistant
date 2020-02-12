@@ -14,13 +14,19 @@
         data_template:
           title: "Moring Briefing"
           message: >
-                    Today is {{ now().strftime( '%B %d, %Y') }}{{ "\n" }}
-                    {{ "\n" }}
-                    {% if is_state('sensor.holiday', '') %} {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %}{{ "\n" }}
-                    {{ "\n" }}
-                    The current temperature is {{state_attr('weather.dark_sky', 'temperature')}} degrees Fahrenheit with a forecast of {{ states.weather.dark_sky.attributes.forecast[0].condition }}. The low temperature today is {{ states.weather.dark_sky.attributes.forecast[0].templow }} degrees Fahrenheit with a high of {{ states.weather.dark_sky.attributes.forecast[0].temperature }}.{{ "\n" }}
-                    {{ "\n" }}
-                    The predicted rainfall today is {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} inches.{{ "\n" }}
+                    <b>Today is {{ now().strftime( '%B %d, %Y') }} </b> <br>
+                    <br>
+                    <b> Today's Weather </b> <br>
+                    The current temperature is {{state_attr('weather.dark_sky', 'temperature')}} degrees Fahrenheit with a forecast of {{ states.weather.dark_sky.attributes.forecast[0].condition }}. The low temperature today is {{ states.weather.dark_sky.attributes.forecast[0].templow }} degrees Fahrenheit with a high of {{ states.weather.dark_sky.attributes.forecast[0].temperature }}. <br>
+                    The predicted rainfall today is {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} inches. <br>
+                    <br>
+                    <b> Holiday's & Birthdays </b> <br>
+                    {% if is_state('sensor.holiday', '') %} No Holidays or Birthdays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %} <br>
+                    {% if is_state('sensor.holidaytomorrow', '') %} {% else %}Today is {{ states.sensor.holidaytomorrow.state}}.{% endif %} <br>
+                    {% if is_state('sensor.holidayinaweek', '') %} {% else %}Today is {{ states.sensor.holidayinaweek.state}}.{% endif %} <br>
+          data:
+            images:
+              - "/fakedirectory/fakeimage.jpg" #this will cause an error to be logged each time the automation runs but allows the HTML above 
 
   - alias: "Morning Briefing Amy"
     initial_state: true
@@ -32,13 +38,20 @@
         data_template:
           title: "Moring Briefing"
           message: >
-                    Good morning my love!Today is {{ now().strftime( '%B %d, %Y') }}{{ "\n" }}
-                    {{ "\n" }}
-                    {% if is_state('sensor.holiday', '') %} {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %}{{ "\n" }}
-                    {{ "\n" }}
-                    The current temperature is {{state_attr('weather.dark_sky', 'temperature')}} degrees Fahrenheit with a forecast of {{ states.weather.dark_sky.attributes.forecast[0].condition }}. The low temperature today is {{ states.weather.dark_sky.attributes.forecast[0].templow }} degrees Fahrenheit with a high of {{ states.weather.dark_sky.attributes.forecast[0].temperature }}.{{ "\n" }}
-                    {{ "\n" }}
-                    The predicted rainfall today is {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} inches.{{ "\n" }}
+                    <b>Today is {{ now().strftime( '%B %d, %Y') }} </b> <br>
+                    Good morning my love! <br>
+                    <br>
+                    <b> Today's Weather </b> <br>
+                    The current temperature is {{state_attr('weather.dark_sky', 'temperature')}} degrees Fahrenheit with a forecast of {{ states.weather.dark_sky.attributes.forecast[0].condition }}. The low temperature today is {{ states.weather.dark_sky.attributes.forecast[0].templow }} degrees Fahrenheit with a high of {{ states.weather.dark_sky.attributes.forecast[0].temperature }}. <br>
+                    The predicted rainfall today is {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} inches. <br>
+                    <br>
+                    <b> Holiday's & Birthdays </b> <br>
+                    {% if is_state('sensor.holiday', '') %} No Holidays or Birthdays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %} <br>
+                    {% if is_state('sensor.holidaytomorrow', '') %} {% else %}Today is {{ states.sensor.holidaytomorrow.state}}.{% endif %} <br>
+                    {% if is_state('sensor.holidayinaweek', '') %} {% else %}Today is {{ states.sensor.holidayinaweek.state}}.{% endif %} <br>
+          data:
+            images:
+              - "/fakedirectory/fakeimage.jpg" #this will cause an error to be logged each time the automation runs but allows the HTML above
 
 ####################################################
 #                                                  #
