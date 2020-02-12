@@ -22,6 +22,31 @@
       {{ holiday }}
     scan_interval: 14400
 
+  - platform: command_line
+    name: Holidaytomorrow
+    command: 'cat /config/data/days.json'
+    value_template: >
+      {% set today = now().month  ~ '/' ~ (now().day+1)  %}
+      {% set holiday =  value_json.MAJOR_US.static[ today ] %}
+      {% if holiday | trim == "" %}
+        {% set today = now().month  ~ '/' ~ (now().day+1) ~ '/' ~ now().year %}
+        {% set holiday =  value_json.MAJOR_US.dynamic[ today ] %}
+      {% endif %}
+      {{ holiday }}
+    scan_interval: 14400
+
+  - platform: command_line
+    name: Holidayinaweek
+    command: 'cat /config/data/days.json'
+    value_template: >
+      {% set today = now().month  ~ '/' ~ (now().day+7)  %}
+      {% set holiday =  value_json.MAJOR_US.static[ today ] %}
+      {% if holiday | trim == "" %}
+        {% set today = now().month  ~ '/' ~ (now().day+7) ~ '/' ~ now().year %}
+        {% set holiday =  value_json.MAJOR_US.dynamic[ today ] %}
+      {% endif %}
+      {{ holiday }}
+    scan_interval: 14400
 
 #Below is an example on how to setup the days.json file. 
 # {
