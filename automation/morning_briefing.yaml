@@ -18,7 +18,7 @@
                     <br>
                     <b> Today's Weather </b> <br>
                     The current temperature is {{state_attr('weather.dark_sky', 'temperature')}} degrees Fahrenheit with a forecast of {{ states.weather.dark_sky.attributes.forecast[0].condition }}. The low temperature today is {{ states.weather.dark_sky.attributes.forecast[0].templow }} degrees Fahrenheit with a high of {{ states.weather.dark_sky.attributes.forecast[0].temperature }}. <br>
-                    The predicted rainfall today is {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} inches. <br>
+                    The predicted rainfall today is {% if states.weather.dark_sky.attributes.forecast[0].precipitation == None %} 0 inches. {% else %} {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} inches. {% endif %} <br>
                     <br>
                     <b> Holiday's & Birthdays </b> <br>
                     {% if is_state('sensor.holiday', '') %} No Holidays or Birthdays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %} <br>
@@ -43,7 +43,7 @@
                     <br>
                     <b> Today's Weather </b> <br>
                     The current temperature is {{state_attr('weather.dark_sky', 'temperature')}} degrees Fahrenheit with a forecast of {{ states.weather.dark_sky.attributes.forecast[0].condition }}. The low temperature today is {{ states.weather.dark_sky.attributes.forecast[0].templow }} degrees Fahrenheit with a high of {{ states.weather.dark_sky.attributes.forecast[0].temperature }}. <br>
-                    The predicted rainfall today is {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} inches. <br>
+                    The predicted precipitation today is {% if states.weather.dark_sky.attributes.forecast[2].precipitation == None %} 0 inches. {% else %} {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} inches. {% endif %} <br>
                     <br>
                     <b> Holiday's & Birthdays </b> <br>
                     {% if is_state('sensor.holiday', '') %} No Holidays or Birthdays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %} <br>
