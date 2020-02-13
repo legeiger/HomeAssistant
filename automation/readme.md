@@ -155,7 +155,7 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 ### Morning Briefing.yaml Automation:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/morning_briefing.yaml)__
 
-* Send my Wife and I a morning e-mail with the weather for the day and some other tidbits of information. 
+* Send my Wife and I a morning e-mail with the weather for the day current and upcoming holidays/birthdays and a random picture of the two of us. This automation relies on __[filemove.py](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/filemove.py)__ to move a random picture into the correct directory each morning.  That python file is availalbe in this repository and runs each morning via a cron job.
 
 ### Notification bulb.yaml Automations
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/notification_bulb.yaml)__
