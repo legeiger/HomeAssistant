@@ -1,0 +1,7 @@
+#!/bin/sh
+
+/usr/lib/update-notifier/apt-check 2>&1 | tee /usr/share/hassio/share/system_updates.out
+
+# This file check for security and system updates and outputs that info to system_updates.out
+# an output of 0;0 means there are 0 security or system updates. 
+# an output of 2;3 means there are 2 system updates and 3 security updates.
