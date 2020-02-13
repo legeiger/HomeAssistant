@@ -4,8 +4,8 @@ import shutil
 import random
 import os.path
 
-src_dir = '/usr/share/hassio/homeassistant/www/pictures/from'
-target_dir = '/usr/share/hassio/homeassistant/www/pictures/to/1.jpg'
+src_dir = '/usr/share/hassio/homeassistant/data/pictures/from'
+target_dir = '/usr/share/hassio/homeassistant/data/pictures/to/1.jpg'
 src_files = (os.listdir(src_dir))
 def valid_path(dir_path, filename):
     full_path = os.path.join(dir_path, filename)
