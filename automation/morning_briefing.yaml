@@ -28,7 +28,7 @@
                     <b> A Picture of Us! </b>
           data:
             images:
-              - /config/www/pictures/to/1.jpg 
+              - /config/data/pictures/to/1.jpg 
 
   - alias: "Morning Briefing Amy"
     initial_state: true
@@ -55,7 +55,7 @@
                     <b> A Picture of Us! </b>
           data:
             images:
-              - /config/www/pictures/to/1.jpg
+              - /config/data/pictures/to/1.jpg
 
 ####################################################
 #                                                  #
