@@ -1,25 +1,29 @@
 ####################################################
 #                                                  #
-#                   RESOURCES                      #
+#                   LOVELACE                       #
 #                                                  #
 ####################################################
 
 resources:
   #https://github.com/MizterB/lovelace-secondaryinfo-entity-row
-  - url: /local/secondaryinfo-entity-row.js?v=0.1
+  - url: /local/secondaryinfo-entity-row.js
     type: module
   #https://github.com/thomasloven/lovelace-card-tools
-  - url: /local/card-tools.js
+  - url: /local/card-tools.js?v=9
     type: js
   #https://github.com/custom-cards/vertical-stack-in-card
-  - url: /local/vertical-stack-in-card.js?v=v0.1.1
+  - url: /local/vertical-stack-in-card.js
     type: js
-  #https://github.com/maykar/compact-custom-header
-  - url: /local/compact-custom-header.js?v=0.0.1
+  #https://github.com/maykar/custom-header
+  - url: /local/custom-header.js
     type: module
 
-cch:
-  options: clock
+custom_header:
+  compact_mode: true
+  hide_help: true
+  hide_config: true
+  shadow: on
+  chevrons: false
 
 title: Home
 background: var(--background-image)
