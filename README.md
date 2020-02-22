@@ -12,7 +12,7 @@ This is the most important part of Home Assistant!  Remote control and voice com
 
 # My Home Assistant Setup:
 
-I run my home assistant instance on a Zotac mini PC.  The previous life of this device was as a Datto Alto2 backup solution.  It has a AMD GX-415GA quad core processor, 8GB of RAM, 64GB SSD and sips on power.  The base operating system is [Ubuntu Server 18.04.3 LTS](https://ubuntu.com/download/server) and it runs [Hass.io via docker](https://www.home-assistant.io/hassio/installation/#alternative-install-on-a-generic-linux-host). It also runs the following add-ons. 
+I run my home assistant instance on a HP ProDesk 600 G1 Desktop Mini PC with i5 4590T low power processor. The base operating system is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the Intel-Nuc image of [Hass.io ](https://www.home-assistant.io/hassio/installation/). It also runs the following add-ons. 
 
 * [Adguard Home](https://github.com/hassio-addons/addon-adguard-home)
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
@@ -41,7 +41,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|47               |14      |6               |37        |81           |6        |158      |10             | 
+|53               |14      |6               |33        |81           |6        |151      |10             | 
 
 # Connected Devices:
 
