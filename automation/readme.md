@@ -90,10 +90,6 @@ Some automations for Home Assistant related items.
 * Notify me and restart the nut addon if it stops reporting values
 * A dailty reset and loggin of the total kWh reading from my home energy monitor
 
-The next two automations use the __[hassio-system-updates](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/hassio-system-updates)__ file to check for system and security updates.  That information is then pulled into a __[set of sensors](https://github.com/SilvrrGIT/HomeAssistant/blob/master/sensors/system_monitor.yaml#L26)__ which the automation monitors and notifies me when there are changes. 
-* Notify me if the host (Ubuntu Server) has a system update available
-* Notify me if the host (Ubuntu Server) has a security update available
-
 ### hvac.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/thermostat.yaml)__
 
@@ -157,7 +153,7 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 ### Morning Briefing.yaml Automation:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/morning_briefing.yaml)__
 
-* Send my Wife and I a morning e-mail with the weather for the day current and upcoming holidays/birthdays and a random picture of the two of us. This automation relies on __[filemove.py](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/filemove.py)__ to move a random picture into the correct directory each morning.  That python file is availalbe in this repository and runs each morning via a cron job.
+* Send my Wife and I a morning e-mail with the weather for the day current and upcoming holidays/birthdays and a random picture of the two of us.
 
 ### Notification bulb.yaml Automations
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/notification_bulb.yaml)__
