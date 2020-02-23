@@ -11,7 +11,7 @@
 
   - platform: wake_on_lan
     name: Desktop Switch
-    mac: 78:2b:cb:9f:60:cd #Optiplex 790
+    mac: 48:0f:cf:52:95:3a #HP Elitedesk 600 G1
     host: 192.168.1.6
     turn_off:
       service: hassio.addon_stdin

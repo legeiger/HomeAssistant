@@ -159,8 +159,7 @@ cards:
         icon: mdi:raspberry-pi
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.33"
-      - entity: device_tracker.ubuntu
-        name: Hassio Server
+      - entity: device_tracker.homeassistant
         icon:  mdi:server
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.24"

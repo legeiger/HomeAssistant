@@ -19,18 +19,9 @@
 #https://www.home-assistant.io/components/sensor.command_line/
   - platform: command_line
     name: CPU Temperature
-    command: "cat /sys/class/hwmon/hwmon1/temp1_input"
+    command: "cat /sys/class/thermal/thermal_zone2/temp"
     unit_of_measurement: "°C"
     value_template: '{{ value | multiply(0.001) | round(1) }}'
-
-  - platform: command_line
-    name: Host System Updates
-    scan_interval: 3600
-    command: "cat /share/system_updates.out | cut -d ';' -f 1"
-  - platform: command_line
-    name: Host Security Updates
-    scan_interval: 3600
-    command: "cat /share/system_updates.out | cut -d ';' -f 2"
 
 #https://www.home-assistant.io/integrations/uptime/
   - platform: uptime

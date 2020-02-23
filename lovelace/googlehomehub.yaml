@@ -5,9 +5,9 @@
 ####################################################
 
 title: Google Home
-theme: default
 path: googlehomehub
-icon: mdi:google-home
+theme: 
+icon: mdi:blank
 panel: true
 cards:
   - type: vertical-stack

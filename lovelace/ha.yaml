@@ -60,14 +60,24 @@ cards:
   - type: custom:vertical-stack-in-card
     title: Hass.io Host Load
     cards:
-      - type: sensor
-        name: CPU Temperature
-        icon: mdi:memory
-        entity: sensor.cpu_temperature
-        hours_to_show: 24
-        graph: line
-        detail: 1
-        theme: midnightclear
+      - type: horizontal-stack
+        cards:
+        - type: sensor
+          name: CPU Temperature
+          icon: mdi:memory
+          entity: sensor.cpu_temperature
+          hours_to_show: 24
+          graph: line
+          detail: 1
+          theme: midnightclear
+        - type: sensor
+          name: Disk use
+          icon: mdi:harddisk
+          entity: sensor.disk_use_percent_home
+          hours_to_show: 24
+          graph: line
+          detail: 1
+          theme: midnightclear
       - type: horizontal-stack
         cards:
           - type: sensor
@@ -84,17 +94,6 @@ cards:
             graph: line
             detail: 1
             theme: midnightclear
-      - type: glance
-        columns: 3
-        theme: midnightclear
-        entities:
-          - entity: sensor.host_system_updates
-            icon: mdi:update
-          - entity: sensor.host_security_updates
-            icon: mdi:shield-lock
-          - entity: sensor.disk_use_percent_home
-            name: Disk Use
-            icon: mdi:harddisk
   - type: glance
     title: Home Assistant Info
     entities:
