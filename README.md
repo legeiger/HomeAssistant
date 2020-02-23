@@ -12,7 +12,7 @@ This is the most important part of Home Assistant!  Remote control and voice com
 
 # My Home Assistant Setup:
 
-I run my home assistant instance on a HP ProDesk 600 G1 Desktop Mini PC with i5 4590T low power processor. The base operating system is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the Intel-Nuc image of [Hass.io ](https://www.home-assistant.io/hassio/installation/). It also runs the following add-ons. 
+I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https://support.hp.com/us-en/document/c04240180#AbT0) with i5 4590T low power processor. The base operating system is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the Intel-Nuc image of [Hass.io ](https://www.home-assistant.io/hassio/installation/). It also runs the following add-ons. 
 
 * [Adguard Home](https://github.com/hassio-addons/addon-adguard-home)
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
@@ -24,7 +24,7 @@ I run my home assistant instance on a HP ProDesk 600 G1 Desktop Mini PC with i5 
 * [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
 * [VScode](https://github.com/hassio-addons/addon-vscode)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.105.1__ on this instance.
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.105.5__ on this instance.
 
 # UI Based Integrations:
 The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup. 
