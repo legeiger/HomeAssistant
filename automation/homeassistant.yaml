@@ -200,52 +200,6 @@
 
 #########################################################
 #                                                       #
-#               HOST UPDATES AVAILABLE                  #
-#                                                       #
-#########################################################
-
-  - alias: "Notify if Host System Update Available"
-    initial_state: true
-    trigger:
-      - platform: state
-        entity_id: sensor.host_system_updates
-    condition:
-      - condition: template
-        value_template: "{{ trigger.from_state.state != 'None' }}"
-      - condition: template
-        value_template: "{{ trigger.from_state.state != 'unavailable' }}"
-      - condition: template
-        value_template: "{{ trigger.from_state.state < trigger.to_state.state }}"
-      - condition: template
-        value_template: "{{ states('sensor.host_system_updates') > '0' }}"
-    action:
-      service: notify.home_assistant
-      data_template:
-        title: "Hassio Host System Update Available"
-        message: "There are currently {{ trigger.to_state.state }} system updates available for the Hassio Host"
-
-  - alias: "Notify if Host Security Update Available"
-    initial_state: true
-    trigger:
-      - platform: state
-        entity_id: sensor.host_security_updates
-    condition:
-      - condition: template
-        value_template: "{{ trigger.from_state.state != 'None' }}"
-      - condition: template
-        value_template: "{{ trigger.from_state.state != 'unavailable' }}"
-      - condition: template
-        value_template: "{{ trigger.from_state.state < trigger.to_state.state }}"
-      - condition: template
-        value_template: "{{ states('sensor.host_security_updates') > '0' }}"
-    action:
-      service: notify.home_assistant
-      data_template:
-        title: "Hassio Host Security Update Available"
-        message: "There are currently {{ trigger.to_state.state }} security updates available for the Hassio Host"
-
-#########################################################
-#                                                       #
 #            END OF CONFIGURATION FILE                  #
 #                                                       #
 #########################################################
