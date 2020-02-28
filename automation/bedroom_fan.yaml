@@ -14,9 +14,9 @@
       condition: and
       conditions:
         - condition: template
-          value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+          value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
-          value_template: "{{ states('group.amy_home_presence') != 'home' }}"
+          value_template: "{{ states('person.amy') != 'home' }}"
     action:
       - service: switch.turn_on
         entity_id: switch.kuled1
@@ -31,9 +31,9 @@
       condition: and
       conditions:
         - condition: template
-          value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+          value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
-          value_template: "{{ states('group.amy_home_presence') != 'home' }}"
+          value_template: "{{ states('person.amy') != 'home' }}"
     action:
       - service: switch.turn_off
         entity_id: switch.kuled1

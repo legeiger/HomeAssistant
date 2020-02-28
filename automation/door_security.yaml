@@ -15,9 +15,9 @@
       condition: and
       conditions:
         - condition: template
-          value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+          value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
-          value_template: "{{ states('group.amy_home_presence') != 'home' }}"
+          value_template: "{{ states('person.amy') != 'home' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:
@@ -44,9 +44,9 @@
       condition: and
       conditions:
         - condition: template
-          value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+          value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
-          value_template: "{{ states('group.amy_home_presence') != 'home' }}"
+          value_template: "{{ states('person.amy') != 'home' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:
@@ -73,9 +73,9 @@
       condition: and
       conditions:
         - condition: template
-          value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+          value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
-          value_template: "{{ states('group.amy_home_presence') != 'home' }}"
+          value_template: "{{ states('person.amy') != 'home' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:
@@ -96,16 +96,16 @@
     initial_state: true
     trigger:
       - platform: state
-        entity_id: group.adam_home_presence
+        entity_id: person.adam
       - platform: state
-        entity_id: group.amy_home_presence
+        entity_id: person.amy
     condition:
       condition: and
       conditions:
         - condition: template
-          value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+          value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
-          value_template: "{{ states('group.amy_home_presence') != 'home' }}"
+          value_template: "{{ states('person.amy') != 'home' }}"
         - condition: state
           entity_id: cover.garage_door
           state: 'open'
@@ -135,9 +135,9 @@
       condition: and
       conditions:
         - condition: template
-          value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+          value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
-          value_template: "{{ states('group.amy_home_presence') != 'home' }}"
+          value_template: "{{ states('person.amy') != 'home' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:
@@ -163,9 +163,9 @@
       - condition: template
         value_template: "{{trigger.from_state.state != trigger.to_state.state}}"
       - condition: template
-        value_template: "{{ states('group.adam_home_presence') != 'away' }}"
+        value_template: "{{ states('person.adam') != 'away' }}"
       - condition: template
-        value_template: "{{ states('group.amy_home_presence') != 'away' }}"
+        value_template: "{{ states('person.amy') != 'away' }}"
       - condition: template
         value_template: "{{ states('input_boolean.guest_mode') != 'off' }}"
     action:

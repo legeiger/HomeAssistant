@@ -13,7 +13,7 @@
       to: 'on'
     condition:
         condition: template
-        value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+        value_template: "{{ states('person.adam') != 'home' }}"
     action:
       service: notify.home_assistant
       data:

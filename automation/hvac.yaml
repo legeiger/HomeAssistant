@@ -8,16 +8,16 @@
     initial_state: true
     trigger:
       - platform: state
-        entity_id: group.adam_home_presence
+        entity_id: person.adam
       - platform: state
-        entity_id: group.amy_home_presence
+        entity_id: person.amy
     condition:
       condition: and
       conditions:
         - condition: template
-          value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+          value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
-          value_template: "{{ states('group.amy_home_presence') != 'home' }}"
+          value_template: "{{ states('person.amy') != 'home' }}"
         - condition: time
           before: '12:00:00'
           weekday:
@@ -97,10 +97,10 @@
     initial_state: true
     trigger:
       - platform: state
-        entity_id: group.adam_home_presence
+        entity_id: person.adam
         to: 'home'
       - platform: state
-        entity_id: group.amy_home_presence
+        entity_id: person.amy
         to: 'home'
     action:
       - service: climate.set_temperature

@@ -93,22 +93,6 @@ cover:
         name: Garage Door
 
 ####################################################
-#                    GROUP                         #
-####################################################
-
-#https://www.home-assistant.io/components/group/
-group:
-  adam_home_presence:
-    - device_tracker.adam_s_iphone #GPS
-    - device_tracker.adam_s_iphone #WiFi
-  amy_home_presence:
-    - device_tracker.amy_s_iphone_2 #GPS
-    - device_tracker.amy_s_iphone #WiFi
-  living_room_lamps:
-    - switch.basic1
-    - light.yeelightrgb2
-
-####################################################
 #                 INPUT BOOLEAN                    #
 ####################################################
 

@@ -19,7 +19,7 @@
         - condition: time
           after: '20:00:00'
         - condition: state
-          entity_id: group.adam_home_presence
+          entity_id: person.adam
           state: 'home'
     action:
       - service: notify.mobile_app_adams_iphone
@@ -48,7 +48,7 @@
         - condition: time
           after: '20:00:00'
         - condition: state
-          entity_id: group.adam_home_presence
+          entity_id: person.adam
           state: 'home'
     action:
       - service: notify.mobile_app_adams_iphone
@@ -90,7 +90,7 @@
         - condition: time
           after: '20:00:00'
         - condition: state
-          entity_id: group.adam_home_presence
+          entity_id: gperson.adam
           state: 'home'
     action:
       - service: notify.mobile_app_adams_iphone

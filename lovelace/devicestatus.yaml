@@ -12,6 +12,7 @@ cards:
     title: Adam's iPhone Location & Data
     show_header_toggle: false
     entities:
+      - entity: person.adam
       - entity: sensor.battery_level
         name: Battery
         type: "custom:secondaryinfo-entity-row"
@@ -31,6 +32,7 @@ cards:
     title: Amy's iPhone Location & Data
     show_header_toggle: false
     entities:
+      - entity: person.amy
       - entity: sensor.battery_level_2
         name: Battery
         type: "custom:secondaryinfo-entity-row"

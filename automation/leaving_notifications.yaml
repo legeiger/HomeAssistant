@@ -8,16 +8,16 @@
     initial_state: true
     trigger:
       - platform: state
-        entity_id: group.adam_home_presence
+        entity_id: person.adam
       - platform: state
-        entity_id: group.amy_home_presence
+        entity_id: person.amy
     condition:
       condition: and
       conditions:
         - condition: template
-          value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+          value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
-          value_template: "{{ states('group.amy_home_presence') != 'home' }}"
+          value_template: "{{ states('person.amy') != 'home' }}"
         - condition: state
           entity_id: switch.desktop_switch
           state: 'on'
@@ -57,16 +57,16 @@
     initial_state: true
     trigger:
       - platform: state
-        entity_id: group.adam_home_presence
+        entity_id: person.adam
       - platform: state
-        entity_id: group.amy_home_presence
+        entity_id: person.amy
     condition:
       condition: and
       conditions:
         - condition: template
-          value_template: "{{ states('group.adam_home_presence') != 'home' }}"
+          value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
-          value_template: "{{ states('group.amy_home_presence') != 'home' }}"
+          value_template: "{{ states('person.amy') != 'home' }}"
         - condition: or
           conditions:
             - condition: template
