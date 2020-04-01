@@ -14,7 +14,6 @@ This is the most important part of Home Assistant!  Remote control and voice com
 
 I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https://support.hp.com/us-en/document/c04240180#AbT0) with i5 4590T low power processor. The base operating system is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the Intel-Nuc image of [Hass.io ](https://www.home-assistant.io/hassio/installation/). It also runs the following add-ons. 
 
-* [Adguard Home](https://github.com/hassio-addons/addon-adguard-home)
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
 * [Mosquitto MQTT broker](https://www.home-assistant.io/addons/mosquitto/)
 * [Network UPS Tools](https://github.com/SilvrrGIT/hassio-addons)
@@ -24,12 +23,11 @@ I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https:
 * [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
 * [VScode](https://github.com/hassio-addons/addon-vscode)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.105.5__ on this instance.
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.107.7__.
 
 # UI Based Integrations:
 The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup. 
 
-* [Adguard Home](https://www.home-assistant.io/integrations/adguard/)
 * [IKEA Trådfri (Tradfri)](https://www.home-assistant.io/integrations/tradfri/)
 * [MQTT](https://www.home-assistant.io/integrations/mqtt/)
 * [Unifi Controller](https://www.home-assistant.io/integrations/unifi/)
@@ -41,7 +39,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|53               |14      |6               |33        |81           |6        |151      |10             | 
+|62               |14      |6               |34        |80           |6        |145      |10             | 
 
 # Connected Devices:
 
