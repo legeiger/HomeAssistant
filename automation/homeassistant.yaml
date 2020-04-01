@@ -13,6 +13,12 @@
         data:
           title: "Home Assistant Started"
           message: "Home Assistant Has Started"
+      - delay:
+          minutes: 1
+      - service: homeassistant.turn_on
+        entity_id: automation.new_github_star
+      - service: homeassistant.turn_on
+        entity_id: automation.addon_update_available
 
 #########################################################
 #                                                       #
@@ -41,11 +47,9 @@
     trigger:
       platform: state
       entity_id:
-        - sensor.adguard
         - sensor.gdrivebackup
         - sensor.mosquitto
         - sensor.nut
-#        - sensor.pihole
         - sensor.rpcshutdown
         - sensor.samba
         - sensor.ssh
@@ -58,6 +62,35 @@
         data_template:
           title: "Hass.io Addon Stopped"
           message: "{{ trigger.to_state.entity_id }} addon is stopped"
+
+#########################################################
+#                                                       #
+#                   ADDON UPDATE                        #
+#                                                       #
+#########################################################
+
+  - alias: Addon Update Available
+    initial_state: false
+    trigger:
+      - platform: template
+        value_template: "{{state_attr('sensor.gdrivebackup', 'version') != state_attr('sensor.gdrivebackup', 'version_latest')}}"
+      - platform: template
+        value_template: "{{state_attr('sensor.mosquitto', 'version') != state_attr('sensor.mosquitto', 'version_latest')}}"
+      - platform: template
+        value_template: "{{state_attr('sensor.rpcshutdown', 'version') != state_attr('sensor.rpcshutdown', 'version_latest')}}"
+      - platform: template
+        value_template: "{{state_attr('sensor.samba', 'version') != state_attr('sensor.samba', 'version_latest')}}"
+      - platform: template
+        value_template: "{{state_attr('sensor.ssh', 'version') != state_attr('sensor.ssh', 'version_latest')}}"
+      - platform: template
+        value_template: "{{state_attr('sensor.unificontroller', 'version') != state_attr('sensor.unificontroller', 'version_latest')}}"
+      - platform: template
+        value_template: "{{state_attr('sensor.vscode', 'version') != state_attr('sensor.vscode', 'version_latest')}}"
+    action:
+      service: notify.home_assistant
+      data_template:
+        title: "Add-On Update Available"
+        message: "The {{ trigger.to_state.attributes.friendly_name }} add-on is currently running version {{ trigger.to_state.attributes.version }} and version {{ trigger.to_state.attributes.version_latest }} is available."
 
 #########################################################
 #                                                       #

@@ -56,6 +56,19 @@ logger:
 #https://www.home-assistant.io/lovelace/yaml-mode/
 lovelace:
   mode: yaml
+  resources:
+    #https://github.com/MizterB/lovelace-secondaryinfo-entity-row
+    - url: /local/secondaryinfo-entity-row.js
+      type: module
+    #https://github.com/thomasloven/lovelace-card-tools
+    - url: /local/card-tools.js?v=9
+      type: js
+    #https://github.com/custom-cards/vertical-stack-in-card
+    - url: /local/vertical-stack-in-card.js
+      type: js
+    #https://github.com/maykar/custom-header
+    - url: /local/custom-header.js
+      type: module
 
 #https://www.home-assistant.io/integrations/mobile_app/
 mobile_app:
@@ -69,6 +82,23 @@ system_health:
 #https://www.home-assistant.io/integrations/google_translate/
 tts:
   - platform: google_translate
+
+#https://www.home-assistant.io/integrations/zone/
+zone:
+  - name: Home
+    latitude: !secret latitude
+    longitude: !secret longitude
+    radius: 750
+
+  - name: Adam Work
+    latitude: !secret adam_work_latitude
+    longitude: !secret adam_work_longitude
+    radius: 350
+
+  - name: Amy Work
+    latitude: !secret amy_work_latitude
+    longitude: !secret amy_work_longitude
+    radius: 350
 
 ####################################################
 #               BINARY SENSOR                      #

@@ -16,7 +16,7 @@
     condition:
       condition: zone
       entity_id: device_tracker.adam_s_iphone
-      zone: zone.adam_work
+      zone: zone.adam_work_2
     action:
       service: notify.mobile_app_adams_iphone
       data:

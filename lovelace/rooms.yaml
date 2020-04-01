@@ -37,16 +37,19 @@ cards:
             name: TV - Power
             icon: mdi:television
             theme: midnightclear
+            state_color: true
           - type: entity-button
             entity: switch.receivervideo2
             name: Amp-TV
             icon: mdi:television
             theme: midnightclear
+            state_color: false
           - type: entity-button
             entity: script.volumeup
             name: Volume Up
             icon: mdi:volume-plus
             theme: midnightclear
+            state_color: false
             tap_action:
               action: call-service
               service: script.volumeup
@@ -63,11 +66,13 @@ cards:
             name: Amp-Music
             icon: mdi:music
             theme: midnightclear
+            state_color: false
           - type: entity-button
             entity: script.volumedown
             name: Volume Down
             icon: mdi:volume-minus
             theme: midnightclear
+            state_color: false
             tap_action:
               action: call-service
               service: script.volumedown

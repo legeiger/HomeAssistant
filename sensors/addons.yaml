@@ -8,15 +8,6 @@
 ####################################################
 
   - platform: rest
-    resource: http://192.168.1.24:8123/api/hassio/addons/a0d7b954_adguard/info
-    name: adguard
-    value_template: '{{ value_json.data.state }}'
-    scan_interval: 60
-    headers:
-      Authorization: !secret llt
-      Content-Type: application/json
-
-  - platform: rest
     resource: http://192.168.1.24:8123/api/hassio/addons/cebe7a76_hassio_google_drive_backup/info
     name: gdrivebackup
     value_template: '{{ value_json.data.state }}'
@@ -24,6 +15,10 @@
     headers:
       Authorization: !secret llt
       Content-Type: application/json
+    json_attributes_path: "$.data"
+    json_attributes:
+      - version
+      - version_latest
 
   - platform: rest
     resource: http://192.168.1.24:8123/api/hassio/addons/core_mosquitto/info
@@ -33,6 +28,10 @@
     headers:
       Authorization: !secret llt
       Content-Type: application/json
+    json_attributes_path: "$.data"
+    json_attributes:
+      - version
+      - version_latest
 
   - platform: rest
     resource: http://192.168.1.24:8123/api/hassio/addons/68be3ab6_nut/info
@@ -42,15 +41,10 @@
     headers:
       Authorization: !secret llt
       Content-Type: application/json
-      
-#  - platform: rest
-#    resource: http://192.168.1.24:8123/api/hassio/addons/a0d7b954_pi-hole/info
-#    name: pihole
-#    value_template: '{{ value_json.data.state }}'
-#    scan_interval: 60
-#    headers:
-#      Authorization: !secret llt
-#      Content-Type: application/json
+    json_attributes_path: "$.data"
+    json_attributes:
+      - version
+      - version_latest
 
   - platform: rest
     resource: http://192.168.1.24:8123/api/hassio/addons/core_rpc_shutdown/info
@@ -60,6 +54,10 @@
     headers:
       Authorization: !secret llt
       Content-Type: application/json
+    json_attributes_path: "$.data"
+    json_attributes:
+      - version
+      - version_latest
 
   - platform: rest
     resource: http://192.168.1.24:8123/api/hassio/addons/core_samba/info
@@ -69,6 +67,10 @@
     headers:
       Authorization: !secret llt
       Content-Type: application/json
+    json_attributes_path: "$.data"
+    json_attributes:
+      - version
+      - version_latest
 
   - platform: rest
     resource: http://192.168.1.24:8123/api/hassio/addons/core_ssh/info
@@ -77,7 +79,11 @@
     scan_interval: 60
     headers:
       Authorization: !secret llt
-      Content-Type: application/json
+      Content-Type: application/json    
+    json_attributes_path: "$.data"
+    json_attributes:
+      - version
+      - version_latest
 
   - platform: rest
     resource: http://192.168.1.24:8123/api/hassio/addons/a0d7b954_unifi/info
@@ -87,6 +93,10 @@
     headers:
       Authorization: !secret llt
       Content-Type: application/json
+    json_attributes_path: "$.data"
+    json_attributes:
+      - version
+      - version_latest
 
   - platform: rest
     resource: http://192.168.1.24:8123/api/hassio/addons/a0d7b954_vscode/info
@@ -96,6 +106,10 @@
     headers:
       Authorization: !secret llt
       Content-Type: application/json
+    json_attributes_path: "$.data"
+    json_attributes:
+      - version
+      - version_latest
 
 ####################################################
 #                                                  #

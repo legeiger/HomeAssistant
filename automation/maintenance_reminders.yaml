@@ -36,7 +36,7 @@
     action:
       service: notify.home_assistant
       data:
-        title: "Check Furnace Filter and Replace if Needed"
+        title: "Check Furnace Filter, replace if needed and clean burner area"
         message: "Furnace filter is 16x25x1 if you need to buy one"
 
 #########################################################

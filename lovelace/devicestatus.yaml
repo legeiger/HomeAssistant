@@ -70,11 +70,15 @@ cards:
         icon: mdi:fire
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.21"
+      - entity: switch.amazon_fire_tv
+        name: Fire TV Internet
       - entity: device_tracker.localhost
         name: Samsung Smart TV
         icon: mdi:television-classic
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.9"
+      - entity: switch.basement_tv_samsung_55_inch
+        name: Samsung TV Internet
       - entity: device_tracker.kuled_1
         name: Kuled Switch 1
         icon: mdi:light-switch
@@ -182,6 +186,8 @@ cards:
         type: "custom:secondaryinfo-entity-row"
         icon: mdi:amazon
         secondary_info: "192.168.1.4"
+      - entity: switch.mikey_s_kindle_fire
+        name: Mikey's Kindle Internet
       - entity: device_tracker.amy_2018
         name: Amy's Work Laptop (WiFi)
         icon: mdi:windows
@@ -277,40 +283,6 @@ cards:
         icon: 'mdi:wifi'
     title: Wifi Strength
     show_header_toggle: false
-  - type: custom:vertical-stack-in-card
-    cards:
-      - type: entities
-        show_header_toggle: false
-        title: UPS Status
-        theme: midnightclear
-        entities:
-          - entity: sensor.ups_status
-            name: State
-            icon: mdi:flash-circle
-          - entity: sensor.ups_input_voltage
-          - entity: sensor.ups_battery_voltage
-          - entity: sensor.ups_output_voltage
-          - entity: sensor.ups_battery_charge
-            icon: mdi:battery-charging
-          - entity: sensor.ups_load
-            icon: mdi:percent
-      - type: horizontal-stack
-        cards:
-          - type: sensor
-            entity: sensor.approxwattage
-            name: Load
-            icon: mdi:gauge
-            hours_to_show: 24
-            graph: line
-            detail: 1
-            theme: midnightclear
-          - type: sensor
-            entity: sensor.ups_battery_runtime
-            name: Runtime
-            hours_to_show: 24
-            graph: line
-            detail: 1
-            theme: midnightclear
 
 ####################################################
 #                                                  #

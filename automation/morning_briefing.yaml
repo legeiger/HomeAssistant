@@ -24,11 +24,9 @@
                     {% if is_state('sensor.holiday', '') %} No Holidays or Birthdays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %} <br>
                     {% if is_state('sensor.holidaytomorrow', '') %} {% else %}Tomorrow is {{ states.sensor.holidaytomorrow.state}}.{% endif %} <br>
                     {% if is_state('sensor.holidayinaweek', '') %} {% else %} {{ states.sensor.holidayinaweek.state}} is in one week.{% endif %} <br>
-                    <br>
-                    <b> A Picture of Us! </b>
           data:
             images:
-              - /config/data/pictures/to/1.jpg 
+              - /config/fakedirectory/1.jpg 
 
   - alias: "Morning Briefing Amy"
     initial_state: true
@@ -51,11 +49,9 @@
                     {% if is_state('sensor.holiday', '') %} No Holidays or Birthdays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %} <br>
                     {% if is_state('sensor.holidaytomorrow', '') %} {% else %}Tomorrow is {{ states.sensor.holidaytomorrow.state}}.{% endif %} <br>
                     {% if is_state('sensor.holidayinaweek', '') %} {% else %} {{ states.sensor.holidayinaweek.state}} is in one week.{% endif %} <br>
-                    <br>
-                    <b> A Picture of Us! </b>
           data:
             images:
-              - /config/data/pictures/to/1.jpg
+              - /config/fakedirectory/1.jpg 
 
 ####################################################
 #                                                  #

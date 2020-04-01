@@ -53,6 +53,11 @@ cards:
                         tap_action:
                           action: call-service
                           service: script.volumedown
+                  # - type: horizontal-stack
+                  #   title: Birthdays & Holidays
+                  #   cards:
+                  #     - type: markdown
+                  #       content: Test #{% if is_state('sensor.holiday', '') %} No Birthdays or Holidays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %}
                   - type: horizontal-stack
                     title: Other Controls
                     cards:
@@ -68,11 +73,6 @@ cards:
                         entity: input_boolean.feeddog
                         name: Dog is Fed
                         icon: mdi:paw
-                  - type: horizontal-stack
-                    title: Birthdays & Holidays
-                    cards:
-                      - type: markdown
-                        content: "{% if is_state('sensor.holiday', '') %} No Birthdays or Holidays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %}"
           - type: vertical-stack
             cards:
               - type: horizontal-stack

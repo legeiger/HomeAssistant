@@ -9,7 +9,7 @@
   google_actions:
     filter:
       include_entities:
-        - group.living_room_lamps
+        - switch.basic1
         - input_boolean.guest
         - script.volumedown
         - script.volumeup
@@ -19,9 +19,11 @@
         - switch.receiverstate
         - switch.tvstate
     entity_config:
-      group.living_room_lamps:
+      switch.basic1:
         name: Living Room Lamps
-        aliases: Lamps
+        aliases: 
+          - Lamps
+          - Lights
         room: Family Room
       input_boolean.guest:
         name: Guest Mode
@@ -65,7 +67,6 @@
           - TV
           - Television
         room: Family Room
-
 
 #########################################################
 #                                                       #

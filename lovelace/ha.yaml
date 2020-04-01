@@ -12,11 +12,6 @@ cards:
     title: Hass.io Addons
     show_header_toggle: false
     entities:
-      - entity: switch.adguard
-        name: Adguard Home
-        icon: mdi:server-plus
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.adguard.state ]]"
       - entity: switch.gdrivebackup
         name: Google Drive Backup
         icon: mdi:server-plus
