@@ -39,22 +39,11 @@
         turn_on:
           service: hassio.addon_start
           data:
-            addon: 8dfed277_nut
+            addon: a0d7b954_nut
         turn_off:
           service: hassio.addon_stop
           data:
-            addon: 8dfed277_nut
-
-#      pihole:
-#        value_template: "{{ is_state('sensor.pihole', 'started') }}"
-#        turn_on:
-#          service: hassio.addon_start
-#          data:
-#            addon: a0d7b954_pi-hole
-#        turn_off:
-#          service: hassio.addon_stop
-#          data:
-#            addon: a0d7b954_pi-hole
+            addon: a0d7b954_nut
 
       rpcshutdown:
         value_template: "{{ is_state('sensor.rpcshutdown', 'started') }}"

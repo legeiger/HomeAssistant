@@ -34,7 +34,7 @@
       - version_latest
 
   - platform: rest
-    resource: http://192.168.1.24:8123/api/hassio/addons/68be3ab6_nut/info
+    resource: http://192.168.1.24:8123/api/hassio/addons/a0d7b954_nut/info
     name: nut
     value_template: '{{ value_json.data.state }}'
     scan_interval: 60
