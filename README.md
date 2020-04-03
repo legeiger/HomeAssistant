@@ -16,7 +16,7 @@ I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https:
 
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
 * [Mosquitto MQTT broker](https://www.home-assistant.io/addons/mosquitto/)
-* [Network UPS Tools](https://github.com/SilvrrGIT/hassio-addons)
+* [Network UPS Tools](https://github.com/hassio-addons/addon-nut)
 * [RPC Shutdown](https://www.home-assistant.io/addons/rpc_shutdown/)
 * [SSH](https://www.home-assistant.io/addons/ssh/)
 * [Samba](https://www.home-assistant.io/addons/samba/)
