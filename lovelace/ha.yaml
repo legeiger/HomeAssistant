@@ -8,53 +8,53 @@ title: HA
 icon: mdi:home-assistant
 path: ha
 cards:
-  - type: entities
-    title: Hass.io Addons
-    show_header_toggle: false
-    entities:
-      - entity: switch.gdrivebackup
-        name: Google Drive Backup
-        icon: mdi:server-plus
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.gdrivebackup.state ]]"
-      - entity: switch.mosquitto
-        name: Mosquitto MQTT
-        icon: mdi:server-plus
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.mosquitto.state ]]"
-      - entity: switch.nut
-        name: NUT
-        icon: mdi:server-plus
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.nut.state ]]"
-      - entity: switch.rpcshutdown
-        name: RPC Shutdown
-        icon: mdi:server-plus
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.rpcshutdown.state ]]"
-      - entity: switch.samba
-        name: Samba
-        icon: mdi:server-plus
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.samba.state ]]"
-      - entity: switch.ssh
-        name: SSH
-        icon: mdi:server-plus
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.ssh.state ]]"
-      - entity: switch.unificontroller
-        name: Unifi Controller
-        icon: mdi:server-plus
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.unificontroller.state ]]"
-      - entity: switch.vscode
-        name: Visual Studio Code
-        icon: mdi:server-plus
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.vscode.state ]]"
   - type: custom:vertical-stack-in-card
-    title: Hass.io Host Load
+    title: Hass.io Status
     cards:
+      - type: entities
+        show_header_toggle: false
+        theme: midnightclear
+        entities:
+          - entity: switch.gdrivebackup
+            name: Google Drive Backup
+            icon: mdi:server-plus
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ sensor.gdrivebackup.state ]]"
+          - entity: switch.mosquitto
+            name: Mosquitto MQTT
+            icon: mdi:server-plus
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ sensor.mosquitto.state ]]"
+          - entity: switch.nut
+            name: NUT
+            icon: mdi:server-plus
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ sensor.nut.state ]]"
+          - entity: switch.rpcshutdown
+            name: RPC Shutdown
+            icon: mdi:server-plus
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ sensor.rpcshutdown.state ]]"
+          - entity: switch.samba
+            name: Samba
+            icon: mdi:server-plus
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ sensor.samba.state ]]"
+          - entity: switch.ssh
+            name: SSH
+            icon: mdi:server-plus
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ sensor.ssh.state ]]"
+          - entity: switch.unificontroller
+            name: Unifi Controller
+            icon: mdi:server-plus
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ sensor.unificontroller.state ]]"
+          - entity: switch.vscode
+            name: Visual Studio Code
+            icon: mdi:server-plus
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ sensor.vscode.state ]]"
       - type: horizontal-stack
         cards:
         - type: sensor
@@ -66,29 +66,12 @@ cards:
           detail: 1
           theme: midnightclear
         - type: sensor
-          name: Disk use
-          icon: mdi:harddisk
-          entity: sensor.disk_use_percent_home
+          entity: sensor.processor_use
+          name: Processor
           hours_to_show: 24
           graph: line
           detail: 1
           theme: midnightclear
-      - type: horizontal-stack
-        cards:
-          - type: sensor
-            entity: sensor.processor_use
-            name: Processor
-            hours_to_show: 24
-            graph: line
-            detail: 1
-            theme: midnightclear
-          - type: sensor
-            entity: sensor.memory_use_percent
-            name: Memory
-            hours_to_show: 24
-            graph: line
-            detail: 1
-            theme: midnightclear
   - type: glance
     title: Home Assistant Info
     entities:
@@ -131,18 +114,52 @@ cards:
       - entity: sensor.tradfri_remote_control
         icon: mdi:battery-50
         name: Tradfri Remote Battery
-      - entity: sensor.gehingepinsensor1batt
+      - entity: sensor.ge_32563_hinge_pin_smart_door_sensor_battery_level
         icon: mdi:battery-50
         name: GE Hinge Pin Sensor 1
-      - entity: sensor.gehingepinsensor2batt
+      - entity: sensor.ge_32563_hinge_pin_smart_door_sensor_battery_level_2
         icon: mdi:battery-50
         name: GE Hinge Pin Sensor 2
-      - entity: sensor.backdoorstatusbatt
+      - entity: sensor.unknown_id_021f_unknown_type_0003_id_0101_battery_level
         icon: mdi:battery-50
         name: Back Door Sensor
       - entity: sensor.doorbell
         name: Doorbell
         icon: mdi:battery-50
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: entities
+        show_header_toggle: false
+        title: UPS Status
+        theme: midnightclear
+        entities:
+          - entity: sensor.ups_status
+            name: State
+            icon: mdi:flash-circle
+          - entity: sensor.ups_input_voltage
+          - entity: sensor.ups_battery_voltage
+          - entity: sensor.ups_output_voltage
+          - entity: sensor.ups_battery_charge
+            icon: mdi:battery-charging
+          - entity: sensor.ups_load
+            icon: mdi:percent
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            entity: sensor.approxwattage
+            name: Load
+            icon: mdi:gauge
+            hours_to_show: 24
+            graph: line
+            detail: 1
+            theme: midnightclear
+          - type: sensor
+            entity: sensor.ups_battery_runtime
+            name: Runtime
+            hours_to_show: 24
+            graph: line
+            detail: 1
+            theme: midnightclear
 
 ####################################################
 #                                                  #

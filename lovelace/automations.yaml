@@ -16,22 +16,6 @@ cards:
       - entity: input_boolean.guest
         icon: mdi:home-account
   - type: entities
-    title: Bedtime Notifications
-    show_header_toggle: false
-    entities:
-      - entity: automation.desktop_on_at_bedtime
-        name: Desktop on at Bedtime
-        icon: mdi:hotel
-        secondary_info: last-triggered
-      - entity: automation.garage_door_open_at_bedtime
-        name: Garage Door Open at Bedtime
-        icon: mdi:hotel
-        secondary_info: last-triggered
-      - entity: automation.living_room_lamps_on_at_bedtime
-        name: Lamps On At Bedtime Notification
-        icon: mdi:hotel
-        secondary_info: last-triggered
-  - type: entities
     title: Automations For Lights
     show_header_toggle: false
     entities:
@@ -115,10 +99,6 @@ cards:
         name: Failed HA Login Attempt Notification
         icon: mdi:lock-outline
         secondary_info: last-triggered
-      - entity: automation.notify_if_new_devices
-        name: Notify if New Devices
-        icon: mdi:new-box
-        secondary_info: last-triggered
   - type: entities
     title: Home Assistant Automations
     show_header_toggle: false
@@ -131,33 +111,21 @@ cards:
         name: Home Assistant Stopped
         icon: mdi:home-assistant
         secondary_info: last-triggered
-      - entity: automation.update_template_sensors
-        name: Update Template Sensors
-        icon: mdi:update
-        secondary_info: last-triggered
       - entity: automation.addon_update_available
         name: Add-on Update Available
         icon: mdi:progress-upload
+        secondary_info: last-triggered
+      - entity: automation.new_home_assitant_version
+        name: New home Assistant Version
+        icon: mdi:home-assistant
         secondary_info: last-triggered
   - type: entities
     title: Other Automations
     show_header_toggle: false
     entities:
-      - entity: automation.low_battery_adams_phone
-        name: Low iPhone Battery
-        icon: mdi:battery-charging-30
-        secondary_info: last-triggered
       - entity: automation.holiday_and_birthday_notification
         name: Holiday/Birthday Notification
         icon: mdi:gift
-        secondary_info: last-triggered
-      - entity: automation.hvac_record
-        name: Long Term HVAC Record
-        icon: mdi:timetable
-        secondary_info: last-triggered
-      - entity: automation.reset_energy_usage_at_midnight
-        name: Reset Energy Usage - Midnight
-        icon: mdi:power-plug
         secondary_info: last-triggered
       - entity: automation.check_deep_freezer_temperature
         name: Check Freezer Temperature
@@ -308,37 +276,9 @@ cards:
         icon: mdi:weather-sunset
         secondary_info: last-triggered
   - type: entities
-    title: Github Automations
-    show_header_toggle: false
-    entities:
-      - entity: automation.new_home_assitant_version
-        name: New home Assistant Version
-        icon: mdi:home-assistant
-        secondary_info: last-triggered
-      - entity: automation.new_github_star
-        name: New Github Star
-        icon: mdi:star-circle
-        secondary_info: last-triggered
-      - entity: automation.new_github_fork
-        name: New Github Fork
-        icon: mdi:directions-fork
-        secondary_info: last-triggered
-      - entity: automation.new_github_subscriber
-        name: New Github Subscriber
-        icon: mdi:github-circle
-        secondary_info: last-triggered
-      - entity: automation.github_issues
-        name: Github Issues
-        icon: mdi:alert-circle
-        secondary_info: last-triggered
-  - type: entities
     show_header_toggle: false
     title: Watchdogs
     entities:
-      - entity: automation.restart_nut_add_on
-        name: Nut Add-on Watchdog
-        icon: mdi:alert-decagram-outline
-        secondary_info: last-triggered
       - entity: automation.notify_if_ha_device_offline
         name: Notify if HA device Offline
         icon: mdi:home-assistant

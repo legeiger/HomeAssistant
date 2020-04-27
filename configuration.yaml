@@ -69,15 +69,20 @@ lovelace:
     #https://github.com/maykar/custom-header
     - url: /local/custom-header.js
       type: module
+  dashboards:
+    reserved-ips:
+      mode: yaml
+      filename: lovelace-reservedips.yaml
+      title: Reserved IPs
+      icon: mdi:lan
+      show_in_sidebar: true
+      require_admin: true
 
 #https://www.home-assistant.io/integrations/mobile_app/
 mobile_app:
 
 #https://home-assistant.io/components/sun/
 sun:
-
-#https://www.home-assistant.io/components/system_health/
-system_health:
 
 #https://www.home-assistant.io/integrations/google_translate/
 tts:

@@ -26,7 +26,6 @@
           - device_tracker.google_nest_hub
           - device_tracker.ikea_tradfri_gateway
           - device_tracker.open_garage
-          - device_tracker.echo_dot
           - device_tracker.yeelight_1
           - device_tracker.yeelight_2
           - device_tracker.yeelight_3

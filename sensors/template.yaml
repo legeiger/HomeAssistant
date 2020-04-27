@@ -13,49 +13,6 @@
       approxwattage:
         unit_of_measurement: 'W'
         value_template:  '{{states("sensor.ups_load")|int*9}}'
-        
-      operatingstate:
-        value_template: "{{ state_attr('climate.thermostat', 'hvac_action') }}"
-
-      sensor_count:
-        entity_id: []
-        friendly_name: 'Number of Sensors'
-        value_template: '{{ states.sensor | count }}'
-
-      automation_count:
-        entity_id: []
-        friendly_name: 'Number of Automations'
-        value_template: '{{ states.automation | count }}'
-
-      script_count:
-        entity_id: []
-        friendly_name: 'Number of Scripts'
-        value_template: '{{ states.script | count }}'
-
-      switch_count:
-        entity_id: []
-        friendly_name: 'Number of Switches'
-        value_template: '{{ states.switch | count }}'
-
-      binary_sensor_count:
-        entity_id: []
-        friendly_name: 'Number of Binary Sensors'
-        value_template: '{{ states.binary_sensor | count }}'
-
-      lights_count:
-        entity_id: []
-        friendly_name: 'Number of Lights'
-        value_template: '{{ states.light | count }}'
-
-      tracker_count:
-        entity_id: []
-        friendly_name: 'Number of Devices'
-        value_template: '{{ states.device_tracker | count }}'
-
-      zwave_count:
-        entity_id: []
-        friendly_name: 'Zwave Devices'
-        value_template: '{{ states.zwave | count }}'
 
 ####################################################
 #                                                  #

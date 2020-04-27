@@ -20,6 +20,7 @@
       dark-primary-color: 'var(--accent-color)'                                       # Hyperlinks
       light-primary-color: 'var(--accent-color)'                                      # Horizontal line in about
       card-background-color: 'var(--paper-card-background-color)'
+      sidebar-background-color: "var(--paper-listbox-background-color)"
 
 # Text colors
       primary-text-color: '#FFFFFF'                                                   # Primary text colour, here is referencing dark-primary-color

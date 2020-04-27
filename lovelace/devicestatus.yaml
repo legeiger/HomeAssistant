@@ -203,6 +203,11 @@ cards:
         icon: mdi:watch
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.16"
+      - entity: device_tracker.canon_printer
+        name: Canon Printer
+        icon: mdi:printer
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.13"
   - type: custom:vertical-stack-in-card
     title: Network Status
     cards:

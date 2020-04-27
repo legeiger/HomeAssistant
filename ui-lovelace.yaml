@@ -19,7 +19,6 @@ views:
   - !include lovelace/devicestatus.yaml
   - !include lovelace/ha.yaml
   - !include lovelace/automations.yaml
-  - !include lovelace/data.yaml
   - !include lovelace/googlehomehub.yaml
 
 ####################################################

@@ -10,17 +10,6 @@ Automations to turn on/off the ceiling fan in our bedroom.  Its a vaulted ceilin
 * When the HVAC turns on, turn on the fan to circulate the air
 * When the HVAC turns off, turn off the fan
 
-### Bedtime_Notifications.yaml Automations:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/bedtime_notifications.yaml)__
-
-These notifications are triggered after 8:00 PM when I plug my phone in (generally I am in bed when this happens).  These send an iOS app notification with an action option to turn the device off.  These are primarily a power saving items.
-* Notify Me if the garage door is open and I am in bed 
-* Notify Me if the Desktop PC is left on and I am in bed 
-* Notify Me if the Living Room Lamps are left on and I am in bed
-
-<p align="center"> <img src="https://github.com/SilvrrGIT/HomeAssistant/blob/master/www/iosnotification.jpg"><img src="https://github.com/SilvrrGIT/HomeAssistant/blob/master/www/ios%20action.jpg">
-</p>
-
 ### Device Offline.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/deviceoffline.yaml)__
 
@@ -66,10 +55,6 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 
 Simple automations to let me know if there is a new home assistant version or if there are changes to my github stats. I get notifications of....
 * New Homeassistant Versions
-* New Github Stars
-* New Github Forks
-* New Github Subscribers
-* Github Issues
 
 ### Holiday_Birthday.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/holiday_birthday.yaml)__
@@ -87,8 +72,6 @@ Some automations for Home Assistant related items.
 * Send me a notification if my Home Assistant disk gets full
 * Notify me if a Zwave device is dead
 * Notify me if a battery power sensor battery is getting low
-* Notify me and restart the nut addon if it stops reporting values
-* A dailty reset and loggin of the total kWh reading from my home energy monitor
 
 ### hvac.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/thermostat.yaml)__
@@ -114,6 +97,9 @@ These notifications are triggered when I leave my home zone and no one is home. 
 * Notify Me if the Living Room Lamps are left on and no one is home 
 * Notify Me if the Media Center is left on and no one is home. This is an effort to automate my 'dumb'TV and amplifier based on power usage.  Knowing the power being drawing I can assume which device is left on as they have unique power usage. 
 
+<p align="center"> <img src="https://github.com/SilvrrGIT/HomeAssistant/blob/master/www/iosnotification.jpg"><img src="https://github.com/SilvrrGIT/HomeAssistant/blob/master/www/ios%20action.jpg">
+</p>
+
 ### Living Room Lamps.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/living_room_lamps.yaml)__
 
@@ -121,18 +107,6 @@ These lamps are the main light source when you walk in through the garage (our p
 * Turn on the living room lamps at sunset 
 * Turn on the living room lamps when somone comes home and its dark out
 * Turn off the living room lamps at midnight
-
-### Long Term Data.yaml Automations:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/long_term_data.yaml)__
-
-These automation take data from home assistant and store it in a .csv file for later trending/evaluation.  I only keep 3 days of history and do not want all devices saved long term so this is the solution I implemented. 
-* Store my HVAC runtime, and the outdoor high/low temps. 
-
-### Low_Battery_Adams_iPhone.yaml Automations:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/low_battery_adam_phone.yaml)__
-
-This is to notify me to charge my phone when I am at work.  Generally I forget to charge my phone and it is either low or dead for the train ride home.    
-* Charge my phone notification at 50 and 30% battery
 
 ### Maintenance Reminders.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/maintenance_reminders.yaml)__
@@ -167,7 +141,6 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 Some simple automations to turn my outside house lights on at sunset and off at sunrise.  They are initially set to 10% brightness but are set to full brightness if a door is opened, until it is closed.
 * Turn on the outside lights at sunset
 * Turn off the outside lights at sunrise
-* Open front doors Increase Brightness
 * Open back door Increase Brightness
 
 ### PC_Security.yaml Automations:
@@ -175,7 +148,6 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 
 * Notify me if the Desktop PC is turned on while away
 * Notify me if there is a failed login attempt to the HA front end
-* Notify me of a new device added to my Wifi network
 
 ### UPS.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/ups.yaml)__
