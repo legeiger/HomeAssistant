@@ -105,11 +105,6 @@ The following integrations are setup in the User Interface (UI) and may be a mis
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/automations.png">
 </p>
 
-## Data
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/data.png">
-</p>
-
 # Questions?
 
 The best way to get help on Home Assistant is the [Home Assistant Forum](https://community.home-assistant.io/).  If you have a specific question about my configuration send me a Private Message on the HA forum, my username over there is [Silvrr](https://community.home-assistant.io/u/silvrr/).  If you have found something incorrect, please submit an issue here on Github and I will get it fixed.
