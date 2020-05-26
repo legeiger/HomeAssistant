@@ -1,0 +1,116 @@
+####################################################
+#                                                  #
+#                 NETWORK STATUS                   #
+#                                                  #
+####################################################
+
+title: Network Status
+icon: mdi:lan
+path: network
+cards:
+  - type: entities
+    title: Network Status
+    show_header_toggle: false
+    footer:
+      type: graph
+      entity: sensor.unifi_gateway_wan_download
+      detail: 2
+    entities:
+      - entity: sensor.wireless_clients
+        name: Wireless Clients Connected
+        icon: mdi:access-point-network
+      - entity: sensor.wired_clients
+        name: Wired Clients Connected
+        icon: mdi:server-network
+      - entity: sensor.guest_clients
+        name: Guest Clients Connected
+        icon: mdi:account-network
+      - entity: binary_sensor.modem
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.100.1"
+        icon: mdi:wan
+      - entity: device_tracker.unifi_security_gateway
+        name: Ubiquiti Security Gateway
+        icon: mdi:folder-key-network-outline
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.1"
+      - entity: device_tracker.unifi_switch_8_poe_60w
+        name: Ubiquiti Switch 8
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.19"
+        icon: mdi:server-network
+      - entity: device_tracker.usmini
+        name: Ubiquiti USW Flex Mini
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.30"
+        icon: mdi:server-network
+      - entity: device_tracker.unifi_ap_ac_lr
+        name: Ubiquiti AP-AC-LR
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.38"
+        icon: mdi:access-point-network
+      - entity: sensor.unifi_gateway_wan_upload
+        icon: mdi:arrow-up-bold-outline
+      - type: divider
+      - entity: sensor.unifi_gateway_wan_download
+        icon: mdi:arrow-down-bold-outline
+  - type: entities
+    title: Speedtest Results
+    footer:
+      type: graph
+      entity: sensor.speedtest_download
+      detail: 2
+    entities: 
+      - type: button
+        name: Initiate Speedtest
+        icon: mdi:restart-alert
+        action_name: Start
+        tap_action: 
+          action: call-service
+          service: speedtestdotnet.speedtest
+      - entity: sensor.speedtest_upload
+        name: Upload
+        icon: mdi:arrow-up-bold
+      - type: divider
+      - entity: sensor.speedtest_download
+        name: Download
+        icon: mdi:arrow-down-bold
+  - type: entities
+    title: Unifi Security Gateway Status
+    footer:
+      type: graph
+      entity: sensor.unifi_gateway_wan_cpu
+      detail: 2
+    show_header_toggle: false
+    entities:
+      - entity: sensor.unifi_gateway_alerts
+      - entity: sensor.unifi_gateway_wan
+      - entity: sensor.unifi_gateway_www
+      - entity: sensor.unifi_gateway_wlan
+      - entity: sensor.unifi_gateway_lan
+      - entity: sensor.unifi_gateway_firmware_upgradable
+      - entity: sensor.unifi_gateway_wan_mem
+      - type: divider
+      - entity: sensor.unifi_gateway_wan_cpu
+  - type: entities
+    entities:
+      - entity: sensor.basic1_signal
+        icon: 'mdi:wifi'
+      - entity: sensor.pow1_signal
+        icon: 'mdi:wifi'
+      - entity: sensor.pow2_signal
+        icon: 'mdi:wifi'
+      - entity: sensor.th161_signal
+        icon: 'mdi:wifi'
+      - entity: sensor.kuled1_signal
+        icon: 'mdi:wifi'
+      - entity: sensor.kuled2_signal
+        icon: 'mdi:wifi'
+    title: Wifi Strength
+    show_header_toggle: false
+
+####################################################
+#                                                  #
+#          END OF CONFIGURATION FILE               #
+#                                                  #
+####################################################

@@ -17,6 +17,7 @@
       - lan
       - wlan
       - alerts
+      - wan
       - firmware
       
 #https://www.home-assistant.io/components/template/
@@ -31,6 +32,22 @@
       guest_clients:
         value_template: "{{ (state_attr('sensor.unifi_gateway_wlan','num_guest')) }}"
         entity_id: sensor.unifi_gateway_wlan
+      unifi_gateway_wan_cpu:
+        friendly_name: 'CPU percentage'
+        value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['cpu'] }}"
+        unit_of_measurement: '%'
+      unifi_gateway_wan_mem:
+        friendly_name: 'Memory percentage'
+        value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['mem'] }}"
+        unit_of_measurement: '%'
+      unifi_gateway_wan_upload:
+        friendly_name: 'WAN Upload'
+        unit_of_measurement: Kbps
+        value_template: "{{ (states.sensor.unifi_gateway_wan.attributes['tx_bytes-r'] / 1024) | int }}"
+      unifi_gateway_wan_download:
+        friendly_name: 'WAN Download'
+        unit_of_measurement: Kbps
+        value_template: "{{ (states.sensor.unifi_gateway_wan.attributes['rx_bytes-r'] / 1024) | int }}"
 
 ####################################################
 #                                                  #

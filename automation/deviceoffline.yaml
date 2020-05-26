@@ -60,7 +60,6 @@
           - light.yeelight3
           - light.yeelight4
           - light.yeelight5
-          - light.yeelightrgb2
         to: 'unavailable'
         for:
           seconds: 60

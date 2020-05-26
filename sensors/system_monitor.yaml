@@ -14,6 +14,11 @@
         arg: /home
       - type: memory_use_percent
       - type: processor_use
+      - type: throughput_network_in
+        arg: eno1
+      - type: throughput_network_out
+        arg: eno1
+      - type: last_boot
 
 #https://www.home-assistant.io/components/sensor.command_line/
   - platform: command_line
@@ -22,6 +27,10 @@
     unit_of_measurement: "°C"
     value_template: '{{ value | multiply(0.001) | round(1) }}'
 
+#https://www.home-assistant.io/integrations/uptime/
+  - platform: uptime
+    name: Time Online
+    unit_of_measurement: hours
 
 ####################################################
 #                                                  #

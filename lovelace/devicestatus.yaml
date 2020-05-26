@@ -17,7 +17,7 @@ cards:
         name: Battery
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "[[ {entity}.attributes.Battery State ]]"
-      - entity: device_tracker.adam_s_iphone
+      - entity: device_tracker.adams_iphone_2
         name: Wifi Connection
         icon: mdi:cellphone-iphone
         type: "custom:secondaryinfo-entity-row"
@@ -72,8 +72,7 @@ cards:
         secondary_info: "192.168.1.21"
       - entity: switch.amazon_fire_tv
         name: Fire TV Internet
-      - entity: device_tracker.localhost
-        name: Samsung Smart TV
+      - entity: device_tracker.basement_tv_samsung_55_inch
         icon: mdi:television-classic
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.9"
@@ -99,6 +98,11 @@ cards:
         icon: mdi:bell
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.39"
+      - entity: device_tracker.lifx_mini_57057e
+        name: Lifx Mini 1
+        icon: mdi:lightbulb-outline
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.25"
   - type: entities
     title: Sonoffs
     show_header_toggle: false
@@ -142,10 +146,6 @@ cards:
       - entity: device_tracker.yeelight_5
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.28"
-        icon: mdi:lightbulb-outline
-      - entity: device_tracker.yeelight_rgb_2
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.25"
         icon: mdi:lightbulb-outline
   - type: entities
     title: Wired Devices
@@ -208,86 +208,29 @@ cards:
         icon: mdi:printer
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.13"
-  - type: custom:vertical-stack-in-card
-    title: Network Status
-    cards:
-      - type: entities
-        theme: midnightclear
-        show_header_toggle: false
-        entities:
-          - entity: sensor.wireless_clients
-            name: Wireless Clients Connected
-            icon: mdi:access-point-network
-          - entity: sensor.wired_clients
-            name: Wired Clients Connected
-            icon: mdi:server-network
-          - entity: sensor.guest_clients
-            name: Guest Clients Connected
-            icon: mdi:account-network
-      - type: horizontal-stack
-        cards:
-          - type: sensor
-            entity: sensor.speedtest_download
-            name: Download
-            hours_to_show: 24
-            graph: line
-            detail: 1
-            theme: midnightclear
-          - type: sensor
-            entity: sensor.speedtest_upload
-            name: Upload
-            hours_to_show: 24
-            graph: line
-            detail: 1
-            theme: midnightclear
-      - type: entities
-        theme: midnightclear
-        show_header_toggle: false
-        entities:
-          - entity: binary_sensor.modem
-            type: "custom:secondaryinfo-entity-row"
-            secondary_info: "192.168.100.1"
-            icon: mdi:wan
-          - entity: device_tracker.unifi_security_gateway
-            name: Ubiquiti Security Gateway
-            icon: mdi:folder-key-network-outline
-            type: "custom:secondaryinfo-entity-row"
-            secondary_info: "192.168.1.1"
-          - entity: device_tracker.unifi_switch_8_poe_60w
-            name: Ubiquiti Switch 8
-            type: "custom:secondaryinfo-entity-row"
-            secondary_info: "192.168.1.19"
-            icon: mdi:server-network
-          - entity: device_tracker.unifi_ap_ac_lr
-            name: Ubiquiti AP-AC-LR
-            type: "custom:secondaryinfo-entity-row"
-            secondary_info: "192.168.1.38"
-            icon: mdi:access-point-network
+      - entity: device_tracker.hp2f2505
+        name: HP Printer
+        icon: mdi:printer
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.17"
   - type: entities
-    title: Unifi Security Gateway Status
+    title: HP 9025 Printer Status
     show_header_toggle: false
     entities:
-      - entity: sensor.unifi_gateway_alerts
-      - entity: sensor.unifi_gateway_www
-      - entity: sensor.unifi_gateway_wlan
-      - entity: sensor.unifi_gateway_lan
-      - entity: sensor.unifi_gateway_firmware_upgradable
-  - type: entities
-    entities:
-      - entity: sensor.basic1_signal
-        icon: 'mdi:wifi'
-      - entity: sensor.pow1_signal
-        icon: 'mdi:wifi'
-      - entity: sensor.pow2_signal
-        icon: 'mdi:wifi'
-      - entity: sensor.th161_signal
-        icon: 'mdi:wifi'
-      - entity: sensor.kuled1_signal
-        icon: 'mdi:wifi'
-      - entity: sensor.kuled2_signal
-        icon: 'mdi:wifi'
-    title: Wifi Strength
-    show_header_toggle: false
+      - entity: sensor.hp_officejet_pro_9020_series
+        name: Printer Status
+      - entity: sensor.hp_officejet_pro_9020_series_black_cartridge
+        name: Black Ink Level
+      - entity: sensor.hp_officejet_pro_9020_series_cyan_cartridge
+        name: Cyan Ink Level
+      - entity: sensor.hp_officejet_pro_9020_series_magenta_cartridge
+        name: Magenta Ink Level
+      - entity: sensor.hp_officejet_pro_9020_series_yellow_cartridge
+        name: Yellow Ink Level
+  - type: media-control
+    entity: media_player.basement_tv
+  - type: media-control
+    entity: media_player.family_room_display
 
 ####################################################
 #                                                  #

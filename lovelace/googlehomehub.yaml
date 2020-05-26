@@ -6,7 +6,6 @@
 
 title: Google Home
 path: googlehomehub
-theme: 
 icon: mdi:blank
 panel: true
 cards:
@@ -18,8 +17,10 @@ cards:
             cards:
               - type: vertical-stack
                 cards:
+                  - type: markdown
+                    content: > 
+                            ## Media Center Controls
                   - type: horizontal-stack
-                    title: Media Center Controls
                     cards:
                       - type: entity-button
                         entity: switch.tvstate
@@ -53,37 +54,47 @@ cards:
                         tap_action:
                           action: call-service
                           service: script.volumedown
-                  # - type: horizontal-stack
-                  #   title: Birthdays & Holidays
-                  #   cards:
-                  #     - type: markdown
-                  #       content: Test #{% if is_state('sensor.holiday', '') %} No Birthdays or Holidays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %}
-                  - type: horizontal-stack
-                    title: Other Controls
+
+                  - type: vertical-stack
                     cards:
-                      - type: entity-button
-                        entity: input_boolean.feeddog
-                        name: Dog is Fed
-                        icon: mdi:paw
-                      - type: entity-button
-                        entity: input_boolean.guest
-                        name: Guest Mode
-                        icon: mdi:home-account
-                      - type: entity-button
-                        entity: input_boolean.feeddog
-                        name: Dog is Fed
-                        icon: mdi:paw
+                      - type: markdown
+                        content: > 
+                                ## Other Controls                  
+                      - type: horizontal-stack
+                        cards:
+                          - type: entity-button
+                            entity: input_boolean.feeddog
+                            name: Dog is Fed
+                            icon: mdi:paw
+                          - type: entity-button
+                            entity: input_boolean.guest
+                            name: Guest Mode
+                            icon: mdi:home-account
+                          - type: entity-button
+                            entity: input_boolean.feeddog
+                            name: Dog is Fed
+                            icon: mdi:paw
+                      - type: markdown
+                        content: > 
+                                ## Holidays & Birthdays </br>
+                                    {% if is_state('sensor.holiday', '') %} No Birthdays or Holidays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %}
           - type: vertical-stack
             cards:
+              - type: markdown
+                content: > 
+                        ## Light Controls
               - type: horizontal-stack
-                title: Light Controls
                 cards:
                   - type: entity-button
                     entity: switch.basic1
                     name: Livingroom
                     icon: mdi:lightbulb-outline
                   - type: entity-button
-                    entity: light.yeelightrgb2
+                    entity: light.basement_lights
+                    name: Basement Lights
+                    icon: mdi:lightbulb-outline
+                  - type: entity-button
+                    entity: light.notification_light
                     name: Notification
                     icon: mdi:lightbulb-outline
                     tap_action: 
@@ -91,10 +102,6 @@ cards:
                     hold_action:
                       action: call-service
                       service: script.normallight
-                  - type: entity-button
-                    entity: light.basement_lights
-                    name: Basement Lights
-                    icon: mdi:lightbulb-outline
               - type: horizontal-stack
                 cards:
                   - type: entity-button
@@ -109,7 +116,11 @@ cards:
                     entity: switch.kuled2
                     name: Nursery Fan
                     icon: mdi:fan
+              - type: markdown
+                content: > 
+                        ## Weather
               - type: weather-forecast
+                name: Weather Forecast
                 entity: weather.dark_sky
 
 ####################################################

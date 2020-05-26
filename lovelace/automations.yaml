@@ -35,14 +35,6 @@ cards:
         name: Turn on Living Room Lamps - Sunset
         icon: mdi:lightbulb-outline
         secondary_info: last-triggered
-      - entity: automation.set_notification_bulb2_color
-        name: Set Notification Bulb 2 Color
-        icon: mdi:lightbulb-outline
-        secondary_info: last-triggered
-      - entity: automation.set_notification_bulb2_normal
-        name: Set Notification Bulb 2 Normal
-        icon: mdi:lightbulb-outline
-        secondary_info: last-triggered
       - entity: automation.lamps_on_when_home
         name: Lamps on When Home
         icon: mdi:lightbulb-outline
@@ -119,6 +111,10 @@ cards:
         name: New home Assistant Version
         icon: mdi:home-assistant
         secondary_info: last-triggered
+      - entity: automation.update_template_sensors
+        name: Update Template Sensors
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
   - type: entities
     title: Other Automations
     show_header_toggle: false
@@ -135,6 +131,9 @@ cards:
         name: Turn on Amp with TV
         icon: mdi:television
         secondary_info: last-triggered
+      - entity: automation.kuled1_double_tap
+        name: Kuled1 Double Tap Automation
+        icon: mdi:gesture-double-tap
   - type: entities
     title: Climate Automations
     show_header_toggle: false
@@ -170,30 +169,6 @@ cards:
       - entity: automation.turn_off_bedroom_fan_with_hvac
         name: Turn off Bedroom Fan with HVAC
         icon: mdi:fan
-        secondary_info: last-triggered
-  - type: entities
-    title: Feed the dog Automations
-    show_header_toggle: false
-    entities:
-      - entity: automation.dog_has_been_fed_evening
-        name: Dog has been fed - evening
-        icon: mdi:paw
-        secondary_info: last-triggered
-      - entity: automation.dog_has_been_fed_morning
-        name: Dog has been fed - morning
-        icon: mdi:paw
-        secondary_info: last-triggered
-      - entity: automation.reset_feed_the_dog_notifications
-        name: Reset feed the dog automations
-        icon: mdi:paw
-        secondary_info: last-triggered
-      - entity: automation.feed_the_dog_evening
-        name: Feed the dog evening
-        icon: mdi:paw
-        secondary_info: last-triggered
-      - entity: automation.feed_the_dog_morning
-        name: Feed the dog morning
-        icon: mdi:paw
         secondary_info: last-triggered
   - type: entities
     title: Leaving Automations
@@ -262,6 +237,34 @@ cards:
       - entity: automation.humidifier_maintenance_reminder
         name: Humidifier Maintenance
         icon: mdi:water-percent
+        secondary_info: last-triggered
+      - entity: automation.county_tax_bill_reminder
+        name: Tax Bill Reminder
+        icon: mdi:currency-usd
+        secondary_info: last-triggered
+  - type: entities
+    title: Feed the dog Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.dog_has_been_fed_evening
+        name: Dog has been fed - evening
+        icon: mdi:paw
+        secondary_info: last-triggered
+      - entity: automation.dog_has_been_fed_morning
+        name: Dog has been fed - morning
+        icon: mdi:paw
+        secondary_info: last-triggered
+      - entity: automation.reset_feed_the_dog_notifications
+        name: Reset feed the dog automations
+        icon: mdi:paw
+        secondary_info: last-triggered
+      - entity: automation.feed_the_dog_evening
+        name: Feed the dog evening
+        icon: mdi:paw
+        secondary_info: last-triggered
+      - entity: automation.feed_the_dog_morning
+        name: Feed the dog morning
+        icon: mdi:paw
         secondary_info: last-triggered
   - type: entities
     title: Morning Briefings

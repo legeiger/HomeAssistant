@@ -189,19 +189,19 @@
           title: "Doorbell Pressed"
           message: "The doorbell was pressed"
       - service_template: >-
-          {%- if is_state('light.yeelightrgb2' , 'off') -%}
+          {%- if is_state('light.notification_light' , 'off') -%}
             input_boolean.turn_off
           {%- else -%}
             input_boolean.turn_on
           {%- endif -%}
         entity_id: input_boolean.doorbelllight
       - service: light.turn_on
-        entity_id: light.yeelightrgb2
+        entity_id: light.notification_light
         data:
-          effect: 'Strobe color'
+          effect: 'effect_colorloop'
       - delay: '00:00:02'
       - service: light.turn_on
-        entity_id: light.yeelightrgb2
+        entity_id: light.notification_light
         data:
           effect: Stop
       - service_template: >-
@@ -210,7 +210,7 @@
           {%- else -%}
             light.turn_on
           {%- endif -%}
-        entity_id: light.yeelightrgb2
+        entity_id: light.notification_light
       - delay: 00:00:01
       - service: media_player.turn_off
         entity_id: media_player.family_room_display

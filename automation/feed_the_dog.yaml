@@ -12,7 +12,7 @@
     action:
       service: light.turn_on
       data:
-        entity_id: light.yeelightrgb2
+        entity_id: light.notification_light
         brightness: 254
         color_name: blue
 
@@ -30,7 +30,7 @@
     action:
       service: light.turn_on
       data:
-        entity_id: light.yeelightrgb2
+        entity_id: light.notification_light
         brightness: 254
         color_name: blue
 

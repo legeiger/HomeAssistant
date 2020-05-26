@@ -8,146 +8,171 @@ title: Rooms
 path: home
 icon: mdi:home
 cards:
-  - type: custom:vertical-stack-in-card
-    title: Door Status
-    cards: 
-      - type: glance
-        theme: midnightclear
-        entities:
-          - entity: sensor.gehingepinsensor2
-            name: Int. Garage
-            icon: mdi:door
-          - entity: sensor.backdoorstatus
-            name: Back
-            icon: mdi:door
-          - entity: sensor.gehingepinsensor1
-            name: Front
-            icon: mdi:door
-      - type: entities
-        theme: midnightclear
-        entities: 
-          - entity: cover.garage_door
-  - type: custom:vertical-stack-in-card
-    title: Entertainment Center
-    cards: 
-      - type: horizontal-stack
-        cards:
-          - type: entity-button
-            entity: switch.tvstate
-            name: TV - Power
-            icon: mdi:television
-            theme: midnightclear
-            state_color: true
-          - type: entity-button
-            entity: switch.receivervideo2
-            name: Amp-TV
-            icon: mdi:television
-            theme: midnightclear
-            state_color: false
-          - type: entity-button
-            entity: script.volumeup
-            name: Volume Up
-            icon: mdi:volume-plus
-            theme: midnightclear
-            state_color: false
-            tap_action:
-              action: call-service
-              service: script.volumeup
-      - type: horizontal-stack
-        cards:
-          - type: entity-button
-            state_color: true
-            entity: switch.receiverstate
-            icon: mdi:speaker
-            theme: midnightclear
-            name: Amp - Power
-          - type: entity-button
-            entity: switch.receivervideo1
-            name: Amp-Music
-            icon: mdi:music
-            theme: midnightclear
-            state_color: false
-          - type: entity-button
-            entity: script.volumedown
-            name: Volume Down
-            icon: mdi:volume-minus
-            theme: midnightclear
-            state_color: false
-            tap_action:
-              action: call-service
-              service: script.volumedown
-  - type: custom:vertical-stack-in-card
-    title: Lights & Fans
+  - type: vertical-stack
     cards:
-      - type: horizontal-stack
-        cards:
-          - type: entity-button
-            entity: switch.basic1
+    - type: glance
+      title: Door Status
+      entities:
+        - entity: sensor.gehingepinsensor2
+          name: Int. Garage
+          icon: mdi:door
+        - entity: sensor.backdoorstatus
+          name: Back
+          icon: mdi:door
+        - entity: sensor.gehingepinsensor1
+          name: Front
+          icon: mdi:door
+        - entity: cover.garage_door
+          name: Garage
+          tap_action:
+            action: toggle
+    - type: weather-forecast
+      name: Weather
+      entity: weather.dark_sky
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: Entertainment Center
+        show_header_toggle: false
+        footer:
+          type: buttons
+          entities:
+            - entity: script.volumeup
+              icon: mdi:volume-plus
+            - entity: switch.receivervideo1
+              icon: mdi:music
+            - entity: script.volumedown
+              icon: mdi:volume-minus
+        entities:
+          - entity: switch.tvstate
+            name: TV
+            icon: mdi:television
+          - entity: switch.receiverstate
+            name: Amplifier
+            icon: mdi:speaker
+      - type: conditional
+        conditions:
+          - entity: climate.thermostat
+            state: "cool"
+        card:
+          type: entities
+          show_header_toggle: false
+          title: HVAC Information
+          footer:
+            type: graph
+            entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
+            detail: 2
+          entities:
+            - entity: climate.thermostat
+              name: Thermostat
+            - entity: sensor.cooling_hours_today
+              icon: mdi:progress-clock
+            - entity: sensor.cooling_hours_yesterday
+              icon: mdi:progress-clock
+            - entity: sensor.cooling_hours_two_days_ago
+              icon: mdi:progress-clock
+            - type: divider
+            - entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
+              name: Current Indoor Temperature
+      - type: conditional
+        conditions:
+          - entity: climate.thermostat
+            state: "heat"
+        card:
+          type: entities
+          show_header_toggle: false
+          title: HVAC Information
+          footer:
+            type: graph
+            entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
+            detail: 2
+          entities:
+            - entity: climate.thermostat
+              name: Thermostat
+            - entity: sensor.heating_hours_today
+              icon: mdi:progress-clock
+            - entity: sensor.heating_hours_yesterday
+              icon: mdi:progress-clock
+            - entity: sensor.heating_hours_two_days_ago
+              icon: mdi:progress-clock
+            - type: divider
+            - entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
+              name: Current Indoor Temperature
+  - type: vertical-stack
+    cards:
+      - type: glance
+        columns: 3
+        title: Lights & Fans
+        entities:
+          - entity: switch.basic1
             name: Livingroom
             icon: mdi:lightbulb-outline
-            theme: midnightclear
-          - type: entity-button
-            entity: switch.kuled1
+          - entity: switch.kuled1
             name: Bedroom Fan
             icon: mdi:fan
-            theme: midnightclear
-          - type: entity-button
-            entity: switch.kuled2
+          - entity: switch.kuled2
             name: Nursery Fan
             icon: mdi:fan
-            theme: midnightclear
+      - type: entities
+        title: Whole Home Energy Usage
+        show_header_toggle: false
+        footer:
+          type: graph
+          entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
+          detail: 2
+        entities:
+          - entity: sensor.daily_energy
+            name: Today's Energy Usage
+            icon: mdi:power-plug
+          - type: attribute
+            entity: sensor.daily_energy
+            attribute: last_period
+            icon: mdi:power-plug
+            suffix: kWh
+            name: Yesterday's Energy Usage
+          - entity: sensor.monthly_energy
+            name: Monthly Energy Usage
+            icon: mdi:power-plug
+          - type: divider
+          - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
+            name: Current Power Usage
+            icon: mdi:power-plug
+  - type: vertical-stack
+    cards:
       - type: horizontal-stack
+        title: Other Lights
         cards:
           - type: light
             entity: light.front_lights
             icon: mdi:lightbulb-outline
-            theme: midnightclear
-            name: Outdoor Lights
-          - type: light
-            entity: light.yeelightrgb2
-            name: Notification Light
-            icon: mdi:lightbulb-outline
-            theme: midnightclear
+            name: Exterior
           - type: light
             entity: light.bedroom_lights
-            name: Bedroom Lights
+            name: Bedroom
             icon: mdi:lightbulb-outline
-            theme: midnightclear
-  - type: custom:vertical-stack-in-card
-    title: Basement Lights
-    cards:            
+          - type: light
+            entity: light.notification_light
+            name: Notification
+            icon: mdi:lightbulb-outline
       - type: horizontal-stack
+        title: Basement Lights
         cards:
           - type: light
             entity: light.zooz_zen27_s2_dimmer_wall_switch_level
-            name: Main Room Lights
+            name: Main Room
             icon: mdi:lightbulb-outline
-            theme: midnightclear
           - type: light
             entity: light.zooz_zen27_s2_dimmer_wall_switch_level_2
-            name: Accent Lights
+            name: Fireplace Accent
             icon: mdi:lightbulb-outline
-            theme: midnightclear
           - type: light
-            entity: light.basement_lights
-            name: All Lights
+            entity: light.zooz_zen27_s2_dimmer_wall_switch_level_3
+            name: Stairs & Hall
             icon: mdi:lightbulb-outline
-            theme: midnightclear
-  - type: thermostat
-    entity: climate.thermostat
-    name: Thermostat
-  - type: weather-forecast
-    entity: weather.dark_sky
-  - type: custom:vertical-stack-in-card
-    cards:
-      - type: sensor
-        name: Whole Home Energy Usage
-        icon: mdi:power-plug
-        entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
-        hours_to_show: 24
-        graph: line
-        detail: 1
-        theme: midnightclear
+  # - type: entities
+  #   entities:
+  #     - entity: switch.cast
+  #       icon: mdi:google-assistant
 
 ####################################################
 #                                                  #

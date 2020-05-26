@@ -52,7 +52,7 @@
       - service: switch.turn_off
         entity_id: switch.basic1
       - service: light.turn_off
-        entity_id: light.yeelightrgb2
+        entity_id: light.notification_light
 
 ########################################################
 #                                                       #

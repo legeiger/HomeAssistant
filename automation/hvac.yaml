@@ -30,7 +30,7 @@
       - service: climate.set_temperature
         data:
           entity_id: climate.thermostat
-          temperature: 62
+          temperature: 78
 
 #########################################################
 #                                                       #
@@ -55,7 +55,7 @@
       - service: climate.set_temperature
         data:
           entity_id: climate.thermostat
-          temperature: 69
+          temperature: 73
 
 #########################################################
 #                                                       #
@@ -64,7 +64,7 @@
 #########################################################
 
   - alias: "Set Thermostat Away Mode at 1500"
-    initial_state: true
+    initial_state: false
     trigger:
       platform: time
       at: '15:00'
@@ -72,7 +72,7 @@
       condition: and
       conditions:
         - condition: template
-          value_template: "{% if states('sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature') | float <= 64 %} True {% else %} False {% endif %}"
+          value_template: "{% if states('sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature') | float >= 78 %} True {% else %} False {% endif %}"
         - condition: time
           weekday:
             - mon
@@ -106,7 +106,7 @@
       - service: climate.set_temperature
         data:
           entity_id: climate.thermostat
-          temperature: 69
+          temperature: 73
 
 #########################################################
 #                                                       #
@@ -115,7 +115,7 @@
 #########################################################
 
   - alias: "Set Thermostat Temperature - 2200"
-    initial_state: true
+    initial_state: false
     trigger:
       platform: time
       at: '22:00'
@@ -126,7 +126,7 @@
           temperature: 67
 
   - alias: "Set Thermostat Temperature - 0500"
-    initial_state: true
+    initial_state: false
     trigger:
       platform: time
       at: '06:30'

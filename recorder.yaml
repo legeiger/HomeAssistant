@@ -1,19 +1,15 @@
 
 #https://home-assistant.io/components/binary_sensor/
 
-  purge_interval: 1
   purge_keep_days: 3
   exclude:
     domains:
       - automation
-      - weblink
-      - updater
       - group
       - script
       - switch
       - zone
       - zwave
-      - sensor
     entities:
       - binary_sensor.ge_32563_hinge_pin_smart_door_sensor_sensor
       - binary_sensor.ge_32563_hinge_pin_smart_door_sensor_sensor_2
@@ -32,38 +28,6 @@
       - switch.th161
       - switch.kuled1
       - switch.kuled2
-      - sensor.backdoorstatus
-      - sensor.garagedoorstatus
-      - sensor.gehingepinsensor1
-      - sensor.gehingepinsensor2
-      - sensor.operatingstate
-      - sensor.operatingmode
-      - sensor.ups_battery_charge
-      - sensor.ups_battery_runtime
-      - sensor.ups_input_voltage
-      - sensor.ups_status
-      - sensor.approxwattage
-      - sensor.homeassistant_v2db
-      - sensor.load_1m
-      - sensor.load_5m
-      - sensor.load_15m
-      - sensor.speedtest_download
-      - sensor.speedtest_upload
-      - sensor.pow1_power
-      - sensor.pow2_power
-      - sensor.th161_temperature
-      - sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
-      - sensor.processor_use
-      - sensor.memory_use_percent
-      - sensor.disk_use_percent_home
-      - sensor.setpoint
-      - sensor.adam_s_iphone_battery_state
-      - sensor.adam_s_iphone_battery_level
-      - sensor.amy_s_iphone_battery_level
-      - sensor.amy_s_iphone_battery_state
-      - sensor.doorbell
-      - sensor.cpu_temperature
-      - sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
     domains:
       - media_player
       - climate
@@ -71,6 +35,7 @@
       - cover
       - device_tracker
       - light
+      - sensor
 
 ####################################################
 #                                                  #

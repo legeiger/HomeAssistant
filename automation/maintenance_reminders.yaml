@@ -133,6 +133,26 @@
 
 #########################################################
 #                                                       #
+#              COUNTY TAX BILL REMINDER                 #
+#                                                       #
+#########################################################
+
+  - alias: "County Tax Bill Reminder"
+    initial_state: true
+    trigger:
+      platform: sun
+      event: sunrise
+    condition:
+      condition: template
+      value_template: '{{ now().strftime("%m-%d") == "04-30" }}'
+    action:
+      service: notify.home_assistant
+      data:
+        title: "Retreive Annual County Tax Bill"
+        message: "The annual county property tax bill is avaialbe online"
+
+#########################################################
+#                                                       #
 #            END OF CONFIGURATION FILE                  #
 #                                                       #
 #########################################################

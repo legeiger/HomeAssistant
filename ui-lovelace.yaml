@@ -6,6 +6,8 @@
 
 custom_header:
   compact_mode: true
+  button_text:
+    options: '{{ hours12LZ }}:{{ minutesLZ }}'
   hide_help: true
   hide_config: true
   shadow: on
@@ -18,6 +20,7 @@ views:
   - !include lovelace/switches.yaml
   - !include lovelace/devicestatus.yaml
   - !include lovelace/ha.yaml
+  - !include lovelace/network.yaml
   - !include lovelace/automations.yaml
   - !include lovelace/googlehomehub.yaml
 

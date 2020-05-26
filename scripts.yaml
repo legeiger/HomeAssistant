@@ -21,33 +21,6 @@
 
 ####################################################
 #                                                  #
-#                 NORMAL LIGHT                     #
-#                                                  #
-####################################################
-
-  normallight:
-    sequence:
-      - service: light.turn_on
-        entity_id: light.yeelightrgb2
-        data:
-          brightness: 254
-          color_temp: 336.02150537634407
-
-####################################################
-#                                                  #
-#                RETURN TO NORMAL LIGHT            #
-#                                                  #
-####################################################
-
-  returntonormal:
-    sequence:
-      - service: script.normallight
-      - delay: '00:00:01'
-      - service: light.turn_off
-        entity_id: light.yeelightrgb2
-
-####################################################
-#                                                  #
 #             RECEIVER VOLUME UP                   #
 #                                                  #
 ####################################################
@@ -89,6 +62,33 @@
         entity_id: switch.receivervoldwn
       - service: homeassistant.turn_on
         entity_id: switch.receivervoldwn
+
+####################################################
+#                                                  #
+#                 NORMAL LIGHT                     #
+#                                                  #
+####################################################
+
+  normallight:
+    sequence:
+      - service: light.turn_on
+        entity_id: light.notification_light
+        data:
+          brightness: 254
+          color_temp: 336.02150537634407
+
+####################################################
+#                                                  #
+#                RETURN TO NORMAL LIGHT            #
+#                                                  #
+####################################################
+
+  returntonormal:
+    sequence:
+      - service: script.normallight
+      - delay: '00:00:01'
+      - service: light.turn_off
+        entity_id: light.notification_light
 
 ####################################################
 #                                                  #
