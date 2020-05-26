@@ -23,7 +23,7 @@ I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https:
 * [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
 * [VScode](https://github.com/hassio-addons/addon-vscode)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.108.9__.
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.110.3__.
 
 # UI Based Integrations:
 The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup. 
@@ -33,13 +33,13 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 * [Unifi Controller](https://www.home-assistant.io/integrations/unifi/)
 * [Google Cast](https://www.home-assistant.io/integrations/cast/)
 * [iOS](https://www.home-assistant.io/integrations/ios/)
-* [Zone](https://www.home-assistant.io/integrations/zone/)
+* [LifX](https://www.home-assistant.io/integrations/lifx/)
 * [ZWave](https://www.home-assistant.io/docs/z-wave/installation)
 
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|39               |14      |1               |32        |65           |6        |68       |10             | 
+|41               |14      |1               |32        |66           |6        |103       |10             | 
 
 # Connected Devices:
 
@@ -58,6 +58,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 * [OpenGarage Door Controller ](https://www.amazon.com/OpenGarage-WiFi-enabled-Garage-Door-Opener/dp/B01M4RL0CL)*
 * [Kuled WiFi Light Switches (Flashed with Tasmota)](https://www.amazon.com/Required-Wireless-Requires-Schedule-Compatible/dp/B079FDTG7T)*
 * [Firefly Electronix Wifi Doorbell](https://www.fireflyelectronix.com/product/wifidoorbell)*
+* [Lifx Mini Color Bulb](https://www.lifx.com/collections/lamps-and-pendants/products/lifx-mini-color)*
 
 ### Zwave / Zigbee Devices
 * [Ikea TRÅDFRI LED Bulbs](http://www.ikea.com/us/en/catalog/products/20318267/)
@@ -98,6 +99,11 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 ## Home Assistant Status
 <p align="center">
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/ha.png">
+</p>
+
+## Network Status
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/network.png">
 </p>
 
 ## Automations
