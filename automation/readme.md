@@ -84,6 +84,17 @@ This set of automations is still in its infancy.  I replaced my nest thermostat 
 * At bedtime lower the temperature 2 degrees.
 * Pre-heat the house for when we wake up.
 
+### Kuled1.yaml Automations:
+__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/kuled1.yaml)__
+
+This is a simple automation to toggle our bedside lights when the 'kuled1' switch is double pressed.  The automation looks for the topic set by the double press and toggles the light when it sees it.  This reuired the following commands to be entered into the tasmota console on that switch. 
+
+```
+buttontopic kuledbutton
+setoption1 1
+setoption11 1
+```
+
 ### Leaving Home.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/leaving_home.yaml)__
 
