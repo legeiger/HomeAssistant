@@ -28,6 +28,8 @@
       - switch.th161
       - switch.kuled1
       - switch.kuled2
+      - switch.kuled3
+      - switch.kuled4
     domains:
       - media_player
       - climate

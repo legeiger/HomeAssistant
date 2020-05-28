@@ -149,6 +149,26 @@ light:
       - light.zooz_zen27_s2_dimmer_wall_switch_level_2
       - light.zooz_zen27_s2_dimmer_wall_switch_level_3
 
+  - platform: switch
+    name: basic1
+    entity_id: switch.basic1
+
+  - platform: switch
+    name: kuled1
+    entity_id: switch.kuled1
+
+  - platform: switch
+    name: kuled2
+    entity_id: switch.kuled2
+
+  - platform: switch
+    name: kuled3
+    entity_id: switch.kuled3
+
+  - platform: switch
+    name: kuled4
+    entity_id: switch.kuled4
+
 ####################################################
 #                   SPEEDTEST                      #
 ####################################################

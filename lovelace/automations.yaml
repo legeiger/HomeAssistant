@@ -142,10 +142,6 @@ cards:
         name: Set thermostat Away Mode When Leaving
         icon: mdi:home-outline
         secondary_info: last-triggered
-      - entity: automation.set_thermostat_away_mode_at_1500
-        name: Turn Off thermostat Away Mode at 1500
-        icon: mdi:home-outline
-        secondary_info: last-triggered
       - entity: automation.set_thermostat_away_mode_at_1600
         name: Turn Off thermostat Away Mode at 1600
         icon: mdi:home-outline
@@ -153,6 +149,14 @@ cards:
       - entity: automation.turn_off_away_when_home
         name: Turn Off thermostat Away Mode When Home
         icon: mdi:home-outline
+        secondary_info: last-triggered
+      - entity: automation.turn_on_bedroom_fan_with_hvac
+        name: Turn on Bedroom Fan with HVAC
+        icon: mdi:fan
+        secondary_info: last-triggered
+      - entity: automation.turn_off_bedroom_fan_with_hvac
+        name: Turn off Bedroom Fan with HVAC
+        icon: mdi:fan
         secondary_info: last-triggered
       - entity: automation.set_thermostat_temperature_2200
         name: Set Overnight Temperature
@@ -162,13 +166,9 @@ cards:
         name: Set Morning Temperature
         icon: mdi:weather-sunset
         secondary_info: last-triggered
-      - entity: automation.turn_on_bedroom_fan_with_hvac
-        name: Turn on Bedroom Fan with HVAC
-        icon: mdi:fan
-        secondary_info: last-triggered
-      - entity: automation.turn_off_bedroom_fan_with_hvac
-        name: Turn off Bedroom Fan with HVAC
-        icon: mdi:fan
+      - entity: automation.set_thermostat_away_mode_at_1500
+        name: Turn Off thermostat Away Mode at 1500
+        icon: mdi:home-outline
         secondary_info: last-triggered
   - type: entities
     title: Leaving Automations

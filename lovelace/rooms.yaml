@@ -100,60 +100,6 @@ cards:
               name: Current Indoor Temperature
   - type: vertical-stack
     cards:
-      - type: glance
-        columns: 3
-        title: Lights & Fans
-        entities:
-          - entity: switch.basic1
-            name: Livingroom
-            icon: mdi:lightbulb-outline
-          - entity: switch.kuled1
-            name: Bedroom Fan
-            icon: mdi:fan
-          - entity: switch.kuled2
-            name: Nursery Fan
-            icon: mdi:fan
-      - type: entities
-        title: Whole Home Energy Usage
-        show_header_toggle: false
-        footer:
-          type: graph
-          entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
-          detail: 2
-        entities:
-          - entity: sensor.daily_energy
-            name: Today's Energy Usage
-            icon: mdi:power-plug
-          - type: attribute
-            entity: sensor.daily_energy
-            attribute: last_period
-            icon: mdi:power-plug
-            suffix: kWh
-            name: Yesterday's Energy Usage
-          - entity: sensor.monthly_energy
-            name: Monthly Energy Usage
-            icon: mdi:power-plug
-          - type: divider
-          - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
-            name: Current Power Usage
-            icon: mdi:power-plug
-  - type: vertical-stack
-    cards:
-      - type: horizontal-stack
-        title: Other Lights
-        cards:
-          - type: light
-            entity: light.front_lights
-            icon: mdi:lightbulb-outline
-            name: Exterior
-          - type: light
-            entity: light.bedroom_lights
-            name: Bedroom
-            icon: mdi:lightbulb-outline
-          - type: light
-            entity: light.notification_light
-            name: Notification
-            icon: mdi:lightbulb-outline
       - type: horizontal-stack
         title: Basement Lights
         cards:
@@ -169,10 +115,77 @@ cards:
             entity: light.zooz_zen27_s2_dimmer_wall_switch_level_3
             name: Stairs & Hall
             icon: mdi:lightbulb-outline
-  # - type: entities
-  #   entities:
-  #     - entity: switch.cast
-  #       icon: mdi:google-assistant
+      - type: horizontal-stack
+        title: Other Lights
+        cards:
+          - type: light
+            entity: light.front_lights
+            icon: mdi:lightbulb-outline
+            name: Exterior House Lights
+          - type: light
+            entity: light.basic1
+            name: Living Room Lamps
+            icon: mdi:lightbulb-outline
+          - type: light
+            entity: light.notification_light
+            name: Notification Light
+            icon: mdi:lightbulb-outline
+  - type: entities
+    title: Whole Home Energy Usage
+    show_header_toggle: false
+    footer:
+      type: graph
+      entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
+      detail: 2
+    entities:
+      - entity: sensor.daily_energy
+        name: Today's Energy Usage
+        icon: mdi:power-plug
+      - type: attribute
+        entity: sensor.daily_energy
+        attribute: last_period
+        icon: mdi:power-plug
+        suffix: kWh
+        name: Yesterday's Energy Usage
+      - entity: sensor.monthly_energy
+        name: Monthly Energy Usage
+        icon: mdi:power-plug
+      - type: divider
+      - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
+        name: Current Power Usage
+        icon: mdi:power-plug
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        title: Master Bedroom Lights
+        cards:
+          - type: light
+            entity: light.tradfri_bulb_e26_ws_opal_980lm_2_2
+            icon: mdi:lightbulb-outline
+            name: Amy's Bedside
+          - type: light
+            entity: light.kuled1
+            icon: mdi:lightbulb-outline
+            name: Fan & Light
+          - type: light
+            entity: light.tradfri_bulb_e26_ws_opal_980lm_3
+            icon: mdi:lightbulb-outline
+            name: Adam's Bedside
+      - type: horizontal-stack
+        title: Bedroom Lights
+        cards:
+          - type: light
+            entity: light.kuled2
+            icon: mdi:lightbulb-outline
+            name: Mia's Bedroom
+          - type: light
+            entity: light.kuled3
+            icon: mdi:lightbulb-outline
+            name: Mikey's Bedroom
+          - type: light
+            entity: light.kuled4
+            icon: mdi:lightbulb-outline
+            name: Guest Bedroom
 
 ####################################################
 #                                                  #

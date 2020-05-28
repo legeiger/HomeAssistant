@@ -13,7 +13,7 @@
         from: 'on'
         to: 'off'
         for:
-          seconds: 30
+          seconds: 60
       - platform: state
         entity_id:
           - device_tracker.sonoff_basic_1
@@ -22,6 +22,8 @@
           - device_tracker.sonoff_th16_1
           - device_tracker.kuled_1
           - device_tracker.kuled_2
+          - device_tracker.sonoff_1242
+          - device_tracker.unifi_80_7d_3a_02_23_96_default
           - device_tracker.broadlink_rm_mini_3
           - device_tracker.google_nest_hub
           - device_tracker.ikea_tradfri_gateway
@@ -36,8 +38,11 @@
           - device_tracker.unifi_security_gateway
           - device_tracker.unifi_switch_8_poe_60w
           - device_tracker.raspberry_pi_2_wired
+          - device_tracker.lifx_mini_57057e
         from: 'home'
         to: 'not_home'
+        for:
+          seconds: 60
     action:
       service: notify.home_assistant
       data_template:

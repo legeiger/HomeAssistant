@@ -106,6 +106,10 @@ cards:
         icon: 'mdi:wifi'
       - entity: sensor.kuled2_signal
         icon: 'mdi:wifi'
+      - entity: sensor.kuled3_signal
+        icon: 'mdi:wifi'
+      - entity: sensor.kuled4_signal
+        icon: 'mdi:wifi'
     title: Wifi Strength
     show_header_toggle: false
 

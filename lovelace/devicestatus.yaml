@@ -78,16 +78,6 @@ cards:
         secondary_info: "192.168.1.9"
       - entity: switch.basement_tv_samsung_55_inch
         name: Samsung TV Internet
-      - entity: device_tracker.kuled_1
-        name: Kuled Switch 1
-        icon: mdi:light-switch
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.5"
-      - entity: device_tracker.kuled_2
-        name: Kuled Switch 2
-        icon: mdi:light-switch
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.22"
       - entity: device_tracker.ikea_tradfri_gateway
         icon: mdi:server
         name: Tradfri Gateway
@@ -103,6 +93,30 @@ cards:
         icon: mdi:lightbulb-outline
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.25"
+  - type: entities
+    title: Kuled Switches
+    show_header_toggle: false
+    entities:
+      - entity: device_tracker.kuled_1
+        name: Kuled Switch 1
+        icon: mdi:light-switch
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.5"
+      - entity: device_tracker.kuled_2
+        name: Kuled Switch 2
+        icon: mdi:light-switch
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.22"
+      - entity: device_tracker.sonoff_1242
+        name: Kuled Switch 3
+        icon: mdi:light-switch
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.27"
+      - entity: device_tracker.unifi_80_7d_3a_02_23_96_default
+        name: Kuled Switch 4
+        icon: mdi:light-switch
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.31"
   - type: entities
     title: Sonoffs
     show_header_toggle: false
@@ -182,12 +196,10 @@ cards:
         icon: mdi:linux
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.23"
-      - entity: device_tracker.mikey_s_kindle_fire
-        type: "custom:secondaryinfo-entity-row"
-        icon: mdi:amazon
-        secondary_info: "192.168.1.4"
-      - entity: switch.mikey_s_kindle_fire
-        name: Mikey's Kindle Internet
+      # - entity: device_tracker.mikey_s_kindle_fire
+      #   type: "custom:secondaryinfo-entity-row"
+      #   icon: mdi:amazon
+      #   secondary_info: "192.168.1.4"
       - entity: device_tracker.amy_2018
         name: Amy's Work Laptop (WiFi)
         icon: mdi:windows

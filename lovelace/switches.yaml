@@ -151,7 +151,17 @@ cards:
         name: Kuled 2
         icon: mdi:light-switch
         type: "custom:secondaryinfo-entity-row"
-        secondary_info: "Nursery Fan"
+        secondary_info: "Mia's Fan"
+      - entity: switch.kuled3
+        name: Kuled 3
+        icon: mdi:light-switch
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "Mikey's Fan"
+      - entity: switch.kuled4
+        name: Kuled 4
+        icon: mdi:light-switch
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "Pink Room Fan"
   - type: entities
     title: Computer Switches
     show_header_toggle: false

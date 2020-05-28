@@ -55,7 +55,7 @@
       - service: climate.set_temperature
         data:
           entity_id: climate.thermostat
-          temperature: 73
+          temperature: 74
 
 #########################################################
 #                                                       #
@@ -106,7 +106,7 @@
       - service: climate.set_temperature
         data:
           entity_id: climate.thermostat
-          temperature: 73
+          temperature: 74
 
 #########################################################
 #                                                       #
