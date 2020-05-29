@@ -1,0 +1,59 @@
+#########################################################
+#                                                       #
+#                    OK TO WAKE - RED                   #
+#                                                       #
+#########################################################
+
+  - alias: "OK to Wake Red"
+    initial_state: true  
+    trigger:
+      platform: time
+      at: '05:00'
+    action:
+      service: light.turn_on
+      data:
+        entity_id: light.mikey_s_bed_lights
+        brightness: 5
+        rgb_color: [255,0,0]
+        white_value: 0
+
+#########################################################
+#                                                       #
+#                  OK TO WAKE - GREEN                   #
+#                                                       #
+#########################################################
+
+  - alias: "OK to Wake Green"
+    initial_state: true  
+    trigger:
+      platform: time
+      at: '07:00'
+    action:
+      service: light.turn_on
+      data:
+        entity_id: light.mikey_s_bed_lights
+        brightness: 5
+        rgb_color: [0,255,0]
+        white_value: 0
+
+#########################################################
+#                                                       #
+#                  OK TO WAKE - OFF                     #
+#                                                       #
+#########################################################
+
+  - alias: "OK to Wake Off"
+    initial_state: true  
+    trigger:
+      platform: time
+      at: '08:00'
+    action:
+      service: light.turn_off
+      data:
+        entity_id: light.mikey_s_bed_lights
+
+#########################################################
+#                                                       #
+#            END OF CONFIGURATION FILE                  #
+#                                                       #
+#########################################################

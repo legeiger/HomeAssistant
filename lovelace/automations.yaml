@@ -134,6 +134,18 @@ cards:
       - entity: automation.kuled1_double_tap
         name: Kuled1 Double Tap Automation
         icon: mdi:gesture-double-tap
+      - entity: automation.kuled3_double_tap
+        name: Kuled3 Double Tap Automation
+        icon: mdi:gesture-double-tap
+      - entity: automation.ok_to_wake_red
+        name: OK to Wake-Red
+        icon: mdi:alarm-note-off
+      - entity: automation.ok_to_wake_green
+        name: OK to Wake-Green
+        icon: mdi:alarm-note
+      - entity: automation.ok_to_wake_off
+        name: OK to Wake-Off
+        icon: mdi:alarm-note-off
   - type: entities
     title: Climate Automations
     show_header_toggle: false

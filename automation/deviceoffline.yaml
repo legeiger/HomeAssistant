@@ -39,6 +39,7 @@
           - device_tracker.unifi_switch_8_poe_60w
           - device_tracker.raspberry_pi_2_wired
           - device_tracker.lifx_mini_57057e
+          - device_tracker.esp_a0d647
         from: 'home'
         to: 'not_home'
         for:

@@ -93,6 +93,11 @@ cards:
         icon: mdi:lightbulb-outline
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.25"
+      - entity: device_tracker.esp_a0d647
+        name: LED Strip Light
+        icon: mdi:led-strip-variant
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.4"
   - type: entities
     title: Kuled Switches
     show_header_toggle: false

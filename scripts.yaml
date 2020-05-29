@@ -92,6 +92,103 @@
 
 ####################################################
 #                                                  #
+#                MIKEY READING LIGHT               #
+#                                                  #
+####################################################
+
+  readinglight:
+    sequence:
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          rgb_color: [255,100,0]
+          brightness: 255
+          white_value: 255
+      - delay: '00:00:01' 
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          rgb_color: [255,100,0]
+          brightness: 255
+          white_value: 255
+
+####################################################
+#                                                  #
+#               FADE BED LIGHTS OFF                #
+#                                                  #
+####################################################
+
+  fadebedlightoff:
+    sequence:
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          brightness: 230
+          white_value: 230
+      - delay: '00:02:00'
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          brightness: 205
+          white_value: 205
+      - delay: '00:02:00'
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          brightness: 180
+          white_value: 180
+      - delay: '00:02:00'
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          brightness: 155
+          white_value: 155
+      - delay: '00:02:00'
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          brightness: 130
+          white_value: 130
+      - delay: '00:02:00'
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          brightness: 105
+          white_value: 105
+      - delay: '00:02:00'
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          brightness: 80
+          white_value: 80
+      - delay: '00:02:00'
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          brightness: 55
+          white_value: 55
+      - delay: '00:02:00'
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          brightness: 30
+          white_value: 30
+      - delay: '00:02:00'
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          brightness: 5
+          white_value: 5
+      - delay: '00:02:00'
+      - service: light.turn_on
+        entity_id: light.mikey_s_bed_lights
+        data:
+          white_value: 0
+      - service: light.turn_off
+        entity_id: light.mikey_s_bed_lights
+
+####################################################
+#                                                  #
 #           END OF CONFIGURATION FILE              #
 #                                                  #
 ####################################################

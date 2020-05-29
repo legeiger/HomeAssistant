@@ -41,11 +41,13 @@ cards:
       - entity: light.yeelight5
         name: Interior Garage Light
   - type: entities
-    title: Lifx Lights
+    title: Other Lights
     show_header_toggle: false
     entities:
       - entity: light.notification_light
         name: Notification Light
+      - entity: light.mikey_s_bed_lights
+        name: Mikey's Bed LED Strip
   - type: entities
     title: Broadlink IR Switches
     show_header_toggle: false

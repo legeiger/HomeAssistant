@@ -169,6 +169,12 @@ light:
     name: kuled4
     entity_id: switch.kuled4
 
+  - platform: flux_led
+    devices:
+      192.168.1.4:
+        name: Mikey's Bed Lights
+        mode: "rgbw"
+
 ####################################################
 #                   SPEEDTEST                      #
 ####################################################
