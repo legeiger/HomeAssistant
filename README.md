@@ -39,7 +39,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|41               |14      |1               |32        |66           |6        |103       |10             | 
+|41               |20      |1               |32        |70           |8        |105       |10            | 
 
 # Connected Devices:
 
@@ -59,6 +59,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 * [Kuled WiFi Light Switches (Flashed with Tasmota)](https://www.amazon.com/Required-Wireless-Requires-Schedule-Compatible/dp/B079FDTG7T)*
 * [Firefly Electronix Wifi Doorbell](https://www.fireflyelectronix.com/product/wifidoorbell)*
 * [Lifx Mini Color Bulb](https://www.lifx.com/collections/lamps-and-pendants/products/lifx-mini-color)*
+* [Wifi RGBW LED Strip](https://www.amazon.com/gp/product/B07QBKRCW1)*
 
 ### Zwave / Zigbee Devices
 * [Ikea TRÅDFRI LED Bulbs](http://www.ikea.com/us/en/catalog/products/20318267/)
