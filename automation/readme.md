@@ -84,13 +84,20 @@ This set of automations is still in its infancy.  I replaced my nest thermostat 
 * At bedtime lower the temperature 2 degrees.
 * Pre-heat the house for when we wake up.
 
-### Kuled1.yaml Automations:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/kuled1.yaml)__
+### Kuleddoubletap.yaml Automations:
+__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/kuleddoubletap.yaml)__
 
-This is a simple automation to toggle our bedside lights when the 'kuled1' switch is double pressed.  The automation looks for the topic set by the double press and toggles the light when it sees it.  This reuired the following commands to be entered into the tasmota console on that switch. 
+* This is a simple automation to toggle our bedside lights when the 'kuled1' switch is double pressed.  The automation looks for the topic set by the double press and toggles the light when it sees it.  This reuired the following commands to be entered into the tasmota console on that switch. 
 
 ```
 buttontopic kuledbutton
+setoption1 1
+setoption11 1
+```
+* This is an automation that upon double press of the switch evaluates if the LED strip in the room is on or off. If its off, the automation turns the LED strip on to a set color/brightness.  If its on, it starts a sequence to slowly turn off the LED strip overtime.  We use use this as a reading light when my son goes to bed at night.  When leaving the room we can double tap again and the light will slowly transition off.  This reuired the following commands to be entered into the tasmota console on that switch. 
+
+```
+buttontopic kuledbutton3
 setoption1 1
 setoption11 1
 ```
@@ -145,6 +152,11 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 
 * Set the notification bulb to the color selected using an input select
 * Set the notification bulb to a white color that matches the other lamps in the room
+
+### OKtowake.yaml Automations
+__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/oktowake.yaml)__
+
+This is to mimic a the OK to wake tools you can buy for kids.  If they wake up and see a red light they need to stay in bed, if its green they are OK to leave the bed.  
 
 ### Outside Lights.yaml Automations
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/outside_Lights.yaml)__
