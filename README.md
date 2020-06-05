@@ -39,7 +39,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|41               |20      |1               |32        |70           |8        |105       |10            | 
+|42               |21      |2               |30        |70           |8        |108      |11             | 
 
 # Connected Devices:
 
