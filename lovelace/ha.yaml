@@ -131,6 +131,8 @@ cards:
         name: Zooz Dimmer Switch 2
       - entity: zwave.zooz_zen27_s2_dimmer_wall_switch_3
         name: Zooz Dimmer Switch 3
+      - entity: zwave.vision_security_zg8101_garage_door_detector
+        name: Tilt Sensor
   - type: entities
     show_header_toggle: false
     title: UPS Status
@@ -177,9 +179,13 @@ cards:
       - entity: sensor.unknown_id_021f_unknown_type_0003_id_0101_battery_level
         icon: mdi:battery-50
         name: Back Door Sensor
+      - entity: sensor.vision_security_zg8101_garage_door_detector_battery_level
+        name: Tilt Sensor
+        icon: mdi:battery-50
       - entity: sensor.doorbell
         name: Doorbell
         icon: mdi:battery-50
+
 
 ####################################################
 #                                                  #

@@ -43,10 +43,14 @@
   - alias: "Dog Has Been Fed Morning"
     initial_state: true
     trigger:
-      platform: state
-      entity_id: input_boolean.feeddog
-      from: 'off'
-      to: 'on'
+      - platform: state
+        entity_id: input_boolean.feeddog
+        from: 'off'
+        to: 'on'
+      - platform: state
+        entity_id: sensor.vision_security_zg8101_garage_door_detector_alarm_level
+        from: '0'
+        to: '255'
     condition:
         condition: time
         before: '12:00:00'
@@ -66,10 +70,14 @@
   - alias: "Dog Has Been Fed Evening"
     initial_state: true
     trigger:
-      platform: state
-      entity_id: input_boolean.feeddog
-      from: 'off'
-      to: 'on'
+      - platform: state
+        entity_id: input_boolean.feeddog
+        from: 'off'
+        to: 'on'
+      - platform: state
+        entity_id: sensor.vision_security_zg8101_garage_door_detector_alarm_level
+        from: '0'
+        to: '255'
     condition:
         condition: time
         after: '12:00:00'
