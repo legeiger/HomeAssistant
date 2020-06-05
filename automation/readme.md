@@ -34,8 +34,8 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 These automations are used to turn a light on to signify the dog needs to be fed.  A amazon dash button is used to signify the dog has been fed by turning off the light. 
 * Turn on Notification Light AM
 * Turn on Notification Light PM
-* Turn off the Notification Light When the button is pressed in the morning
-* Turn off the Notification Light When the button is pressed in the evening
+* Turn off the Notification Light when the dog food container is opened in the morning
+* Turn off the Notification Light When the dog food container is opened in the evening
 * Reset everything for the new day
 
 ### Freezer Temp.yaml Automations:
