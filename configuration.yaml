@@ -57,8 +57,8 @@ lovelace:
     #https://github.com/thomasloven/lovelace-card-tools
     - url: /local/card-tools.js
       type: js
-    #https://github.com/maykar/custom-header
-    - url: /local/custom-header.js
+    #https://github.com/custom-cards/stack-in-card
+    - url: /local/stack-in-card.js
       type: module
 
 #https://www.home-assistant.io/integrations/mobile_app/
@@ -175,18 +175,23 @@ light:
         name: Mikey's Bed Lights
         mode: "rgbw"
 
+  - platform: flux_led
+    devices:
+      192.168.1.42:
+        name: LED Strip Light2
+        mode: "rgbw"
+
 ####################################################
-#                   SPEEDTEST                      #
+#                   SAMSUNG TV                     #
 ####################################################
 
-#https://www.home-assistant.io/components/speedtestdotnet/
-speedtestdotnet:
-  server_id: 1776
-  monitored_conditions:
-    - download
-    - upload
-  scan_interval:
-    hours: 2
+#https://www.home-assistant.io/integrations/samsungtv/
+samsungtv:
+  - host: 192.168.1.9
+    turn_on_action:
+      - service: wake_on_lan.send_magic_packet
+        data:
+          mac: "8c:79:f5:68:4b:7b"
 
 ####################################################
 #                TRADFRI HUB                       #

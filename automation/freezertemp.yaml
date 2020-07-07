@@ -9,7 +9,7 @@
     trigger:
       - platform: numeric_state
         entity_id: sensor.th161_temperature
-        above: 5
+        above: 10
     action:
       - service: notify.mobile_app_adams_iphone
         data:

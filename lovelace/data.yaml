@@ -1,0 +1,143 @@
+####################################################
+#                                                  #
+#                    ROOMS VIEW                    #
+#                                                  #
+####################################################
+
+title: Data
+path: data
+icon: mdi:home-analytics
+cards:
+  - type: conditional
+    conditions:
+      - entity: climate.thermostat
+        state: "cool"
+    card:
+      type: entities
+      show_header_toggle: false
+      title: HVAC Information
+      footer:
+        type: graph
+        entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
+        detail: 2
+      entities:
+        - entity: climate.thermostat
+          name: Thermostat
+        - entity: sensor.cooling_hours_today
+          icon: mdi:progress-clock
+        - entity: sensor.cooling_hours_yesterday
+          icon: mdi:progress-clock
+        - entity: sensor.cooling_hours_two_days_ago
+          icon: mdi:progress-clock
+        - type: divider
+        - entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
+          name: Current Indoor Temperature
+  - type: conditional
+    conditions:
+      - entity: climate.thermostat
+        state: "heat"
+    card:
+      type: entities
+      show_header_toggle: false
+      title: HVAC Information
+      footer:
+        type: graph
+        entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
+        detail: 2
+      entities:
+        - entity: climate.thermostat
+          name: Thermostat
+        - entity: sensor.heating_hours_today
+          icon: mdi:progress-clock
+        - entity: sensor.heating_hours_yesterday
+          icon: mdi:progress-clock
+        - entity: sensor.heating_hours_two_days_ago
+          icon: mdi:progress-clock
+        - type: divider
+        - entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
+          name: Current Indoor Temperature
+  - type: entities
+    title: Whole Home Energy Usage
+    show_header_toggle: false
+    footer:
+      type: graph
+      entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
+      detail: 2
+    entities:
+      - type: section
+        label: Daily Usage
+      - entity: sensor.daily_energy
+        name: Today
+        icon: mdi:power-plug
+      - type: attribute
+        entity: sensor.daily_energy
+        attribute: last_period
+        icon: mdi:power-plug
+        suffix: kWh
+        name: Yesterday
+      - type: section
+        label: Montly Usage
+      - entity: sensor.monthly_energy
+        name: This Month
+        icon: mdi:power-plug
+      - type: attribute
+        entity: sensor.monthly_energy
+        name: Previous Month
+        attribute: last_period
+        icon: mdi:power-plug
+        suffix: kWh
+      - type: section
+        label:
+      - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
+        name: Current Power Usage
+        icon: mdi:power-plug
+  - type: entities
+    show_header_toggle: false
+    title: UPS Status
+    footer:
+      type: graph
+      entity: sensor.approxwattage
+      detail: 2
+    entities:
+      - entity: sensor.ups_load
+        name: Load (Percent)
+        icon: mdi:percent
+      - entity: sensor.ups_status
+        name: State
+        icon: mdi:flash-circle
+      - entity: sensor.ups_input_voltage
+        name: Input Voltage
+      - entity: sensor.ups_battery_voltage
+        name: Battery Voltage
+      - entity: sensor.ups_output_voltage
+        name: Output Voltage
+      - entity: sensor.ups_battery_charge
+        name: Battery Charge
+        icon: mdi:battery-charging
+      - entity: sensor.ups_battery_runtime
+        name: Runntime
+        icon: mdi:av-timer
+      - type: divider
+      - entity: sensor.approxwattage
+        name: Load (Watts)
+        icon: mdi:power-standby
+  - type: entities
+    title: HP 9025 Printer Status
+    show_header_toggle: false
+    entities:
+      - entity: sensor.hp_officejet_pro_9020_series
+        name: Printer Status
+      - entity: sensor.hp_officejet_pro_9020_series_black_cartridge
+        name: Black Ink Level
+      - entity: sensor.hp_officejet_pro_9020_series_cyan_cartridge
+        name: Cyan Ink Level
+      - entity: sensor.hp_officejet_pro_9020_series_magenta_cartridge
+        name: Magenta Ink Level
+      - entity: sensor.hp_officejet_pro_9020_series_yellow_cartridge
+        name: Yellow Ink Level
+
+####################################################
+#                                                  #
+#          END OF CONFIGURATION FILE               #
+#                                                  #
+####################################################

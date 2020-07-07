@@ -70,14 +70,6 @@ cards:
         icon: mdi:fire
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.21"
-      - entity: switch.amazon_fire_tv
-        name: Fire TV Internet
-      - entity: device_tracker.basement_tv_samsung_55_inch
-        icon: mdi:television-classic
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.9"
-      - entity: switch.basement_tv_samsung_55_inch
-        name: Samsung TV Internet
       - entity: device_tracker.ikea_tradfri_gateway
         icon: mdi:server
         name: Tradfri Gateway
@@ -94,10 +86,15 @@ cards:
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.25"
       - entity: device_tracker.esp_a0d647
-        name: LED Strip Light
+        name: Mikey's Bed LED Strip Light
         icon: mdi:led-strip-variant
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.4"
+      - entity: device_tracker.sta_5f8b40
+        name: (Location TBD) LED Strip Light
+        icon: mdi:led-strip-variant
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.42"
   - type: entities
     title: Kuled Switches
     show_header_toggle: false
@@ -188,6 +185,11 @@ cards:
         icon:  mdi:server
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.24"
+      - entity: device_tracker.unifi_8c_79_f5_68_4b_7b_default
+        icon: mdi:television-classic
+        name: Basment TV (Samsung 55 Inch)
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.9"
   - type: entities
     title: Wireless Devices
     show_header_toggle: false
@@ -201,10 +203,11 @@ cards:
         icon: mdi:linux
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.23"
-      # - entity: device_tracker.mikey_s_kindle_fire
-      #   type: "custom:secondaryinfo-entity-row"
-      #   icon: mdi:amazon
-      #   secondary_info: "192.168.1.4"
+      - entity: device_tracker.mikey_s_kindle_fire
+        name: Mikey's Kindle Fire
+        type: "custom:secondaryinfo-entity-row"
+        icon: mdi:amazon
+        secondary_info: "192.168.1.41"
       - entity: device_tracker.amy_2018
         name: Amy's Work Laptop (WiFi)
         icon: mdi:windows
@@ -220,34 +223,16 @@ cards:
         icon: mdi:watch
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.16"
-      - entity: device_tracker.canon_printer
-        name: Canon Printer
-        icon: mdi:printer
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.13"
+      # - entity: device_tracker.canon_printer
+      #   name: Canon Printer
+      #   icon: mdi:printer
+      #   type: "custom:secondaryinfo-entity-row"
+      #   secondary_info: "192.168.1.13"
       - entity: device_tracker.hp2f2505
         name: HP Printer
         icon: mdi:printer
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.17"
-  - type: entities
-    title: HP 9025 Printer Status
-    show_header_toggle: false
-    entities:
-      - entity: sensor.hp_officejet_pro_9020_series
-        name: Printer Status
-      - entity: sensor.hp_officejet_pro_9020_series_black_cartridge
-        name: Black Ink Level
-      - entity: sensor.hp_officejet_pro_9020_series_cyan_cartridge
-        name: Cyan Ink Level
-      - entity: sensor.hp_officejet_pro_9020_series_magenta_cartridge
-        name: Magenta Ink Level
-      - entity: sensor.hp_officejet_pro_9020_series_yellow_cartridge
-        name: Yellow Ink Level
-  - type: media-control
-    entity: media_player.basement_tv
-  - type: media-control
-    entity: media_player.family_room_display
 
 ####################################################
 #                                                  #

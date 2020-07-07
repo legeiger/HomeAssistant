@@ -128,6 +128,7 @@
           - zwave.zooz_zen27_s2_dimmer_wall_switch
           - zwave.zooz_zen27_s2_dimmer_wall_switch_2
           - zwave.zooz_zen27_s2_dimmer_wall_switch_3
+          - zwave.vision_security_zg8101_garage_door_detector
         to: 'dead'
     action:
       service: notify.home_assistant
@@ -150,6 +151,7 @@
           - sensor.ge_32563_hinge_pin_smart_door_sensor_battery_level
           - sensor.ge_32563_hinge_pin_smart_door_sensor_battery_level_2
           - sensor.unknown_id_021f_unknown_type_0003_id_0101_battery_level
+          - sensor.vision_security_zg8101_garage_door_detector_battery_level
         below: 20
     action:
       service: notify.home_assistant

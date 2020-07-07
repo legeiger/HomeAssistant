@@ -134,36 +134,6 @@ cards:
       - entity: zwave.vision_security_zg8101_garage_door_detector
         name: Tilt Sensor
   - type: entities
-    show_header_toggle: false
-    title: UPS Status
-    footer:
-      type: graph
-      entity: sensor.approxwattage
-      detail: 2
-    entities:
-      - entity: sensor.ups_load
-        name: Load (Percent)
-        icon: mdi:percent
-      - entity: sensor.ups_status
-        name: State
-        icon: mdi:flash-circle
-      - entity: sensor.ups_input_voltage
-        name: Input Voltage
-      - entity: sensor.ups_battery_voltage
-        name: Battery Voltage
-      - entity: sensor.ups_output_voltage
-        name: Output Voltage
-      - entity: sensor.ups_battery_charge
-        name: Battery Charge
-        icon: mdi:battery-charging
-      - entity: sensor.ups_battery_runtime
-        name: Runntime
-        icon: mdi:av-timer
-      - type: divider
-      - entity: sensor.approxwattage
-        name: Load (Watts)
-        icon: mdi:power-standby
-  - type: entities
     title: Sensor Battery Status
     show_header_toggle: false
     entities:

@@ -17,6 +17,8 @@ title: Home
 background: var(--background-image)
 views:
   - !include lovelace/rooms.yaml
+  - !include lovelace/weather.yaml
+  - !include lovelace/data.yaml
   - !include lovelace/switches.yaml
   - !include lovelace/devicestatus.yaml
   - !include lovelace/ha.yaml

@@ -10,12 +10,19 @@
       platform: time
       at: '05:00'
     action:
-      service: light.turn_on
-      data:
-        entity_id: light.mikey_s_bed_lights
-        brightness: 5
-        rgb_color: [255,0,0]
-        white_value: 0
+      - service: light.turn_on
+        data:
+          entity_id: light.mikey_s_bed_lights
+          brightness: 5
+          rgb_color: [255,0,0]
+          white_value: 0
+      - delay: '00:00:05'
+      - service: light.turn_on
+        data:
+          entity_id: light.mikey_s_bed_lights
+          brightness: 5
+          rgb_color: [255,0,0]
+          white_value: 0
 
 #########################################################
 #                                                       #
@@ -29,12 +36,19 @@
       platform: time
       at: '07:00'
     action:
-      service: light.turn_on
-      data:
-        entity_id: light.mikey_s_bed_lights
-        brightness: 5
-        rgb_color: [0,255,0]
-        white_value: 0
+      - service: light.turn_on
+        data:
+          entity_id: light.mikey_s_bed_lights
+          brightness: 5
+          rgb_color: [0,255,0]
+          white_value: 0
+      - delay: '00:00:05'
+      - service: light.turn_on
+        data:
+          entity_id: light.mikey_s_bed_lights
+          brightness: 5
+          rgb_color: [0,255,0]
+          white_value: 0
 
 #########################################################
 #                                                       #

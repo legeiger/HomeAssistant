@@ -1,0 +1,44 @@
+####################################################
+#                                                  #
+#                  WEATHER VIEW                    #
+#                                                  #
+####################################################
+
+title: Weather
+path: weather
+icon: mdi:weather-partly-snowy-rainy
+cards:
+  - type: custom:stack-in-card
+    cards:
+      - type: weather-forecast
+        name: Weather
+        entity: weather.dark_sky
+        secondary_info_attribute: humidity
+      - type: entities
+        entities:
+          - sun.sun
+          - entity: sensor.nextsunrise
+            icon: mdi:weather-sunset-up
+          - entity: sensor.nextsunset
+            icon: mdi:weather-sunset-down
+          - entity: sensor.hoursdaylight
+            icon: mdi:clock
+            name: Hours of Daylight
+          - type: attribute
+            entity: sun.sun
+            attribute: elevation
+            name: Sun Elevation
+            icon: mdi:weather-sunset
+          - entity: sensor.moon
+            name: Moon Phase
+  - type: picture
+    image: https://forecast.weather.gov/meteograms/Plotter.php?lat=41.9796&lon=-88.1674&wfo=LOT&zcode=ILZ013&gset=10&gdiff=5&unit=0&tinfo=CY6&ahour=0&pcmd=11011111111110000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6
+  - type: iframe
+    url: https://embed.windy.com/embed2.html?lat=41.979&lon=-88.167&zoom=5&level=surface&overlay=radar&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=41.9796&detailLon=-88.167&metricWind=default&metricTemp=default&radarRange=-1
+    aspect_ratio: 80%
+
+####################################################
+#                                                  #
+#          END OF CONFIGURATION FILE               #
+#                                                  #
+####################################################

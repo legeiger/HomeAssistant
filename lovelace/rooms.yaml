@@ -10,29 +10,24 @@ icon: mdi:home
 cards:
   - type: vertical-stack
     cards:
-    - type: glance
-      title: Door Status
-      entities:
-        - entity: sensor.gehingepinsensor2
-          name: Int. Garage
-          icon: mdi:door
-        - entity: sensor.backdoorstatus
-          name: Back
-          icon: mdi:door
-        - entity: sensor.gehingepinsensor1
-          name: Front
-          icon: mdi:door
-        - entity: cover.garage_door
-          name: Garage
-          tap_action:
-            action: toggle
-    - type: weather-forecast
-      name: Weather
-      entity: weather.dark_sky
-  - type: vertical-stack
-    cards:
+      - type: glance
+        title: Door Status
+        entities:
+          - entity: sensor.gehingepinsensor2
+            name: Int. Garage
+            icon: mdi:door
+          - entity: sensor.backdoorstatus
+            name: Back
+            icon: mdi:door
+          - entity: sensor.gehingepinsensor1
+            name: Front
+            icon: mdi:door
+          - entity: cover.garage_door
+            name: Garage
+            tap_action:
+              action: toggle
       - type: entities
-        title: Entertainment Center
+        title: TV and Stereo Controls
         show_header_toggle: false
         footer:
           type: buttons
@@ -44,125 +39,28 @@ cards:
             - entity: script.volumedown
               icon: mdi:volume-minus
         entities:
+          - type: section
+            label: Basement
+          - entity: media_player.unnamed_device
+            name: Basement TV
+          - type: section
+            label: Living Room
           - entity: switch.tvstate
             name: TV
             icon: mdi:television
           - entity: switch.receiverstate
             name: Amplifier
             icon: mdi:speaker
-      - type: conditional
-        conditions:
-          - entity: climate.thermostat
-            state: "cool"
-        card:
-          type: entities
-          show_header_toggle: false
-          title: HVAC Information
-          footer:
-            type: graph
-            entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
-            detail: 2
-          entities:
-            - entity: climate.thermostat
-              name: Thermostat
-            - entity: sensor.cooling_hours_today
-              icon: mdi:progress-clock
-            - entity: sensor.cooling_hours_yesterday
-              icon: mdi:progress-clock
-            - entity: sensor.cooling_hours_two_days_ago
-              icon: mdi:progress-clock
-            - type: divider
-            - entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
-              name: Current Indoor Temperature
-      - type: conditional
-        conditions:
-          - entity: climate.thermostat
-            state: "heat"
-        card:
-          type: entities
-          show_header_toggle: false
-          title: HVAC Information
-          footer:
-            type: graph
-            entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
-            detail: 2
-          entities:
-            - entity: climate.thermostat
-              name: Thermostat
-            - entity: sensor.heating_hours_today
-              icon: mdi:progress-clock
-            - entity: sensor.heating_hours_yesterday
-              icon: mdi:progress-clock
-            - entity: sensor.heating_hours_two_days_ago
-              icon: mdi:progress-clock
-            - type: divider
-            - entity: sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
-              name: Current Indoor Temperature
   - type: vertical-stack
     cards:
-      - type: horizontal-stack
-        title: Basement Lights
-        cards:
-          - type: light
-            entity: light.zooz_zen27_s2_dimmer_wall_switch_level
-            name: Main Room
-            icon: mdi:lightbulb-outline
-          - type: light
-            entity: light.zooz_zen27_s2_dimmer_wall_switch_level_2
-            name: Fireplace Accent
-            icon: mdi:lightbulb-outline
-          - type: light
-            entity: light.zooz_zen27_s2_dimmer_wall_switch_level_3
-            name: Stairs & Hall
-            icon: mdi:lightbulb-outline
-      - type: horizontal-stack
-        title: Other Lights
-        cards:
-          - type: light
-            entity: light.front_lights
-            icon: mdi:lightbulb-outline
-            name: Exterior House Lights
-          - type: light
-            entity: light.basic1
-            name: Living Room Lamps
-            icon: mdi:lightbulb-outline
-          - type: light
-            entity: light.notification_light
-            name: Notification Light
-            icon: mdi:lightbulb-outline
-  - type: entities
-    title: Whole Home Energy Usage
-    show_header_toggle: false
-    footer:
-      type: graph
-      entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
-      detail: 2
-    entities:
-      - entity: sensor.daily_energy
-        name: Today's Energy Usage
-        icon: mdi:power-plug
-      - type: attribute
-        entity: sensor.daily_energy
-        attribute: last_period
-        icon: mdi:power-plug
-        suffix: kWh
-        name: Yesterday's Energy Usage
-      - entity: sensor.monthly_energy
-        name: Monthly Energy Usage
-        icon: mdi:power-plug
-      - type: divider
-      - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
-        name: Current Power Usage
-        icon: mdi:power-plug
-  - type: vertical-stack
-    cards:
-      - type: horizontal-stack
+      - type: custom:stack-in-card
+        mode: horizontal
         title: Master Bedroom Lights
         cards:
           - type: light
             entity: light.tradfri_bulb_e26_ws_opal_980lm_2_2
             icon: mdi:lightbulb-outline
-            name: Amy's Bedside
+            name: Adam's Bedside
           - type: light
             entity: light.kuled1
             icon: mdi:lightbulb-outline
@@ -170,8 +68,9 @@ cards:
           - type: light
             entity: light.tradfri_bulb_e26_ws_opal_980lm_3
             icon: mdi:lightbulb-outline
-            name: Adam's Bedside
-      - type: horizontal-stack
+            name: Amy's Bedside
+      - type: custom:stack-in-card
+        mode: horizontal
         title: Bedroom Lights
         cards:
           - type: light
@@ -186,6 +85,40 @@ cards:
             entity: light.kuled4
             icon: mdi:lightbulb-outline
             name: Guest Bedroom
+  - type: vertical-stack
+    cards:
+      - type: custom:stack-in-card
+        mode: horizontal
+        title: Basement Lights
+        cards:
+          - type: light
+            entity: light.zooz_zen27_s2_dimmer_wall_switch_level
+            name: Main Room
+            icon: mdi:lightbulb-outline
+          - type: light
+            entity: light.zooz_zen27_s2_dimmer_wall_switch_level_2
+            name: Fireplace Accent
+            icon: mdi:lightbulb-outline
+          - type: light
+            entity: light.zooz_zen27_s2_dimmer_wall_switch_level_3
+            name: Stairs & Hall
+            icon: mdi:lightbulb-outline
+      - type: custom:stack-in-card
+        mode: horizontal
+        title: Other Lights
+        cards:
+          - type: light
+            entity: light.front_lights
+            icon: mdi:lightbulb-outline
+            name: Exterior Lights
+          - type: light
+            entity: light.basic1
+            name: Living Room
+            icon: mdi:lightbulb-outline
+          - type: light
+            entity: light.notification_light
+            name: Notification Light
+            icon: mdi:lightbulb-outline
 
 ####################################################
 #                                                  #

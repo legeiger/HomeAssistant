@@ -28,7 +28,7 @@ cards:
         name: Stair Lights
   - type: entities
     title: Yeelights
-    show_header_toggle: false
+
     entities:
       - entity: light.yeelight1
         name: Front Porch
@@ -48,6 +48,8 @@ cards:
         name: Notification Light
       - entity: light.mikey_s_bed_lights
         name: Mikey's Bed LED Strip
+      - entity: light.led_strip_light2
+        name: LED Strip2
   - type: entities
     title: Broadlink IR Switches
     show_header_toggle: false

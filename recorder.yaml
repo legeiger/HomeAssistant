@@ -5,23 +5,61 @@
   exclude:
     domains:
       - automation
-      - group
+      - device_tracker
+      - input_boolean
+      - media_player
+      - sensor
       - script
       - switch
+      - weather
       - zone
       - zwave
     entities:
-      - binary_sensor.ge_32563_hinge_pin_smart_door_sensor_sensor
-      - binary_sensor.ge_32563_hinge_pin_smart_door_sensor_sensor_2
-      - binary_sensor.unknown_id021f_unknown_type0003_id0101_sensor
-      - binary_sensor.vision_zg8101_garage_door_detector_sensor
       - sun.sun
-      - input_boolean.vacation
   include:
     entities:
+      - device_tracker.adams_iphone
+      - device_tracker.adams_iphone_2
+      - device_tracker.amy_s_iphone
+      - device_tracker.amy_s_iphone_2
+      - device_tracker.amy_s_iphone_3
+      - media_player.unnamed_device
       - person.adam
       - person.amy
+      - sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
+      - sensor.approxwattage
+      - sensor.backdoorstatus
+      - sensor.cooling_hours_today
+      - sensor.cooling_hours_two_days_ago
+      - sensor.cooling_hours_yesterday
+      - sensor.cpu_temperature
+      - sensor.daily_energy
+      - sensor.disk_use_percent_home
+      - sensor.gehingepinsensor1
+      - sensor.gehingepinsensor2
+      - sensor.heating_hours_today
+      - sensor.heating_hours_two_days_ago
+      - sensor.heating_hours_yesterday
+      - sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
+      - sensor.memory_use_percent
+      - sensor.monthly_energy
+      - sensor.operatingstate
+      - sensor.pow1_energy
+      - sensor.pow1_power
+      - sensor.pow2_energy
+      - sensor.pow2_power
+      - sensor.processor_use
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.th161_signal
+      - sensor.th161_temperature
+      - sensor.tradfri_remote_control
+      - sensor.unifi_gateway_wan_cpu
+      - sensor.ups_battery_charge
+      - sensor.ups_battery_runtime
+      - sensor.unifi_gateway_wan_download
       - switch.desktop_switch
+      - switch.lenovo_switch
       - switch.basic1
       - switch.pow1
       - switch.pow2
@@ -31,13 +69,11 @@
       - switch.kuled3
       - switch.kuled4
     domains:
-      - media_player
       - climate
       - binary_sensor
       - cover
-      - device_tracker
       - light
-      - sensor
+      - person
 
 ####################################################
 #                                                  #
