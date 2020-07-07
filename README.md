@@ -12,7 +12,7 @@ This is the most important part of Home Assistant!  Remote control and voice com
 
 # My Home Assistant Setup:
 
-I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https://support.hp.com/us-en/document/c04240180#AbT0) with i5 4590T low power processor. The base operating system is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the Intel-Nuc image of [Hass.io ](https://www.home-assistant.io/hassio/installation/). It also runs the following add-ons. 
+I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https://support.hp.com/us-en/document/c04240180#AbT0) with i5 4590T low power processor. The base operating system is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the Intel-NUC image of [Home Assistant ](https://www.home-assistant.io/hassio/installation/). It also runs the following add-ons. 
 
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
 * [Mosquitto MQTT broker](https://www.home-assistant.io/addons/mosquitto/)
@@ -23,7 +23,7 @@ I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https:
 * [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
 * [VScode](https://github.com/hassio-addons/addon-vscode)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.110.3__.
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.112.3__.
 
 # UI Based Integrations:
 The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup. 
@@ -39,7 +39,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|42               |21      |2               |30        |70           |8        |108      |11             | 
+|45               |21      |1               |30        |70           |8        |126      |11             | 
 
 # Connected Devices:
 
@@ -85,6 +85,16 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 ## Home
 <p align="center">
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/rooms.png">
+</p>
+
+## Weather
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/weather.png">
+</p>
+
+## Data
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/data.png">
 </p>
 
 ## Switches
