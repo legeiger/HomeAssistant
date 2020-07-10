@@ -10,6 +10,11 @@
       platform: time
       at: '06:00'
     action:
+      - service: hassio.addon_stdin
+        data:
+          addon: a0d7b954_ssh
+          input: python3 /config/data/filemove.py
+      - delay: 00:00:05
       - service: notify.home_assistant
         data_template:
           title: "Moring Briefing"
@@ -24,15 +29,17 @@
                     {% if is_state('sensor.holiday', '') %} No Holidays or Birthdays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %} <br>
                     {% if is_state('sensor.holidaytomorrow', '') %} {% else %}Tomorrow is {{ states.sensor.holidaytomorrow.state}}.{% endif %} <br>
                     {% if is_state('sensor.holidayinaweek', '') %} {% else %} {{ states.sensor.holidayinaweek.state}} is in one week.{% endif %} <br>
+                    <br>
+                    <b> A Picture of Us! </b>
           data:
             images:
-              - /config/fakedirectory/1.jpg 
+              - /config/data/pictures/to/1.jpg 
 
   - alias: "Morning Briefing Amy"
     initial_state: true
     trigger:
       platform: time
-      at: '06:00'
+      at: '06:01'
     action:
       - service: notify.amy
         data_template:
@@ -49,9 +56,11 @@
                     {% if is_state('sensor.holiday', '') %} No Holidays or Birthdays Today {% else %}Today is {{ states.sensor.holiday.state}}.{% endif %} <br>
                     {% if is_state('sensor.holidaytomorrow', '') %} {% else %}Tomorrow is {{ states.sensor.holidaytomorrow.state}}.{% endif %} <br>
                     {% if is_state('sensor.holidayinaweek', '') %} {% else %} {{ states.sensor.holidayinaweek.state}} is in one week.{% endif %} <br>
+                    <br>
+                    <b> A Picture of Us! </b>
           data:
             images:
-              - /config/fakedirectory/1.jpg 
+              - /config/data/pictures/to/1.jpg 
 
 ####################################################
 #                                                  #
