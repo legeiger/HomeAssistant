@@ -169,13 +169,6 @@
       - condition: template
         value_template: "{{ states('input_boolean.guest_mode') != 'off' }}"
     action:
-      - service: notify.fire_tv
-        data:
-          message: 'Somone Is At The Front Door'
-          title: 'Doorbell'
-          data:
-            fontsize: max
-            position: center
       - service: tts.google_translate_say
         entity_id: media_player.family_room_display
         data:
@@ -199,7 +192,7 @@
         entity_id: light.notification_light
         data:
           effect: 'effect_colorloop'
-      - delay: '00:00:02'
+      - delay: '00:00:05'
       - service: light.turn_on
         entity_id: light.notification_light
         data:
@@ -212,14 +205,10 @@
           {%- endif -%}
         entity_id: light.notification_light
       - delay: 00:00:01
-      - service: media_player.turn_off
-        entity_id: media_player.family_room_display
-      - delay: 00:00:01
-      - service: switch.turn_on
-        entity_id: switch.cast
-      - delay: 00:00:30
-      - service: switch.turn_on
-        entity_id: switch.cast
+      - service: hassio.addon_stdin
+        data:
+          addon: a0d7b954_ssh
+          input: catt -d "Family Room Display" cast_site http://192.168.1.24:8123/lovelace/googlehomehub
 
 #########################################################
 #                                                       #

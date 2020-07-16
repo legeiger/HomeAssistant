@@ -25,10 +25,6 @@ cards:
       - entity: sensor.guest_clients
         name: Guest Clients Connected
         icon: mdi:account-network
-      - entity: binary_sensor.modem
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.100.1"
-        icon: mdi:wan
       - entity: device_tracker.unifi_security_gateway
         name: Ubiquiti Security Gateway
         icon: mdi:folder-key-network-outline
@@ -88,7 +84,7 @@ cards:
       - entity: sensor.unifi_gateway_www
       - entity: sensor.unifi_gateway_wlan
       - entity: sensor.unifi_gateway_lan
-      # - entity: sensor.unifi_gateway_firmware_upgradable
+      - entity: sensor.unifi_gateway_firmware_upgradable
       - entity: sensor.unifi_gateway_wan_mem
       - type: divider
       - entity: sensor.unifi_gateway_wan_cpu

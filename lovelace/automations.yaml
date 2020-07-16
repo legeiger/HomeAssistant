@@ -115,6 +115,10 @@ cards:
         name: Update Template Sensors
         icon: mdi:home-assistant
         secondary_info: last-triggered
+      - entity: automation.casttohub
+        name: Cast to Google Hub
+        icon: mdi:google
+        secondary_info: last-triggered
   - type: entities
     title: Other Automations
     show_header_toggle: false
@@ -134,9 +138,15 @@ cards:
       - entity: automation.kuled1_double_tap
         name: Kuled1 Double Tap Automation
         icon: mdi:gesture-double-tap
+      - type: divider
       - entity: automation.kuled3_double_tap
         name: Kuled3 Double Tap Automation
         icon: mdi:gesture-double-tap
+      - entity: script.readinglight
+        name: Reading Light Script
+      - entity: script.fadebedlightoff
+        name: Fade Bed Light Off Script
+      - type: divider
       - entity: automation.ok_to_wake_red
         name: OK to Wake-Red
         icon: mdi:alarm-note-off
@@ -329,6 +339,22 @@ cards:
       - entity:  automation.notify_if_unifi_firmware_update_available
         name: Network Device Firmware Update Available
         icon: mdi:check-network
+        secondary_info: last-triggered
+  - type: entities
+    show_header_toggle: false
+    title: Actionable Notifications
+    entities:
+      - entity: automation.tv_on_when_away_notification
+        name: TV When Away Actionable Notification
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.desktop_on_when_away_notification
+        name: Desktop When Away Actionable Notification
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.receiver_on_when_away_notification
+        name: Receiver When Away Actionable Notification
+        icon: mdi:home-assistant
         secondary_info: last-triggered
 
 ####################################################

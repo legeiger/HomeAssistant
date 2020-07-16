@@ -1,0 +1,36 @@
+#########################################################
+#                                                       #
+#                 CAST TO GOOGLE HUB                    #
+#                                                       #
+#########################################################
+
+  - alias: CastToHub
+    trigger:
+      platform: time_pattern
+      minutes: /10
+    condition:
+      condition: time
+      after: '6:00'
+      before: '22:30'
+    action:
+      - service: hassio.addon_stdin
+        data:
+          addon: a0d7b954_ssh
+          input: catt -d "Family Room Display" volume 0
+      - delay: 00:00:05
+      - service: hassio.addon_stdin
+        data:
+          addon: a0d7b954_ssh
+          input: catt -d "Family Room Display" cast_site http://192.168.1.24:8123/lovelace/googlehomehub
+      - delay: 00:00:10
+      - service: hassio.addon_stdin
+        data:
+          addon: a0d7b954_ssh
+          input: catt -d "Family Room Display" volume 75
+
+
+#########################################################
+#                                                       #
+#            END OF CONFIGURATION FILE                  #
+#                                                       #
+#########################################################

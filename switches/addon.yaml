@@ -72,11 +72,11 @@
         turn_on:
           service: hassio.addon_start
           data:
-            addon: core_ssh
+            addon: a0d7b954_ssh
         turn_off:
           service: hassio.addon_stop
           data:
-            addon: core_ssh
+            addon: a0d7b954_ssh
 
       unificontroller:
         value_template: "{{ is_state('sensor.unificontroller', 'started') }}"

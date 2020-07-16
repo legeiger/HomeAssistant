@@ -9,13 +9,6 @@
     trigger:
       - platform: state
         entity_id:
-          - binary_sensor.modem
-        from: 'on'
-        to: 'off'
-        for:
-          seconds: 60
-      - platform: state
-        entity_id:
           - device_tracker.sonoff_basic_1
           - device_tracker.sonoff_pow_1
           - device_tracker.sonoff_pow_2
@@ -37,7 +30,6 @@
           - device_tracker.unifi_ap_ac_lr
           - device_tracker.unifi_security_gateway
           - device_tracker.unifi_switch_8_poe_60w
-          - device_tracker.raspberry_pi_2_wired
           - device_tracker.lifx_mini_57057e
           - device_tracker.esp_a0d647
         from: 'home'

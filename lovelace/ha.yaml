@@ -9,6 +9,30 @@ icon: mdi:home-assistant
 path: ha
 cards:
   - type: entities
+    title: Quick Links
+    show_header_toggle: false
+    entities:
+      - type: weblink
+        url: !secret logs
+        name: Logs
+        icon: mdi:math-log
+      - type: weblink
+        url: !secret restart
+        name: Config Check - Restart
+        icon: mdi:restart
+      - type: weblink
+        url: !secret states
+        name: States Tool
+        icon: mdi:toolbox-outline
+      - type: weblink
+        url: !secret services
+        name: Services Tool
+        icon: mdi:toolbox-outline
+      - type: weblink
+        url: !secret templates
+        name: Template Tool
+        icon: mdi:toolbox-outline
+  - type: entities
     title: Home Assistant Status
     show_header_toggle: false
     entities:
@@ -133,6 +157,8 @@ cards:
         name: Zooz Dimmer Switch 3
       - entity: zwave.vision_security_zg8101_garage_door_detector
         name: Tilt Sensor
+      - entity: zwave.aeon_labs_dsb28_home_energy_meter_2nd_edition
+        name: Energy Meter
   - type: entities
     title: Sensor Battery Status
     show_header_toggle: false
@@ -155,7 +181,6 @@ cards:
       - entity: sensor.doorbell
         name: Doorbell
         icon: mdi:battery-50
-
 
 ####################################################
 #                                                  #

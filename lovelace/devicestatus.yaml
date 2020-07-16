@@ -33,7 +33,7 @@ cards:
     show_header_toggle: false
     entities:
       - entity: person.amy
-      - entity: sensor.battery_level_2
+      - entity: sensor.amy_s_iphone_battery_level
         name: Battery
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "[[ {entity}.attributes.Battery State ]]"
@@ -41,7 +41,7 @@ cards:
         name: Wifi Connection
         icon: mdi:cellphone-iphone
         type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.ssid_2.state ]]"
+        secondary_info: "[[ sensor.amy_s_iphone_ssid ]]"
       - entity: device_tracker.amy_s_iphone_2
         name: GPS Location
         icon: mdi:crosshairs-gps
@@ -90,11 +90,11 @@ cards:
         icon: mdi:led-strip-variant
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.4"
-      - entity: device_tracker.sta_5f8b40
-        name: (Location TBD) LED Strip Light
-        icon: mdi:led-strip-variant
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.42"
+      # - entity: device_tracker.sta_5f8b40
+      #   name: (Location TBD) LED Strip Light
+      #   icon: mdi:led-strip-variant
+      #   type: "custom:secondaryinfo-entity-row"
+      #   secondary_info: "192.168.1.42"
   - type: entities
     title: Kuled Switches
     show_header_toggle: false
@@ -208,7 +208,7 @@ cards:
         type: "custom:secondaryinfo-entity-row"
         icon: mdi:amazon
         secondary_info: "192.168.1.41"
-      - entity: device_tracker.amy_2018
+      - entity: device_tracker.amy_s_work_laptop
         name: Amy's Work Laptop (WiFi)
         icon: mdi:windows
         type: "custom:secondaryinfo-entity-row"
@@ -223,16 +223,21 @@ cards:
         icon: mdi:watch
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.16"
-      # - entity: device_tracker.canon_printer
-      #   name: Canon Printer
-      #   icon: mdi:printer
-      #   type: "custom:secondaryinfo-entity-row"
-      #   secondary_info: "192.168.1.13"
+      - entity: device_tracker.android_a2bd7d9e922ef11b
+        name: Honda Odyssey
+        icon: mdi:van-passenger
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "No Static IP"
       - entity: device_tracker.hp2f2505
         name: HP Printer
         icon: mdi:printer
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.17"
+      - entity: device_tracker.moode
+        name: Edimax USB WiFi Adapter
+        icon: mdi:usb-flash-drive
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "No Static IP"
 
 ####################################################
 #                                                  #

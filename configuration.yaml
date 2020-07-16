@@ -10,6 +10,11 @@ homeassistant:
   elevation: 244
   unit_system: imperial
   time_zone: !secret time_zone
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.1.14
 
 ####################################################
 #      LINKS TO INDIVUAL CONFIGURATION FILES       #
@@ -21,7 +26,6 @@ cloud: !include cloud.yaml
 frontend:
   themes: !include_dir_merge_named themes/
 ios: !include ios.yaml
-notify: !include notification.yaml
 recorder: !include recorder.yaml
 script: !include scripts.yaml
 sensor: !include_dir_merge_list sensors/
@@ -60,6 +64,9 @@ lovelace:
     #https://github.com/custom-cards/stack-in-card
     - url: /local/stack-in-card.js
       type: module
+    #https://github.com/maykar/custom-header
+    - url: /local/custom-header.js?v=0.0.1
+      type: module
 
 #https://www.home-assistant.io/integrations/mobile_app/
 mobile_app:
@@ -80,16 +87,6 @@ zone:
     latitude: !secret latitude
     longitude: !secret longitude
     radius: 750
-
-####################################################
-#               BINARY SENSOR                      #
-####################################################
-
-#https://home-assistant.io/components/binary_sensor.ping/
-binary_sensor:
-  - platform: ping
-    host: 192.168.100.1
-    name: Modem
 
 ####################################################
 #                     COVER                        #
@@ -174,12 +171,35 @@ light:
       192.168.1.4:
         name: Mikey's Bed Lights
         mode: "rgbw"
-
-  - platform: flux_led
-    devices:
       192.168.1.42:
         name: LED Strip Light2
         mode: "rgbw"
+
+####################################################
+#                NOTIFICATIONS                     #
+####################################################
+
+#https://home-assistant.io/components/notify.smtp/
+notify:
+  - platform: smtp
+    name: Home_Assistant
+    server: smtp.gmail.com
+    port: 587
+    sender: !secret notification_sender
+    starttls: true
+    username: !secret notification_username
+    password: !secret notification_password
+    recipient: !secret notification_recipient
+
+  - platform: smtp
+    name: Amy
+    server: smtp.gmail.com
+    port: 587
+    sender: !secret notification_sender
+    starttls: true
+    username: !secret notification_username
+    password: !secret notification_password
+    recipient: !secret notification_amy
 
 ####################################################
 #                   SAMSUNG TV                     #
