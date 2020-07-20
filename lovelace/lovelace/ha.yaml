@@ -1,0 +1,224 @@
+####################################################
+#                                                  #
+#                HOME ASSISTANT                    #
+#                                                  #
+####################################################
+
+title: HA
+icon: mdi:home-assistant
+path: ha
+cards:
+  - type: entities
+    title: Quick Links
+    show_header_toggle: false
+    entities:
+      - type: weblink
+        url: !secret logs
+        name: Logs
+        icon: mdi:math-log
+      - type: weblink
+        url: !secret restart
+        name: Config Check - Restart
+        icon: mdi:restart
+      - type: weblink
+        url: !secret states
+        name: States Tool
+        icon: mdi:toolbox-outline
+      - type: weblink
+        url: !secret services
+        name: Services Tool
+        icon: mdi:toolbox-outline
+      - type: weblink
+        url: !secret templates
+        name: Template Tool
+        icon: mdi:toolbox-outline
+  - type: entities
+    title: Home Assistant Status
+    show_header_toggle: false
+    entities:
+      - type: section
+        label: Uptime Status
+      - entity: sensor.time_online
+        name: Last Restart
+        icon: mdi:clock-outline
+      - entity: sensor.last_boot
+        name: Last Boot
+        format: relative
+        icon: mdi:clock-outline
+      - type: section
+        label: Add-On Status
+      - entity: switch.gdrivebackup
+        name: Google Drive Backup
+        icon: mdi:server-plus
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "[[ sensor.gdrivebackup.state ]]"
+      - entity: switch.mosquitto
+        name: Mosquitto MQTT
+        icon: mdi:server-plus
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "[[ sensor.mosquitto.state ]]"
+      - entity: switch.nut
+        name: NUT
+        icon: mdi:server-plus
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "[[ sensor.nut.state ]]"
+      - entity: switch.rpcshutdown
+        name: RPC Shutdown
+        icon: mdi:server-plus
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "[[ sensor.rpcshutdown.state ]]"
+      - entity: switch.samba
+        name: Samba
+        icon: mdi:server-plus
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "[[ sensor.samba.state ]]"
+      - entity: switch.ssh
+        name: SSH
+        icon: mdi:server-plus
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "[[ sensor.ssh.state ]]"
+      - entity: switch.unificontroller
+        name: Unifi Controller
+        icon: mdi:server-plus
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "[[ sensor.unificontroller.state ]]"
+      - entity: switch.vscode
+        name: Visual Studio Code
+        icon: mdi:server-plus
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "[[ sensor.vscode.state ]]"
+  - type: entities
+    title: Server Load
+    footer:
+      type: graph
+      entity: sensor.cpu_temperature
+      detail: 2
+    entities:
+      - sensor.memory_use_percent
+      - entity: sensor.disk_use_percent_home
+        name: Disk Use
+      - entity: sensor.network_throughput_in_eno1
+      - entity: sensor.network_throughput_out_eno1
+      - sensor.processor_use
+      - type: divider
+      - sensor.cpu_temperature
+  - type: entities
+    title: Home Assistant Information
+    show_header_toggle: false
+    entities:
+      - type: section
+        label: Version Information
+      - entity: sensor.installed_version
+        name: Installed
+        icon: mdi:folder-download
+      - entity: sensor.hassio_version
+        name: Latest Release
+        icon: mdi:github-circle
+      - type: section 
+        label: Entity Count Information
+      - entity: sensor.tracker_count
+        icon: mdi:cellphone-link
+        name: Number of Network Devices
+      - entity: sensor.lights_count
+        icon: mdi:lightbulb
+      - entity: sensor.binary_sensor_count
+        icon: mdi:nintendo-switch
+      - entity: sensor.switch_count
+        icon: mdi:toggle-switch
+      - entity: sensor.automation_count
+        icon: mdi:home-assistant
+      - entity: sensor.script_count
+        icon: mdi:script-text-outline
+      - entity: sensor.sensor_count
+        icon: mdi:gauge
+      - entity: sensor.zwave_count
+        icon: mdi:z-wave
+  - type: entities
+    title: Zwave Status
+    show_header_toggle: false
+    entities:
+      - entity: zwave.aeotec_zw090_z_stick_gen5_us
+        name: Aeotec Zstick
+      - entity: zwave.ge_32563_hinge_pin_smart_door_sensor
+        name: GE Hinge Pin Sensor 1
+      - entity: zwave.ge_32563_hinge_pin_smart_door_sensor_2
+        name: GE Hinge Pin Sensor 2
+      - entity: zwave.unknown_id_021f_unknown_type_0003_id_0101
+        name: Dome Door Sensor
+      - entity: zwave.linear_gc_tbz48_battery_powered_z_wave_thermostat
+        name: Thermostat
+      - entity: zwave.aeotec_zw117_range_extender_6
+        name: Range Extender
+      - entity: zwave.zooz_zen27_s2_dimmer_wall_switch
+        name: Zooz Dimmer Switch 1
+      - entity: zwave.zooz_zen27_s2_dimmer_wall_switch_2
+        name: Zooz Dimmer Switch 2
+      - entity: zwave.zooz_zen27_s2_dimmer_wall_switch_3
+        name: Zooz Dimmer Switch 3
+      - entity: zwave.vision_security_zg8101_garage_door_detector
+        name: Tilt Sensor
+      - entity: zwave.aeon_labs_dsb28_home_energy_meter_2nd_edition
+        name: Energy Meter
+  - type: entities
+    title: Sensor Battery Status
+    show_header_toggle: false
+    entities:
+      - entity: sensor.tradfri_remote_control
+        icon: mdi:battery-50
+        name: Tradfri Remote Battery
+      - entity: sensor.ge_32563_hinge_pin_smart_door_sensor_battery_level
+        icon: mdi:battery-50
+        name: GE Hinge Pin Sensor 1
+      - entity: sensor.ge_32563_hinge_pin_smart_door_sensor_battery_level_2
+        icon: mdi:battery-50
+        name: GE Hinge Pin Sensor 2
+      - entity: sensor.unknown_id_021f_unknown_type_0003_id_0101_battery_level
+        icon: mdi:battery-50
+        name: Back Door Sensor
+      - entity: sensor.vision_security_zg8101_garage_door_detector_battery_level
+        name: Tilt Sensor
+        icon: mdi:battery-50
+      - entity: sensor.doorbell
+        name: Doorbell
+        icon: mdi:battery-50
+  - type: conditional
+    conditions:
+      - entity: switch.fake
+        state: "on"
+    card:
+        type: entities
+        title: Hide Items from unused entities list
+        entities:
+          # Addon Sensors
+          - entity: sensor.gdrivebackup
+          - entity: sensor.mosquitto
+          - entity: sensor.nut
+          - entity: sensor.rpcshutdown
+          - entity: sensor.samba
+          - entity: sensor.ssh
+          - entity: sensor.unificontroller
+          - entity: sensor.vscode
+          #iPhone Sensors
+          - entity: sensor.ssid
+          - entity: sensor.amy_s_iphone_ssid
+          #Energy Meter Sensors
+          - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_energy
+          # Other
+          - entity: input_boolean.doorbelllight
+          - entity: sensor.holiday
+          - entity: sensor.holidayinaweek
+          - entity: sensor.holidaytomorrow
+          - entity: switch.receiverpower
+          - entity: script.returntonormal
+          - entity: script.normallight
+          - entity: switch.tvpower
+          - entity: sensor.unknown_id_021f_unknown_type_0003_id_0101_access_control
+          - entity: sensor.vision_security_zg8101_garage_door_detector_alarm_level
+          - entity: sensor.ge_32563_hinge_pin_smart_door_sensor_access_control
+          - entity: sensor.ge_32563_hinge_pin_smart_door_sensor_access_control_2
+
+####################################################
+#                                                  #
+#          END OF CONFIGURATION FILE               #
+#                                                  #
+####################################################
