@@ -181,6 +181,41 @@ cards:
       - entity: sensor.doorbell
         name: Doorbell
         icon: mdi:battery-50
+  - type: conditional
+    conditions:
+      - entity: switch.fake
+        state: "on"
+    card:
+        type: entities
+        title: Hide Items from unused entities list
+        entities:
+          # Addon Sensors
+          - entity: sensor.gdrivebackup
+          - entity: sensor.mosquitto
+          - entity: sensor.nut
+          - entity: sensor.rpcshutdown
+          - entity: sensor.samba
+          - entity: sensor.ssh
+          - entity: sensor.unificontroller
+          - entity: sensor.vscode
+          #iPhone Sensors
+          - entity: sensor.ssid
+          - entity: sensor.amy_s_iphone_ssid
+          #Energy Meter Sensors
+          - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_energy
+          # Other
+          - entity: input_boolean.doorbelllight
+          - entity: sensor.holiday
+          - entity: sensor.holidayinaweek
+          - entity: sensor.holidaytomorrow
+          - entity: switch.receiverpower
+          - entity: script.returntonormal
+          - entity: script.normallight
+          - entity: switch.tvpower
+          - entity: sensor.unknown_id_021f_unknown_type_0003_id_0101_access_control
+          - entity: sensor.vision_security_zg8101_garage_door_detector_alarm_level
+          - entity: sensor.ge_32563_hinge_pin_smart_door_sensor_access_control
+          - entity: sensor.ge_32563_hinge_pin_smart_door_sensor_access_control_2
 
 ####################################################
 #                                                  #
