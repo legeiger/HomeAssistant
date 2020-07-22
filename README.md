@@ -23,23 +23,26 @@ I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https:
 * [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
 * [VScode](https://github.com/hassio-addons/addon-vscode)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.112.3__.
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.113.0__.
 
 # UI Based Integrations:
 The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup. 
 
 * [IKEA Trådfri (Tradfri)](https://www.home-assistant.io/integrations/tradfri/)
-* [MQTT](https://www.home-assistant.io/integrations/mqtt/)
-* [Unifi Controller](https://www.home-assistant.io/integrations/unifi/)
-* [Google Cast](https://www.home-assistant.io/integrations/cast/)
+* [Internet Printing Protocol (IPP)](https://www.home-assistant.io/integrations/ipp/)
 * [iOS](https://www.home-assistant.io/integrations/ios/)
-* [LifX](https://www.home-assistant.io/integrations/lifx/)
+* [LIFX](https://www.home-assistant.io/integrations/lifx/)
+* [MQTT](https://www.home-assistant.io/integrations/mqtt/)
+* [NUT](home-assistant.io/integrations/nut/)
+* [Samsung TV](https://www.home-assistant.io/integrations/samsungtv/)
+* [Speedtest](https://www.home-assistant.io/integrations/speedtestdotnet/)
+* [Unifi Controller](https://www.home-assistant.io/integrations/unifi/)
 * [ZWave](https://www.home-assistant.io/docs/z-wave/installation)
 
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|45               |21      |1               |30        |70           |8        |126      |11             | 
+|45               |21      |0               |29        |71           |8        |108      |11             | 
 
 # Connected Devices:
 
