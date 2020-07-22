@@ -9,9 +9,22 @@
       platform: time_pattern
       minutes: /10
     condition:
-      condition: time
-      after: '6:00'
-      before: '22:30'
+      condition: and
+      conditions:
+        - condition: time
+          after: '6:00'
+          before: '22:30'
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: person.adam
+              state: 'home'
+            - condition: state
+              entity_id: person.amy
+              state: 'home'
+            - condition: state
+              entity_id: input_boolean.guest
+              state: 'on'
     action:
       - service: hassio.addon_stdin
         data:
