@@ -66,7 +66,7 @@ midnight:
   paper-orange-400: "#ffa726" #Default Value
 
   #Markdown styles
-  markdown-code-background-color: "#f6f8fa" #Default Value
+  markdown-code-background-color: "#5e5e5e"
 
 ####################################################
 #                                                  #
