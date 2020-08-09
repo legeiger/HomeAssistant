@@ -50,12 +50,6 @@ Simple automations to turn on an overhead light in the garage when the interior 
 * Turn on the light when the garage door opens
 * Turn Off Garage Light After 5 Minutes
 
-### Github.yaml Automations:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/github.yaml)__
-
-Simple automations to let me know if there is a new home assistant version or if there are changes to my github stats. I get notifications of....
-* New Homeassistant Versions
-
 ### Holiday_Birthday.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/holiday_birthday.yaml)__
 
@@ -147,12 +141,6 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 
 * Send my Wife and I a morning e-mail with the weather for the day current and upcoming holidays/birthdays and a random picture of the two of us. The filemove.py file in the main config directory is called by the automation to move a random file from a folder with many pitures to another which is then included in the e-mail.  
 
-### Notification bulb.yaml Automations
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/notification_bulb.yaml)__
-
-* Set the notification bulb to the color selected using an input select
-* Set the notification bulb to a white color that matches the other lamps in the room
-
 ### OKtowake.yaml Automations
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/oktowake.yaml)__
 
@@ -177,10 +165,3 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 
 * Notify me if there is a power outage
 * Notify me when power is restored
-
-### Vacation Mode.yaml Automations:
-__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/vacation_mode.yaml)__
-
-This is a single switch to turn on/off a number of automations and devices when we will be away from the house for an extended period of time. 
-* Turn On Vacation Mode with Vacation Mode Switch
-* Turn Off Vacation Mode with Vacation Mode Switch
