@@ -14,6 +14,7 @@ This is the most important part of Home Assistant!  Remote control and voice com
 
 I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https://support.hp.com/us-en/document/c04240180#AbT0) with i5 4590T low power processor. The base operating system is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the Intel-NUC image of [Home Assistant ](https://www.home-assistant.io/hassio/installation/). It also runs the following add-ons. 
 
+* [AdGuard Home](https://github.com/hassio-addons/addon-adguard-home)
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
 * [Mosquitto MQTT broker](https://www.home-assistant.io/addons/mosquitto/)
 * [Network UPS Tools](https://github.com/hassio-addons/addon-nut)
@@ -23,7 +24,7 @@ I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https:
 * [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
 * [VScode](https://github.com/hassio-addons/addon-vscode)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.113.0__.
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.113.3__.
 
 # UI Based Integrations:
 The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup. 
@@ -42,7 +43,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|45               |21      |0               |29        |71           |8        |108      |11             | 
+|41               |21      |0               |19        |68           |10       |111      |11             | 
 
 # Connected Devices:
 
@@ -54,7 +55,6 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 ### Wifi Connected Devices
 * [Xiaomi Yeelight RGBW E27 Smart LED Bulbs](http://www.gearbest.com/smart-lighting/pp_361555.html) *
 * [Xiaomi Yeelight E27 Smart LED Bulbs](http://www.gearbest.com/smart-light-bulb/pp_278478.html) *
-* [Broadlink RM Mini 3](https://www.amazon.com/BroadLink-Control-Universal-Remote-RMMINI3-EN/dp/B01FK2SDOC/ref=sr_1_2?ie=UTF8&qid=1499475366&sr=8-2&keywords=broadlink+mini3)*
 * [Sonoff Basic (Flashed with Tasmota)](https://www.amazon.com/Sonoff-Wireless-Modified-Low-cost-Compatible/dp/B06WWNBD3Y?ref=ast_p_ei)*
 * [Sonoff POW (Flashed with Tasmota)](https://www.amazon.com/Sonoff-Consumption-Monitoring-Appliances-Compatible/dp/B06XSD6PD6?ref=ast_p_ei)*
 * [Sonoff TH16 (Flashed with Tasmota)](https://www.amazon.com/Sonoff-TH16-Temperature-Monitoring-Compatible/dp/B06XTNSJ46)*
@@ -80,6 +80,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 * [Ubiquiti Unifi AP-AC Long Range - Wireless Access Point](https://www.ui.com/unifi/unifi-ap-ac-lr/) used for presence detection
 * [Ubiquiti Unifi Security Gateway](https://www.ui.com/unifi-routing/usg/) used for network stats
 * [Ikea TRÅDFRI Gateway](http://www.ikea.com/us/en/catalog/products/00337813/) *
+* [Yamaha RX-V481 Network AV Receiver](https://usa.yamaha.com/products/audio_visual/av_receivers_amps/rx-v481_u/index.html#product-tabs) *
 
 *Block these from external network access and they will still work on your local network with Home Assistant.
 
