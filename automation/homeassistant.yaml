@@ -45,6 +45,7 @@
     trigger:
       platform: state
       entity_id:
+        - sensor.adguard
         - sensor.gdrivebackup
         - sensor.mosquitto
         - sensor.nut
@@ -70,6 +71,8 @@
   - alias: Addon Update Available
     initial_state: false
     trigger:
+      - platform: template
+        value_template: "{{state_attr('sensor.adguard', 'version') != state_attr('sensor.adguard', 'version_latest')}}"
       - platform: template
         value_template: "{{state_attr('sensor.gdrivebackup', 'version') != state_attr('sensor.gdrivebackup', 'version_latest')}}"
       - platform: template
@@ -169,7 +172,7 @@
     initial_state: true  
     trigger:
         platform: time_pattern
-        minutes: '/10'
+        minutes: '/60'
     action:
       - service: homeassistant.update_entity
         entity_id:
@@ -181,6 +184,28 @@
           - sensor.script_count
           - sensor.sensor_count
           - sensor.zwave_count
+
+#########################################################
+#                                                       #
+#             New Homeassistant Version                 #
+#                                                       #
+#########################################################
+
+  - alias: "New Home Assitant Version"
+    initial_state: true  
+    trigger:
+      - platform: state
+        entity_id: sensor.hassio_version
+    condition:
+      - condition: template
+        value_template: "{{ states('sensor.hassio_version') != 'unavailable' }}"
+      - condition: template
+        value_template: "{{ trigger.from_state.state != 'unavailable' }}"
+    action:
+      service: notify.mobile_app_adams_iphone
+      data:
+        title: "New Home Assistant Version"
+        message: "Version {{ states.sensor.hassio_version.state }} is available!"
 
 #########################################################
 #                                                       #

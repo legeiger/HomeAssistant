@@ -17,7 +17,6 @@
           - device_tracker.kuled_2
           - device_tracker.sonoff_1242
           - device_tracker.unifi_80_7d_3a_02_23_96_default
-          - device_tracker.broadlink_rm_mini_3
           - device_tracker.google_nest_hub
           - device_tracker.ikea_tradfri_gateway
           - device_tracker.open_garage

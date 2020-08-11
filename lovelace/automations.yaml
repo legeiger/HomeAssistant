@@ -188,10 +188,6 @@ cards:
         name: Set Morning Temperature
         icon: mdi:weather-sunset
         secondary_info: last-triggered
-      - entity: automation.set_thermostat_away_mode_at_1500
-        name: Turn Off thermostat Away Mode at 1500
-        icon: mdi:home-outline
-        secondary_info: last-triggered
   - type: entities
     title: Leaving Automations
     show_header_toggle: false
@@ -219,18 +215,6 @@ cards:
       - entity: automation.power_restored
         name: Power Restored
         icon: mdi:power-plug
-        secondary_info: last-triggered
-  - type: entities
-    title: Vacation Mode Automations
-    show_header_toggle: false
-    entities:
-      - entity: automation.turn_off_vacation_mode
-        name: Turn Off Vacation Mode
-        icon: mdi:beach
-        secondary_info: last-triggered
-      - entity: automation.turn_on_vacation_mode
-        name: Turn On Vacation Mode
-        icon: mdi:beach
         secondary_info: last-triggered
   - type: entities
     title: Maintenance Reminder Automations

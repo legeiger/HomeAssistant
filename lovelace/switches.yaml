@@ -51,43 +51,6 @@ cards:
       - entity: light.led_strip_light2
         name: LED Strip2
   - type: entities
-    title: Broadlink IR Switches
-    show_header_toggle: false
-    entities:
-      - entity: switch.receiverstate
-        name: Receiver-Power
-        icon: mdi:speaker
-      - entity: switch.tvstate
-        name: TV - Power
-        icon: mdi:television
-      - entity: switch.receivermute
-        name: Receiver-Mute
-        icon: mdi:volume-mute
-      - entity: switch.receivervideo1
-        name: Receiver - Video 1
-        icon: mdi:television
-      - entity: switch.receivervideo2
-        name: Receiver - Video 2
-        icon: mdi:speaker
-      - entity: switch.receivervoldwn
-        name: Receiver - Volume Down
-        icon: mdi:volume-minus
-      - entity: switch.receivervolup
-        name: Receiver - Voume Up
-        icon: mdi:volume-plus
-      - entity: switch.tvhdmi
-        name: TV - HDMI
-        icon: mdi:video-input-hdmi
-      - entity: switch.tvtv
-        name: TV - Input Select
-        icon: mdi:television
-      - entity: script.volumeup
-        name: Script - Volume Up
-        icon: mdi:volume-plus
-      - entity: script.volumedown
-        name: Script - Volume Down
-        icon: mdi:volume-minus
-  - type: entities
     title: Sonoff Switches
     show_header_toggle: false
     footer:
@@ -103,9 +66,9 @@ cards:
       - type: divider
       - entity: switch.pow1
         name: Sonoff POW 1
-        icon: mdi:speaker-wireless
+        icon: mdi:toggle-switch
         type: "custom:secondaryinfo-entity-row"
-        secondary_info: "Receiver"
+        secondary_info: "Unassigned"
       - entity: sensor.pow1_energy
         name: kWh
         icon: mdi:chart-line

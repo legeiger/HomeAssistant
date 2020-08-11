@@ -11,8 +11,13 @@
         entity_id: sensor.pow2_power
         above: 50
     action:
-      - service: switch.turn_on
-        entity_id: switch.receivervideo2
+      - service: media_player.turn_on
+        entity_id: media_player.rx_v481_dccace_main
+      - delay: 00:00:05
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.rx_v481_dccace_main
+          source: hdmi2
 
 #########################################################
 #                                                       #

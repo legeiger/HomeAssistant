@@ -23,6 +23,8 @@ cards:
       entities:
         - entity: climate.thermostat
           name: Thermostat
+        - entity: sensor.operatingstate
+          name: Current Status
         - entity: sensor.cooling_hours_today
           icon: mdi:progress-clock
         - entity: sensor.cooling_hours_yesterday
@@ -47,6 +49,8 @@ cards:
       entities:
         - entity: climate.thermostat
           name: Thermostat
+        - entity: sensor.operatingstate
+          name: Current Status
         - entity: sensor.heating_hours_today
           icon: mdi:progress-clock
         - entity: sensor.heating_hours_yesterday
@@ -87,7 +91,10 @@ cards:
         icon: mdi:power-plug
         suffix: kWh
       - type: section
-        label:
+        label: Current Status
+      - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_voltage
+        name: Voltage
+        icon: mdi:flash
       - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
         name: Current Power Usage
         icon: mdi:power-plug

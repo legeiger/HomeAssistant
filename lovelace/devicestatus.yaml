@@ -52,10 +52,6 @@ cards:
     title: Home Automation Devices
     show_header_toggle: false
     entities:
-      - entity:  device_tracker.broadlink_rm_mini_3
-        type: "custom:secondaryinfo-entity-row"
-        icon: mdi:remote
-        secondary_info: "192.168.1.32"
       - entity:  device_tracker.open_garage
         type: "custom:secondaryinfo-entity-row"
         icon: mdi:garage
@@ -167,57 +163,29 @@ cards:
     title: Wired Devices
     show_header_toggle: false
     entities:
-      - entity: switch.desktop_switch
-        name: Desktop
-        icon: mdi:desktop-tower
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.6"
-      - entity: device_tracker.linux_laptop_wired
-        icon: mdi:linux
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.23"
       - entity: device_tracker.raspberry_pi_2_wired
         name: Raspberry Pi 2B (Wired)
         icon: mdi:raspberry-pi
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.33"
-      - entity: device_tracker.homeassistant
-        icon:  mdi:server
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.24"
       - entity: device_tracker.unifi_8c_79_f5_68_4b_7b_default
         icon: mdi:television-classic
         name: Basment TV (Samsung 55 Inch)
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "192.168.1.9"
+      - entity: device_tracker.unifi_00_a0_de_dc_ca_ce_default
+        type: "custom:secondaryinfo-entity-row"
+        icon: mdi:audio-video
+        secondary_info: "192.168.1.3"
   - type: entities
     title: Wireless Devices
     show_header_toggle: false
     entities:
-      - entity: switch.lenovo_switch
-        name: Lenovo Laptop (WiFi)
-        icon: mdi:windows
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.8"
-      - entity: device_tracker.linux_laptop_wifi
-        icon: mdi:linux
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "192.168.1.23"
       - entity: device_tracker.mikey_s_kindle_fire
         name: Mikey's Kindle Fire
         type: "custom:secondaryinfo-entity-row"
         icon: mdi:amazon
         secondary_info: "192.168.1.41"
-      - entity: device_tracker.amy_s_work_laptop
-        name: Amy's Work Laptop (WiFi)
-        icon: mdi:windows
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "No Static IP"
-      - entity: device_tracker.adam_s_work_laptop
-        name: Adam's Work Laptop (WiFi)
-        icon: mdi:windows
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "No Static IP"
       - entity: device_tracker.amy_s_apple_watch
         name: Amy's Apple Watch
         icon: mdi:watch
@@ -238,6 +206,44 @@ cards:
         icon: mdi:usb-flash-drive
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "No Static IP"
+  - type: entities
+    title: Computers
+    show_header_toggle: false
+    entities:
+      - entity: device_tracker.unifi_f8_ac_65_34_42_98_default
+        name: Lenovo Chromebook
+        icon: mdi:google-chrome
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.50"
+      - entity: sensor.octopus_battery_level
+        name: Battery Level
+      - entity: sensor.octopus_battery_state
+        name: Battery State
+      - type: divider
+      - entity: device_tracker.amy_s_work_laptop
+        name: Amy's Work Laptop (WiFi)
+        icon: mdi:microsoft-windows
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "No Static IP"
+      - entity: device_tracker.adam_s_work_laptop
+        name: Adam's Work Laptop (WiFi)
+        icon: mdi:microsoft-windows
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "No Static IP"
+      - entity: switch.lenovo_switch
+        name: Lenovo Laptop (WiFi)
+        icon: mdi:microsoft-windows
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.8"
+      - entity: switch.desktop_switch
+        name: Desktop
+        icon: mdi:desktop-tower
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.6"
+      - entity: device_tracker.homeassistant
+        icon:  mdi:server
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.24"
 
 ####################################################
 #                                                  #

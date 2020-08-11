@@ -25,6 +25,9 @@
             - condition: state
               entity_id: input_boolean.guest
               state: 'on'
+            - condition: state
+              entity_id: input_boolean.vacation
+              state: 'off'
     action:
       - service: hassio.addon_stdin
         data:

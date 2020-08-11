@@ -9,6 +9,10 @@
     trigger:
       platform: time
       at: '05:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.vacation
+        state: 'off'
     action:
       - service: light.turn_on
         data:
@@ -35,6 +39,10 @@
     trigger:
       platform: time
       at: '07:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.vacation
+        state: 'off'
     action:
       - service: light.turn_on
         data:

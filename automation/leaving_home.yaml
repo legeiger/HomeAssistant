@@ -25,6 +25,8 @@
       entity_id:
         - switch.kuled1
         - switch.kuled2
+        - switch.kuled3
+        - switch.kuled4
         - switch.basic1
     - service: light.turn_off
       entity_id:

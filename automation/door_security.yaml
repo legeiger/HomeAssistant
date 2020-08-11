@@ -47,6 +47,8 @@
           value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
           value_template: "{{ states('person.amy') != 'home' }}"
+        - condition: template  
+          value_template: "{{ states('input_boolean.guest_mode') != 'on' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:
@@ -76,6 +78,8 @@
           value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
           value_template: "{{ states('person.amy') != 'home' }}"
+        - condition: template  
+          value_template: "{{ states('input_boolean.guest_mode') != 'on' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:
@@ -106,6 +110,8 @@
           value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
           value_template: "{{ states('person.amy') != 'home' }}"
+        - condition: template  
+          value_template: "{{ states('input_boolean.guest_mode') != 'on' }}"
         - condition: state
           entity_id: cover.garage_door
           state: 'open'
@@ -138,6 +144,8 @@
           value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
           value_template: "{{ states('person.amy') != 'home' }}"
+        - condition: template  
+          value_template: "{{ states('input_boolean.guest_mode') != 'on' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:

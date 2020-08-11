@@ -12,6 +12,7 @@ cards:
     cards:
       - type: glance
         title: Door Status
+        state_color: true
         entities:
           - entity: sensor.gehingepinsensor2
             name: Int. Garage
@@ -32,25 +33,25 @@ cards:
         footer:
           type: buttons
           entities:
-            - entity: script.volumeup
-              icon: mdi:volume-plus
-            - entity: switch.receivervideo1
-              icon: mdi:music
             - entity: script.volumedown
+              icon: mdi:volume-plus
+            - entity: script.bluetooth
+              icon: mdi:bluetooth-audio
+            - entity: script.airplay
+              icon: mdi:apple-airplay
+            - entity: script.volumeup
               icon: mdi:volume-minus
         entities:
           - type: section
             label: Basement
           - entity: media_player.unnamed_device
             name: Basement TV
+            icon: mdi:television-clean
           - type: section
             label: Living Room
-          - entity: switch.tvstate
-            name: TV
-            icon: mdi:television
-          - entity: switch.receiverstate
-            name: Amplifier
-            icon: mdi:speaker
+          - entity: media_player.rx_v481_dccace_main
+            icon: mdi:audio-video
+            name: Yamaha Receiver
   - type: vertical-stack
     cards:
       - type: custom:stack-in-card

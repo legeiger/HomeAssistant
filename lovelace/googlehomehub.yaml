@@ -20,20 +20,41 @@ cards:
                   - type: markdown
                     content: > 
                             ## Media Center Controls
+                  # - type: entities
+                  #   show_header_toggle: false
+                  #   entities:
+                  #     - entity: media_player.rx_v481_dccace_main
+                  #       icon: mdi:audio-video
                   - type: horizontal-stack
                     cards:
                       - type: entity-button
-                        entity: switch.tvstate
-                        name: TV - Power
-                        icon: mdi:television
+                        state_color: false
+                        entity: media_player.rx_v481_dccace_main
+                        name: Power On
+                        icon: mdi:audio-video
+                        tap_action:
+                          action: call-service
+                          service: media_player.turn_on
+                          service_data:
+                            entity_id: media_player.rx_v481_dccace_main
                       - type: entity-button
-                        entity: switch.receiverstate
-                        icon: mdi:speaker
-                        name: Amp - Power
+                        state_color: false
+                        entity: script.airplay
+                        name: Airplay
+                        icon: mdi:apple-airplay
+                        tap_action:
+                          action: call-service
+                          service: script.bluetooth
                       - type: entity-button
-                        entity: switch.receivervideo2
-                        name: Amp-TV
-                        icon: mdi:television
+                        state_color: false
+                        entity: media_player.rx_v481_dccace_main
+                        name: Power Off
+                        icon: mdi:audio-video-off
+                        tap_action:
+                          action: call-service
+                          service: media_player.turn_off
+                          service_data:
+                            entity_id: media_player.rx_v481_dccace_main
                   - type: horizontal-stack
                     cards:
                       - type: entity-button
@@ -44,9 +65,12 @@ cards:
                           action: call-service
                           service: script.volumeup
                       - type: entity-button
-                        entity: switch.receivervideo1
-                        name: Amp-Music
-                        icon: mdi:music
+                        entity: script.bluetooth
+                        name: Bluetooth
+                        icon: mdi:bluetooth-audio
+                        tap_action:
+                          action: call-service
+                          service: script.bluetooth
                       - type: entity-button
                         entity: script.volumedown
                         name: Volume Down

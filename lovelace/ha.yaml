@@ -47,6 +47,11 @@ cards:
         icon: mdi:clock-outline
       - type: section
         label: Add-On Status
+      - entity: switch.adguard
+        name: Adguard Home
+        icon: mdi:server-plus
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "[[ sensor.adguard.state ]]"
       - entity: switch.gdrivebackup
         name: Google Drive Backup
         icon: mdi:server-plus
@@ -190,6 +195,7 @@ cards:
         title: Hide Items from unused entities list
         entities:
           # Addon Sensors
+          - entity: sensor.adguard
           - entity: sensor.gdrivebackup
           - entity: sensor.mosquitto
           - entity: sensor.nut
@@ -204,6 +210,7 @@ cards:
           #Energy Meter Sensors
           - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_energy
           # Other
+          - entity: device_tracker.octopus
           - entity: input_boolean.doorbelllight
           - entity: sensor.holiday
           - entity: sensor.holidayinaweek
@@ -211,11 +218,18 @@ cards:
           - entity: switch.receiverpower
           - entity: script.returntonormal
           - entity: script.normallight
+          - entity: sensor.snapshot_backup
+          - entity: binary_sensor.snapshots_stale
           - entity: switch.tvpower
           - entity: sensor.unknown_id_021f_unknown_type_0003_id_0101_access_control
           - entity: sensor.vision_security_zg8101_garage_door_detector_alarm_level
           - entity: sensor.ge_32563_hinge_pin_smart_door_sensor_access_control
           - entity: sensor.ge_32563_hinge_pin_smart_door_sensor_access_control_2
+          #Scripts
+          - entity: script.bluetooth
+          - entity: script.airplay
+          - entity: script.hdmi2
+
 
 ####################################################
 #                                                  #

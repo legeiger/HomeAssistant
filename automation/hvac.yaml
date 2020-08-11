@@ -44,48 +44,21 @@
       platform: time
       at: '16:00'
     condition:
-      condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.vacation
+        state: 'off'
     action:
       - service: climate.set_temperature
         data:
           entity_id: climate.thermostat
           temperature: 74
-
-#########################################################
-#                                                       #
-#            SET Thermostat AWAY MODE - OFF  1500       #
-#                                                       #
-#########################################################
-
-  - alias: "Set Thermostat Away Mode at 1500"
-    initial_state: false
-    trigger:
-      platform: time
-      at: '15:00'
-    condition:
-      condition: and
-      conditions:
-        - condition: template
-          value_template: "{% if states('sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature') | float >= 78 %} True {% else %} False {% endif %}"
-        - condition: time
-          weekday:
-            - mon
-            - tue
-            - wed
-            - thu
-            - fri
-    action:
-      - service: climate.set_temperature
-        data:
-          entity_id: climate.thermostat
-          temperature: 69
-
 
 #########################################################
 #                                                       #
