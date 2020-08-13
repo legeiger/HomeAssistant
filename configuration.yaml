@@ -71,6 +71,9 @@ lovelace:
 #https://www.home-assistant.io/integrations/mobile_app/
 mobile_app:
 
+#https://www.home-assistant.io/integrations/stream/
+stream:
+
 #https://home-assistant.io/components/sun/
 sun:
 
@@ -87,6 +90,16 @@ zone:
     latitude: !secret latitude
     longitude: !secret longitude
     radius: 750
+
+####################################################
+#                     CAMERA                       #
+####################################################
+
+#https://www.home-assistant.io/integrations/generic_ip_camera/
+camera:
+  - platform: generic
+    stream_source: !secret stream_source
+    still_image_url: !secret still_image_url
 
 ####################################################
 #                     COVER                        #

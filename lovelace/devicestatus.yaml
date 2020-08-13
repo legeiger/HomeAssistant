@@ -13,7 +13,7 @@ cards:
     show_header_toggle: false
     entities:
       - entity: person.adam
-      - entity: sensor.battery_level
+      - entity: sensor.adams_iphone_battery_level
         name: Battery
         type: "custom:secondaryinfo-entity-row"
         secondary_info: "[[ {entity}.attributes.Battery State ]]"
@@ -21,7 +21,7 @@ cards:
         name: Wifi Connection
         icon: mdi:cellphone-iphone
         type: "custom:secondaryinfo-entity-row"
-        secondary_info: "[[ sensor.ssid.state ]]"
+        secondary_info: "[[ sensor.adams_iphone_ssid.state ]]"
       - entity: device_tracker.adams_iphone
         name: GPS Location
         icon: mdi:crosshairs-gps
@@ -91,6 +91,16 @@ cards:
       #   icon: mdi:led-strip-variant
       #   type: "custom:secondaryinfo-entity-row"
       #   secondary_info: "192.168.1.42"
+      - entity: device_tracker.raspberry_pi_zero_w
+        name: Raspberry Pi Zero W
+        icon: mdi:raspberry-pi
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.29"
+      - entity: device_tracker.e1
+        name: Reolink E1 Zoom
+        icon: mdi:camera-wireless-outline
+        type: "custom:secondaryinfo-entity-row"
+        secondary_info: "192.168.1.23"
   - type: entities
     title: Kuled Switches
     show_header_toggle: false

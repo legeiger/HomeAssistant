@@ -60,20 +60,20 @@
   - platform: mqtt
     name: "TH161 Temperature"
     state_topic: "tele/th161/SENSOR"
-    value_template: "{{ value_json['DS18B20'].Temperature }}"
+    value_template: "{{ value_json['AM2301'].Temperature }}"
     unit_of_measurement: "°F"
     availability_topic: "tele/th161/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
 
-  # - platform: mqtt
-  #   name: "TH161 Humidity"
-  #   state_topic: "tele/th161/SENSOR"
-  #   value_template: "{{ value_json['AM2301'].Humidity }}"
-  #   unit_of_measurement: "%"
-  #   availability_topic: "tele/th161/LWT"
-  #   payload_available: "Online"
-  #   payload_not_available: "Offline"
+  - platform: mqtt
+    name: "TH161 Humidity"
+    state_topic: "tele/th161/SENSOR"
+    value_template: "{{ value_json['AM2301'].Humidity }}"
+    unit_of_measurement: "%"
+    availability_topic: "tele/th161/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
 
   - platform: mqtt
     name: "POW1 Signal"

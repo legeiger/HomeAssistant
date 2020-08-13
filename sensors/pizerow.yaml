@@ -1,0 +1,36 @@
+
+#https://home-assistant.io/components/sensor/
+
+####################################################
+#                                                  #
+#                      MQTT                        #
+#                                                  #
+####################################################
+
+#https://home-assistant.io/components/sensor.mqtt/
+
+  - platform: mqtt
+    name: "ds18b20_1"
+    state_topic: "pizerow/sensor/28_01144baec5aa_temperature/state"
+    unit_of_measurement: "°F"
+
+  - platform: mqtt
+    name: "ds18b20_2"
+    state_topic: "pizerow/sensor/28_011927aed256_temperature/state"
+    unit_of_measurement: "°F"
+
+  - platform: mqtt
+    name: "dht22temp"
+    state_topic: "pizerow/sensor/dht_sensor_temperature/state"
+    unit_of_measurement: "°F"
+
+  - platform: mqtt
+    name: "dht22humid"
+    state_topic: "pizerow/sensor/dht_sensor_humidity/state"
+    unit_of_measurement: "%"
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################

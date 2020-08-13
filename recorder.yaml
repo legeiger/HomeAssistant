@@ -34,7 +34,11 @@
       - sensor.cooling_hours_yesterday
       - sensor.cpu_temperature
       - sensor.daily_energy
+      - sensor.dht22humid
+      - sensor.dht22temp
       - sensor.disk_use_percent_home
+      - sensor.ds18b20_1
+      - sensor.ds18b20_2
       - sensor.gehingepinsensor1
       - sensor.gehingepinsensor2
       - sensor.heating_hours_today

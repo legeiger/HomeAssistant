@@ -24,6 +24,7 @@ views:
   - !include lovelace/ha.yaml
   - !include lovelace/network.yaml
   - !include lovelace/automations.yaml
+  - !include lovelace/cameras.yaml
   - !include lovelace/googlehomehub.yaml
 
 ####################################################

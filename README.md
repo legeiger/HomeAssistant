@@ -24,7 +24,7 @@ I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https:
 * [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
 * [VScode](https://github.com/hassio-addons/addon-vscode)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.113.3__.
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.114.0__.
 
 # UI Based Integrations:
 The following integrations are setup in the User Interface (UI) and may be a missing peice as to the full configuration of my HA setup. 
@@ -43,7 +43,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Binary Sensors | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:--------------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|41               |21      |0               |19        |68           |10       |111      |11             | 
+|43               |21      |0               |19        |68           |10       |116      |11             | 
 
 # Connected Devices:
 
@@ -63,6 +63,8 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 * [Firefly Electronix Wifi Doorbell](https://www.fireflyelectronix.com/product/wifidoorbell)*
 * [Lifx Mini Color Bulb](https://www.lifx.com/collections/lamps-and-pendants/products/lifx-mini-color)*
 * [Wifi RGBW LED Strip](https://www.amazon.com/gp/product/B07QBKRCW1)*
+* [Reolink E1 Zoom](https://reolink.com/product/e1-zoom/)*
+* [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)* with 2 DS18B20 and 1 DHT22 sensors connected
 
 ### Zwave / Zigbee Devices
 * [Ikea TRÅDFRI LED Bulbs](http://www.ikea.com/us/en/catalog/products/20318267/)
@@ -124,6 +126,11 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 ## Automations
 <p align="center">
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/automations.png">
+</p>
+
+## Cameras
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/cameras.png">
 </p>
 
 # Questions?

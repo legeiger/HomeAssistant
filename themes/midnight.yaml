@@ -35,7 +35,7 @@ midnight:
   dark-primary-color: "#03a9f4"
   light-primary-color: "#03a9f4"
   accent-color: "#03a9f4"
-  divider-color: "rgba(0, 0, 0, .12)" #Default Value
+  divider-color: "rgb(50, 52, 56, 0.5)"
   scrollbar-thumb-color: "rgb(194, 194, 194)" #Default Value
   error-color: "#db4437" #Default Value
   warning-color: "#f4b400" #Default Value

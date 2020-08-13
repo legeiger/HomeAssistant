@@ -8,17 +8,20 @@
     initial_state: true
     trigger:
       - platform: numeric_state
-        entity_id: sensor.th161_temperature
+        entity_id: sensor.ds18b20_1
+        above: 10
+      - platform: numeric_state
+        entity_id: sensor.ds18b20_2
         above: 10
     action:
       - service: notify.mobile_app_adams_iphone
-        data:
+        data_template:
           title: "Deep Freezer Temperature Alert!"
-          message: "The Deep Freezer Temperature is above 0 degrees!"
+          message: "A Deep Freezer Temperature is above 10 degrees! The right freezer is {{ states.sensor.ds18b20_1.state }} degrees farenheit. The left freezer is {{ states.sensor.ds18b20_2.state }} degrees farenheit."
       - service: notify.mobile_app_amy_s_iphone
-        data:
+        data_template:
           title: "Deep Freezer Temperature Alert!"
-          message: "The Deep Freezer Temperature is above 0 degrees!"
+          message: "The Deep Freezer Temperature is above 10 degrees!"
 
 #########################################################
 #                                                       #

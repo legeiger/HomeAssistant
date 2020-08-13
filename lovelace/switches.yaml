@@ -28,7 +28,6 @@ cards:
         name: Stair Lights
   - type: entities
     title: Yeelights
-
     entities:
       - entity: light.yeelight1
         name: Front Porch
@@ -53,10 +52,6 @@ cards:
   - type: entities
     title: Sonoff Switches
     show_header_toggle: false
-    footer:
-      type: graph
-      entity: sensor.th161_temperature
-      detail: 2
     entities:
       - entity: switch.basic1
         name: Sonoff Basic 1
@@ -103,8 +98,6 @@ cards:
       - entity: switch.th161
         name: Sonoff TH16
         icon: mdi:toggle-switch
-        type: "custom:secondaryinfo-entity-row"
-        secondary_info: "Basement freezer temp is [[ sensor.th161_temperature.state ]] °F"
   - type: entities
     title: Kuled Switches
     show_header_toggle: false
@@ -138,7 +131,7 @@ cards:
         icon: mdi:desktop-tower
       - entity: switch.lenovo_switch
         name: Lenovo Laptop
-        icon: mdi:windows
+        icon: mdi:microsoft-windows
 
 ####################################################
 #                                                  #

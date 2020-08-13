@@ -1,0 +1,18 @@
+####################################################
+#                                                  #
+#                  WEATHER VIEW                    #
+#                                                  #
+####################################################
+
+title: Cameras
+path: camera
+icon: mdi:camera-iris
+cards:
+  - type: picture-entity
+    entity: camera.generic_camera
+
+####################################################
+#                                                  #
+#          END OF CONFIGURATION FILE               #
+#                                                  #
+####################################################

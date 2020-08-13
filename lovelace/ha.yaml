@@ -32,6 +32,10 @@ cards:
         url: !secret templates
         name: Template Tool
         icon: mdi:toolbox-outline
+      - type: weblink
+        url: http://192.168.1.29:8123/lovelace/0
+        name: Raspberry Pi Zero W UI
+        icon: mdi:raspberry-pi
   - type: entities
     title: Home Assistant Status
     show_header_toggle: false
@@ -205,7 +209,7 @@ cards:
           - entity: sensor.unificontroller
           - entity: sensor.vscode
           #iPhone Sensors
-          - entity: sensor.ssid
+          - entity: sensor.adams_iphone_ssid
           - entity: sensor.amy_s_iphone_ssid
           #Energy Meter Sensors
           - entity: sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_energy
