@@ -60,8 +60,12 @@
         from: '0'
         to: '255'
     condition:
-        condition: time
-        before: '12:00:00'
+      condition: and
+      conditions:
+        - condition: time
+          before: '12:00:00'
+        - condition: template
+          value_template: "{{ as_timestamp(now()) - as_timestamp(states.automation.dog_has_been_fed_morning.attributes.last_triggered)  > 600 }}"
     action:
       - service: automation.turn_off
         entity_id: automation.feed_the_dog_morning
@@ -87,8 +91,12 @@
         from: '0'
         to: '255'
     condition:
-        condition: time
-        after: '12:00:00'
+      condition: and
+      conditions:
+        - condition: time
+          after: '12:00:00'
+        - condition: template
+          value_template: "{{ as_timestamp(now()) - as_timestamp(states.automation.dog_has_been_fed_evening.attributes.last_triggered)  > 600 }}"
     action:
       - service: automation.turn_off
         entity_id: automation.feed_the_dog_evening

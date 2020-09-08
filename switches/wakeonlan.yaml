@@ -19,16 +19,6 @@
         addon: core_rpc_shutdown
         input: desktop
 
-  - platform: wake_on_lan
-    name: Lenovo Switch
-    mac: "10:08:b1:e2:17:79"
-    host: 192.168.1.8
-    turn_off:
-      service: hassio.addon_stdin
-      data:
-        addon: core_rpc_shutdown
-        input: lenovo
-
 ####################################################
 #                                                  #
 #           END OF CONFIGURATION FILE              #

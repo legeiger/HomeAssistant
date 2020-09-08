@@ -123,6 +123,18 @@
     value_template: "{{ value_json.Wifi.RSSI }}"
     unit_of_measurement: "%"
 
+  - platform: mqtt
+    name: "Kuled5 Signal"
+    state_topic: "tele/kuled5/STATE"
+    value_template: "{{ value_json.Wifi.RSSI }}"
+    unit_of_measurement: "%"
+
+  - platform: mqtt
+    name: "Kuled6 Signal"
+    state_topic: "tele/kuled6/STATE"
+    value_template: "{{ value_json.Wifi.RSSI }}"
+    unit_of_measurement: "%"
+
 ####################################################
 #                                                  #
 #            END OF CONFIGURATION FILE             #

@@ -21,6 +21,40 @@
 
 #########################################################
 #                                                       #
+#             Turn on Amp With Music App                #
+#                                                       #
+#########################################################
+
+  - alias: "Turn on Amp With Music App"
+    initial_state: true
+    trigger:
+      - platform: state
+        entity_id: input_boolean.adamphonemusic
+        to: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: input_boolean.adamphonemusic
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: person.adam
+            state: 'home'
+          - condition: state
+            entity_id: sensor.adams_iphone_ssid
+            state: 'Ubiquiti'
+      - service: media_player.turn_on
+        entity_id: media_player.rx_v481_dccace_main
+      - delay: 00:00:05
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.rx_v481_dccace_main
+          source: airplay
+
+# I have an iPhone automation from the shortcuts app that turns
+# on this input boolean when I open the music app on my phone.
+
+#########################################################
+#                                                       #
 #            END OF CONFIGURATION FILE                  #
 #                                                       #
 #########################################################

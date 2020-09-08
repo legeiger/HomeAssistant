@@ -16,9 +16,10 @@
           - device_tracker.kuled_1
           - device_tracker.kuled_2
           - device_tracker.sonoff_1242
+          - device_tracker.sonoff_6108
           - device_tracker.unifi_80_7d_3a_02_23_96_default
+          - device_tracker.unifi_d8_bf_c0_d9_99_b4_default
           - device_tracker.google_nest_hub
-          - device_tracker.ikea_tradfri_gateway
           - device_tracker.open_garage
           - device_tracker.yeelight_1
           - device_tracker.yeelight_2
@@ -31,6 +32,7 @@
           - device_tracker.unifi_switch_8_poe_60w
           - device_tracker.lifx_mini_57057e
           - device_tracker.esp_a0d647
+          - device_tracker.e1
         from: 'home'
         to: 'not_home'
         for:
@@ -66,6 +68,35 @@
         title: "Yeelight is Offline"
         message: "{{ trigger.to_state.attributes.friendly_name }} is offline"
 
+#########################################################
+#                                                       #
+#                 DEAD ZWAVE DEVICE                     #
+#                                                       #
+#########################################################
+
+  - alias: "Notify if Zwave Device is Dead"
+    initial_state: true
+    trigger:
+      - platform: state
+        entity_id:
+          - zwave.aeotec_zw090_z_stick_gen5_us
+          - zwave.ge_32563_hinge_pin_smart_door_sensor
+          - zwave.ge_32563_hinge_pin_smart_door_sensor_2
+          - zwave.unknown_id_021f_unknown_type_0003_id_0101
+          - zwave.linear_gc_tbz48_battery_powered_z_wave_thermostat
+          - zwave.aeon_labs_dsb28_home_energy_meter_2nd_edition
+          - zwave.zooz_zen27_s2_dimmer_wall_switch
+          - zwave.zooz_zen27_s2_dimmer_wall_switch_2
+          - zwave.zooz_zen27_s2_dimmer_wall_switch_3
+          - zwave.zooz_zen27_s2_dimmer_wall_switch_4
+          - zwave.linear_nortek_security_control_llc_wa00z_1_scene_switch
+          - zwave.vision_security_zg8101_garage_door_detector
+        to: 'dead'
+    action:
+      service: notify.home_assistant
+      data_template:
+        title: "Home Assistant Zwave Device is dead"
+        message: "{{ trigger.to_state.attributes.friendly_name }} is dead."
 #########################################################
 #                                                       #
 #            END OF CONFIGURATION FILE                  #

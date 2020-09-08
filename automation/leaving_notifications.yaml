@@ -9,8 +9,10 @@
     trigger:
       - platform: state
         entity_id: person.adam
+        from: 'home'
       - platform: state
         entity_id: person.amy
+        from: 'home'
     condition:
       condition: and
       conditions:
@@ -56,8 +58,10 @@
     trigger:
       - platform: state
         entity_id: person.adam
+        from: 'home'
       - platform: state
         entity_id: person.amy
+        from: 'home'
     condition:
       condition: and
       conditions:
@@ -66,17 +70,17 @@
         - condition: template
           value_template: "{{ states('person.amy') != 'home' }}"
         - condition: template
-          value_template: "{{ states('input_boolean.guest_mode') != 'on' }}"
+          value_template: "{{ states('input_boolean.guest') != 'on' }}"
         - condition: or
           conditions:
             - condition: template
               value_template: "{{ states('sensor.pow2_power') | float > 10 }}"
             - condition: template
-              value_template: "{{ states('media_player.media_player.rx_v481_dccace_main') != 'off' }}"
+              value_template: "{{ states('media_player.rx_v481_dccace_main') != 'off' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data_template:
-          message: 'The TV is pulling {{ states("sensor.pow2_power") }} watts, the receiver is {{states("media_player.media_player.rx_v481_dccace_main") }} and no one is home'
+          message: 'The TV is pulling {{ states("sensor.pow2_power") }} watts, the receiver is {{states("media_player.rx_v481_dccace_main") }} and no one is home'
           data:
             push:
               badge: 0

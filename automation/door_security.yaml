@@ -18,6 +18,8 @@
           value_template: "{{ states('person.adam') != 'home' }}"
         - condition: template
           value_template: "{{ states('person.amy') != 'home' }}"
+        - condition: template  
+          value_template: "{{ states('input_boolean.guest') != 'on' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:
@@ -48,7 +50,7 @@
         - condition: template
           value_template: "{{ states('person.amy') != 'home' }}"
         - condition: template  
-          value_template: "{{ states('input_boolean.guest_mode') != 'on' }}"
+          value_template: "{{ states('input_boolean.guest') != 'on' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:
@@ -79,7 +81,7 @@
         - condition: template
           value_template: "{{ states('person.amy') != 'home' }}"
         - condition: template  
-          value_template: "{{ states('input_boolean.guest_mode') != 'on' }}"
+          value_template: "{{ states('input_boolean.guest') != 'on' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:
@@ -111,7 +113,7 @@
         - condition: template
           value_template: "{{ states('person.amy') != 'home' }}"
         - condition: template  
-          value_template: "{{ states('input_boolean.guest_mode') != 'on' }}"
+          value_template: "{{ states('input_boolean.guest') != 'on' }}"
         - condition: state
           entity_id: cover.garage_door
           state: 'open'
@@ -145,7 +147,7 @@
         - condition: template
           value_template: "{{ states('person.amy') != 'home' }}"
         - condition: template  
-          value_template: "{{ states('input_boolean.guest_mode') != 'on' }}"
+          value_template: "{{ states('input_boolean.guest') != 'on' }}"
     action:
       - service: notify.mobile_app_adams_iphone
         data:
@@ -175,7 +177,7 @@
       - condition: template
         value_template: "{{ states('person.amy') != 'away' }}"
       - condition: template
-        value_template: "{{ states('input_boolean.guest_mode') != 'off' }}"
+        value_template: "{{ states('input_boolean.guest') != 'off' }}"
     action:
       - service: tts.google_translate_say
         entity_id: media_player.family_room_display

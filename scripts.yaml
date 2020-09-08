@@ -250,6 +250,42 @@
       - service: light.turn_off
         entity_id: light.mikey_s_bed_lights
 
+#########################################################
+#                                                       #
+#                  SEND ADAM CAMERA                     #
+#                                                       #
+#########################################################
+
+  send_adam_nursery_camera:
+    sequence:
+      - service: notify.mobile_app_adams_iphone
+        data:
+          message: Nursery Camera Live View
+          data:
+            attachment:
+              content-type: jpeg
+            push:
+              category: camera
+            entity_id: camera.nursery_camera
+
+#########################################################
+#                                                       #
+#                   SEND AMY CAMERA                     #
+#                                                       #
+#########################################################
+
+  send_amy_nursery_camera:
+    sequence:
+      - service: notify.mobile_app_amy_s_iphone
+        data:
+          message: Nursery Camera Live View
+          data:
+            attachment:
+              content-type: jpeg
+            push:
+              category: camera
+            entity_id: camera.nursery_camera
+
 ####################################################
 #                                                  #
 #           END OF CONFIGURATION FILE              #

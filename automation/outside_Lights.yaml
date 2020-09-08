@@ -14,8 +14,7 @@
         entity_id:
           - light.yeelight1
           - light.yeelight2
-          - light.yeelight3
-          - light.yeelight4
+          - switch.kuled6
 
 #########################################################
 #                                                       #
@@ -34,9 +33,9 @@
         data:
           entity_id:
             - light.yeelight1
-            - light.yeelight3
-            - light.yeelight4
           brightness_pct: 100
+      - service: switch.turn_on
+        entity_id: switch.kuled6
       - service: light.turn_on
         data:
           entity_id:

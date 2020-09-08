@@ -104,6 +104,30 @@
     payload_not_available: "Offline"
     retain: false
 
+  - platform: mqtt
+    name: "Kuled5"
+    state_topic: "stat/kuled5/POWER"
+    command_topic: "cmnd/kuled5/POWER"
+    availability_topic: "tele/kuled5/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
+  - platform: mqtt
+    name: "Kuled6"
+    state_topic: "stat/kuled6/POWER"
+    command_topic: "cmnd/kuled6/POWER"
+    availability_topic: "tele/kuled6/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
 ####################################################
 #                                                  #
 #           END OF CONFIGURATION FILE              #

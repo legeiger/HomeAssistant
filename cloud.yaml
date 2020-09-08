@@ -15,9 +15,6 @@
         - script.volumeup
         - input_boolean.feeddog
         - script.normallight
-        - switch.cast
-        - switch.receiverstate
-        - switch.tvstate
     entity_config:
       switch.basic1:
         name: Living Room Lamps
@@ -53,19 +50,6 @@
       script.normallight:
         name: Normal Light
         aliases: Normal Lamp
-        room: Family Room
-      switch.receiverstate:
-        name: Receiver Power
-        aliases:
-          - Receiver
-          - Amplifier
-          - Amp
-        room: Family Room
-      switch.tvstate:
-        name: TV Power
-        aliases:
-          - TV
-          - Television
         room: Family Room
 
 #########################################################

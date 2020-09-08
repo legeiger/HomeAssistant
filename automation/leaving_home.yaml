@@ -9,8 +9,10 @@
   trigger:
     - platform: state
       entity_id: person.adam
+      from: 'home'
     - platform: state
-      entity_id: gperson.amy
+      entity_id: person.amy
+      from: 'home'
   condition:
     condition: and
     conditions:
@@ -19,7 +21,7 @@
       - condition: template
         value_template: "{{ states('person.amy') != 'home' }}"
       - condition: template  
-        value_template: "{{ states('input_boolean.guest_mode') != 'on' }}"
+        value_template: "{{ states('input_boolean.guest') != 'on' }}"
   action:
     - service: switch.turn_off
       entity_id:
@@ -30,11 +32,12 @@
         - switch.basic1
     - service: light.turn_off
       entity_id:
-        - light.tradfri_bulb_e26_ws_opal_980lm_3
-        - light.tradfri_bulb_e26_ws_opal_980lm_2_2
         - light.zooz_zen27_s2_dimmer_wall_switch_level
         - light.zooz_zen27_s2_dimmer_wall_switch_level_2
         - light.zooz_zen27_s2_dimmer_wall_switch_level_3
+        - light.zooz_zen27_s2_dimmer_wall_switch_level_4
+        - light.yeelight3
+        - light.yeelight4
 
 ########################################################
 #                                                      #

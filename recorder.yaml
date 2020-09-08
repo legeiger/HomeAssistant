@@ -57,7 +57,6 @@
       - sensor.speedtest_upload
       - sensor.th161_signal
       - sensor.th161_temperature
-      - sensor.tradfri_remote_control
       - sensor.unifi_gateway_wan_cpu
       - sensor.ups_battery_charge
       - sensor.ups_battery_runtime

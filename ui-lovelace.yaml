@@ -10,6 +10,7 @@ custom_header:
     options: '{{ hours12LZ }}:{{ minutesLZ }}'
   hide_help: true
   hide_config: true
+  hide_unused: true
   shadow: on
   chevrons: false
 
@@ -20,9 +21,9 @@ views:
   - !include lovelace/weather.yaml
   - !include lovelace/data.yaml
   - !include lovelace/switches.yaml
-  - !include lovelace/devicestatus.yaml
-  - !include lovelace/ha.yaml
-  - !include lovelace/network.yaml
+#  - !include lovelace/devicestatus.yaml (Now a seperate dashboard)
+#  - !include lovelace/ha.yaml (Now a seperate dashboard)
+#  - !include lovelace/network.yaml (Now a seperate dashboard)
   - !include lovelace/automations.yaml
   - !include lovelace/cameras.yaml
   - !include lovelace/googlehomehub.yaml

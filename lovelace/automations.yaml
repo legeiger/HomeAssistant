@@ -6,6 +6,7 @@
 
 title: Automations
 icon: mdi:home-automation
+background: "center / cover no-repeat url('/local/background.jpg') fixed"
 cards:
   - type: entities
     title: Automation Modes
@@ -15,6 +16,13 @@ cards:
         icon: mdi:beach
       - entity: input_boolean.guest
         icon: mdi:home-account
+  - type: entities
+    title: iPhone Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.turn_on_amp_with_music_app
+        name: Turn On Amp - Music App Opened
+        icon: mdi:music
   - type: entities
     title: Automations For Lights
     show_header_toggle: false
@@ -49,6 +57,10 @@ cards:
         secondary_info: last-triggered
       - entity: automation.turn_off_interior_garage_light_after_5
         name: Turn Off Interior Garage Light After 5 Min
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+      - entity: automation.bedroom_light_control
+        name: Bedside Light Remote
         icon: mdi:lightbulb-outline
         secondary_info: last-triggered
   - type: entities
@@ -137,6 +149,9 @@ cards:
         secondary_info: last-triggered
       - entity: automation.kuled1_double_tap
         name: Kuled1 Double Tap Automation
+        icon: mdi:gesture-double-tap
+      - entity: automation.kuled5_double_tap
+        name: Kuled5 Double Tap Automation
         icon: mdi:gesture-double-tap
       - type: divider
       - entity: automation.kuled3_double_tap

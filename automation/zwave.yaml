@@ -1,0 +1,27 @@
+#########################################################
+#                                                       #
+#              BEDROOM LIGHT CONTROLLER              #
+#                                                       #
+#########################################################
+
+  - alias: Bedroom Light Control
+    trigger:
+      - platform: event
+        event_type: zwave.scene_activated
+        event_data:
+          entity_id: zwave.linear_nortek_security_control_llc_wa00z_1_scene_switch
+          scene_id: 1
+      - platform: event
+        event_type: zwave.scene_activated
+        event_data:
+          entity_id: zwave.linear_nortek_security_control_llc_wa00z_1_scene_switch
+          scene_id: 2
+    action:
+      service: light.toggle
+      entity_id: light.bedroom_lights
+
+#########################################################
+#                                                       #
+#            END OF CONFIGURATION FILE                  #
+#                                                       #
+#########################################################

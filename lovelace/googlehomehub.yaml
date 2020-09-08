@@ -5,6 +5,7 @@
 ####################################################
 
 title: Google Home
+theme: default_ha
 path: googlehomehub
 icon: mdi:blank
 panel: true
@@ -20,11 +21,6 @@ cards:
                   - type: markdown
                     content: > 
                             ## Media Center Controls
-                  # - type: entities
-                  #   show_header_toggle: false
-                  #   entities:
-                  #     - entity: media_player.rx_v481_dccace_main
-                  #       icon: mdi:audio-video
                   - type: horizontal-stack
                     cards:
                       - type: entity-button

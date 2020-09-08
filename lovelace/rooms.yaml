@@ -7,6 +7,7 @@
 title: Rooms
 path: home
 icon: mdi:home
+background: "center / cover no-repeat url('/local/background.jpg') fixed"
 cards:
   - type: vertical-stack
     cards:
@@ -33,13 +34,13 @@ cards:
         footer:
           type: buttons
           entities:
-            - entity: script.volumedown
+            - entity: script.volumeup
               icon: mdi:volume-plus
             - entity: script.bluetooth
               icon: mdi:bluetooth-audio
             - entity: script.airplay
               icon: mdi:apple-airplay
-            - entity: script.volumeup
+            - entity: script.volumedown
               icon: mdi:volume-minus
         entities:
           - type: section
@@ -59,7 +60,7 @@ cards:
         title: Master Bedroom Lights
         cards:
           - type: light
-            entity: light.tradfri_bulb_e26_ws_opal_980lm_2_2
+            entity: light.yeelight3
             icon: mdi:lightbulb-outline
             name: Adam's Bedside
           - type: light
@@ -67,9 +68,27 @@ cards:
             icon: mdi:lightbulb-outline
             name: Fan & Light
           - type: light
-            entity: light.tradfri_bulb_e26_ws_opal_980lm_3
+            entity: light.yeelight4
             icon: mdi:lightbulb-outline
             name: Amy's Bedside
+      - type: custom:stack-in-card
+        mode: horizontal
+        title: First Floor Lights
+        cards:
+          - type: light
+            entity: light.zooz_zen27_s2_dimmer_wall_switch_level_4
+            icon: mdi:lightbulb-outline
+            name: Dining Room Light
+          - type: light
+            entity: light.basic1
+            name: Living Room
+            icon: mdi:lightbulb-outline
+          - type: light
+            entity: light.notification_light
+            name: Notification Light
+            icon: mdi:lightbulb-outline
+  - type: vertical-stack
+    cards:
       - type: custom:stack-in-card
         mode: horizontal
         title: Bedroom Lights
@@ -86,8 +105,6 @@ cards:
             entity: light.kuled4
             icon: mdi:lightbulb-outline
             name: Guest Bedroom
-  - type: vertical-stack
-    cards:
       - type: custom:stack-in-card
         mode: horizontal
         title: Basement Lights
@@ -103,22 +120,6 @@ cards:
           - type: light
             entity: light.zooz_zen27_s2_dimmer_wall_switch_level_3
             name: Stairs & Hall
-            icon: mdi:lightbulb-outline
-      - type: custom:stack-in-card
-        mode: horizontal
-        title: Other Lights
-        cards:
-          - type: light
-            entity: light.front_lights
-            icon: mdi:lightbulb-outline
-            name: Exterior Lights
-          - type: light
-            entity: light.basic1
-            name: Living Room
-            icon: mdi:lightbulb-outline
-          - type: light
-            entity: light.notification_light
-            name: Notification Light
             icon: mdi:lightbulb-outline
 
 ####################################################
