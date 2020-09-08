@@ -130,6 +130,9 @@ The following integrations are setup in the User Interface (UI) and may be a mis
   <img src="https://raw.githubusercontent.com/SilvrrGIT/HomeAssistant/master/www/cameras.png">
 </p>
 
+# Themes
+I created a repository with the theme(s) I use and also a version of the default theme.  It is structured to help you identify the base variables available in Home Assistant to aide in tweaking a theme or creating a new one.  The repository is [HERE](https://github.com/SilvrrGIT/Home-Assistant-Themes)
+
 # Questions?
 
 The best way to get help on Home Assistant is the [Home Assistant Forum](https://community.home-assistant.io/).  If you have a specific question about my configuration send me a Private Message on the HA forum, my username over there is [Silvrr](https://community.home-assistant.io/u/silvrr/).  If you have found something incorrect, please submit an issue here on Github and I will get it fixed.
