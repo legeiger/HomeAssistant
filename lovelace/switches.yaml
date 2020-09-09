@@ -38,12 +38,18 @@ cards:
     entities:
       - entity: light.notification_light
         name: Notification Light
-      - entity: light.mikey_s_bed_lights
-        name: Mikey's Bed LED Strip
       - entity: light.led_strip_light2
         name: LED Strip2
       - entity: light.zooz_zen27_s2_dimmer_wall_switch_level_4
         name: Dining Room Light
+  - type: entities
+    title: OK To Wake Light
+    entities:
+      - entity: light.mikey_s_bed_lights
+        name: Mikey's Bed LED Strip
+      - entity: input_datetime.red_light_time
+      - entity: input_datetime.green_light_time
+      - entity: input_datetime.ok_to_wake_off
   - type: entities
     title: Sonoff Switches
     show_header_toggle: false

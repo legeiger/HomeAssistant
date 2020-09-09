@@ -7,8 +7,8 @@
   - alias: "OK to Wake Red"
     initial_state: true  
     trigger:
-      platform: time
-      at: '05:00'
+      platform: template
+      value_template: "{{ states('sensor.time') == states('input_datetime.red_light_time').rsplit(':',1)[0] }}"
     condition:
       - condition: state
         entity_id: input_boolean.vacation
@@ -37,8 +37,8 @@
   - alias: "OK to Wake Green"
     initial_state: true  
     trigger:
-      platform: time
-      at: '06:30'
+      platform: template
+      value_template: "{{ states('sensor.time') == states('input_datetime.green_light_time').rsplit(':',1)[0] }}"
     condition:
       - condition: state
         entity_id: input_boolean.vacation
@@ -67,8 +67,8 @@
   - alias: "OK to Wake Off"
     initial_state: true  
     trigger:
-      platform: time
-      at: '08:00'
+      platform: template
+      value_template: "{{ states('sensor.time') == states('input_datetime.ok_to_wake_off').rsplit(':',1)[0] }}"
     action:
       service: light.turn_off
       data:

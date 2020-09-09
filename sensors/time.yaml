@@ -1,0 +1,21 @@
+
+#https://home-assistant.io/components/sensor/
+
+####################################################
+#                                                  #
+#                       NUT                        #
+#                                                  #
+####################################################
+
+#https://www.home-assistant.io/integrations/time_date/
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'time_utc'
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################
