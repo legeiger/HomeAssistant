@@ -128,7 +128,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Helpers | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:-------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|58               |22      |9        |21        |71           |12       |117      |13             | 
+|58               |22      |9        |21        |73           |12       |117      |13             | 
 
 # Themes
 I created a repository with the theme(s) I use and also a version of the default theme.  It is structured to help you identify the base variables available in Home Assistant to aide in tweaking a theme or creating a new one.  The repository is [HERE](https://github.com/SilvrrGIT/Home-Assistant-Themes)
