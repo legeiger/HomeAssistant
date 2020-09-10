@@ -1,0 +1,371 @@
+####################################################
+#                                                  #
+#                  AUTOMATIONS                     #
+#                                                  #
+####################################################
+
+title: Automations
+icon: mdi:home-automation
+background: "center / cover no-repeat url('/local/background.jpg') fixed"
+cards:
+  - type: entities
+    title: Automation Modes
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.vacation
+        icon: mdi:beach
+      - entity: input_boolean.guest
+        icon: mdi:home-account
+  - type: entities
+    title: iPhone Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.turn_on_amp_with_music_app
+        name: Turn On Amp - Music App Opened
+        icon: mdi:music
+  - type: entities
+    title: Automations For Lights
+    show_header_toggle: false
+    entities:
+      - entity: automation.turn_off_outside_lights
+        name: Turn Off Outside Lights - Sunrise
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+      - entity: automation.turn_on_outside_lights
+        name: Turn on Outside Lights - Sunset
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+      - entity: automation.open_back_door_increase_brightness
+        name: Open Back Doors Increase Brightness
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+      - entity: automation.turn_on_living_room_lamps
+        name: Turn on Living Room Lamps - Sunset
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+      - entity: automation.lamps_on_when_home
+        name: Lamps on When Home
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+      - entity: automation.turn_off_living_room_lamps_at_midnight
+        name: Turn off Living Room Lamps - Midnight
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+      - entity: automation.interior_garage_door_open_light_on
+        name: Interior Garage Door Open Light On
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+      - entity: automation.turn_off_interior_garage_light_after_5
+        name: Turn Off Interior Garage Light After 5 Min
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+      - entity: automation.bedroom_light_control
+        name: Bedside Light Remote
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+  - type: entities
+    title: Security Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.front_door_opened_when_away
+        name: Front Door Opened When Away
+        icon: mdi:shield-home
+        secondary_info: last-triggered
+      - entity: automation.back_door_opened_when_away
+        name: Back Door Opened When Away
+        icon: mdi:shield-home
+        secondary_info: last-triggered
+      - entity: automation.interior_garage_door_opened_when_away
+        name: Inside Garage Door Opened When Away
+        icon: mdi:shield-home
+        secondary_info: last-triggered
+      - entity: automation.exterior_garage_door_opened_when_away
+        name: Outside Garage Door Opened When Away
+        icon: mdi:shield-home
+        secondary_info: last-triggered
+      - entity: automation.exterior_garage_door_left_open_when_away
+        name: Outside Garage Door Left Open When Away
+        icon: mdi:shield-home
+        secondary_info: last-triggered
+      - entity: automation.doorbell_pressed
+        name: Doorbell Pressed
+        icon: mdi:bell
+        secondary_info: last-triggered
+  - type: entities
+    title: Network Security Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.desktop_pc_on_when_away
+        name: Desktop PC on When Away
+        icon: mdi:windows
+        secondary_info: last-triggered
+      - entity: automation.send_notification_upon_failed_login_attempt
+        name: Failed HA Login Attempt Notification
+        icon: mdi:lock-outline
+        secondary_info: last-triggered
+  - type: entities
+    title: Home Assistant Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.home_assistant_started
+        name: Home Assistant Started
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.home_assistant_stopped
+        name: Home Assistant Stopped
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.addon_update_available
+        name: Add-on Update Available
+        icon: mdi:progress-upload
+        secondary_info: last-triggered
+      - entity: automation.new_home_assitant_version
+        name: New home Assistant Version
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.update_template_sensors
+        name: Update Template Sensors
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.casttohub
+        name: Cast to Google Hub
+        icon: mdi:google
+        secondary_info: last-triggered
+  - type: entities
+    title: Other Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.holiday_and_birthday_notification
+        name: Holiday/Birthday Notification
+        icon: mdi:gift
+        secondary_info: last-triggered
+      - entity: automation.check_deep_freezer_temperature
+        name: Check Freezer Temperature
+        icon: mdi:snowflake
+        secondary_info: last-triggered
+      - entity: automation.turn_on_amp_with_tv
+        name: Turn on Amp with TV
+        icon: mdi:television
+        secondary_info: last-triggered
+      - entity: automation.kuled1_double_tap
+        name: Kuled1 Double Tap Automation
+        icon: mdi:gesture-double-tap
+      - entity: automation.kuled5_double_tap
+        name: Kuled5 Double Tap Automation
+        icon: mdi:gesture-double-tap
+      - type: divider
+      - entity: automation.kuled3_double_tap
+        name: Kuled3 Double Tap Automation
+        icon: mdi:gesture-double-tap
+      - entity: script.readinglight
+        name: Reading Light Script
+      - entity: script.fadebedlightoff
+        name: Fade Bed Light Off Script
+      - type: divider
+      - entity: automation.ok_to_wake_red
+        name: OK to Wake-Red
+        icon: mdi:alarm-note-off
+      - entity: automation.ok_to_wake_green
+        name: OK to Wake-Green
+        icon: mdi:alarm-note
+      - entity: automation.ok_to_wake_off
+        name: OK to Wake-Off
+        icon: mdi:alarm-note-off
+  - type: entities
+    title: Climate Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.set_thermostat_away_mode_when_leaving
+        name: Set thermostat Away Mode When Leaving
+        icon: mdi:home-outline
+        secondary_info: last-triggered
+      - entity: automation.set_thermostat_away_mode_at_1600
+        name: Turn Off thermostat Away Mode at 1600
+        icon: mdi:home-outline
+        secondary_info: last-triggered
+      - entity: automation.turn_off_away_when_home
+        name: Turn Off thermostat Away Mode When Home
+        icon: mdi:home-outline
+        secondary_info: last-triggered
+      - entity: automation.turn_on_bedroom_fan_with_hvac
+        name: Turn on Bedroom Fan with HVAC
+        icon: mdi:fan
+        secondary_info: last-triggered
+      - entity: automation.turn_off_bedroom_fan_with_hvac
+        name: Turn off Bedroom Fan with HVAC
+        icon: mdi:fan
+        secondary_info: last-triggered
+      - entity: automation.set_thermostat_temperature_2200
+        name: Set Overnight Temperature
+        icon: mdi:weather-night
+        secondary_info: last-triggered
+      - entity: automation.set_thermostat_temperature_0500
+        name: Set Morning Temperature
+        icon: mdi:weather-sunset
+        secondary_info: last-triggered
+      - entity: automation.attic_fan_control_on
+        name: Turn on Attic Fan
+        icon: mdi:fan
+        secondary_info: last-triggered
+      - entity: automation.attic_fan_control_off
+        name: Turn off Attic Fan
+        icon: mdi:fan
+        secondary_info: last-triggered
+  - type: entities
+    title: Leaving Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.desktop_on_when_leaving
+        name: Desktop On When Leaving
+        icon: mdi:windows
+        secondary_info: last-triggered
+      - entity: automation.media_center_on_when_leaving
+        name: Media Center On When leaving
+        icon: mdi:television-classic
+        secondary_info: last-triggered
+      - entity: automation.leaving_home
+        name: Leaving Home Turn off lights
+        icon: mdi:home-circle
+        secondary_info: last-triggered
+  - type: entities
+    title: UPS Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.power_outage
+        name: Power Outage
+        icon: mdi:power-plug
+        secondary_info: last-triggered
+      - entity: automation.power_restored
+        name: Power Restored
+        icon: mdi:power-plug
+        secondary_info: last-triggered
+  - type: entities
+    title: Maintenance Reminder Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.water_filter_maintenance_reminder
+        name: Water Filter Maintenance
+        icon: mdi:water
+        secondary_info: last-triggered
+      - entity: automation.trash_day_reminder
+        name: Trash Day
+        icon: mdi:delete-empty
+        secondary_info: last-triggered
+      - entity: automation.furnace_filter_reminder
+        name: Furnace Filter
+        icon: mdi:fire
+        secondary_info: last-triggered
+      - entity: automation.belle_flea_tick_and_heartworm_reminder
+        name: Belle Flea Tick and Heartworm
+        icon: mdi:paw
+        secondary_info: last-triggered
+      - entity: automation.water_softener_reminder
+        name: Water Softener
+        icon: mdi:water-pump
+        secondary_info: last-triggered
+      - entity: automation.humidifier_maintenance_reminder
+        name: Humidifier Maintenance
+        icon: mdi:water-percent
+        secondary_info: last-triggered
+      - entity: automation.county_tax_bill_reminder
+        name: Tax Bill Reminder
+        icon: mdi:currency-usd
+        secondary_info: last-triggered
+  - type: entities
+    title: Feed the dog Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.dog_has_been_fed_evening
+        name: Dog has been fed - evening
+        icon: mdi:paw
+        secondary_info: last-triggered
+      - entity: automation.dog_has_been_fed_morning
+        name: Dog has been fed - morning
+        icon: mdi:paw
+        secondary_info: last-triggered
+      - entity: automation.reset_feed_the_dog_notifications
+        name: Reset feed the dog automations
+        icon: mdi:paw
+        secondary_info: last-triggered
+      - entity: automation.feed_the_dog_evening
+        name: Feed the dog evening
+        icon: mdi:paw
+        secondary_info: last-triggered
+      - entity: automation.feed_the_dog_morning
+        name: Feed the dog morning
+        icon: mdi:paw
+        secondary_info: last-triggered
+  - type: entities
+    title: Morning Briefings
+    show_header_toggle: false
+    entities:
+      - entity: automation.morning_briefing_adam
+        name: Adam's Morning Briefing
+        icon: mdi:weather-sunset
+        secondary_info: last-triggered
+      - entity: automation.morning_briefing_amy
+        name: Amy's Morning Briefing
+        icon: mdi:weather-sunset
+        secondary_info: last-triggered
+  - type: entities
+    show_header_toggle: false
+    title: Watchdogs
+    entities:
+      - entity: automation.notify_if_ha_device_offline
+        name: Notify if HA device Offline
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.notify_if_zwave_device_is_dead
+        name: Notify if Zwave device is Dead
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.notify_if_yeelight_offline
+        name: Notify if Yeelight Offline
+        icon: mdi:lightbulb-outline
+        secondary_info: last-triggered
+      - entity: automation.addon_stopped
+        name: Addon Stopped
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.disk_use_alarm
+        name: Hass.io Disk Use Alarm
+        icon: mdi:harddisk
+        secondary_info: last-triggered
+      - entity: automation.sensor_low_battery
+        name: Low Sensor Battery
+        icon: mdi:battery-charging-wireless-10
+        secondary_info: last-triggered
+      - entity: automation.notify_if_unifi_gateway_alert
+        name: Notify if Unifi Gateway Alert
+        icon: mdi:alert
+        secondary_info: last-triggered
+      - entity: automation.notify_if_network_device_issue
+        name: Network Device Issue Notification
+        icon: mdi:help-network
+        secondary_info: last-triggered
+      - entity:  automation.notify_if_unifi_firmware_update_available
+        name: Network Device Firmware Update Available
+        icon: mdi:check-network
+        secondary_info: last-triggered
+  - type: entities
+    show_header_toggle: false
+    title: Actionable Notifications
+    entities:
+      - entity: automation.tv_on_when_away_notification
+        name: TV When Away Actionable Notification
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.desktop_on_when_away_notification
+        name: Desktop When Away Actionable Notification
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+      - entity: automation.receiver_on_when_away_notification
+        name: Receiver When Away Actionable Notification
+        icon: mdi:home-assistant
+        secondary_info: last-triggered
+
+####################################################
+#                                                  #
+#          END OF CONFIGURATION FILE               #
+#                                                  #
+####################################################
