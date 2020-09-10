@@ -203,6 +203,14 @@ cards:
         name: Set Morning Temperature
         icon: mdi:weather-sunset
         secondary_info: last-triggered
+      - entity: automation.attic_fan_control_on
+        name: Turn on Attic Fan
+        icon: mdi:fan
+        secondary_info: last-triggered
+      - entity: automation.attic_fan_control_off
+        name: Turn off Attic Fan
+        icon: mdi:fan
+        secondary_info: last-triggered
   - type: entities
     title: Leaving Automations
     show_header_toggle: false

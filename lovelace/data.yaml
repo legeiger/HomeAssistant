@@ -189,12 +189,21 @@ cards:
           entity: sensor.th161_temperature
           detail: 2
         entities:
+          - entity: input_number.attic_fan_on
+            name: Fan on Temperature
+          - entity: sensor.attic_fan_hours_today
+            icon: mdi:progress-clock
+          - entity: sensor.attic_fan_hours_yesterday
+            icon: mdi:progress-clock
+          - entity: sensor.attic_fan_hours_two_days_ago
+            icon: mdi:progress-clock
           - entity: sensor.th161_humidity
             name: Attic Humidity
             icon: mdi:water-percent
           - entity: sensor.th161_temperature
             name: Attic Temperature
             icon: mdi:thermometer-lines
+
 
 ####################################################
 #                                                  #
