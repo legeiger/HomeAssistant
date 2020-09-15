@@ -1,0 +1,38 @@
+#########################################################
+#                                                       #
+#             SPACEX LAUNCH NOTIFICATION                #
+#                                                       #
+#########################################################
+
+  - alias: SpaceX Launch Notify
+    initial_state: true
+    trigger:
+      - platform: template
+        value_template: "{{ (((states.sensor.spacex.state)| int) - as_timestamp(states.sensor.date.state + ' ' + states.sensor.time.state) |int ) - 3600 < 0 }}"
+    condition:
+      - condition: template
+        value_template: "{{ now().strftime('%m.%d.%Y') == states.sensor.spacex_next_launch_day.state }}"
+    action:
+      - service: notify.home_assistant
+        data_template:
+          title: SpaceX Launch in One Hour
+          message: >
+                    <b> Launch Time: </b> {{ states.sensor.spacex.state | int | timestamp_custom("%I:%M %p")}} <br>
+                    <br>
+                    <b> Mission Summary: </b> {{ states.sensor.spacex.attributes.details }} <br>
+                    <br>
+                    <b> Launch Site: </b> {{ states.sensor.spacex.attributes.launch_site.site_name_long }} <br>
+                    <br>
+                    <b> The Youtube Link is: </b> {{ states.sensor.spacex.attributes.links.youtube_id }} <br>
+                    <br>
+                    <b> The Video Link is: </b> {{ states.sensor.spacex.attributes.links.video_link }} <br>
+                    <br>
+          data:
+            images:
+              - /config/data/pictures/spacex.png 
+
+####################################################
+#                                                  #
+#           END OF CONFIGURATION FILE              #
+#                                                  #
+####################################################

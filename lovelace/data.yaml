@@ -189,6 +189,9 @@ cards:
           entity: sensor.th161_temperature
           detail: 2
         entities:
+          - entity: switch.th161
+            name: Attic Fan
+            icon: mdi:fan
           - entity: input_number.attic_fan_on
             name: Fan on Temperature
           - entity: sensor.attic_fan_hours_today
@@ -203,7 +206,19 @@ cards:
           - entity: sensor.th161_temperature
             name: Attic Temperature
             icon: mdi:thermometer-lines
-
+  - type: entities
+    title: SpaceX Launch Information
+    entities:
+      - entity: sensor.spacex_next_rocket
+        icon: mdi:rocket
+      - entity: sensor.spacex_next_mission_name
+        icon: mdi:information-outline
+      - entity: sensor.spacex_next_launch_day
+        icon: mdi:calendar
+      - entity: sensor.spacex_next_launch_time
+        icon: mdi:clock-outline
+      - entity: sensor.spacex_next_launch_site
+        icon: mdi:map-marker-radius-outline
 
 ####################################################
 #                                                  #
