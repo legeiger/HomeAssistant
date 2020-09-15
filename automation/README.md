@@ -183,12 +183,16 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 * Notify me if the Desktop PC is turned on while away
 * Notify me if there is a failed login attempt to the HA front end
 
+### SpaceX.yaml Automations:
+__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/spacex.yaml)__
+
+* Send me a notification 1 hour before a SpaceX launch with some general information about the launch
+
 ### UPS.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/ups.yaml)__
 
 * Notify me if there is a power outage
 * Notify me when power is restored
-
 
 ### Zwave.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/zwave.yaml)__
