@@ -1,0 +1,85 @@
+
+#https://www.home-assistant.io/integrations/light/
+
+####################################################
+#                                                  #
+#                     FLUX LED                     #
+#                                                  #
+####################################################
+
+#https://www.home-assistant.io/integrations/flux_led/
+  - platform: flux_led
+    devices:
+      192.168.1.4:
+        name: Mikey's Bed Lights
+        mode: "rgbw"
+      192.168.1.42:
+        name: LED Strip Light2
+        mode: "rgbw"
+
+####################################################
+#                                                  #
+#                  LIGHT GROUPS                    #
+#                                                  #
+####################################################
+
+#https://www.home-assistant.io/components/light.group/
+  - platform: group
+    name: Basement Lights
+    entities:
+      - light.zooz_zen27_s2_dimmer_wall_switch_level
+      - light.zooz_zen27_s2_dimmer_wall_switch_level_2
+      - light.zooz_zen27_s2_dimmer_wall_switch_level_3
+
+  - platform: group
+    name: Bedroom Lights
+    entities:
+      - light.yeelight3
+      - light.yeelight4
+
+  - platform: group
+    name: Front Lights
+    entities:
+      - light.yeelight1
+      - light.kuled6
+
+####################################################
+#                                                  #
+#                  LIGHT SWITCH                    #
+#                                                  #
+####################################################
+
+#https://www.home-assistant.io/integrations/light.switch/
+  - platform: switch
+    name: basic1
+    entity_id: switch.basic1
+
+  - platform: switch
+    name: kuled1
+    entity_id: switch.kuled1
+
+  - platform: switch
+    name: kuled2
+    entity_id: switch.kuled2
+
+  - platform: switch
+    name: kuled3
+    entity_id: switch.kuled3
+
+  - platform: switch
+    name: kuled4
+    entity_id: switch.kuled4
+
+  - platform: switch
+    name: kuled5
+    entity_id: switch.kuled5
+
+  - platform: switch
+    name: kuled6
+    entity_id: switch.kuled6
+
+####################################################
+#                                                  #
+#           END OF CONFIGURATION FILE              #
+#                                                  #
+####################################################

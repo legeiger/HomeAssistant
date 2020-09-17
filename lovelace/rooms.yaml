@@ -45,7 +45,7 @@ cards:
         entities:
           - type: section
             label: Basement
-          - entity: media_player.unnamed_device
+          - entity: media_player.basement_tv
             name: Basement TV
             icon: mdi:television-clean
           - type: section

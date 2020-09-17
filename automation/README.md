@@ -155,7 +155,7 @@ __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/
 ### Morning Briefing.yaml Automation:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/morning_briefing.yaml)__
 
-* Send my Wife and I a morning e-mail with the weather for the day current and upcoming holidays/birthdays and a random picture of the two of us. The filemove.py file in the main config directory is called by the automation to move a random file from a folder with many pitures to another which is then included in the e-mail. 
+* Send my Wife and I a morning e-mail with the weather for the day current and upcoming holidays/birthdays and a random picture of the two of us. The pictures folder in my data directory has a bunch of pictures each with a unique number as the file name.
 
 ### Network.yaml Automation:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/network.yaml)__

@@ -23,8 +23,6 @@
                     <br>
                     <b> Launch Site: </b> {{ states.sensor.spacex.attributes.launch_site.site_name_long }} <br>
                     <br>
-                    <b> The Youtube Link is: </b> {{ states.sensor.spacex.attributes.links.youtube_id }} <br>
-                    <br>
                     <b> The Video Link is: </b> {{ states.sensor.spacex.attributes.links.video_link }} <br>
                     <br>
           data:

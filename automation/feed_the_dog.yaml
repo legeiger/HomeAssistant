@@ -8,7 +8,7 @@
     initial_state: true  
     trigger:
       platform: time
-      at: '06:00'
+      at: '06:00:00'
     condition:
       condition: state
       entity_id: input_boolean.vacation
@@ -30,7 +30,7 @@
     initial_state: true
     trigger:
       platform: time
-      at: '17:00'
+      at: '17:00:00'
     condition:
       condition: state
       entity_id: input_boolean.vacation
@@ -114,7 +114,7 @@
     initial_state: true
     trigger:
       platform: time
-      at: '01:00'
+      at: '01:00:00'
     action:
       - service: automation.turn_on
         entity_id: automation.dog_has_been_fed_evening

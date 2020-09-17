@@ -8,13 +8,8 @@
     initial_state: true
     trigger:
       platform: time
-      at: '06:00'
+      at: '06:00:00'
     action:
-      - service: hassio.addon_stdin
-        data:
-          addon: a0d7b954_ssh
-          input: python3 /config/data/filemove.py
-      - delay: 00:00:05
       - service: notify.home_assistant
         data_template:
           title: "Moring Briefing"
@@ -33,13 +28,13 @@
                     <b> A Picture of Us! </b>
           data:
             images:
-              - /config/data/pictures/to/1.jpg 
+              - /config/data/pictures/{{ range(1, 76) | random }}.jpg 
 
   - alias: "Morning Briefing Amy"
     initial_state: true
     trigger:
       platform: time
-      at: '06:01'
+      at: '06:01:00'
     action:
       - service: notify.amy
         data_template:
@@ -60,7 +55,7 @@
                     <b> A Picture of Us! </b>
           data:
             images:
-              - /config/data/pictures/to/1.jpg 
+              - /config/data/pictures/{{ range(1, 76) | random }}.jpg 
 
 ####################################################
 #                                                  #

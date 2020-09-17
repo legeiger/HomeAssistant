@@ -60,7 +60,23 @@
             activationMode: 'background'
             authenticationRequired: yes
             destructive: no
-            behavior: 'default'            
+            behavior: 'default'
+
+      - name: Garage Light
+        identifier: 'Garagelight'
+        actions:
+          - identifier: 'LIGHT_OFF'
+            title: 'Light Off'
+            activationMode: 'background'
+            authenticationRequired: yes
+            destructive: yes
+            behavior: 'default'
+          - identifier: 'DISMISS'
+            title: 'Dismiss'
+            activationMode: 'background'
+            authenticationRequired: yes
+            destructive: no
+            behavior: 'default'
 
 ####################################################
 #                                                  #

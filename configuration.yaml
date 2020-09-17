@@ -26,6 +26,7 @@ cloud: !include cloud.yaml
 frontend:
   themes: !include_dir_merge_named themes/
 ios: !include ios.yaml
+light: !include lights.yaml
 recorder: !include recorder.yaml
 script: !include scripts.yaml
 sensor: !include_dir_merge_list sensors/
@@ -46,6 +47,21 @@ history:
 
 #https://home-assistant.io/components/http/
 http:
+
+#https://www.home-assistant.io/integrations/input_boolean/
+input_boolean:
+
+#https://www.home-assistant.io/integrations/input_datetime/
+input_datetime:
+
+#https://www.home-assistant.io/integrations/input_number/
+input_number:
+
+#https://www.home-assistant.io/integrations/input_select/
+input_select:
+
+#https://www.home-assistant.io/integrations/input_text/
+input_text:
 
 #https://home-assistant.io/components/logger/
 logger:
@@ -108,87 +124,6 @@ cover:
         host: 192.168.1.18
         device_key: !secret device_key
         name: Garage Door
-
-####################################################
-#                 INPUT BOOLEAN                    #
-####################################################
-
-#https://home-assistant.io/components/input_boolean/
-input_boolean:
-  vacation:
-    name: Vacation Mode
-    initial: off
-  guest:
-    name: Guest Mode
-    initial: off
-  feeddog:
-    name: feeddog
-    initial: off
-  doorbelllight:
-    name: doorbelllight
-    initial: off
-
-####################################################
-#                     LIGHT                        #
-####################################################
-
-#https://www.home-assistant.io/components/light.group/
-light:
-  - platform: group
-    name: Bedroom Lights
-    entities:
-      - light.yeelight3
-      - light.yeelight4
-
-  - platform: group
-    name: Front Lights
-    entities:
-      - light.yeelight1
-      - light.kuled6
-
-  - platform: group
-    name: Basement Lights
-    entities:
-      - light.zooz_zen27_s2_dimmer_wall_switch_level
-      - light.zooz_zen27_s2_dimmer_wall_switch_level_2
-      - light.zooz_zen27_s2_dimmer_wall_switch_level_3
-
-  - platform: switch
-    name: basic1
-    entity_id: switch.basic1
-
-  - platform: switch
-    name: kuled1
-    entity_id: switch.kuled1
-
-  - platform: switch
-    name: kuled2
-    entity_id: switch.kuled2
-
-  - platform: switch
-    name: kuled3
-    entity_id: switch.kuled3
-
-  - platform: switch
-    name: kuled4
-    entity_id: switch.kuled4
-
-  - platform: switch
-    name: kuled5
-    entity_id: switch.kuled5
-
-  - platform: switch
-    name: kuled6
-    entity_id: switch.kuled6
-
-  - platform: flux_led
-    devices:
-      192.168.1.4:
-        name: Mikey's Bed Lights
-        mode: "rgbw"
-      192.168.1.42:
-        name: LED Strip Light2
-        mode: "rgbw"
 
 ####################################################
 #                MEDIA PLAYER                      #
@@ -260,24 +195,6 @@ weather:
   - platform: darksky
     api_key: !secret darksky
     mode: daily
-
-####################################################
-#                     YEELIGHTS                    #
-####################################################
-
-#https://home-assistant.io/components/light.yeelight/
-yeelight:
-  devices:
-    192.168.1.10:
-      name: Yeelight1
-    192.168.1.11:
-      name: Yeelight2
-    192.168.1.12:
-      name: Yeelight3
-    192.168.1.26:
-      name: Yeelight4
-    192.168.1.28:
-      name: Yeelight5
 
 ####################################################
 #                                                  #

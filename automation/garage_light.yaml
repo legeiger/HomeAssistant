@@ -19,7 +19,7 @@
 
 #########################################################
 #                                                       #
-#         TURN OFF GARAGE LIGHT AFTER 5 MINUTES         #
+#        TURN OFF GARAGE LIGHT AFTER 10 MINUTES         #
 #                                                       #
 #########################################################
 
@@ -30,12 +30,28 @@
       entity_id: switch.kuled5
       to: 'on'
       for:
-        minutes: 5
+        minutes: 10
     action:
-      service: switch.turn_off
-      entity_id: switch.kuled5
+      - service: notify.mobile_app_adams_iphone
+        data_template:
+          message: The Garage Light has been on for 10 minutes, would you like to turn it off?
+          data:
+            push:
+              badge: 0
+              category: 'garagelight'
 
-########################################################
+  - alias: Garage Light on after 10 notification
+    initial_state: true
+    trigger:
+      platform: event
+      event_type: ios.notification_action_fired
+      event_data:
+        actionName: LIGHT_OFF
+    action:
+      - service: switch.turn_off
+        entity_id: switch.kuled5
+
+#########################################################
 #                                                       #
 #            END OF CONFIGURATION FILE                  #
 #                                                       #

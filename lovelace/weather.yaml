@@ -6,38 +6,394 @@
 
 title: Weather
 path: weather
-panel: true
+panel: false
 icon: mdi:weather-partly-snowy-rainy
 cards:
-  - type: custom:stack-in-card
-    cards:
-      - type: weather-forecast
-        name: Weather
-        entity: weather.dark_sky
-        secondary_info_attribute: humidity
-      - type: entities
-        entities:
-          - sun.sun
-          - entity: sensor.nextsunrise
-            icon: mdi:weather-sunset-up
-          - entity: sensor.nextsunset
-            icon: mdi:weather-sunset-down
-          - entity: sensor.hoursdaylight
-            icon: mdi:clock
-            name: Hours of Daylight
-          - type: attribute
-            entity: sun.sun
-            attribute: elevation
-            name: Sun Elevation
-            icon: mdi:weather-sunset
-          - entity: sensor.moon
-            name: Moon Phase
-      - type: picture
-        image: https://forecast.weather.gov/meteograms/Plotter.php?lat=41.9796&lon=-88.1674&wfo=LOT&zcode=ILZ013&gset=10&gdiff=5&unit=0&tinfo=CY6&ahour=0&pcmd=11011111111110000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6
-      - type: iframe
-        url: https://embed.windy.com/embed2.html?lat=41.979&lon=-88.167&zoom=5&level=surface&overlay=radar&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=41.9796&detailLon=-88.167&metricWind=default&metricTemp=default&radarRange=-1
-        aspect_ratio: 80%
-
+  - type: weather-forecast
+    name: Weather
+    entity: weather.dark_sky
+    secondary_info_attribute: humidity
+  - type: entities
+    entities:
+      - sun.sun
+      - entity: sensor.nextsunrise
+        icon: mdi:weather-sunset-up
+      - entity: sensor.nextsunset
+        icon: mdi:weather-sunset-down
+      - entity: sensor.hoursdaylight
+        icon: mdi:clock
+        name: Hours of Daylight
+      - type: attribute
+        entity: sun.sun
+        attribute: elevation
+        name: Sun Elevation
+        icon: mdi:weather-sunset
+      - entity: sensor.moon
+        name: Moon Phase
+  - type: picture
+    image: https://forecast.weather.gov/meteograms/Plotter.php?lat=41.9796&lon=-88.1674&wfo=LOT&zcode=ILZ013&gset=10&gdiff=5&unit=0&tinfo=CY6&ahour=0&pcmd=11011111111110000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6
+  - type: iframe
+    url: https://embed.windy.com/embed2.html?lat=41.979&lon=-88.167&zoom=5&level=surface&overlay=radar&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=41.9796&detailLon=-88.167&metricWind=default&metricTemp=default&radarRange=-1
+    aspect_ratio: 80%
+  - type: conditional
+    conditions:
+      - entity: sensor.fake
+        state: "on"
+    card:
+      type: entities
+      entities:
+        - automation.addon_stopped
+        - automation.addon_update_available
+        - automation.attic_fan_control_off
+        - automation.attic_fan_control_on
+        - automation.back_door_opened_when_away
+        - automation.bedroom_light_control
+        - automation.belle_flea_tick_and_heartworm_reminder
+        - automation.casttohub
+        - automation.check_deep_freezer_temperature
+        - automation.county_tax_bill_reminder
+        - automation.desktop_on_when_away_notification
+        - automation.desktop_on_when_leaving
+        - automation.desktop_pc_on_when_away
+        - automation.disk_use_alarm
+        - automation.dog_has_been_fed_evening
+        - automation.dog_has_been_fed_morning
+        - automation.doorbell_pressed
+        - automation.exterior_garage_door_left_open_when_away
+        - automation.exterior_garage_door_opened_when_away
+        - automation.feed_the_dog_evening
+        - automation.feed_the_dog_morning
+        - automation.front_door_opened_when_away
+        - automation.furnace_filter_reminder
+        - automation.garage_light_on_after_10_notification
+        - automation.holiday_and_birthday_notification
+        - automation.home_assistant_started
+        - automation.home_assistant_stopped
+        - automation.humidifier_maintenance_reminder
+        - automation.interior_garage_door_open_light_on
+        - automation.interior_garage_door_opened_when_away
+        - automation.kuled1_double_tap
+        - automation.kuled3_double_tap
+        - automation.kuled5_double_tap
+        - automation.lamps_on_when_home
+        - automation.leaving_home
+        - automation.media_center_on_when_leaving
+        - automation.morning_briefing_adam
+        - automation.morning_briefing_amy
+        - automation.new_home_assitant_version
+        - automation.notify_if_ha_device_offline
+        - automation.notify_if_network_device_issue
+        - automation.notify_if_unifi_firmware_update_available
+        - automation.notify_if_unifi_gateway_alert
+        - automation.notify_if_yeelight_offline
+        - automation.notify_if_zwave_device_is_dead
+        - automation.ok_to_wake_green
+        - automation.ok_to_wake_off
+        - automation.ok_to_wake_red
+        - automation.open_back_door_increase_brightness
+        - automation.power_outage
+        - automation.power_restored
+        - automation.receiver_on_when_away_notification
+        - automation.reset_feed_the_dog_notifications
+        - automation.send_notification_upon_failed_login_attempt
+        - automation.sensor_low_battery
+        - automation.set_thermostat_away_mode_at_1600
+        - automation.set_thermostat_away_mode_when_leaving
+        - automation.set_thermostat_temperature_0500
+        - automation.set_thermostat_temperature_2200
+        - automation.spacex_launch_notify
+        - automation.trash_day_reminder
+        - automation.turn_off_away_when_home
+        - automation.turn_off_bedroom_fan_with_hvac
+        - automation.turn_off_interior_garage_light_after_5
+        - automation.turn_off_living_room_lamps_at_midnight
+        - automation.turn_off_outside_lights
+        - automation.turn_on_amp_with_music_app
+        - automation.turn_on_amp_with_tv
+        - automation.turn_on_bedroom_fan_with_hvac
+        - automation.turn_on_living_room_lamps
+        - automation.turn_on_outside_lights
+        - automation.tv_on_when_away_notification
+        - automation.update_template_sensors
+        - automation.water_filter_maintenance_reminder
+        - automation.water_softener_reminder
+        - camera.nursery_camera
+        - climate.thermostat
+        - cover.garage_door
+        - device_tracker.adam_s_work_laptop
+        - device_tracker.adams_iphone
+        - device_tracker.adams_iphone_2
+        - device_tracker.amazon_fire_tv
+        - device_tracker.amy_s_apple_watch
+        - device_tracker.amy_s_iphone
+        - device_tracker.amy_s_iphone_2
+        - device_tracker.amy_s_work_laptop
+        - device_tracker.android_a2bd7d9e922ef11b
+        - device_tracker.doorbell
+        - device_tracker.e1
+        - device_tracker.esp_a0d647
+        - device_tracker.google_nest_hub
+        - device_tracker.homeassistant
+        - device_tracker.hp2f2505
+        - device_tracker.ikea_tradfri_gateway
+        - device_tracker.kuled_1
+        - device_tracker.kuled_2
+        - device_tracker.lenovo_laptop
+        - device_tracker.lifx_mini_57057e
+        - device_tracker.mikey_s_kindle_fire
+        - device_tracker.moode
+        - device_tracker.open_garage
+        - device_tracker.raspberry_pi_2_wired
+        - device_tracker.raspberry_pi_zero_w
+        - device_tracker.sonoff_1242
+        - device_tracker.sonoff_6108
+        - device_tracker.sonoff_basic_1
+        - device_tracker.sonoff_pow_1
+        - device_tracker.sonoff_pow_2
+        - device_tracker.sonoff_th16_1
+        - device_tracker.unifi_00_00_01_c0_00_40_default
+        - device_tracker.unifi_00_a0_de_dc_ca_ce_default
+        - device_tracker.unifi_02_92_27_7c_83_f5_default
+        - device_tracker.unifi_26_bf_0b_c4_c4_8b_default
+        - device_tracker.unifi_2a_c7_3f_e6_7b_28_default
+        - device_tracker.unifi_3e_6d_56_88_1a_6c_default
+        - device_tracker.unifi_48_f4_ab_a2_67_27_default
+        - device_tracker.unifi_68_a5_a9_0f_1c_70_default
+        - device_tracker.unifi_6e_45_ed_5b_7e_f8_default
+        - device_tracker.unifi_6e_d6_80_74_1e_07_default
+        - device_tracker.unifi_80_7d_3a_02_23_96_default
+        - device_tracker.unifi_8c_79_f5_68_4b_7b_default
+        - device_tracker.unifi_9c_a9_28_6a_f5_12_default
+        - device_tracker.unifi_ap_ac_lr
+        - device_tracker.unifi_b0_25_97_ad_d5_8a_default
+        - device_tracker.unifi_d8_bf_c0_d9_99_b4_default
+        - device_tracker.unifi_de_9b_28_e0_23_51_default
+        - device_tracker.unifi_e4_ab_7c_50_fb_d5_default
+        - device_tracker.unifi_e6_82_cd_d9_f3_f0_default
+        - device_tracker.unifi_f8_29_ba_7b_68_1f_default
+        - device_tracker.unifi_f8_ac_65_34_42_98_default
+        - device_tracker.unifi_security_gateway
+        - device_tracker.unifi_switch_8_poe_60w
+        - device_tracker.usmini
+        - device_tracker.yeelight_1
+        - device_tracker.yeelight_2
+        - device_tracker.yeelight_3
+        - device_tracker.yeelight_4
+        - device_tracker.yeelight_5
+        - input_boolean.adamphonemusic
+        - input_boolean.doorbelllight
+        - input_boolean.feeddog
+        - input_boolean.guest
+        - input_boolean.vacation
+        - input_datetime.green_light_time
+        - input_datetime.ok_to_wake_off
+        - input_datetime.red_light_time
+        - input_number.attic_fan_on
+        - light.basement_lights
+        - light.basic1
+        - light.bedroom_lights
+        - light.front_lights
+        - light.kuled1
+        - light.kuled2
+        - light.kuled3
+        - light.kuled4
+        - light.kuled5
+        - light.kuled6
+        - light.led_strip_light2
+        - light.mikey_s_bed_lights
+        - light.notification_light
+        - light.yeelight1
+        - light.yeelight2
+        - light.yeelight3
+        - light.yeelight4
+        - light.yeelight5
+        - light.zooz_zen27_s2_dimmer_wall_switch_level
+        - light.zooz_zen27_s2_dimmer_wall_switch_level_2
+        - light.zooz_zen27_s2_dimmer_wall_switch_level_3
+        - light.zooz_zen27_s2_dimmer_wall_switch_level_4
+        - media_player.family_room_display
+        - media_player.rx_v481_dccace_main
+        - media_player.basement_tv
+        - person.adam
+        - person.amy
+        - script.adamlocation
+        - script.airplay
+        - script.amylocation
+        - script.bluetooth
+        - script.fadebedlightoff
+        - script.normallight
+        - script.readinglight
+        - script.returntonormal
+        - script.send_adam_nursery_camera
+        - script.send_amy_nursery_camera
+        - script.volumedown
+        - script.volumeup
+        - sensor.adams_iphone_battery_level
+        - sensor.adams_iphone_ssid
+        - sensor.adguard
+        - sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_energy
+        - sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
+        - sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_voltage
+        - sensor.amy_s_iphone_battery_level
+        - sensor.amy_s_iphone_battery_state
+        - sensor.amy_s_iphone_ssid
+        - sensor.approxwattage
+        - sensor.attic_fan_hours_today
+        - sensor.attic_fan_hours_two_days_ago
+        - sensor.attic_fan_hours_yesterday
+        - sensor.automation_count
+        - sensor.backdoorstatus
+        - sensor.basic1_signal
+        - sensor.binary_sensor_count
+        - sensor.cooling_hours_today
+        - sensor.cooling_hours_two_days_ago
+        - sensor.cooling_hours_yesterday
+        - sensor.cpu_temperature
+        - sensor.daily_energy
+        - sensor.date
+        - sensor.dht22humid
+        - sensor.dht22temp
+        - sensor.disk_use_percent_home
+        - sensor.doorbell
+        - sensor.ds18b20_1
+        - sensor.ds18b20_2
+        - sensor.gdrivebackup
+        - sensor.ge_32563_hinge_pin_smart_door_sensor_access_control
+        - sensor.ge_32563_hinge_pin_smart_door_sensor_access_control_2
+        - sensor.ge_32563_hinge_pin_smart_door_sensor_battery_level
+        - sensor.ge_32563_hinge_pin_smart_door_sensor_battery_level_2
+        - sensor.gehingepinsensor1
+        - sensor.gehingepinsensor2
+        - sensor.guest_clients
+        - sensor.hassio_version
+        - sensor.heating_hours_today
+        - sensor.heating_hours_two_days_ago
+        - sensor.heating_hours_yesterday
+        - sensor.holiday
+        - sensor.holidayinaweek
+        - sensor.holidaytomorrow
+        - sensor.hoursdaylight
+        - sensor.hp_officejet_pro_9020_series
+        - sensor.hp_officejet_pro_9020_series_black_cartridge
+        - sensor.hp_officejet_pro_9020_series_cyan_cartridge
+        - sensor.hp_officejet_pro_9020_series_magenta_cartridge
+        - sensor.hp_officejet_pro_9020_series_yellow_cartridge
+        - sensor.installed_version
+        - sensor.kuled1_signal
+        - sensor.kuled2_signal
+        - sensor.kuled3_signal
+        - sensor.kuled4_signal
+        - sensor.kuled5_signal
+        - sensor.kuled6_signal
+        - sensor.last_boot
+        - sensor.lights_count
+        - sensor.linear_gc_tbz48_battery_powered_z_wave_thermostat_temperature
+        - sensor.linear_nortek_security_control_llc_wa00z_1_scene_switch_battery_level
+        - sensor.memory_use_percent
+        - sensor.monthly_energy
+        - sensor.moon
+        - sensor.mosquitto
+        - sensor.network_throughput_in_eno1
+        - sensor.network_throughput_out_eno1
+        - sensor.nextsunrise
+        - sensor.nextsunset
+        - sensor.nut
+        - sensor.operatingstate
+        - sensor.pow1_current
+        - sensor.pow1_energy
+        - sensor.pow1_power
+        - sensor.pow1_signal
+        - sensor.pow1_voltage
+        - sensor.pow2_current
+        - sensor.pow2_energy
+        - sensor.pow2_power
+        - sensor.pow2_signal
+        - sensor.pow2_voltage
+        - sensor.processor_use
+        - sensor.rpcshutdown
+        - sensor.samba
+        - sensor.script_count
+        - sensor.sensor_count
+        - sensor.spacex
+        - sensor.spacex_next_launch_day
+        - sensor.spacex_next_launch_site
+        - sensor.spacex_next_launch_time
+        - sensor.spacex_next_mission_name
+        - sensor.spacex_next_rocket
+        - sensor.speedtest_download
+        - sensor.speedtest_upload
+        - sensor.ssh
+        - sensor.switch_count
+        - sensor.th161_humidity
+        - sensor.th161_signal
+        - sensor.th161_temperature
+        - sensor.time
+        - sensor.time_online
+        - sensor.time_utc
+        - sensor.tracker_count
+        - sensor.unifi_gateway_alerts
+        - sensor.unifi_gateway_firmware_upgradable
+        - sensor.unifi_gateway_lan
+        - sensor.unifi_gateway_wan
+        - sensor.unifi_gateway_wan_cpu
+        - sensor.unifi_gateway_wan_download
+        - sensor.unifi_gateway_wan_mem
+        - sensor.unifi_gateway_wan_upload
+        - sensor.unifi_gateway_wlan
+        - sensor.unifi_gateway_www
+        - sensor.unificontroller
+        - sensor.unknown_id_021f_unknown_type_0003_id_0101_access_control
+        - sensor.unknown_id_021f_unknown_type_0003_id_0101_battery_level
+        - sensor.ups_battery_charge
+        - sensor.ups_battery_runtime
+        - sensor.ups_battery_voltage
+        - sensor.ups_input_voltage
+        - sensor.ups_load
+        - sensor.ups_output_voltage
+        - sensor.ups_status
+        - sensor.vision_security_zg8101_garage_door_detector_alarm_level
+        - sensor.vision_security_zg8101_garage_door_detector_battery_level
+        - sensor.vscode
+        - sensor.wired_clients
+        - sensor.wireless_clients
+        - sensor.zwave_count
+        - sun.sun
+        - switch.adguard
+        - switch.basic1
+        - switch.desktop_switch
+        - switch.gdrivebackup
+        - switch.kuled1
+        - switch.kuled2
+        - switch.kuled3
+        - switch.kuled4
+        - switch.kuled5
+        - switch.kuled6
+        - switch.mosquitto
+        - switch.nut
+        - switch.pow1
+        - switch.pow2
+        - switch.rpcshutdown
+        - switch.samba
+        - switch.ssh
+        - switch.th161
+        - switch.unifi_poe_68_a5_a9_0f_1c_70
+        - switch.unificontroller
+        - switch.vscode
+        - weather.dark_sky
+        - zone.home
+        - zwave.aeon_labs_dsb28_home_energy_meter_2nd_edition
+        - zwave.aeotec_zw090_z_stick_gen5_us
+        - zwave.aeotec_zw117_range_extender_6
+        - zwave.ge_32563_hinge_pin_smart_door_sensor
+        - zwave.ge_32563_hinge_pin_smart_door_sensor_2
+        - zwave.linear_gc_tbz48_battery_powered_z_wave_thermostat
+        - zwave.linear_nortek_security_control_llc_wa00z_1_scene_switch
+        - zwave.unknown_id_021f_unknown_type_0003_id_0101
+        - zwave.vision_security_zg8101_garage_door_detector
+        - zwave.zooz_zen27_s2_dimmer_wall_switch
+        - zwave.zooz_zen27_s2_dimmer_wall_switch_2
+        - zwave.zooz_zen27_s2_dimmer_wall_switch_3
+        - zwave.zooz_zen27_s2_dimmer_wall_switch_4
 ####################################################
 #                                                  #
 #          END OF CONFIGURATION FILE               #

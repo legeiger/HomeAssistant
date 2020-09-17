@@ -26,19 +26,11 @@
         name: Guest Mode
         aliases: Guest
         room: Family Room
-      switch.cast:
-        name: Cast
-        aliases: Cast Google Home
-        room: Family Room
       script.volumedown:
         name: Volume Down
         room: Family Room
       script.volumeup:
         name: Volume Up
-        room: Family Room
-      light.yeelightrgb2:
-        name: Notification light
-        aliases: Corner Light
         room: Family Room
       input_boolean.feeddog:
         name: Feed The Dog

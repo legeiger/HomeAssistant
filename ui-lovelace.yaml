@@ -10,7 +10,6 @@ custom_header:
     options: '{{ hours12LZ }}:{{ minutesLZ }}'
   hide_help: true
   hide_config: true
-  hide_unused: true
   shadow: on
   chevrons: false
 

@@ -24,7 +24,7 @@ I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https:
 * [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
 * [VScode](https://github.com/hassio-addons/addon-vscode)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.114.4__.
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.115.0__.
 
 # Connected Devices:
 
@@ -123,16 +123,13 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 * [Samsung TV](https://www.home-assistant.io/integrations/samsungtv/)
 * [Speedtest](https://www.home-assistant.io/integrations/speedtestdotnet/)
 * [Unifi Controller](https://www.home-assistant.io/integrations/unifi/)
+* [Yeelight](https://www.home-assistant.io/integrations/yeelight)
 * [ZWave](https://www.home-assistant.io/docs/z-wave/installation)
 
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Helpers | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:-------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|60               |22      |9        |21        |74           |12       |129      |13             | 
+|60               |22      |9        |21        |75           |12       |129      |13             | 
 
 # Themes
 I created a repository with the theme(s) I use and also a version of the default theme.  It is structured to help you identify the base variables available in Home Assistant to aide in tweaking a theme or creating a new one.  The repository is [HERE](https://github.com/SilvrrGIT/Home-Assistant-Themes)
-
-# Questions?
-
-The best way to get help on Home Assistant is the [Home Assistant Forum](https://community.home-assistant.io/).  If you have a specific question about my configuration send me a Private Message on the HA forum, my username over there is [Silvrr](https://community.home-assistant.io/u/silvrr/).  If you have found something incorrect, please submit an issue here on Github and I will get it fixed.

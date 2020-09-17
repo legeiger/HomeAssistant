@@ -1,6 +1,6 @@
 #########################################################
 #                                                       #
-#              AIR CIRCULATION AUTOMATION               #
+#           AIR CIRCULATION AUTOMATION - ON             #
 #                                                       #
 #########################################################
 
@@ -20,6 +20,12 @@
     action:
       - service: switch.turn_on
         entity_id: switch.kuled1
+
+#########################################################
+#                                                       #
+#           AIR CIRCULATION AUTOMATION - OFF            #
+#                                                       #
+#########################################################
 
   - alias: "Turn off Bedroom Fan With HVAC"
     initial_state: true

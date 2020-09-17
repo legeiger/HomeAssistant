@@ -15,6 +15,7 @@
       - links
     value_template: '{{ value_json["launch_date_unix"] }}'
     resource: 'https://api.spacexdata.com/v2/launches/next'
+    scan_interval: 3600
 
 #https://home-assistant.io/components/sensor.template/
   - platform: template
