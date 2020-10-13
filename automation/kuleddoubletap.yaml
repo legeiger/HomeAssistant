@@ -27,28 +27,7 @@
       topic: cmnd/kuledbutton3/POWER
       payload: "TOGGLE"
     action:
-      - service_template: >-
-          {%- if is_state('light.mikey_s_bed_lights' , 'off') -%}
-            script.readinglight
-          {%- else -%}
-            script.fadebedlightoff
-          {%- endif -%}
-
-#########################################################
-#                                                       #
-#                  KULED5 DOUBLE TAP                    #
-#                                                       #
-#########################################################
-
-  - alias: "Kuled5 Double Tap"
-    initial_state: true
-    trigger:
-      platform: mqtt
-      topic: cmnd/kuledbutton5/POWER
-      payload: "TOGGLE"
-    action:
-      - service: homeassistant.toggle
-        entity_id: automation.turn_off_interior_garage_light_after_5
+      - service_template: "{% if is_state('light.mikey_s_bed_lights', 'home') %}script.readinglight{% else %}script.fadebedlightoff{% endif %}"
 
 #########################################################
 #                                                       #

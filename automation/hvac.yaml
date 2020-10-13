@@ -30,7 +30,7 @@
       - service: climate.set_temperature
         data:
           entity_id: climate.thermostat
-          temperature: 78
+          temperature: 62
 
 #########################################################
 #                                                       #
@@ -58,7 +58,7 @@
       - service: climate.set_temperature
         data:
           entity_id: climate.thermostat
-          temperature: 74
+          temperature: 69
 
 #########################################################
 #                                                       #
@@ -79,7 +79,7 @@
       - service: climate.set_temperature
         data:
           entity_id: climate.thermostat
-          temperature: 74
+          temperature: 69
 
 #########################################################
 #                                                       #
@@ -88,7 +88,7 @@
 #########################################################
 
   - alias: "Set Thermostat Temperature - 2200"
-    initial_state: false
+    initial_state: true
     trigger:
       platform: time
       at: '22:00:00'
@@ -99,7 +99,7 @@
           temperature: 67
 
   - alias: "Set Thermostat Temperature - 0500"
-    initial_state: false
+    initial_state: true
     trigger:
       platform: time
       at: '06:30:00'

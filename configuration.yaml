@@ -74,9 +74,6 @@ lovelace:
     #https://github.com/custom-cards/stack-in-card
     - url: /local/stack-in-card.js
       type: module
-    #https://github.com/maykar/custom-header
-    - url: /local/custom-header.js?v=0.0.1
-      type: module
 
 #https://www.home-assistant.io/integrations/mobile_app/
 mobile_app:

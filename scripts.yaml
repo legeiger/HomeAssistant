@@ -251,7 +251,8 @@
         entity_id: light.mikey_s_bed_lights
       - service: homeassistant.turn_off
         entity_id: automation.kuled3_double_tap
-      - delay: '00:60:00'
+      - delay:
+          hours: 2
       - service: homeassistant.turn_on
         entity_id: automation.kuled3_double_tap
 

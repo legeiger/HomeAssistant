@@ -26,6 +26,7 @@ cards:
           name: Thermostat
         - entity: sensor.operatingstate
           name: Current Status
+          icon: mdi:air-purifier
         - entity: sensor.cooling_hours_today
           icon: mdi:progress-clock
         - entity: sensor.cooling_hours_yesterday

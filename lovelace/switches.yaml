@@ -24,14 +24,18 @@ cards:
     entities:
       - entity: light.yeelight1
         name: Front Porch
-      - entity: light.yeelight3
-        name: Adam's Bedside
-      - entity: light.yeelight4
-        name: Amy's Bedside
       - entity: light.yeelight2
         name: Back Porch
       - entity: light.yeelight5
         name: Unassigned
+      - type: section
+        label: Bedroom Lamps
+      - entity: light.bedroom_lights
+      - entity: light.yeelight3
+        name: Adam's Bedside
+      - entity: light.yeelight4
+        name: Amy's Bedside
+
   - type: entities
     title: Other Lights
     show_header_toggle: false

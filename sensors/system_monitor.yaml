@@ -15,22 +15,57 @@
       - type: memory_use_percent
       - type: processor_use
       - type: throughput_network_in
-        arg: eno1
+        arg: enp11s0
       - type: throughput_network_out
-        arg: eno1
+        arg: enp11s0
       - type: last_boot
-
-#https://www.home-assistant.io/components/sensor.command_line/
-  - platform: command_line
-    name: CPU Temperature
-    command: "cat /sys/class/thermal/thermal_zone2/temp"
-    unit_of_measurement: "°C"
-    value_template: '{{ value | multiply(0.001) | round(1) }}'
 
 #https://www.home-assistant.io/integrations/uptime/
   - platform: uptime
     name: Time Online
     unit_of_measurement: hours
+
+#https://www.home-assistant.io/integrations/rest/
+  - platform: rest
+    resource: http://192.168.1.24:8123/api/hassio/core/stats
+    name: core
+    value_template: '{{ value_json.data.cpu_percent }}'
+    scan_interval: 10
+    headers:
+      Authorization: !secret llt
+      Content-Type: application/json
+    unit_of_measurement: '%'
+    json_attributes_path: "$.data"
+    json_attributes:
+      - memory_percent
+
+  - platform: rest
+    resource: http://192.168.1.24:8123/api/hassio/supervisor/stats
+    name: supervisor
+    value_template: '{{ value_json.data.cpu_percent }}'
+    unit_of_measurement: '%'
+    scan_interval: 10
+    headers:
+      Authorization: !secret llt
+      Content-Type: application/json
+    json_attributes_path: "$.data"
+    json_attributes:
+      - memory_percent
+
+#https://www.home-assistant.io/integrations/template/
+  - platform: template
+    sensors:
+      core_mem:
+        friendly_name: Core Memory Usage
+        unit_of_measurement: '%'
+        value_template: "{{ state_attr('sensor.core', 'memory_percent') }}"
+
+  - platform: template
+    sensors:
+      supervisor_mem:
+        friendly_name: Supervisor Memory Usage
+        unit_of_measurement: '%'
+        value_template: "{{ state_attr('sensor.supervisor', 'memory_percent') }}"
 
 ####################################################
 #                                                  #

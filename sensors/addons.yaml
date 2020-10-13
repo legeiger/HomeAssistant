@@ -7,6 +7,7 @@
 #                                                  #
 ####################################################
 
+#https://www.home-assistant.io/integrations/rest/
   - platform: rest
     resource: http://192.168.1.24:8123/api/hassio/addons/a0d7b954_adguard/info
     name: adguard

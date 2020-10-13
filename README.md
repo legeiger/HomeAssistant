@@ -12,9 +12,8 @@ This is the most important part of Home Assistant!  Remote control and voice com
 
 # My Home Assistant Setup:
 
-I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https://support.hp.com/us-en/document/c04240180#AbT0) with i5 4590T low power processor. The base operating system is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the Intel-NUC image of [Home Assistant ](https://www.home-assistant.io/hassio/installation/). It also runs the following add-ons. 
+I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https://support.hp.com/us-en/document/c04240180#AbT0) with i5 4590T low power processor. I am running [VMware ESXi](https://my.vmware.com/en/web/vmware/downloads/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/6_7) to allow multiple virtual machines no the same hardware. The base operating system of the VM is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the [Home Assistant ](https://www.home-assistant.io/hassio/installation/) core. It also runs the following add-ons: 
 
-* [AdGuard Home](https://github.com/hassio-addons/addon-adguard-home)
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
 * [Mosquitto MQTT broker](https://www.home-assistant.io/addons/mosquitto/)
 * [Network UPS Tools](https://github.com/hassio-addons/addon-nut)
@@ -24,7 +23,7 @@ I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https:
 * [Unifi Controller](https://github.com/hassio-addons/addon-unifi)
 * [VScode](https://github.com/hassio-addons/addon-vscode)
 
-I'm currently running [Home Assistant](https://home-assistant.io) version __0.115.0__.
+I'm currently running [Home Assistant](https://home-assistant.io) version __0.116.2__.
 
 # Connected Devices:
 
@@ -129,7 +128,7 @@ The following integrations are setup in the User Interface (UI) and may be a mis
 # A Few Stats On my Setup:
 | Tracked Devices | Lights | Helpers | Switches | Automations | Scripts | Sensors | Zwave Devices |
 |:---------------:|:------:|:-------:|:--------:|:-----------:|:-------:|:-------:|:-------------:|
-|60               |22      |9        |21        |75           |12       |129      |13             | 
+|63               |22      |9        |26        |74           |12       |136      |13             | 
 
 # Themes
 I created a repository with the theme(s) I use and also a version of the default theme.  It is structured to help you identify the base variables available in Home Assistant to aide in tweaking a theme or creating a new one.  The repository is [HERE](https://github.com/SilvrrGIT/Home-Assistant-Themes)

@@ -15,6 +15,11 @@ Automations to turn on/off the ceiling fan in our bedroom.  Its a vaulted ceilin
 * When the HVAC turns on, turn on the fan to circulate the air
 * When the HVAC turns off, turn off the fan
 
+### Cast.yaml Automations:
+__[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/cast.yaml)__
+
+This is a simple automation to use Cast All The Things (CATT) to cast a Home Assistant view to my Google Home Hub. 
+
 ### Device Offline.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/deviceoffline.yaml)__
 
@@ -102,13 +107,7 @@ buttontopic kuledbutton3
 setoption1 1
 setoption11 1
 ```
-* This is a simple automation to toggle the automation to turn off the interior garage light after 5 minutes.  Normally that automation keeps the light from remaining on when its not needed, however, sometimes the light should remain on.  A quick double tap of the swtich and it turns off the automation and keeps the light on. This reuired the following commands to be entered into the tasmota console on that switch. 
 
-```
-buttontopic kuledbutton5
-setoption1 1
-setoption11 1
-```
 ### Leaving Home.yaml Automations:
 __[File Link](https://github.com/SilvrrGIT/HomeAssistant/blob/master/automation/leaving_home.yaml)__
 

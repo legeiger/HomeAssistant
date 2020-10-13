@@ -30,6 +30,10 @@ cards:
         icon: mdi:weather-sunset
       - entity: sensor.moon
         name: Moon Phase
+      - type: weblink
+        url: https://forecast.weather.gov/meteograms/Plotter.php?lat=41.9796&lon=-88.1674&wfo=LOT&zcode=ILZ013&gset=10&gdiff=5&unit=0&tinfo=CY6&ahour=0&pcmd=11011111111110000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6
+        name: Weather Forecast Link
+        icon: mdi:weather-cloudy
   - type: picture
     image: https://forecast.weather.gov/meteograms/Plotter.php?lat=41.9796&lon=-88.1674&wfo=LOT&zcode=ILZ013&gset=10&gdiff=5&unit=0&tinfo=CY6&ahour=0&pcmd=11011111111110000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6
   - type: iframe
@@ -191,7 +195,6 @@ cards:
         - input_number.attic_fan_on
         - light.basement_lights
         - light.basic1
-        - light.bedroom_lights
         - light.front_lights
         - light.kuled1
         - light.kuled2
@@ -230,6 +233,17 @@ cards:
         - script.volumeup
         - sensor.adams_iphone_battery_level
         - sensor.adams_iphone_ssid
+        - sensor.adguard_average_processing_speed
+        - sensor.adguard_dns_queries
+        - sensor.adguard_dns_queries_blocked_ratio
+        - switch.adguard_filtering
+        - switch.adguard_parental_control
+        - sensor.adguard_parental_control_blocked
+        - switch.adguard_protection
+        - switch.adguard_safe_browsing
+        - sensor.adguard_safe_browsing_blocked
+        - switch.adguard_safe_search
+        - sensor.adguard_safe_searches_enforced
         - sensor.adguard
         - sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_energy
         - sensor.aeon_labs_dsb28_home_energy_meter_2nd_edition_power
@@ -293,8 +307,8 @@ cards:
         - sensor.monthly_energy
         - sensor.moon
         - sensor.mosquitto
-        - sensor.network_throughput_in_eno1
-        - sensor.network_throughput_out_eno1
+        - sensor.network_throughput_in_enp11s0
+        - sensor.network_throughput_out_enp11s0
         - sensor.nextsunrise
         - sensor.nextsunset
         - sensor.nut
@@ -320,8 +334,6 @@ cards:
         - sensor.spacex_next_launch_time
         - sensor.spacex_next_mission_name
         - sensor.spacex_next_rocket
-        - sensor.speedtest_download
-        - sensor.speedtest_upload
         - sensor.ssh
         - sensor.switch_count
         - sensor.th161_humidity
@@ -394,6 +406,15 @@ cards:
         - zwave.zooz_zen27_s2_dimmer_wall_switch_2
         - zwave.zooz_zen27_s2_dimmer_wall_switch_3
         - zwave.zooz_zen27_s2_dimmer_wall_switch_4
+        - sensor.core
+        - sensor.core_mem
+        - sensor.supervisor
+        - sensor.supervisor_mem
+        - device_tracker.esxi_host
+        - device_tracker.homeassistant_2
+        - device_tracker.unifi_00_0c_29_76_7b_65_default
+        - device_tracker.unifi_00_0c_29_c2_d1_7d_default
+
 ####################################################
 #                                                  #
 #          END OF CONFIGURATION FILE               #

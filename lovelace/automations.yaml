@@ -100,7 +100,7 @@ cards:
     entities:
       - entity: automation.desktop_pc_on_when_away
         name: Desktop PC on When Away
-        icon: mdi:windows
+        icon: mdi:microsoft-windows
         secondary_info: last-triggered
       - entity: automation.send_notification_upon_failed_login_attempt
         name: Failed HA Login Attempt Notification
@@ -152,10 +152,6 @@ cards:
         secondary_info: last-triggered
       - entity: automation.kuled1_double_tap
         name: Kuled1 Double Tap Automation
-        icon: mdi:gesture-double-tap
-        secondary_info: last-triggered
-      - entity: automation.kuled5_double_tap
-        name: Kuled5 Double Tap Automation
         icon: mdi:gesture-double-tap
         secondary_info: last-triggered
       - type: divider
@@ -230,7 +226,7 @@ cards:
     entities:
       - entity: automation.desktop_on_when_leaving
         name: Desktop On When Leaving
-        icon: mdi:windows
+        icon: mdi:microsoft-windows
         secondary_info: last-triggered
       - entity: automation.media_center_on_when_leaving
         name: Media Center On When leaving
