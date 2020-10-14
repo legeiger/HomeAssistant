@@ -12,7 +12,7 @@ This is the most important part of Home Assistant!  Remote control and voice com
 
 # My Home Assistant Setup:
 
-I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https://support.hp.com/us-en/document/c04240180#AbT0) with i5 4590T low power processor. I am running [VMware ESXi](https://my.vmware.com/en/web/vmware/downloads/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/6_7) to allow multiple virtual machines no the same hardware. The base operating system of the VM is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the [Home Assistant ](https://www.home-assistant.io/hassio/installation/) core. It also runs the following add-ons: 
+I run my home assistant instance on a [HP ProDesk 600 G1 Desktop Mini PC](https://support.hp.com/us-en/document/c04240180#AbT0) with i5 4590T low power processor. I am running [VMware ESXi](https://my.vmware.com/en/web/vmware/downloads/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/6_7) to allow multiple virtual machines on the same hardware. The base operating system of the VM is [HomeAssistant Operating System](https://github.com/home-assistant/operating-system) and it runs the [Home Assistant ](https://www.home-assistant.io/hassio/installation/) core. It also runs the following add-ons: 
 
 * [Backup to Google Drive](https://github.com/sabeechen/hassio-google-drive-backup)
 * [Mosquitto MQTT broker](https://www.home-assistant.io/addons/mosquitto/)
